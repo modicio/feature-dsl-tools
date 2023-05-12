@@ -3,12 +3,16 @@
  */
 package de.tud.st.featurelang.generator
 
+import de.tud.st.featurelang.featureLang.Action
+import de.tud.st.featurelang.featureLang.PriorityValue
+import de.tud.st.featurelang.featureLang.Statement
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.tud.st.featurelang.featureLang.Statement
-import de.tud.st.featurelang.featureLang.Action
+import de.tud.st.featurelang.featureLang.AttributeAction
+import de.tud.st.featurelang.featureLang.AssociationAction
+import de.tud.st.featurelang.featureLang.InheritanceAction
 
 /**
  * Generates code from your model files on save.
@@ -29,15 +33,39 @@ class FeatureLangGenerator extends AbstractGenerator {
 	}
 	
 	private def compile(Statement s) '''
-		load class «s.getTarget().name»
-		«IF s.getAction() !== null »
-			«s.getAction().compile»
+		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
+		«IF should»
+				START OPTIONAL
 		«ENDIF»
-		save class «s.getTarget().name»
+		LOAD CLASS «s.getTarget().name»
+		«IF s.getAction() !== null »
+			«s.getAction().compile(s.isNegation())»
+		«ENDIF»
+		SAVE CLASS «s.getTarget().name»
+		«IF should»
+				END OPTIONAL
+		«ENDIF»
     '''
     
     
-	private def compile(Action a) '''
-		«a.getType().toString()»
-    '''
+	private def compile(Action a, boolean negation){
+		switch a {
+			AttributeAction : a.compileAttributeAction(negation)
+			AssociationAction : a.compileAssociationAction(negation)
+			InheritanceAction : a.compileInheritanceAction(negation)
+			default : 'NOP'
+		}
+	}
+	
+	private def compileAttributeAction(AttributeAction a, boolean neagtion)'''
+		TODO ATTR
+	'''
+	
+	private def compileAssociationAction(AssociationAction a, boolean neagtion)'''
+		TODO ASSO
+	'''
+	
+	private def compileInheritanceAction(InheritanceAction a, boolean neagtion)'''
+		TODO INHER
+	'''
 }
