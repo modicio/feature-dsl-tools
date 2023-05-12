@@ -3,16 +3,17 @@
  */
 package de.tud.st.featurelang.generator
 
-import de.tud.st.featurelang.featureLang.Action
+import de.tud.st.featurelang.featureLang.AssociationAction
+import de.tud.st.featurelang.featureLang.AttributeAction
+import de.tud.st.featurelang.featureLang.InheritanceAction
 import de.tud.st.featurelang.featureLang.PriorityValue
 import de.tud.st.featurelang.featureLang.Statement
+import de.tud.st.featurelang.featureLang.UpdateAction
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.tud.st.featurelang.featureLang.AttributeAction
-import de.tud.st.featurelang.featureLang.AssociationAction
-import de.tud.st.featurelang.featureLang.InheritanceAction
 
 /**
  * Generates code from your model files on save.
@@ -25,8 +26,13 @@ import de.tud.st.featurelang.featureLang.InheritanceAction
 class FeatureLangGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('out.txt',
+		/*fsa.generateFile('out.txt',
 			resource.allContents
+				.filter(Statement)
+				.map[compile]
+				.join())		
+		*/
+		System.out.println(resource.allContents
 				.filter(Statement)
 				.map[compile]
 				.join())
@@ -37,18 +43,20 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF should»
 				START OPTIONAL
 		«ENDIF»
-		LOAD CLASS «s.getTarget().name»
+		GET CLASS «s.getTarget().name»
 		«IF s.getAction() !== null »
-			«s.getAction().compile(s.isNegation())»
+			«s.getAction().getType().compileAction(s.isNegation())»
+		«ELSEIF s.getUpdate() !== null»
+			«s.getUpdate().compileUpdate()»
 		«ENDIF»
-		SAVE CLASS «s.getTarget().name»
+		SET CLASS «s.getTarget().name»
 		«IF should»
 				END OPTIONAL
 		«ENDIF»
     '''
     
     
-	private def compile(Action a, boolean negation){
+	private def compileAction(EObject a, boolean negation){
 		switch a {
 			AttributeAction : a.compileAttributeAction(negation)
 			AssociationAction : a.compileAssociationAction(negation)
@@ -57,15 +65,49 @@ class FeatureLangGenerator extends AbstractGenerator {
 		}
 	}
 	
-	private def compileAttributeAction(AttributeAction a, boolean neagtion)'''
-		TODO ATTR
-	'''
+	private def compileAttributeAction(AttributeAction a, boolean negation){
+		val attr =  a.getAttribute()
+		val attrName = attr.getName()
+		'''
+		«IF negation»
+			DELETE ATTRIBUTE «attrName»
+		«ELSE»
+			ADD ATTRIBUTE «attrName»
+			GET ATTRIBUTE «attrName»
+			«IF a.getType() !== null»
+				SET TYPE «a.getType()»
+			«ELSE»
+				SET TYPE DEFAULT
+			«ENDIF»
+			SET ATTRIBUTE «attrName»
+		«ENDIF»
+		'''
+	}
 	
-	private def compileAssociationAction(AssociationAction a, boolean neagtion)'''
-		TODO ASSO
-	'''
+	private def compileAssociationAction(AssociationAction a, boolean negation){
+		val targetClass = a.getClass().getName()
+		val relation = a.getRelation()
+		'''
+		«IF negation»
+			DELETE ATTRIBUTE «attrName»
+		«ELSE»
+			ADD ATTRIBUTE «attrName»
+			GET ATTRIBUTE «attrName»
+			«IF a.getType() !== null»
+				SET TYPE «a.getType()»
+			«ELSE»
+				SET TYPE DEFAULT
+			«ENDIF»
+			SET ATTRIBUTE «attrName»
+		«ENDIF»
+		'''
+	}
 	
-	private def compileInheritanceAction(InheritanceAction a, boolean neagtion)'''
+	private def compileInheritanceAction(InheritanceAction a, boolean negation)'''
 		TODO INHER
+	'''
+	
+	private def compileUpdate(UpdateAction a)'''
+		TODO ATTR UPDATE
 	'''
 }

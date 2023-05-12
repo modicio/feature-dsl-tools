@@ -28,7 +28,7 @@ public class Main {
 		}*/
 		Injector injector = new FeatureLangStandaloneSetup().createInjectorAndDoEMFRegistration();
 		Main main = injector.getInstance(Main.class);
-		main.runGenerator(args[0], args[1]);
+		main.runGenerator("./proto/my.featurelang", "/");
 	}
 
 	@Inject
