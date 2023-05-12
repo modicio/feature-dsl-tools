@@ -209,20 +209,21 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cAttributeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAttributeAttributeParserRuleCall_2_0 = (RuleCall)cAttributeAssignment_2.eContents().get(0);
 		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cItKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cIsKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cAKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cTypeDatatypeEnumRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cItKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cIsKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cAKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Assignment cTypeAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cTypeDatatypeEnumRuleCall_4_3_0 = (RuleCall)cTypeAssignment_4_3.eContents().get(0);
 		
 		//AttributeAction hidden(WS):
 		//    'have' 'the' attribute=Attribute '.'
-		//    'it' 'is' 'a' type=Datatype
+		//    ('it' 'is' 'a' type=Datatype)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'have' 'the' attribute=Attribute '.'
-		//'it' 'is' 'a' type=Datatype
+		//('it' 'is' 'a' type=Datatype)?
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -240,20 +241,23 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'.'
 		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
 		
+		//('it' 'is' 'a' type=Datatype)?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'it'
-		public Keyword getItKeyword_4() { return cItKeyword_4; }
+		public Keyword getItKeyword_4_0() { return cItKeyword_4_0; }
 		
 		//'is'
-		public Keyword getIsKeyword_5() { return cIsKeyword_5; }
+		public Keyword getIsKeyword_4_1() { return cIsKeyword_4_1; }
 		
 		//'a'
-		public Keyword getAKeyword_6() { return cAKeyword_6; }
+		public Keyword getAKeyword_4_2() { return cAKeyword_4_2; }
 		
 		//type=Datatype
-		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
+		public Assignment getTypeAssignment_4_3() { return cTypeAssignment_4_3; }
 		
 		//Datatype
-		public RuleCall getTypeDatatypeEnumRuleCall_7_0() { return cTypeDatatypeEnumRuleCall_7_0; }
+		public RuleCall getTypeDatatypeEnumRuleCall_4_3_0() { return cTypeDatatypeEnumRuleCall_4_3_0; }
 	}
 	public class AssociationActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AssociationAction");
@@ -261,15 +265,18 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cAssociationsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cClassAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cClassClassParserRuleCall_3_0 = (RuleCall)cClassAssignment_3.eContents().get(0);
+		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTargetClassParserRuleCall_3_0 = (RuleCall)cTargetAssignment_3.eContents().get(0);
+		private final Keyword cCalledKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cRelationAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cRelationIDTerminalRuleCall_5_0 = (RuleCall)cRelationAssignment_5.eContents().get(0);
 		
 		//AssociationAction hidden(WS):
-		//    'have' 'associations' 'to' class=Class
+		//    'have' 'associations' 'to' target=Class 'called' relation=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' 'associations' 'to' class=Class
+		//'have' 'associations' 'to' target=Class 'called' relation=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -281,26 +288,35 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'to'
 		public Keyword getToKeyword_2() { return cToKeyword_2; }
 		
-		//class=Class
-		public Assignment getClassAssignment_3() { return cClassAssignment_3; }
+		//target=Class
+		public Assignment getTargetAssignment_3() { return cTargetAssignment_3; }
 		
 		//Class
-		public RuleCall getClassClassParserRuleCall_3_0() { return cClassClassParserRuleCall_3_0; }
+		public RuleCall getTargetClassParserRuleCall_3_0() { return cTargetClassParserRuleCall_3_0; }
+		
+		//'called'
+		public Keyword getCalledKeyword_4() { return cCalledKeyword_4; }
+		
+		//relation=ID
+		public Assignment getRelationAssignment_5() { return cRelationAssignment_5; }
+		
+		//ID
+		public RuleCall getRelationIDTerminalRuleCall_5_0() { return cRelationIDTerminalRuleCall_5_0; }
 	}
 	public class InheritanceActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.InheritanceAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInheritKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cClassAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cClassClassParserRuleCall_2_0 = (RuleCall)cClassAssignment_2.eContents().get(0);
+		private final Assignment cParentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParentClassParserRuleCall_2_0 = (RuleCall)cParentAssignment_2.eContents().get(0);
 		
 		//InheritanceAction hidden(WS):
-		//    'inherit' 'from' class=Class
+		//    'inherit' 'from' parent=Class
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'inherit' 'from' class=Class
+		//'inherit' 'from' parent=Class
 		public Group getGroup() { return cGroup; }
 		
 		//'inherit'
@@ -309,11 +325,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'from'
 		public Keyword getFromKeyword_1() { return cFromKeyword_1; }
 		
-		//class=Class
-		public Assignment getClassAssignment_2() { return cClassAssignment_2; }
+		//parent=Class
+		public Assignment getParentAssignment_2() { return cParentAssignment_2; }
 		
 		//Class
-		public RuleCall getClassClassParserRuleCall_2_0() { return cClassClassParserRuleCall_2_0; }
+		public RuleCall getParentClassParserRuleCall_2_0() { return cParentClassParserRuleCall_2_0; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Class");
@@ -324,17 +340,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Class hidden(WS):
-		//    ('the')? 'class' name=ID
+		//    ('the')? ('class')? name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('the')? 'class' name=ID
+		//('the')? ('class')? name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//('the')?
 		public Keyword getTheKeyword_0() { return cTheKeyword_0; }
 		
-		//'class'
+		//('class')?
 		public Keyword getClassKeyword_1() { return cClassKeyword_1; }
 		
 		//name=ID
@@ -346,28 +362,20 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cAttributeKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cAttributeKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Attribute hidden(WS):
-		//    ('Attribute' | 'attribute') name=ID
+		//    ('attribute')? name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Attribute' | 'attribute') name=ID
+		//('attribute')? name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//('Attribute' | 'attribute')
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//'Attribute'
-		public Keyword getAttributeKeyword_0_0() { return cAttributeKeyword_0_0; }
-		
-		//'attribute'
-		public Keyword getAttributeKeyword_0_1() { return cAttributeKeyword_0_1; }
+		//('attribute')?
+		public Keyword getAttributeKeyword_0() { return cAttributeKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -568,7 +576,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//AttributeAction hidden(WS):
 	//    'have' 'the' attribute=Attribute '.'
-	//    'it' 'is' 'a' type=Datatype
+	//    ('it' 'is' 'a' type=Datatype)?
 	//;
 	public AttributeActionElements getAttributeActionAccess() {
 		return pAttributeAction;
@@ -579,7 +587,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AssociationAction hidden(WS):
-	//    'have' 'associations' 'to' class=Class
+	//    'have' 'associations' 'to' target=Class 'called' relation=ID
 	//;
 	public AssociationActionElements getAssociationActionAccess() {
 		return pAssociationAction;
@@ -590,7 +598,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//InheritanceAction hidden(WS):
-	//    'inherit' 'from' class=Class
+	//    'inherit' 'from' parent=Class
 	//;
 	public InheritanceActionElements getInheritanceActionAccess() {
 		return pInheritanceAction;
@@ -601,7 +609,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Class hidden(WS):
-	//    ('the')? 'class' name=ID
+	//    ('the')? ('class')? name=ID
 	//;
 	public ClassElements getClassAccess() {
 		return pClass;
@@ -612,7 +620,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Attribute hidden(WS):
-	//    ('Attribute' | 'attribute') name=ID
+	//    ('attribute')? name=ID
 	//;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;

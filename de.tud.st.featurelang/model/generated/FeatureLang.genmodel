@@ -38,10 +38,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AttributeAction/type"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//AssociationAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AssociationAction/relation"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//InheritanceAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/parent"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/name"/>

@@ -383,9 +383,20 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getAssociationAction_Class()
+  public EReference getAssociationAction_Target()
   {
     return (EReference)associationActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssociationAction_Relation()
+  {
+    return (EAttribute)associationActionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -405,7 +416,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getInheritanceAction_Class()
+  public EReference getInheritanceAction_Parent()
   {
     return (EReference)inheritanceActionEClass.getEStructuralFeatures().get(0);
   }
@@ -552,10 +563,11 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(attributeActionEClass, ATTRIBUTE_ACTION__TYPE);
 
     associationActionEClass = createEClass(ASSOCIATION_ACTION);
-    createEReference(associationActionEClass, ASSOCIATION_ACTION__CLASS);
+    createEReference(associationActionEClass, ASSOCIATION_ACTION__TARGET);
+    createEAttribute(associationActionEClass, ASSOCIATION_ACTION__RELATION);
 
     inheritanceActionEClass = createEClass(INHERITANCE_ACTION);
-    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__CLASS);
+    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__PARENT);
 
     classEClass = createEClass(CLASS);
     createEAttribute(classEClass, CLASS__NAME);
@@ -625,10 +637,11 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getAttributeAction_Type(), this.getDatatype(), "type", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(associationActionEClass, AssociationAction.class, "AssociationAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssociationAction_Class(), this.getClass_(), null, "class", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssociationAction_Target(), this.getClass_(), null, "target", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAssociationAction_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inheritanceActionEClass, InheritanceAction.class, "InheritanceAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInheritanceAction_Class(), this.getClass_(), null, "class", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInheritanceAction_Parent(), this.getClass_(), null, "parent", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classEClass, de.tud.st.featurelang.featureLang.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClass_Name(), ecorePackage.getEString(), "name", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class InheritanceActionImpl extends MinimalEObjectImpl.Container implements InheritanceAction
 {
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
+   * The cached value of the '{@link #getParent() <em>Parent</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClass_()
+   * @see #getParent()
    * @generated
    * @ordered
    */
-  protected de.tud.st.featurelang.featureLang.Class class_;
+  protected de.tud.st.featurelang.featureLang.Class parent;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public de.tud.st.featurelang.featureLang.Class getClass_()
+  public de.tud.st.featurelang.featureLang.Class getParent()
   {
-    return class_;
+    return parent;
   }
 
   /**
@@ -77,13 +77,13 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClass(de.tud.st.featurelang.featureLang.Class newClass, NotificationChain msgs)
+  public NotificationChain basicSetParent(de.tud.st.featurelang.featureLang.Class newParent, NotificationChain msgs)
   {
-    de.tud.st.featurelang.featureLang.Class oldClass = class_;
-    class_ = newClass;
+    de.tud.st.featurelang.featureLang.Class oldParent = parent;
+    parent = newParent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__CLASS, oldClass, newClass);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__PARENT, oldParent, newParent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public void setClass(de.tud.st.featurelang.featureLang.Class newClass)
+  public void setParent(de.tud.st.featurelang.featureLang.Class newParent)
   {
-    if (newClass != class_)
+    if (newParent != parent)
     {
       NotificationChain msgs = null;
-      if (class_ != null)
-        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__CLASS, null, msgs);
-      if (newClass != null)
-        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__CLASS, null, msgs);
-      msgs = basicSetClass(newClass, msgs);
+      if (parent != null)
+        msgs = ((InternalEObject)parent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__PARENT, null, msgs);
+      if (newParent != null)
+        msgs = ((InternalEObject)newParent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__PARENT, null, msgs);
+      msgs = basicSetParent(newParent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__CLASS, newClass, newClass));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__PARENT, newParent, newParent));
   }
 
   /**
@@ -121,8 +121,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CLASS:
-        return basicSetClass(null, msgs);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return basicSetParent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,8 +137,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CLASS:
-        return getClass_();
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return getParent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +153,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CLASS:
-        setClass((de.tud.st.featurelang.featureLang.Class)newValue);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        setParent((de.tud.st.featurelang.featureLang.Class)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CLASS:
-        setClass((de.tud.st.featurelang.featureLang.Class)null);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        setParent((de.tud.st.featurelang.featureLang.Class)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,8 +187,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CLASS:
-        return class_ != null;
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return parent != null;
     }
     return super.eIsSet(featureID);
   }

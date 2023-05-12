@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getClass_ <em>Class</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}</li>
  * </ul>
  *
  * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction()
@@ -24,25 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface AssociationAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(de.tud.st.featurelang.featureLang.Class)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Class()
+   * @return the value of the '<em>Target</em>' containment reference.
+   * @see #setTarget(de.tud.st.featurelang.featureLang.Class)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Target()
    * @model containment="true"
    * @generated
    */
-  de.tud.st.featurelang.featureLang.Class getClass_();
+  de.tud.st.featurelang.featureLang.Class getTarget();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getClass_ <em>Class</em>}' containment reference.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
-   * @see #getClass_()
+   * @param value the new value of the '<em>Target</em>' containment reference.
+   * @see #getTarget()
    * @generated
    */
-  void setClass(de.tud.st.featurelang.featureLang.Class value);
+  void setTarget(de.tud.st.featurelang.featureLang.Class value);
+
+  /**
+   * Returns the value of the '<em><b>Relation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Relation</em>' attribute.
+   * @see #setRelation(String)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Relation()
+   * @model
+   * @generated
+   */
+  String getRelation();
+
+  /**
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Relation</em>' attribute.
+   * @see #getRelation()
+   * @generated
+   */
+  void setRelation(String value);
 
 } // AssociationAction

@@ -43,13 +43,13 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF should»
 				START OPTIONAL
 		«ENDIF»
-		GET CLASS «s.getTarget().name»
+		OPEN CLASS «s.getTarget().name»
 		«IF s.getAction() !== null »
 			«s.getAction().getType().compileAction(s.isNegation())»
 		«ELSEIF s.getUpdate() !== null»
 			«s.getUpdate().compileUpdate()»
 		«ENDIF»
-		SET CLASS «s.getTarget().name»
+		CLOSE CLASS «s.getTarget().name»
 		«IF should»
 				END OPTIONAL
 		«ENDIF»
@@ -73,32 +73,28 @@ class FeatureLangGenerator extends AbstractGenerator {
 			DELETE ATTRIBUTE «attrName»
 		«ELSE»
 			ADD ATTRIBUTE «attrName»
-			GET ATTRIBUTE «attrName»
+			OPEN ATTRIBUTE «attrName»
 			«IF a.getType() !== null»
 				SET TYPE «a.getType()»
 			«ELSE»
 				SET TYPE DEFAULT
 			«ENDIF»
-			SET ATTRIBUTE «attrName»
+			CLOSE ATTRIBUTE «attrName»
 		«ENDIF»
 		'''
 	}
 	
 	private def compileAssociationAction(AssociationAction a, boolean negation){
-		val targetClass = a.getClass().getName()
+		val targetClass = a.getTarget().getName()
 		val relation = a.getRelation()
 		'''
 		«IF negation»
-			DELETE ATTRIBUTE «attrName»
+			DELETE ASSOCIATION «relation»
 		«ELSE»
-			ADD ATTRIBUTE «attrName»
-			GET ATTRIBUTE «attrName»
-			«IF a.getType() !== null»
-				SET TYPE «a.getType()»
-			«ELSE»
-				SET TYPE DEFAULT
-			«ENDIF»
-			SET ATTRIBUTE «attrName»
+			ADD ASSOCIATION «relation»
+			OPEN ASSOCIATION «relation»
+			SET TARGET «targetClass»
+			CLOSE ASSOCIATION «relation»
 		«ENDIF»
 		'''
 	}

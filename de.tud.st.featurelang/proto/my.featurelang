@@ -1,8 +1,8 @@
-the class Car must have the attribute speed. it is a number.
+the Car must have the attribute speed. it is a number.
 
-the class Car should not inherit from class Bus.
+Car should not inherit from Bus.
 
-the class Car has an existing attribute manufacturer.
+the class Car has an existing manufacturer.
 it must be a word
 
-the class Car must have associations to the class Driver.
+the class Car must have associations to Driver called drivenBy.

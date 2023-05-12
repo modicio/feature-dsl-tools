@@ -11,7 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,14 +20,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FeatureLangGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_0_or_AttributeKeyword_0_1;
+	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_q;
+	protected AbstractElementAlias match_Class_ClassKeyword_1_q;
 	protected AbstractElementAlias match_Class_TheKeyword_0_q;
 	protected AbstractElementAlias match_Statement_FullStopKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FeatureLangGrammarAccess) access;
-		match_Attribute_AttributeKeyword_0_0_or_AttributeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeAccess().getAttributeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAttributeAccess().getAttributeKeyword_0_1()));
+		match_Attribute_AttributeKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
+		match_Class_ClassKeyword_1_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getClassKeyword_1());
 		match_Class_TheKeyword_0_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getTheKeyword_0());
 		match_Statement_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getFullStopKeyword_2());
 	}
@@ -45,8 +46,10 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Attribute_AttributeKeyword_0_0_or_AttributeKeyword_0_1.equals(syntax))
-				emit_Attribute_AttributeKeyword_0_0_or_AttributeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Attribute_AttributeKeyword_0_q.equals(syntax))
+				emit_Attribute_AttributeKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Class_ClassKeyword_1_q.equals(syntax))
+				emit_Class_ClassKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Class_TheKeyword_0_q.equals(syntax))
 				emit_Class_TheKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Statement_FullStopKeyword_2_q.equals(syntax))
@@ -58,14 +61,28 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'Attribute' | 'attribute'
+	 *     'attribute'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) name=ID
 	 
 	 * </pre>
 	 */
-	protected void emit_Attribute_AttributeKeyword_0_0_or_AttributeKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Attribute_AttributeKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'class'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'the'? (ambiguity) name=ID
+	 
+	 * </pre>
+	 */
+	protected void emit_Class_ClassKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -75,7 +92,7 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'the'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'class' name=ID
+	 *     (rule start) (ambiguity) 'class'? name=ID
 	 
 	 * </pre>
 	 */

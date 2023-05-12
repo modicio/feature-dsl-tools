@@ -33,13 +33,13 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, FeatureLangGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives_1(), "rule__Statement__Alternatives_1");
 			builder.put(grammarAccess.getActionAccess().getTypeAlternatives_0(), "rule__Action__TypeAlternatives_0");
-			builder.put(grammarAccess.getAttributeAccess().getAlternatives_0(), "rule__Attribute__Alternatives_0");
 			builder.put(grammarAccess.getPriorityValueAccess().getAlternatives(), "rule__PriorityValue__Alternatives");
 			builder.put(grammarAccess.getDatatypeAccess().getAlternatives(), "rule__Datatype__Alternatives");
 			builder.put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
 			builder.put(grammarAccess.getStatementAccess().getGroup_1_0(), "rule__Statement__Group_1_0__0");
 			builder.put(grammarAccess.getUpdateActionAccess().getGroup(), "rule__UpdateAction__Group__0");
 			builder.put(grammarAccess.getAttributeActionAccess().getGroup(), "rule__AttributeAction__Group__0");
+			builder.put(grammarAccess.getAttributeActionAccess().getGroup_4(), "rule__AttributeAction__Group_4__0");
 			builder.put(grammarAccess.getAssociationActionAccess().getGroup(), "rule__AssociationAction__Group__0");
 			builder.put(grammarAccess.getInheritanceActionAccess().getGroup(), "rule__InheritanceAction__Group__0");
 			builder.put(grammarAccess.getClassAccess().getGroup(), "rule__Class__Group__0");
@@ -55,9 +55,10 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUpdateActionAccess().getPriorityAssignment_6(), "rule__UpdateAction__PriorityAssignment_6");
 			builder.put(grammarAccess.getUpdateActionAccess().getTypeAssignment_9(), "rule__UpdateAction__TypeAssignment_9");
 			builder.put(grammarAccess.getAttributeActionAccess().getAttributeAssignment_2(), "rule__AttributeAction__AttributeAssignment_2");
-			builder.put(grammarAccess.getAttributeActionAccess().getTypeAssignment_7(), "rule__AttributeAction__TypeAssignment_7");
-			builder.put(grammarAccess.getAssociationActionAccess().getClassAssignment_3(), "rule__AssociationAction__ClassAssignment_3");
-			builder.put(grammarAccess.getInheritanceActionAccess().getClassAssignment_2(), "rule__InheritanceAction__ClassAssignment_2");
+			builder.put(grammarAccess.getAttributeActionAccess().getTypeAssignment_4_3(), "rule__AttributeAction__TypeAssignment_4_3");
+			builder.put(grammarAccess.getAssociationActionAccess().getTargetAssignment_3(), "rule__AssociationAction__TargetAssignment_3");
+			builder.put(grammarAccess.getAssociationActionAccess().getRelationAssignment_5(), "rule__AssociationAction__RelationAssignment_5");
+			builder.put(grammarAccess.getInheritanceActionAccess().getParentAssignment_2(), "rule__InheritanceAction__ParentAssignment_2");
 			builder.put(grammarAccess.getClassAccess().getNameAssignment_2(), "rule__Class__NameAssignment_2");
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1(), "rule__Attribute__NameAssignment_1");
 			builder.put(grammarAccess.getPriorityAccess().getPriorityAssignment(), "rule__Priority__PriorityAssignment");

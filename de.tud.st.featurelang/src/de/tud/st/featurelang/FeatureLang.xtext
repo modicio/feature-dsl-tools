@@ -28,20 +28,19 @@ AttributeAction hidden(WS):
 ;
 
 AssociationAction hidden(WS):
-	'have' 'associations' 'to' class=Class '.'
-	('they' 'are')? 'called' relation=ID
+	'have' 'associations' 'to' target=Class 'called' relation=ID
 ;
 	
 InheritanceAction hidden(WS):
-	'inherit' 'from' class=Class
+	'inherit' 'from' parent=Class
 ;
 
 Class hidden(WS):
-	('the')? 'class' name=ID
+	('the')? ('class')? name=ID
 ;
 
 Attribute hidden(WS):
-	('Attribute' | 'attribute') name=ID
+	('attribute')? name=ID
 ;
 	
 Priority hidden(WS):

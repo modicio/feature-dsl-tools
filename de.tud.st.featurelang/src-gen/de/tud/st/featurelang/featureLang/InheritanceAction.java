@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.InheritanceAction#getClass_ <em>Class</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface InheritanceAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Parent</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(de.tud.st.featurelang.featureLang.Class)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction_Class()
+   * @return the value of the '<em>Parent</em>' containment reference.
+   * @see #setParent(de.tud.st.featurelang.featureLang.Class)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction_Parent()
    * @model containment="true"
    * @generated
    */
-  de.tud.st.featurelang.featureLang.Class getClass_();
+  de.tud.st.featurelang.featureLang.Class getParent();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getClass_ <em>Class</em>}' containment reference.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
-   * @see #getClass_()
+   * @param value the new value of the '<em>Parent</em>' containment reference.
+   * @see #getParent()
    * @generated
    */
-  void setClass(de.tud.st.featurelang.featureLang.Class value);
+  void setParent(de.tud.st.featurelang.featureLang.Class value);
 
 } // InheritanceAction

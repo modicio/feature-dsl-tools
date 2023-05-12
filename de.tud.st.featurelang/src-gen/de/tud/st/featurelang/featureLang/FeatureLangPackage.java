@@ -272,13 +272,22 @@ public interface FeatureLangPackage extends EPackage
   int ASSOCIATION_ACTION = 5;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSOCIATION_ACTION__CLASS = 0;
+  int ASSOCIATION_ACTION__TARGET = 0;
+
+  /**
+   * The feature id for the '<em><b>Relation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_ACTION__RELATION = 1;
 
   /**
    * The number of structural features of the '<em>Association Action</em>' class.
@@ -287,7 +296,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSOCIATION_ACTION_FEATURE_COUNT = 1;
+  int ASSOCIATION_ACTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.
@@ -300,13 +309,13 @@ public interface FeatureLangPackage extends EPackage
   int INHERITANCE_ACTION = 6;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * The feature id for the '<em><b>Parent</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INHERITANCE_ACTION__CLASS = 0;
+  int INHERITANCE_ACTION__PARENT = 0;
 
   /**
    * The number of structural features of the '<em>Inheritance Action</em>' class.
@@ -615,15 +624,26 @@ public interface FeatureLangPackage extends EPackage
   EClass getAssociationAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AssociationAction#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
-   * @see de.tud.st.featurelang.featureLang.AssociationAction#getClass_()
+   * @return the meta object for the containment reference '<em>Target</em>'.
+   * @see de.tud.st.featurelang.featureLang.AssociationAction#getTarget()
    * @see #getAssociationAction()
    * @generated
    */
-  EReference getAssociationAction_Class();
+  EReference getAssociationAction_Target();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Relation</em>'.
+   * @see de.tud.st.featurelang.featureLang.AssociationAction#getRelation()
+   * @see #getAssociationAction()
+   * @generated
+   */
+  EAttribute getAssociationAction_Relation();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.InheritanceAction <em>Inheritance Action</em>}'.
@@ -636,15 +656,15 @@ public interface FeatureLangPackage extends EPackage
   EClass getInheritanceAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
-   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getClass_()
+   * @return the meta object for the containment reference '<em>Parent</em>'.
+   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getParent()
    * @see #getInheritanceAction()
    * @generated
    */
-  EReference getInheritanceAction_Class();
+  EReference getInheritanceAction_Parent();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.Class <em>Class</em>}'.
@@ -909,12 +929,20 @@ public interface FeatureLangPackage extends EPackage
     EClass ASSOCIATION_ACTION = eINSTANCE.getAssociationAction();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ASSOCIATION_ACTION__CLASS = eINSTANCE.getAssociationAction_Class();
+    EReference ASSOCIATION_ACTION__TARGET = eINSTANCE.getAssociationAction_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Relation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSOCIATION_ACTION__RELATION = eINSTANCE.getAssociationAction_Relation();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.
@@ -927,12 +955,12 @@ public interface FeatureLangPackage extends EPackage
     EClass INHERITANCE_ACTION = eINSTANCE.getInheritanceAction();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INHERITANCE_ACTION__CLASS = eINSTANCE.getInheritanceAction_Class();
+    EReference INHERITANCE_ACTION__PARENT = eINSTANCE.getInheritanceAction_Parent();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.ClassImpl <em>Class</em>}' class.

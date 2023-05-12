@@ -94,16 +94,19 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AssociationAction returns AssociationAction
 	 *
 	 * Constraint:
-	 *     class=Class
+	 *     (target=Class relation=ID)
 	 * </pre>
 	 */
 	protected void sequence_AssociationAction(ISerializationContext context, AssociationAction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__CLASS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__CLASS));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__TARGET));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__RELATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssociationActionAccess().getClassClassParserRuleCall_3_0(), semanticObject.getClass_());
+		feeder.accept(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_3_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_5_0(), semanticObject.getRelation());
 		feeder.finish();
 	}
 	
@@ -114,20 +117,11 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AttributeAction returns AttributeAction
 	 *
 	 * Constraint:
-	 *     (attribute=Attribute type=Datatype)
+	 *     (attribute=Attribute type=Datatype?)
 	 * </pre>
 	 */
 	protected void sequence_AttributeAction(ISerializationContext context, AttributeAction semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ATTRIBUTE_ACTION__ATTRIBUTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ATTRIBUTE_ACTION__ATTRIBUTE));
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ATTRIBUTE_ACTION__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ATTRIBUTE_ACTION__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeActionAccess().getAttributeAttributeParserRuleCall_2_0(), semanticObject.getAttribute());
-		feeder.accept(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_7_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -191,16 +185,16 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     InheritanceAction returns InheritanceAction
 	 *
 	 * Constraint:
-	 *     class=Class
+	 *     parent=Class
 	 * </pre>
 	 */
 	protected void sequence_InheritanceAction(ISerializationContext context, InheritanceAction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__CLASS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__CLASS));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__PARENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__PARENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInheritanceActionAccess().getClassClassParserRuleCall_2_0(), semanticObject.getClass_());
+		feeder.accept(grammarAccess.getInheritanceActionAccess().getParentClassParserRuleCall_2_0(), semanticObject.getParent());
 		feeder.finish();
 	}
 	
