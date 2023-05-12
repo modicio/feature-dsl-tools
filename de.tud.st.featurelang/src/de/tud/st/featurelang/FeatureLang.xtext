@@ -24,11 +24,12 @@ UpdateAction hidden(WS):
 
 AttributeAction hidden(WS):
 	'have' 'the' attribute=Attribute '.'
-	'it' 'is' 'a' type=Datatype
+	('it' 'is' 'a' type=Datatype)?
 ;
 
 AssociationAction hidden(WS):
-	'have' 'associations' 'to' class=Class
+	'have' 'associations' 'to' class=Class '.'
+	('they' 'are')? 'called' relation=ID
 ;
 	
 InheritanceAction hidden(WS):
