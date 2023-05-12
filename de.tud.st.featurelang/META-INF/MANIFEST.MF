@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.tud.st.featurelang
+Bundle-ManifestVersion: 2
+Bundle-Name: de.tud.st.featurelang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.tud.st.featurelang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: de.tud.st.featurelang.featureLang,
+ de.tud.st.featurelang,
+ de.tud.st.featurelang.featureLang.impl,
+ de.tud.st.featurelang.serializer,
+ de.tud.st.featurelang.parser.antlr.internal,
+ de.tud.st.featurelang.validation,
+ de.tud.st.featurelang.generator,
+ de.tud.st.featurelang.services,
+ de.tud.st.featurelang.featureLang.util,
+ de.tud.st.featurelang.scoping,
+ de.tud.st.featurelang.parser.antlr
+Import-Package: org.apache.log4j

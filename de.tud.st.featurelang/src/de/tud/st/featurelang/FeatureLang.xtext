@@ -1,0 +1,56 @@
+grammar de.tud.st.featurelang.FeatureLang with org.eclipse.xtext.common.Terminals
+
+generate featureLang "http://www.tud.de/st/featurelang/FeatureLang"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+FeatureRequest:
+	(statements+=Statement)*;
+	
+Statement hidden(WS):
+	target=Class
+	((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
+	('.')?
+;	
+	
+Action hidden(WS):
+	type=(AttributeAction | AssociationAction | InheritanceAction)
+;
+
+UpdateAction hidden(WS):
+	'has' 'an' 'existing'
+	attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
+;
+
+AttributeAction hidden(WS):
+	'have' 'the' attribute=Attribute '.'
+	'it' 'is' 'a' type=Datatype
+;
+
+AssociationAction hidden(WS):
+	'have' 'associations' 'to' class=Class
+;
+	
+InheritanceAction hidden(WS):
+	'inherit' 'from' class=Class
+;
+
+Class hidden(WS):
+	('the')? 'class' name=ID
+;
+
+Attribute hidden(WS):
+	('Attribute' | 'attribute') name=ID
+;
+	
+Priority hidden(WS):
+	priority=PriorityValue
+;
+
+enum PriorityValue:
+	SHOULD='should' | MUST='must'
+;
+
+enum Datatype:
+	WORD='word' | PHRASE='phrase' | NUMBER='number'
+;

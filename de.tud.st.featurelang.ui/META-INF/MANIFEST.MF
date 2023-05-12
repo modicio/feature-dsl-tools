@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.tud.st.featurelang.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: de.tud.st.featurelang.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.tud.st.featurelang.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.tud.st.featurelang,
+ de.tud.st.featurelang.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: de.tud.st.featurelang.ui.internal,
+ de.tud.st.featurelang.ui.contentassist,
+ de.tud.st.featurelang.ui.quickfix
+Bundle-Activator: de.tud.st.featurelang.ui.internal.FeaturelangActivator

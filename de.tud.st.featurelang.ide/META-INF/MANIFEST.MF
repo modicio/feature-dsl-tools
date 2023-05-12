@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.tud.st.featurelang.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: de.tud.st.featurelang.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.tud.st.featurelang.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.tud.st.featurelang,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: de.tud.st.featurelang.ide.contentassist.antlr,
+ de.tud.st.featurelang.ide.contentassist.antlr.internal
