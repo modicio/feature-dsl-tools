@@ -28,10 +28,14 @@ import de.tud.st.featurelang.featureLang.Statement
 class FeatureLangGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile("evolution.txt", resource.allContents
+		val result = resource.allContents
 				.filter(Statement)
 				.map[compileStatement]
-				.join("&\n"))
+				.join("&\n");
+		System.out.println(">>>")
+		System.out.println(result)
+		System.out.println("<<<")
+		fsa.generateFile("evolution.txt", result);
 	}
 	
 	private def compileStatement(Statement s){
