@@ -7,11 +7,12 @@ import com.google.inject.Inject;
 import de.tud.st.featurelang.featureLang.AssociationAction;
 import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
+import de.tud.st.featurelang.featureLang.ChangeStatement;
+import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 import de.tud.st.featurelang.featureLang.Priority;
-import de.tud.st.featurelang.featureLang.Statement;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 import de.tud.st.featurelang.services.FeatureLangGrammarAccess;
 import java.util.Set;
@@ -51,8 +52,14 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case FeatureLangPackage.ATTRIBUTE_ACTION:
 				sequence_AttributeAction(context, (AttributeAction) semanticObject); 
 				return; 
+			case FeatureLangPackage.CHANGE_STATEMENT:
+				sequence_ChangeStatement(context, (ChangeStatement) semanticObject); 
+				return; 
 			case FeatureLangPackage.CLASS:
 				sequence_Class(context, (de.tud.st.featurelang.featureLang.Class) semanticObject); 
+				return; 
+			case FeatureLangPackage.CREATION_STATEMENT:
+				sequence_CreationStatement(context, (CreationStatement) semanticObject); 
 				return; 
 			case FeatureLangPackage.FEATURE_REQUEST:
 				sequence_FeatureRequest(context, (FeatureRequest) semanticObject); 
@@ -62,9 +69,6 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case FeatureLangPackage.PRIORITY:
 				sequence_Priority(context, (Priority) semanticObject); 
-				return; 
-			case FeatureLangPackage.STATEMENT:
-				sequence_Statement(context, (Statement) semanticObject); 
 				return; 
 			case FeatureLangPackage.UPDATE_ACTION:
 				sequence_UpdateAction(context, (UpdateAction) semanticObject); 
@@ -148,6 +152,21 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Statement returns ChangeStatement
+	 *     ChangeStatement returns ChangeStatement
+	 *
+	 * Constraint:
+	 *     (target=Class ((priority=Priority negation?='not'? action=Action) | update=UpdateAction))
+	 * </pre>
+	 */
+	protected void sequence_ChangeStatement(ISerializationContext context, ChangeStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Class returns Class
 	 *
 	 * Constraint:
@@ -162,6 +181,21 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getClassAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns CreationStatement
+	 *     CreationStatement returns CreationStatement
+	 *
+	 * Constraint:
+	 *     (priority=Priority negation?='not'? classElement=Class)
+	 * </pre>
+	 */
+	protected void sequence_CreationStatement(ISerializationContext context, CreationStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -216,20 +250,6 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPriorityAccess().getPriorityPriorityValueEnumRuleCall_0(), semanticObject.getPriority());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns Statement
-	 *
-	 * Constraint:
-	 *     (target=Class ((priority=Priority negation?='not'? action=Action) | update=UpdateAction))
-	 * </pre>
-	 */
-	protected void sequence_Statement(ISerializationContext context, Statement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -28,7 +28,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  WORD(0, "WORD", "word"),
+  WORD(0, "WORD", "time"),
 
   /**
    * The '<em><b>PHRASE</b></em>' literal object.
@@ -55,7 +55,7 @@ public enum Datatype implements Enumerator
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #WORD
-   * @model literal="word"
+   * @model literal="time"
    * @generated
    * @ordered
    */

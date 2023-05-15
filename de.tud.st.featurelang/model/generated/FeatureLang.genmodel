@@ -19,11 +19,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//FeatureRequest/statements"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Statement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//Statement/target"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//Statement/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Statement/negation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//Statement/action"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//Statement/update"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//ChangeStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/update"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//CreationStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreationStatement/classElement"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Action">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//Action/type"/>

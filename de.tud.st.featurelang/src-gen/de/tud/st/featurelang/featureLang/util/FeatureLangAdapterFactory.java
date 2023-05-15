@@ -7,6 +7,8 @@ import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.AssociationAction;
 import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
+import de.tud.st.featurelang.featureLang.ChangeStatement;
+import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
@@ -93,6 +95,16 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStatement(Statement object)
       {
         return createStatementAdapter();
+      }
+      @Override
+      public Adapter caseChangeStatement(ChangeStatement object)
+      {
+        return createChangeStatementAdapter();
+      }
+      @Override
+      public Adapter caseCreationStatement(CreationStatement object)
+      {
+        return createCreationStatementAdapter();
       }
       @Override
       public Adapter caseAction(Action object)
@@ -182,6 +194,36 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.ChangeStatement <em>Change Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.tud.st.featurelang.featureLang.ChangeStatement
+   * @generated
+   */
+  public Adapter createChangeStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.CreationStatement <em>Creation Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.tud.st.featurelang.featureLang.CreationStatement
+   * @generated
+   */
+  public Adapter createCreationStatementAdapter()
   {
     return null;
   }

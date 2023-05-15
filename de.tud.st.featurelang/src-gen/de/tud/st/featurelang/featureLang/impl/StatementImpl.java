@@ -3,11 +3,9 @@
  */
 package de.tud.st.featurelang.featureLang.impl;
 
-import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.Priority;
 import de.tud.st.featurelang.featureLang.Statement;
-import de.tud.st.featurelang.featureLang.UpdateAction;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,27 +24,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.StatementImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.StatementImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.StatementImpl#isNegation <em>Negation</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.StatementImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.StatementImpl#getUpdate <em>Update</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
-  /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected de.tud.st.featurelang.featureLang.Class target;
-
   /**
    * The cached value of the '{@link #getPriority() <em>Priority</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -78,26 +63,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected boolean negation = NEGATION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAction()
-   * @generated
-   * @ordered
-   */
-  protected Action action;
-
-  /**
-   * The cached value of the '{@link #getUpdate() <em>Update</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUpdate()
-   * @generated
-   * @ordered
-   */
-  protected UpdateAction update;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -116,56 +81,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected EClass eStaticClass()
   {
     return FeatureLangPackage.Literals.STATEMENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public de.tud.st.featurelang.featureLang.Class getTarget()
-  {
-    return target;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTarget(de.tud.st.featurelang.featureLang.Class newTarget, NotificationChain msgs)
-  {
-    de.tud.st.featurelang.featureLang.Class oldTarget = target;
-    target = newTarget;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__TARGET, oldTarget, newTarget);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTarget(de.tud.st.featurelang.featureLang.Class newTarget)
-  {
-    if (newTarget != target)
-    {
-      NotificationChain msgs = null;
-      if (target != null)
-        msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__TARGET, null, msgs);
-      if (newTarget != null)
-        msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__TARGET, null, msgs);
-      msgs = basicSetTarget(newTarget, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__TARGET, newTarget, newTarget));
   }
 
   /**
@@ -249,118 +164,12 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
-  public Action getAction()
-  {
-    return action;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAction(Action newAction, NotificationChain msgs)
-  {
-    Action oldAction = action;
-    action = newAction;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__ACTION, oldAction, newAction);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAction(Action newAction)
-  {
-    if (newAction != action)
-    {
-      NotificationChain msgs = null;
-      if (action != null)
-        msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__ACTION, null, msgs);
-      if (newAction != null)
-        msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__ACTION, null, msgs);
-      msgs = basicSetAction(newAction, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__ACTION, newAction, newAction));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public UpdateAction getUpdate()
-  {
-    return update;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetUpdate(UpdateAction newUpdate, NotificationChain msgs)
-  {
-    UpdateAction oldUpdate = update;
-    update = newUpdate;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__UPDATE, oldUpdate, newUpdate);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setUpdate(UpdateAction newUpdate)
-  {
-    if (newUpdate != update)
-    {
-      NotificationChain msgs = null;
-      if (update != null)
-        msgs = ((InternalEObject)update).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__UPDATE, null, msgs);
-      if (newUpdate != null)
-        msgs = ((InternalEObject)newUpdate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.STATEMENT__UPDATE, null, msgs);
-      msgs = basicSetUpdate(newUpdate, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.STATEMENT__UPDATE, newUpdate, newUpdate));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case FeatureLangPackage.STATEMENT__TARGET:
-        return basicSetTarget(null, msgs);
       case FeatureLangPackage.STATEMENT__PRIORITY:
         return basicSetPriority(null, msgs);
-      case FeatureLangPackage.STATEMENT__ACTION:
-        return basicSetAction(null, msgs);
-      case FeatureLangPackage.STATEMENT__UPDATE:
-        return basicSetUpdate(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -375,16 +184,10 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case FeatureLangPackage.STATEMENT__TARGET:
-        return getTarget();
       case FeatureLangPackage.STATEMENT__PRIORITY:
         return getPriority();
       case FeatureLangPackage.STATEMENT__NEGATION:
         return isNegation();
-      case FeatureLangPackage.STATEMENT__ACTION:
-        return getAction();
-      case FeatureLangPackage.STATEMENT__UPDATE:
-        return getUpdate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -399,20 +202,11 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case FeatureLangPackage.STATEMENT__TARGET:
-        setTarget((de.tud.st.featurelang.featureLang.Class)newValue);
-        return;
       case FeatureLangPackage.STATEMENT__PRIORITY:
         setPriority((Priority)newValue);
         return;
       case FeatureLangPackage.STATEMENT__NEGATION:
         setNegation((Boolean)newValue);
-        return;
-      case FeatureLangPackage.STATEMENT__ACTION:
-        setAction((Action)newValue);
-        return;
-      case FeatureLangPackage.STATEMENT__UPDATE:
-        setUpdate((UpdateAction)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -428,20 +222,11 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case FeatureLangPackage.STATEMENT__TARGET:
-        setTarget((de.tud.st.featurelang.featureLang.Class)null);
-        return;
       case FeatureLangPackage.STATEMENT__PRIORITY:
         setPriority((Priority)null);
         return;
       case FeatureLangPackage.STATEMENT__NEGATION:
         setNegation(NEGATION_EDEFAULT);
-        return;
-      case FeatureLangPackage.STATEMENT__ACTION:
-        setAction((Action)null);
-        return;
-      case FeatureLangPackage.STATEMENT__UPDATE:
-        setUpdate((UpdateAction)null);
         return;
     }
     super.eUnset(featureID);
@@ -457,16 +242,10 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case FeatureLangPackage.STATEMENT__TARGET:
-        return target != null;
       case FeatureLangPackage.STATEMENT__PRIORITY:
         return priority != null;
       case FeatureLangPackage.STATEMENT__NEGATION:
         return negation != NEGATION_EDEFAULT;
-      case FeatureLangPackage.STATEMENT__ACTION:
-        return action != null;
-      case FeatureLangPackage.STATEMENT__UPDATE:
-        return update != null;
     }
     return super.eIsSet(featureID);
   }

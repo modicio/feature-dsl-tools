@@ -7,6 +7,8 @@ import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.AssociationAction;
 import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
+import de.tud.st.featurelang.featureLang.ChangeStatement;
+import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
@@ -93,6 +95,22 @@ public class FeatureLangSwitch<T> extends Switch<T>
       {
         Statement statement = (Statement)theEObject;
         T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.CHANGE_STATEMENT:
+      {
+        ChangeStatement changeStatement = (ChangeStatement)theEObject;
+        T result = caseChangeStatement(changeStatement);
+        if (result == null) result = caseStatement(changeStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.CREATION_STATEMENT:
+      {
+        CreationStatement creationStatement = (CreationStatement)theEObject;
+        T result = caseCreationStatement(creationStatement);
+        if (result == null) result = caseStatement(creationStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -184,6 +202,38 @@ public class FeatureLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Change Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Change Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChangeStatement(ChangeStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Creation Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Creation Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreationStatement(CreationStatement object)
   {
     return null;
   }

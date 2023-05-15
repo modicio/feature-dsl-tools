@@ -42,6 +42,24 @@ public interface FeatureLangFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Change Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Change Statement</em>'.
+   * @generated
+   */
+  ChangeStatement createChangeStatement();
+
+  /**
+   * Returns a new object of class '<em>Creation Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Creation Statement</em>'.
+   * @generated
+   */
+  CreationStatement createCreationStatement();
+
+  /**
    * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

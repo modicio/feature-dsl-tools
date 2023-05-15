@@ -30,10 +30,10 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cStatementsStatementParserRuleCall_0 = (RuleCall)cStatementsAssignment.eContents().get(0);
 		
 		//FeatureRequest:
-		//    (statements+=Statement)*;
+		//    (statements+= Statement)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(statements+=Statement)*
+		//(statements+= Statement)*
 		public Assignment getStatementsAssignment() { return cStatementsAssignment; }
 		
 		//Statement
@@ -41,6 +41,34 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Statement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cChangeStatementParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cCreationStatementParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//Statement:
+		//    (ChangeStatement | CreationStatement) ('.')?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(ChangeStatement | CreationStatement) ('.')?
+		public Group getGroup() { return cGroup; }
+		
+		//(ChangeStatement | CreationStatement)
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//ChangeStatement
+		public RuleCall getChangeStatementParserRuleCall_0_0() { return cChangeStatementParserRuleCall_0_0; }
+		
+		//CreationStatement
+		public RuleCall getCreationStatementParserRuleCall_0_1() { return cCreationStatementParserRuleCall_0_1; }
+		
+		//('.')?
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+	}
+	public class ChangeStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.ChangeStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTargetAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTargetClassParserRuleCall_0_0 = (RuleCall)cTargetAssignment_0.eContents().get(0);
@@ -54,18 +82,15 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cActionActionParserRuleCall_1_0_2_0 = (RuleCall)cActionAssignment_1_0_2.eContents().get(0);
 		private final Assignment cUpdateAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cUpdateUpdateActionParserRuleCall_1_1_0 = (RuleCall)cUpdateAssignment_1_1.eContents().get(0);
-		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//Statement hidden(WS):
+		//ChangeStatement hidden(WS):
 		//    target=Class
 		//    ((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
-		//    ('.')?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//target=Class
 		//((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
-		//('.')?
 		public Group getGroup() { return cGroup; }
 		
 		//target=Class
@@ -103,9 +128,50 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//UpdateAction
 		public RuleCall getUpdateUpdateActionParserRuleCall_1_1_0() { return cUpdateUpdateActionParserRuleCall_1_1_0; }
+	}
+	public class CreationStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreationStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cItKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPriorityAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPriorityPriorityParserRuleCall_1_0 = (RuleCall)cPriorityAssignment_1.eContents().get(0);
+		private final Assignment cNegationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cNegationNotKeyword_2_0 = (Keyword)cNegationAssignment_2.eContents().get(0);
+		private final Keyword cExistKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cClassElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cClassElementClassParserRuleCall_4_0 = (RuleCall)cClassElementAssignment_4.eContents().get(0);
 		
-		//('.')?
-		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
+		//CreationStatement hidden(WS):
+		//    'it' priority=Priority (negation ?= 'not')? 'exist' classElement=Class
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'it' priority=Priority (negation ?= 'not')? 'exist' classElement=Class
+		public Group getGroup() { return cGroup; }
+		
+		//'it'
+		public Keyword getItKeyword_0() { return cItKeyword_0; }
+		
+		//priority=Priority
+		public Assignment getPriorityAssignment_1() { return cPriorityAssignment_1; }
+		
+		//Priority
+		public RuleCall getPriorityPriorityParserRuleCall_1_0() { return cPriorityPriorityParserRuleCall_1_0; }
+		
+		//(negation ?= 'not')?
+		public Assignment getNegationAssignment_2() { return cNegationAssignment_2; }
+		
+		//'not'
+		public Keyword getNegationNotKeyword_2_0() { return cNegationNotKeyword_2_0; }
+		
+		//'exist'
+		public Keyword getExistKeyword_3() { return cExistKeyword_3; }
+		
+		//classElement=Class
+		public Assignment getClassElementAssignment_4() { return cClassElementAssignment_4; }
+		
+		//Class
+		public RuleCall getClassElementClassParserRuleCall_4_0() { return cClassElementClassParserRuleCall_4_0; }
 	}
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Action");
@@ -334,21 +400,29 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Class");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTheKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cTheKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cAKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Keyword cClassKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Class hidden(WS):
-		//    ('the')? ('class')? name=ID
+		//    ('the' | 'a')? ('class')? name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('the')? ('class')? name=ID
+		//('the' | 'a')? ('class')? name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//('the')?
-		public Keyword getTheKeyword_0() { return cTheKeyword_0; }
+		//('the' | 'a')?
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'the'
+		public Keyword getTheKeyword_0_0() { return cTheKeyword_0_0; }
+		
+		//'a'
+		public Keyword getAKeyword_0_1() { return cAKeyword_0_1; }
 		
 		//('class')?
 		public Keyword getClassKeyword_1() { return cClassKeyword_1; }
@@ -432,25 +506,25 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Datatype");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cWORDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cWORDWordKeyword_0_0 = (Keyword)cWORDEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cWORDTimeKeyword_0_0 = (Keyword)cWORDEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cPHRASEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cPHRASEPhraseKeyword_1_0 = (Keyword)cPHRASEEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cNUMBEREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cNUMBERNumberKeyword_2_0 = (Keyword)cNUMBEREnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum Datatype:
-		//    WORD='word' | PHRASE='phrase' | NUMBER='number'
+		//    WORD='time' | PHRASE='phrase' | NUMBER='number'
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//WORD='word' | PHRASE='phrase' | NUMBER='number'
+		//WORD='time' | PHRASE='phrase' | NUMBER='number'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//WORD='word'
+		//WORD='time'
 		public EnumLiteralDeclaration getWORDEnumLiteralDeclaration_0() { return cWORDEnumLiteralDeclaration_0; }
 		
-		//'word'
-		public Keyword getWORDWordKeyword_0_0() { return cWORDWordKeyword_0_0; }
+		//'time'
+		public Keyword getWORDTimeKeyword_0_0() { return cWORDTimeKeyword_0_0; }
 		
 		//PHRASE='phrase'
 		public EnumLiteralDeclaration getPHRASEEnumLiteralDeclaration_1() { return cPHRASEEnumLiteralDeclaration_1; }
@@ -467,6 +541,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	private final FeatureRequestElements pFeatureRequest;
 	private final StatementElements pStatement;
+	private final ChangeStatementElements pChangeStatement;
+	private final CreationStatementElements pCreationStatement;
 	private final ActionElements pAction;
 	private final UpdateActionElements pUpdateAction;
 	private final AttributeActionElements pAttributeAction;
@@ -489,6 +565,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.gaTerminals = gaTerminals;
 		this.pFeatureRequest = new FeatureRequestElements();
 		this.pStatement = new StatementElements();
+		this.pChangeStatement = new ChangeStatementElements();
+		this.pCreationStatement = new CreationStatementElements();
 		this.pAction = new ActionElements();
 		this.pUpdateAction = new UpdateActionElements();
 		this.pAttributeAction = new AttributeActionElements();
@@ -529,7 +607,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 
 	
 	//FeatureRequest:
-	//    (statements+=Statement)*;
+	//    (statements+= Statement)*;
 	public FeatureRequestElements getFeatureRequestAccess() {
 		return pFeatureRequest;
 	}
@@ -538,10 +616,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getFeatureRequestAccess().getRule();
 	}
 	
-	//Statement hidden(WS):
-	//    target=Class
-	//    ((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
-	//    ('.')?
+	//Statement:
+	//    (ChangeStatement | CreationStatement) ('.')?
 	//;
 	public StatementElements getStatementAccess() {
 		return pStatement;
@@ -549,6 +625,29 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getStatementRule() {
 		return getStatementAccess().getRule();
+	}
+	
+	//ChangeStatement hidden(WS):
+	//    target=Class
+	//    ((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
+	//;
+	public ChangeStatementElements getChangeStatementAccess() {
+		return pChangeStatement;
+	}
+	
+	public ParserRule getChangeStatementRule() {
+		return getChangeStatementAccess().getRule();
+	}
+	
+	//CreationStatement hidden(WS):
+	//    'it' priority=Priority (negation ?= 'not')? 'exist' classElement=Class
+	//;
+	public CreationStatementElements getCreationStatementAccess() {
+		return pCreationStatement;
+	}
+	
+	public ParserRule getCreationStatementRule() {
+		return getCreationStatementAccess().getRule();
 	}
 	
 	//Action hidden(WS):
@@ -609,7 +708,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Class hidden(WS):
-	//    ('the')? ('class')? name=ID
+	//    ('the' | 'a')? ('class')? name=ID
 	//;
 	public ClassElements getClassAccess() {
 		return pClass;
@@ -653,7 +752,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//enum Datatype:
-	//    WORD='word' | PHRASE='phrase' | NUMBER='number'
+	//    WORD='time' | PHRASE='phrase' | NUMBER='number'
 	//;
 	public DatatypeElements getDatatypeAccess() {
 		return eDatatype;

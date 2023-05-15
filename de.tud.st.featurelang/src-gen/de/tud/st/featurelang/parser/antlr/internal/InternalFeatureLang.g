@@ -98,19 +98,63 @@ ruleFeatureRequest returns [EObject current=null]
 ;
 
 // Entry rule entryRuleStatement
-entryRuleStatement returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-}:
+entryRuleStatement returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getStatementRule()); }
 	iv_ruleStatement=ruleStatement
 	{ $current=$iv_ruleStatement.current; }
+	EOF;
+
+// Rule Statement
+ruleStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getStatementAccess().getChangeStatementParserRuleCall_0_0());
+			}
+			this_ChangeStatement_0=ruleChangeStatement
+			{
+				$current = $this_ChangeStatement_0.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getStatementAccess().getCreationStatementParserRuleCall_0_1());
+			}
+			this_CreationStatement_1=ruleCreationStatement
+			{
+				$current = $this_CreationStatement_1.current;
+				afterParserOrEnumRuleCall();
+			}
+		)
+		(
+			otherlv_2='.'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getStatementAccess().getFullStopKeyword_1());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleChangeStatement
+entryRuleChangeStatement returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getChangeStatementRule()); }
+	iv_ruleChangeStatement=ruleChangeStatement
+	{ $current=$iv_ruleChangeStatement.current; }
 	EOF;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule Statement
-ruleStatement returns [EObject current=null]
+// Rule ChangeStatement
+ruleChangeStatement returns [EObject current=null]
 @init {
 	enterRule();
 	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
@@ -122,12 +166,12 @@ ruleStatement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStatementAccess().getTargetClassParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getChangeStatementAccess().getTargetClassParserRuleCall_0_0());
 				}
 				lv_target_0_0=ruleClass
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStatementRule());
+						$current = createModelElementForParent(grammarAccess.getChangeStatementRule());
 					}
 					set(
 						$current,
@@ -143,12 +187,12 @@ ruleStatement returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getStatementAccess().getPriorityPriorityParserRuleCall_1_0_0_0());
+							newCompositeNode(grammarAccess.getChangeStatementAccess().getPriorityPriorityParserRuleCall_1_0_0_0());
 						}
 						lv_priority_1_0=rulePriority
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getStatementRule());
+								$current = createModelElementForParent(grammarAccess.getChangeStatementRule());
 							}
 							set(
 								$current,
@@ -163,11 +207,11 @@ ruleStatement returns [EObject current=null]
 					(
 						lv_negation_2_0='not'
 						{
-							newLeafNode(lv_negation_2_0, grammarAccess.getStatementAccess().getNegationNotKeyword_1_0_1_0());
+							newLeafNode(lv_negation_2_0, grammarAccess.getChangeStatementAccess().getNegationNotKeyword_1_0_1_0());
 						}
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getStatementRule());
+								$current = createModelElement(grammarAccess.getChangeStatementRule());
 							}
 							setWithLastConsumed($current, "negation", lv_negation_2_0 != null, "not");
 						}
@@ -176,12 +220,12 @@ ruleStatement returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getStatementAccess().getActionActionParserRuleCall_1_0_2_0());
+							newCompositeNode(grammarAccess.getChangeStatementAccess().getActionActionParserRuleCall_1_0_2_0());
 						}
 						lv_action_3_0=ruleAction
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getStatementRule());
+								$current = createModelElementForParent(grammarAccess.getChangeStatementRule());
 							}
 							set(
 								$current,
@@ -197,12 +241,12 @@ ruleStatement returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getStatementAccess().getUpdateUpdateActionParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getChangeStatementAccess().getUpdateUpdateActionParserRuleCall_1_1_0());
 					}
 					lv_update_4_0=ruleUpdateAction
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStatementRule());
+							$current = createModelElementForParent(grammarAccess.getChangeStatementRule());
 						}
 						set(
 							$current,
@@ -214,12 +258,94 @@ ruleStatement returns [EObject current=null]
 				)
 			)
 		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleCreationStatement
+entryRuleCreationStatement returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getCreationStatementRule()); }
+	iv_ruleCreationStatement=ruleCreationStatement
+	{ $current=$iv_ruleCreationStatement.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule CreationStatement
+ruleCreationStatement returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='it'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCreationStatementAccess().getItKeyword_0());
+		}
 		(
-			otherlv_5='.'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getStatementAccess().getFullStopKeyword_2());
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getCreationStatementAccess().getPriorityPriorityParserRuleCall_1_0());
+				}
+				lv_priority_1_0=rulePriority
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCreationStatementRule());
+					}
+					set(
+						$current,
+						"priority",
+						lv_priority_1_0,
+						"de.tud.st.featurelang.FeatureLang.Priority");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_negation_2_0='not'
+				{
+					newLeafNode(lv_negation_2_0, grammarAccess.getCreationStatementAccess().getNegationNotKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCreationStatementRule());
+					}
+					setWithLastConsumed($current, "negation", lv_negation_2_0 != null, "not");
+				}
+			)
 		)?
+		otherlv_3='exist'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCreationStatementAccess().getExistKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_4_0());
+				}
+				lv_classElement_4_0=ruleClass
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCreationStatementRule());
+					}
+					set(
+						$current,
+						"classElement",
+						lv_classElement_4_0,
+						"de.tud.st.featurelang.FeatureLang.Class");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 finally {
@@ -671,20 +797,25 @@ ruleClass returns [EObject current=null]
 		(
 			otherlv_0='the'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getClassAccess().getTheKeyword_0());
+				newLeafNode(otherlv_0, grammarAccess.getClassAccess().getTheKeyword_0_0());
+			}
+			    |
+			otherlv_1='a'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getClassAccess().getAKeyword_0_1());
 			}
 		)?
 		(
-			otherlv_1='class'
+			otherlv_2='class'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getClassAccess().getClassKeyword_1());
+				newLeafNode(otherlv_2, grammarAccess.getClassAccess().getClassKeyword_1());
 			}
 		)?
 		(
 			(
-				lv_name_2_0=RULE_ID
+				lv_name_3_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getClassAccess().getNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getClassAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -693,7 +824,7 @@ ruleClass returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -838,7 +969,7 @@ ruleDatatype returns [Enumerator current=null]
 }:
 	(
 		(
-			enumLiteral_0='word'
+			enumLiteral_0='time'
 			{
 				$current = grammarAccess.getDatatypeAccess().getWORDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_0, grammarAccess.getDatatypeAccess().getWORDEnumLiteralDeclaration_0());

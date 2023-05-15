@@ -5,16 +5,23 @@ generate featureLang "http://www.tud.de/st/featurelang/FeatureLang"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 FeatureRequest:
-	(statements+=Statement)*;
+	(statements+= Statement)*;
 	
-Statement hidden(WS):
+Statement:
+	(ChangeStatement | CreationStatement) ('.')?
+;
+	
+ChangeStatement hidden(WS):
 	target=Class
 	((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
-	('.')?
 ;	
 
+CreationStatement hidden(WS):
+	'it' priority=Priority (negation ?= 'not')? 'exist' classElement=Class
+;
+
 Action hidden(WS):
-	type=(AttributeAction | AssociationAction | InheritanceAction | CreationAction)
+	type=(AttributeAction | AssociationAction | InheritanceAction)
 ;
 
 UpdateAction hidden(WS):
@@ -36,7 +43,7 @@ InheritanceAction hidden(WS):
 ;
 
 Class hidden(WS):
-	('the')? ('class')? name=ID
+	('the' | 'a')? ('class')? name=ID
 ;
 
 Attribute hidden(WS):

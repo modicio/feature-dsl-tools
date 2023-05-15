@@ -11,6 +11,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -22,16 +23,16 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected FeatureLangGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_q;
 	protected AbstractElementAlias match_Class_ClassKeyword_1_q;
-	protected AbstractElementAlias match_Class_TheKeyword_0_q;
-	protected AbstractElementAlias match_Statement_FullStopKeyword_2_q;
+	protected AbstractElementAlias match_Class___AKeyword_0_1_or_TheKeyword_0_0__q;
+	protected AbstractElementAlias match_Statement_FullStopKeyword_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FeatureLangGrammarAccess) access;
 		match_Attribute_AttributeKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
 		match_Class_ClassKeyword_1_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getClassKeyword_1());
-		match_Class_TheKeyword_0_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getTheKeyword_0());
-		match_Statement_FullStopKeyword_2_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getFullStopKeyword_2());
+		match_Class___AKeyword_0_1_or_TheKeyword_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getClassAccess().getAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClassAccess().getTheKeyword_0_0()));
+		match_Statement_FullStopKeyword_1_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getFullStopKeyword_1());
 	}
 	
 	@Override
@@ -50,10 +51,10 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Attribute_AttributeKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Class_ClassKeyword_1_q.equals(syntax))
 				emit_Class_ClassKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Class_TheKeyword_0_q.equals(syntax))
-				emit_Class_TheKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Statement_FullStopKeyword_2_q.equals(syntax))
-				emit_Statement_FullStopKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Class___AKeyword_0_1_or_TheKeyword_0_0__q.equals(syntax))
+				emit_Class___AKeyword_0_1_or_TheKeyword_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Statement_FullStopKeyword_1_q.equals(syntax))
+				emit_Statement_FullStopKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -78,7 +79,7 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'class'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'the'? (ambiguity) name=ID
+	 *     (rule start) ('the' | 'a')? (ambiguity) name=ID
 	 
 	 * </pre>
 	 */
@@ -89,14 +90,14 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'the'?
+	 *     ('the' | 'a')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'class'? name=ID
 	 
 	 * </pre>
 	 */
-	protected void emit_Class_TheKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Class___AKeyword_0_1_or_TheKeyword_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -107,11 +108,12 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     action=Action (ambiguity) (rule end)
+	 *     classElement=Class (ambiguity) (rule end)
 	 *     update=UpdateAction (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_Statement_FullStopKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Statement_FullStopKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

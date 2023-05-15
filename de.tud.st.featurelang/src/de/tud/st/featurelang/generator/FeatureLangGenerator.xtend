@@ -7,13 +7,15 @@ import de.tud.st.featurelang.featureLang.AssociationAction
 import de.tud.st.featurelang.featureLang.AttributeAction
 import de.tud.st.featurelang.featureLang.InheritanceAction
 import de.tud.st.featurelang.featureLang.PriorityValue
-import de.tud.st.featurelang.featureLang.Statement
 import de.tud.st.featurelang.featureLang.UpdateAction
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.tud.st.featurelang.featureLang.CreationStatement
+import de.tud.st.featurelang.featureLang.ChangeStatement
+import de.tud.st.featurelang.featureLang.Statement
 
 /**
  * Generates code from your model files on save.
@@ -34,11 +36,19 @@ class FeatureLangGenerator extends AbstractGenerator {
 		*/
 		System.out.println(resource.allContents
 				.filter(Statement)
-				.map[compile]
-				.join())
+				.map[compileStatement]
+				.join("&\n"))
 	}
 	
-	private def compile(Statement s) '''
+	private def compileStatement(Statement s){
+		switch s {
+			ChangeStatement : s.compile
+			CreationStatement : s.compile
+			default : 'NOP'
+		}
+	}
+	
+	private def compile(ChangeStatement s) '''
 		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
 		«IF should»
 				START OPTIONAL
@@ -55,13 +65,27 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«ENDIF»
     '''
     
+    private def compile(CreationStatement s)'''
+		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
+		«val name = s.getClassElement().getName()»
+		«IF should»
+			START OPTIONAL
+		«ENDIF»
+		«IF s.isNegation() »
+			DELETE CLASS «name»
+		«ELSE»
+			CREATE CLASS «name»
+		«ENDIF»
+		«IF should»
+			END OPTIONAL
+		«ENDIF»
+    '''
     
 	private def compileAction(EObject a, boolean negation){
 		switch a {
 			AttributeAction : a.compileAttributeAction(negation)
 			AssociationAction : a.compileAssociationAction(negation)
 			InheritanceAction : a.compileInheritanceAction(negation)
-			CreationAction : a.compileCreationAction(negation)
 			default : 'NOP'
 		}
 	}
@@ -123,14 +147,4 @@ class FeatureLangGenerator extends AbstractGenerator {
 		END OPTIONAL
 		«ENDIF»
 	'''
-	
-	private def compileCreationAction(CreationAction a, boolean negation){
-		val targetClass = a.getParent().getName()
-		'''
-		«IF negation»
-			DELETE PARENT_RELATION «targetClass»
-		«ELSE»
-			ADD PARENT_RELATION «targetClass»
-		«ENDIF»
-		'''
 }

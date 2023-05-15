@@ -7,6 +7,8 @@ import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.AssociationAction;
 import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
+import de.tud.st.featurelang.featureLang.ChangeStatement;
+import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
@@ -80,6 +82,8 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
     {
       case FeatureLangPackage.FEATURE_REQUEST: return createFeatureRequest();
       case FeatureLangPackage.STATEMENT: return createStatement();
+      case FeatureLangPackage.CHANGE_STATEMENT: return createChangeStatement();
+      case FeatureLangPackage.CREATION_STATEMENT: return createCreationStatement();
       case FeatureLangPackage.ACTION: return createAction();
       case FeatureLangPackage.UPDATE_ACTION: return createUpdateAction();
       case FeatureLangPackage.ATTRIBUTE_ACTION: return createAttributeAction();
@@ -153,6 +157,30 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ChangeStatement createChangeStatement()
+  {
+    ChangeStatementImpl changeStatement = new ChangeStatementImpl();
+    return changeStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreationStatement createCreationStatement()
+  {
+    CreationStatementImpl creationStatement = new CreationStatementImpl();
+    return creationStatement;
   }
 
   /**

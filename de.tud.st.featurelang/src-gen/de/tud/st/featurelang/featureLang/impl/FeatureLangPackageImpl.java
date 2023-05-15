@@ -7,6 +7,8 @@ import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.AssociationAction;
 import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
+import de.tud.st.featurelang.featureLang.ChangeStatement;
+import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
@@ -46,6 +48,20 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass changeStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass creationStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -218,7 +234,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getStatement_Target()
+  public EReference getStatement_Priority()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(0);
   }
@@ -229,20 +245,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getStatement_Priority()
-  {
-    return (EReference)statementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getStatement_Negation()
   {
-    return (EAttribute)statementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)statementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -251,9 +256,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getStatement_Action()
+  public EClass getChangeStatement()
   {
-    return (EReference)statementEClass.getEStructuralFeatures().get(3);
+    return changeStatementEClass;
   }
 
   /**
@@ -262,9 +267,53 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getStatement_Update()
+  public EReference getChangeStatement_Target()
   {
-    return (EReference)statementEClass.getEStructuralFeatures().get(4);
+    return (EReference)changeStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getChangeStatement_Action()
+  {
+    return (EReference)changeStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getChangeStatement_Update()
+  {
+    return (EReference)changeStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCreationStatement()
+  {
+    return creationStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreationStatement_ClassElement()
+  {
+    return (EReference)creationStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -544,11 +593,16 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEReference(featureRequestEClass, FEATURE_REQUEST__STATEMENTS);
 
     statementEClass = createEClass(STATEMENT);
-    createEReference(statementEClass, STATEMENT__TARGET);
     createEReference(statementEClass, STATEMENT__PRIORITY);
     createEAttribute(statementEClass, STATEMENT__NEGATION);
-    createEReference(statementEClass, STATEMENT__ACTION);
-    createEReference(statementEClass, STATEMENT__UPDATE);
+
+    changeStatementEClass = createEClass(CHANGE_STATEMENT);
+    createEReference(changeStatementEClass, CHANGE_STATEMENT__TARGET);
+    createEReference(changeStatementEClass, CHANGE_STATEMENT__ACTION);
+    createEReference(changeStatementEClass, CHANGE_STATEMENT__UPDATE);
+
+    creationStatementEClass = createEClass(CREATION_STATEMENT);
+    createEReference(creationStatementEClass, CREATION_STATEMENT__CLASS_ELEMENT);
 
     actionEClass = createEClass(ACTION);
     createEReference(actionEClass, ACTION__TYPE);
@@ -612,17 +666,24 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    changeStatementEClass.getESuperTypes().add(this.getStatement());
+    creationStatementEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(featureRequestEClass, FeatureRequest.class, "FeatureRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFeatureRequest_Statements(), this.getStatement(), null, "statements", null, 0, -1, FeatureRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatement_Target(), this.getClass_(), null, "target", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Priority(), this.getPriority(), null, "priority", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStatement_Negation(), ecorePackage.getEBoolean(), "negation", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStatement_Action(), this.getAction(), null, "action", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStatement_Update(), this.getUpdateAction(), null, "update", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(changeStatementEClass, ChangeStatement.class, "ChangeStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getChangeStatement_Target(), this.getClass_(), null, "target", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getChangeStatement_Action(), this.getAction(), null, "action", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getChangeStatement_Update(), this.getUpdateAction(), null, "update", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(creationStatementEClass, CreationStatement.class, "CreationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreationStatement_ClassElement(), this.getClass_(), null, "classElement", null, 0, 1, CreationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAction_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

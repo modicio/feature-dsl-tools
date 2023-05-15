@@ -97,22 +97,13 @@ public interface FeatureLangPackage extends EPackage
   int STATEMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__TARGET = 0;
-
-  /**
    * The feature id for the '<em><b>Priority</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT__PRIORITY = 1;
+  int STATEMENT__PRIORITY = 0;
 
   /**
    * The feature id for the '<em><b>Negation</b></em>' attribute.
@@ -121,25 +112,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT__NEGATION = 2;
-
-  /**
-   * The feature id for the '<em><b>Action</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__ACTION = 3;
-
-  /**
-   * The feature id for the '<em><b>Update</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__UPDATE = 4;
+  int STATEMENT__NEGATION = 1;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -148,7 +121,117 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 5;
+  int STATEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl <em>Change Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getChangeStatement()
+   * @generated
+   */
+  int CHANGE_STATEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Priority</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT__PRIORITY = STATEMENT__PRIORITY;
+
+  /**
+   * The feature id for the '<em><b>Negation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT__NEGATION = STATEMENT__NEGATION;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT__TARGET = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT__ACTION = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Update</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT__UPDATE = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Change Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreationStatementImpl <em>Creation Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.CreationStatementImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreationStatement()
+   * @generated
+   */
+  int CREATION_STATEMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Priority</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATION_STATEMENT__PRIORITY = STATEMENT__PRIORITY;
+
+  /**
+   * The feature id for the '<em><b>Negation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATION_STATEMENT__NEGATION = STATEMENT__NEGATION;
+
+  /**
+   * The feature id for the '<em><b>Class Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATION_STATEMENT__CLASS_ELEMENT = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Creation Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.ActionImpl <em>Action</em>}' class.
@@ -158,7 +241,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 2;
+  int ACTION = 4;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -186,7 +269,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getUpdateAction()
    * @generated
    */
-  int UPDATE_ACTION = 3;
+  int UPDATE_ACTION = 5;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
@@ -232,7 +315,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAttributeAction()
    * @generated
    */
-  int ATTRIBUTE_ACTION = 4;
+  int ATTRIBUTE_ACTION = 6;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
@@ -269,7 +352,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAssociationAction()
    * @generated
    */
-  int ASSOCIATION_ACTION = 5;
+  int ASSOCIATION_ACTION = 7;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -306,7 +389,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getInheritanceAction()
    * @generated
    */
-  int INHERITANCE_ACTION = 6;
+  int INHERITANCE_ACTION = 8;
 
   /**
    * The feature id for the '<em><b>Parent</b></em>' containment reference.
@@ -334,7 +417,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getClass_()
    * @generated
    */
-  int CLASS = 7;
+  int CLASS = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,7 +445,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 8;
+  int ATTRIBUTE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -390,7 +473,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriority()
    * @generated
    */
-  int PRIORITY = 9;
+  int PRIORITY = 11;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -418,7 +501,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriorityValue()
    * @generated
    */
-  int PRIORITY_VALUE = 10;
+  int PRIORITY_VALUE = 12;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Datatype <em>Datatype</em>}' enum.
@@ -428,7 +511,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getDatatype()
    * @generated
    */
-  int DATATYPE = 11;
+  int DATATYPE = 13;
 
 
   /**
@@ -463,17 +546,6 @@ public interface FeatureLangPackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.Statement#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see de.tud.st.featurelang.featureLang.Statement#getTarget()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_Target();
-
-  /**
    * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.Statement#getPriority <em>Priority</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -496,26 +568,68 @@ public interface FeatureLangPackage extends EPackage
   EAttribute getStatement_Negation();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.Statement#getAction <em>Action</em>}'.
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.ChangeStatement <em>Change Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Change Statement</em>'.
+   * @see de.tud.st.featurelang.featureLang.ChangeStatement
+   * @generated
+   */
+  EClass getChangeStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Target</em>'.
+   * @see de.tud.st.featurelang.featureLang.ChangeStatement#getTarget()
+   * @see #getChangeStatement()
+   * @generated
+   */
+  EReference getChangeStatement_Target();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getAction <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Action</em>'.
-   * @see de.tud.st.featurelang.featureLang.Statement#getAction()
-   * @see #getStatement()
+   * @see de.tud.st.featurelang.featureLang.ChangeStatement#getAction()
+   * @see #getChangeStatement()
    * @generated
    */
-  EReference getStatement_Action();
+  EReference getChangeStatement_Action();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.Statement#getUpdate <em>Update</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getUpdate <em>Update</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Update</em>'.
-   * @see de.tud.st.featurelang.featureLang.Statement#getUpdate()
-   * @see #getStatement()
+   * @see de.tud.st.featurelang.featureLang.ChangeStatement#getUpdate()
+   * @see #getChangeStatement()
    * @generated
    */
-  EReference getStatement_Update();
+  EReference getChangeStatement_Update();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CreationStatement <em>Creation Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Creation Statement</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreationStatement
+   * @generated
+   */
+  EClass getCreationStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreationStatement#getClassElement <em>Class Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Class Element</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreationStatement#getClassElement()
+   * @see #getCreationStatement()
+   * @generated
+   */
+  EReference getCreationStatement_ClassElement();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.Action <em>Action</em>}'.
@@ -801,14 +915,6 @@ public interface FeatureLangPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__TARGET = eINSTANCE.getStatement_Target();
-
-    /**
      * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -825,12 +931,30 @@ public interface FeatureLangPackage extends EPackage
     EAttribute STATEMENT__NEGATION = eINSTANCE.getStatement_Negation();
 
     /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl <em>Change Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getChangeStatement()
+     * @generated
+     */
+    EClass CHANGE_STATEMENT = eINSTANCE.getChangeStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHANGE_STATEMENT__TARGET = eINSTANCE.getChangeStatement_Target();
+
+    /**
      * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT__ACTION = eINSTANCE.getStatement_Action();
+    EReference CHANGE_STATEMENT__ACTION = eINSTANCE.getChangeStatement_Action();
 
     /**
      * The meta object literal for the '<em><b>Update</b></em>' containment reference feature.
@@ -838,7 +962,25 @@ public interface FeatureLangPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATEMENT__UPDATE = eINSTANCE.getStatement_Update();
+    EReference CHANGE_STATEMENT__UPDATE = eINSTANCE.getChangeStatement_Update();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CreationStatementImpl <em>Creation Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.CreationStatementImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreationStatement()
+     * @generated
+     */
+    EClass CREATION_STATEMENT = eINSTANCE.getCreationStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Class Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATION_STATEMENT__CLASS_ELEMENT = eINSTANCE.getCreationStatement_ClassElement();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.ActionImpl <em>Action</em>}' class.
