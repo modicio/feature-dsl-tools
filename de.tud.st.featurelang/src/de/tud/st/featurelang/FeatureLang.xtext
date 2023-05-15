@@ -12,9 +12,9 @@ Statement hidden(WS):
 	((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
 	('.')?
 ;	
-	
+
 Action hidden(WS):
-	type=(AttributeAction | AssociationAction | InheritanceAction)
+	type=(AttributeAction | AssociationAction | InheritanceAction | CreationAction)
 ;
 
 UpdateAction hidden(WS):
@@ -52,5 +52,5 @@ enum PriorityValue:
 ;
 
 enum Datatype:
-	WORD='word' | PHRASE='phrase' | NUMBER='number'
+	WORD='time' | PHRASE='phrase' | NUMBER='number'
 ;

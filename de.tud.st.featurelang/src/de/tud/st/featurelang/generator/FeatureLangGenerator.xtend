@@ -61,6 +61,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 			AttributeAction : a.compileAttributeAction(negation)
 			AssociationAction : a.compileAssociationAction(negation)
 			InheritanceAction : a.compileInheritanceAction(negation)
+			CreationAction : a.compileCreationAction(negation)
 			default : 'NOP'
 		}
 	}
@@ -99,11 +100,37 @@ class FeatureLangGenerator extends AbstractGenerator {
 		'''
 	}
 	
-	private def compileInheritanceAction(InheritanceAction a, boolean negation)'''
-		TODO INHER
+	private def compileInheritanceAction(InheritanceAction a, boolean negation){
+		val targetClass = a.getParent().getName()
+		'''
+		«IF negation»
+			DELETE PARENT_RELATION «targetClass»
+		«ELSE»
+			ADD PARENT_RELATION «targetClass»
+		«ENDIF»
+		'''
+	}
+	
+	private def compileUpdate(UpdateAction a) '''
+		«val should = a.getPriority() !== null && a.getPriority().getPriority() === PriorityValue.SHOULD»
+		«IF should»
+		START OPTIONAL
+		«ENDIF»
+		OPEN ATTRIBUTE «a.getAttribute().getName()»
+		SET TYPE «a.getType()»
+		CLOSE ATTRIBUTE «a.getAttribute().getName()»
+		«IF should»
+		END OPTIONAL
+		«ENDIF»
 	'''
 	
-	private def compileUpdate(UpdateAction a)'''
-		TODO ATTR UPDATE
-	'''
+	private def compileCreationAction(CreationAction a, boolean negation){
+		val targetClass = a.getParent().getName()
+		'''
+		«IF negation»
+			DELETE PARENT_RELATION «targetClass»
+		«ELSE»
+			ADD PARENT_RELATION «targetClass»
+		«ENDIF»
+		'''
 }
