@@ -28,13 +28,7 @@ import de.tud.st.featurelang.featureLang.Statement
 class FeatureLangGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		/*fsa.generateFile('out.txt',
-			resource.allContents
-				.filter(Statement)
-				.map[compile]
-				.join())		
-		*/
-		System.out.println(resource.allContents
+		fsa.generateFile("evolution.txt", resource.allContents
 				.filter(Statement)
 				.map[compileStatement]
 				.join("&\n"))
