@@ -114,10 +114,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF negation»
 			DELETE ASSOCIATION «relation»
 		«ELSE»
-			ADD ASSOCIATION «relation»
-			OPEN ASSOCIATION «relation»
-			SET TARGET «targetClass»
-			CLOSE ASSOCIATION «relation»
+			ADD ASSOCIATION «relation» TARGET «targetClass»
 		«ENDIF»
 		'''
 	}
