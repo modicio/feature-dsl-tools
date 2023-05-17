@@ -12,4 +12,5 @@ Require-Bundle: de.tud.st.featurelang,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: de.tud.st.featurelang.ide.contentassist.antlr,
- de.tud.st.featurelang.ide.contentassist.antlr.internal
+ de.tud.st.featurelang.ide.contentassist.antlr.internal,
+ de.tud.st.featurelang.ide.contentassist.antlr.lexer

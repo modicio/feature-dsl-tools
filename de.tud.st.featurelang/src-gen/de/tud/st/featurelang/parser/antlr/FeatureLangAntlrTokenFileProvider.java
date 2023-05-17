@@ -11,6 +11,6 @@ public class FeatureLangAntlrTokenFileProvider implements IAntlrTokenFileProvide
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-		return classLoader.getResourceAsStream("de/tud/st/featurelang/parser/antlr/internal/InternalFeatureLang.tokens");
+		return classLoader.getResourceAsStream("de/tud/st/featurelang/parser/antlr/internal/InternalFeatureLangParser.tokens");
 	}
 }

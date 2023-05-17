@@ -8,7 +8,7 @@ import com.google.inject.Provider;
 import com.google.inject.name.Names;
 import de.tud.st.featurelang.ide.contentassist.antlr.FeatureLangParser;
 import de.tud.st.featurelang.ide.contentassist.antlr.PartialFeatureLangContentAssistParser;
-import de.tud.st.featurelang.ide.contentassist.antlr.internal.InternalFeatureLangLexer;
+import de.tud.st.featurelang.ide.contentassist.antlr.lexer.InternalFeatureLangLexer;
 import de.tud.st.featurelang.ui.contentassist.FeatureLangProposalProvider;
 import de.tud.st.featurelang.ui.labeling.FeatureLangDescriptionLabelProvider;
 import de.tud.st.featurelang.ui.labeling.FeatureLangLabelProvider;
@@ -110,7 +110,7 @@ public abstract class AbstractFeatureLangUiModule extends DefaultUiModule {
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(de.tud.st.featurelang.parser.antlr.internal.InternalFeatureLangLexer.class);
+			.to(de.tud.st.featurelang.parser.antlr.lexer.InternalFeatureLangLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2

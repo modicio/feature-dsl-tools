@@ -21,18 +21,26 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FeatureLangGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AttributeAction_AnKeyword_1_1_or_TheKeyword_1_0;
 	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_q;
 	protected AbstractElementAlias match_Class_ClassKeyword_1_q;
 	protected AbstractElementAlias match_Class___AKeyword_0_1_or_TheKeyword_0_0__q;
+	protected AbstractElementAlias match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0;
+	protected AbstractElementAlias match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1;
 	protected AbstractElementAlias match_Statement_FullStopKeyword_1_q;
+	protected AbstractElementAlias match_UpdateAction_ExistingKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FeatureLangGrammarAccess) access;
+		match_AttributeAction_AnKeyword_1_1_or_TheKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getAnKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getTheKeyword_1_0()));
 		match_Attribute_AttributeKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
 		match_Class_ClassKeyword_1_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getClassKeyword_1());
 		match_Class___AKeyword_0_1_or_TheKeyword_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getClassAccess().getAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClassAccess().getTheKeyword_0_0()));
+		match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getBeKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getExistKeyword_3_0()));
+		match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getItKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getThereKeyword_0_1()));
 		match_Statement_FullStopKeyword_1_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getFullStopKeyword_1());
+		match_UpdateAction_ExistingKeyword_2_q = new TokenAlias(false, true, grammarAccess.getUpdateActionAccess().getExistingKeyword_2());
 	}
 	
 	@Override
@@ -47,18 +55,40 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Attribute_AttributeKeyword_0_q.equals(syntax))
+			if (match_AttributeAction_AnKeyword_1_1_or_TheKeyword_1_0.equals(syntax))
+				emit_AttributeAction_AnKeyword_1_1_or_TheKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Attribute_AttributeKeyword_0_q.equals(syntax))
 				emit_Attribute_AttributeKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Class_ClassKeyword_1_q.equals(syntax))
 				emit_Class_ClassKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Class___AKeyword_0_1_or_TheKeyword_0_0__q.equals(syntax))
 				emit_Class___AKeyword_0_1_or_TheKeyword_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0.equals(syntax))
+				emit_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1.equals(syntax))
+				emit_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Statement_FullStopKeyword_1_q.equals(syntax))
 				emit_Statement_FullStopKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UpdateAction_ExistingKeyword_2_q.equals(syntax))
+				emit_UpdateAction_ExistingKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'the' | 'an'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'have' (ambiguity) attribute=Attribute
+	 
+	 * </pre>
+	 */
+	protected void emit_AttributeAction_AnKeyword_1_1_or_TheKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
@@ -104,6 +134,35 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     'exist' | 'be'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     negation?='not' (ambiguity) classElement=Class
+	 *     priority=Priority (ambiguity) classElement=Class
+	 
+	 * </pre>
+	 */
+	protected void emit_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'it' | 'there'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) priority=Priority
+	 
+	 * </pre>
+	 */
+	protected void emit_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     '.'?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -114,6 +173,20 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Statement_FullStopKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'existing'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'has' 'an' (ambiguity) attribute=Attribute
+	 
+	 * </pre>
+	 */
+	protected void emit_UpdateAction_ExistingKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

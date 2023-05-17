@@ -6,7 +6,7 @@ package de.tud.st.featurelang.ide;
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
 import de.tud.st.featurelang.ide.contentassist.antlr.FeatureLangParser;
-import de.tud.st.featurelang.ide.contentassist.antlr.internal.InternalFeatureLangLexer;
+import de.tud.st.featurelang.ide.contentassist.antlr.lexer.InternalFeatureLangLexer;
 import org.eclipse.xtext.ide.DefaultIdeModule;
 import org.eclipse.xtext.ide.LexerIdeBindings;
 import org.eclipse.xtext.ide.editor.contentassist.FQNPrefixMatcher;

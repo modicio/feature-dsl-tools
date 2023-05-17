@@ -33,7 +33,10 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, FeatureLangGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives_0(), "rule__Statement__Alternatives_0");
 			builder.put(grammarAccess.getChangeStatementAccess().getAlternatives_1(), "rule__ChangeStatement__Alternatives_1");
+			builder.put(grammarAccess.getCreationStatementAccess().getAlternatives_0(), "rule__CreationStatement__Alternatives_0");
+			builder.put(grammarAccess.getCreationStatementAccess().getAlternatives_3(), "rule__CreationStatement__Alternatives_3");
 			builder.put(grammarAccess.getActionAccess().getTypeAlternatives_0(), "rule__Action__TypeAlternatives_0");
+			builder.put(grammarAccess.getAttributeActionAccess().getAlternatives_1(), "rule__AttributeAction__Alternatives_1");
 			builder.put(grammarAccess.getClassAccess().getAlternatives_0(), "rule__Class__Alternatives_0");
 			builder.put(grammarAccess.getPriorityValueAccess().getAlternatives(), "rule__PriorityValue__Alternatives");
 			builder.put(grammarAccess.getDatatypeAccess().getAlternatives(), "rule__Datatype__Alternatives");

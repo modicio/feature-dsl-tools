@@ -17,7 +17,7 @@ ChangeStatement hidden(WS):
 ;	
 
 CreationStatement hidden(WS):
-	'it' priority=Priority (negation ?= 'not')? 'exist' classElement=Class
+	('it' | 'there') priority=Priority (negation ?= 'not')? ('exist' | 'be') classElement=Class
 ;
 
 Action hidden(WS):
@@ -25,12 +25,12 @@ Action hidden(WS):
 ;
 
 UpdateAction hidden(WS):
-	'has' 'an' 'existing'
+	'has' 'an' ('existing')?
 	attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
 ;
 
 AttributeAction hidden(WS):
-	'have' 'the' attribute=Attribute '.'
+	'have' ('the' | 'an') attribute=Attribute '.'
 	('it' 'is' 'a' type=Datatype)?
 ;
 

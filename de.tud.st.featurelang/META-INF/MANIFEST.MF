@@ -25,5 +25,6 @@ Export-Package: de.tud.st.featurelang.featureLang,
  de.tud.st.featurelang.services,
  de.tud.st.featurelang.featureLang.util,
  de.tud.st.featurelang.scoping,
- de.tud.st.featurelang.parser.antlr
+ de.tud.st.featurelang.parser.antlr,
+ de.tud.st.featurelang.parser.antlr.lexer
 Import-Package: org.apache.log4j
