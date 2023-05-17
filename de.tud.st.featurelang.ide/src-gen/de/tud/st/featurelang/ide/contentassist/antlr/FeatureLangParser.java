@@ -33,7 +33,6 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, FeatureLangGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives_0(), "rule__Statement__Alternatives_0");
 			builder.put(grammarAccess.getChangeStatementAccess().getAlternatives_1(), "rule__ChangeStatement__Alternatives_1");
-			builder.put(grammarAccess.getCreationStatementAccess().getAlternatives_0(), "rule__CreationStatement__Alternatives_0");
 			builder.put(grammarAccess.getCreationStatementAccess().getAlternatives_3(), "rule__CreationStatement__Alternatives_3");
 			builder.put(grammarAccess.getActionAccess().getTypeAlternatives_0(), "rule__Action__TypeAlternatives_0");
 			builder.put(grammarAccess.getAttributeActionAccess().getAlternatives_1(), "rule__AttributeAction__Alternatives_1");
@@ -57,9 +56,9 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getChangeStatementAccess().getNegationAssignment_1_0_1(), "rule__ChangeStatement__NegationAssignment_1_0_1");
 			builder.put(grammarAccess.getChangeStatementAccess().getActionAssignment_1_0_2(), "rule__ChangeStatement__ActionAssignment_1_0_2");
 			builder.put(grammarAccess.getChangeStatementAccess().getUpdateAssignment_1_1(), "rule__ChangeStatement__UpdateAssignment_1_1");
+			builder.put(grammarAccess.getCreationStatementAccess().getClassElementAssignment_0(), "rule__CreationStatement__ClassElementAssignment_0");
 			builder.put(grammarAccess.getCreationStatementAccess().getPriorityAssignment_1(), "rule__CreationStatement__PriorityAssignment_1");
 			builder.put(grammarAccess.getCreationStatementAccess().getNegationAssignment_2(), "rule__CreationStatement__NegationAssignment_2");
-			builder.put(grammarAccess.getCreationStatementAccess().getClassElementAssignment_4(), "rule__CreationStatement__ClassElementAssignment_4");
 			builder.put(grammarAccess.getActionAccess().getTypeAssignment(), "rule__Action__TypeAssignment");
 			builder.put(grammarAccess.getUpdateActionAccess().getAttributeAssignment_3(), "rule__UpdateAction__AttributeAssignment_3");
 			builder.put(grammarAccess.getUpdateActionAccess().getPriorityAssignment_6(), "rule__UpdateAction__PriorityAssignment_6");

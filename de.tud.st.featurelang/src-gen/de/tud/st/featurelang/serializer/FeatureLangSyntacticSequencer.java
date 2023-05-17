@@ -26,7 +26,6 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Class_ClassKeyword_1_q;
 	protected AbstractElementAlias match_Class___AKeyword_0_1_or_TheKeyword_0_0__q;
 	protected AbstractElementAlias match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0;
-	protected AbstractElementAlias match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1;
 	protected AbstractElementAlias match_Statement_FullStopKeyword_1_q;
 	protected AbstractElementAlias match_UpdateAction_ExistingKeyword_2_q;
 	
@@ -38,7 +37,6 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Class_ClassKeyword_1_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getClassKeyword_1());
 		match_Class___AKeyword_0_1_or_TheKeyword_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getClassAccess().getAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClassAccess().getTheKeyword_0_0()));
 		match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getBeKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getExistKeyword_3_0()));
-		match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getItKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getCreationStatementAccess().getThereKeyword_0_1()));
 		match_Statement_FullStopKeyword_1_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getFullStopKeyword_1());
 		match_UpdateAction_ExistingKeyword_2_q = new TokenAlias(false, true, grammarAccess.getUpdateActionAccess().getExistingKeyword_2());
 	}
@@ -65,8 +63,6 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Class___AKeyword_0_1_or_TheKeyword_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0.equals(syntax))
 				emit_CreationStatement_BeKeyword_3_1_or_ExistKeyword_3_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1.equals(syntax))
-				emit_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Statement_FullStopKeyword_1_q.equals(syntax))
 				emit_Statement_FullStopKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_UpdateAction_ExistingKeyword_2_q.equals(syntax))
@@ -137,8 +133,10 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'exist' | 'be'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     negation?='not' (ambiguity) classElement=Class
-	 *     priority=Priority (ambiguity) classElement=Class
+	 *     negation?='not' (ambiguity) '.'? (rule end)
+	 *     negation?='not' (ambiguity) (rule end)
+	 *     priority=Priority (ambiguity) '.'? (rule end)
+	 *     priority=Priority (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -149,25 +147,12 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'it' | 'there'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) priority=Priority
-	 
-	 * </pre>
-	 */
-	protected void emit_CreationStatement_ItKeyword_0_0_or_ThereKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     '.'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     action=Action (ambiguity) (rule end)
-	 *     classElement=Class (ambiguity) (rule end)
+	 *     negation?='not' ('exist' | 'be') (ambiguity) (rule end)
+	 *     priority=Priority ('exist' | 'be') (ambiguity) (rule end)
 	 *     update=UpdateAction (ambiguity) (rule end)
 	 
 	 * </pre>

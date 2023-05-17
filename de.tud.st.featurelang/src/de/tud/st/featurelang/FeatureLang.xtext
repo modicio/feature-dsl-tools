@@ -17,7 +17,7 @@ ChangeStatement hidden(WS):
 ;	
 
 CreationStatement hidden(WS):
-	('it' | 'there') priority=Priority (negation ?= 'not')? ('exist' | 'be') classElement=Class
+	classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be') 
 ;
 
 Action hidden(WS):

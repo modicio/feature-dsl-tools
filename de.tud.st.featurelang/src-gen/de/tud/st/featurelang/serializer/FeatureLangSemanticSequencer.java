@@ -191,7 +191,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CreationStatement returns CreationStatement
 	 *
 	 * Constraint:
-	 *     (priority=Priority negation?='not'? classElement=Class)
+	 *     (classElement=Class priority=Priority negation?='not'?)
 	 * </pre>
 	 */
 	protected void sequence_CreationStatement(ISerializationContext context, CreationStatement semanticObject) {

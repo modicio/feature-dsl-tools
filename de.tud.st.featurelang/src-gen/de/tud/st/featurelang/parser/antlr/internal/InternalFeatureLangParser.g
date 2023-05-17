@@ -280,66 +280,11 @@ ruleCreationStatement returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0=It
-			{
-				newLeafNode(otherlv_0, grammarAccess.getCreationStatementAccess().getItKeyword_0_0());
-			}
-			    |
-			otherlv_1=There
-			{
-				newLeafNode(otherlv_1, grammarAccess.getCreationStatementAccess().getThereKeyword_0_1());
-			}
-		)
-		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCreationStatementAccess().getPriorityPriorityParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_0_0());
 				}
-				lv_priority_2_0=rulePriority
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCreationStatementRule());
-					}
-					set(
-						$current,
-						"priority",
-						lv_priority_2_0,
-						"de.tud.st.featurelang.FeatureLang.Priority");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				lv_negation_3_0=Not
-				{
-					newLeafNode(lv_negation_3_0, grammarAccess.getCreationStatementAccess().getNegationNotKeyword_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCreationStatementRule());
-					}
-					setWithLastConsumed($current, "negation", lv_negation_3_0 != null, "not");
-				}
-			)
-		)?
-		(
-			otherlv_4=Exist
-			{
-				newLeafNode(otherlv_4, grammarAccess.getCreationStatementAccess().getExistKeyword_3_0());
-			}
-			    |
-			otherlv_5=Be
-			{
-				newLeafNode(otherlv_5, grammarAccess.getCreationStatementAccess().getBeKeyword_3_1());
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_4_0());
-				}
-				lv_classElement_6_0=ruleClass
+				lv_classElement_0_0=ruleClass
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCreationStatementRule());
@@ -347,11 +292,55 @@ ruleCreationStatement returns [EObject current=null]
 					set(
 						$current,
 						"classElement",
-						lv_classElement_6_0,
+						lv_classElement_0_0,
 						"de.tud.st.featurelang.FeatureLang.Class");
 					afterParserOrEnumRuleCall();
 				}
 			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCreationStatementAccess().getPriorityPriorityParserRuleCall_1_0());
+				}
+				lv_priority_1_0=rulePriority
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCreationStatementRule());
+					}
+					set(
+						$current,
+						"priority",
+						lv_priority_1_0,
+						"de.tud.st.featurelang.FeatureLang.Priority");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_negation_2_0=Not
+				{
+					newLeafNode(lv_negation_2_0, grammarAccess.getCreationStatementAccess().getNegationNotKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCreationStatementRule());
+					}
+					setWithLastConsumed($current, "negation", lv_negation_2_0 != null, "not");
+				}
+			)
+		)?
+		(
+			otherlv_3=Exist
+			{
+				newLeafNode(otherlv_3, grammarAccess.getCreationStatementAccess().getExistKeyword_3_0());
+			}
+			    |
+			otherlv_4=Be
+			{
+				newLeafNode(otherlv_4, grammarAccess.getCreationStatementAccess().getBeKeyword_3_1());
+			}
 		)
 	)
 ;

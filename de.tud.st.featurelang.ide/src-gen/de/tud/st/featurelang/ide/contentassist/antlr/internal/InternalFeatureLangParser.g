@@ -47,7 +47,6 @@ import de.tud.st.featurelang.services.FeatureLangGrammarAccess;
 		tokenNameToValue.put("Time", "'time'");
 		tokenNameToValue.put("Class", "'class'");
 		tokenNameToValue.put("Exist", "'exist'");
-		tokenNameToValue.put("There", "'there'");
 		tokenNameToValue.put("Called", "'called'");
 		tokenNameToValue.put("Number", "'number'");
 		tokenNameToValue.put("Phrase", "'phrase'");
@@ -530,27 +529,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreationStatement__Alternatives_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getCreationStatementAccess().getItKeyword_0_0()); }
-		It
-		{ after(grammarAccess.getCreationStatementAccess().getItKeyword_0_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getCreationStatementAccess().getThereKeyword_0_1()); }
-		There
-		{ after(grammarAccess.getCreationStatementAccess().getThereKeyword_0_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__CreationStatement__Alternatives_3
 	@init {
 		int stackSize = keepStackSize();
@@ -896,9 +874,9 @@ rule__CreationStatement__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getCreationStatementAccess().getAlternatives_0()); }
-	(rule__CreationStatement__Alternatives_0)
-	{ after(grammarAccess.getCreationStatementAccess().getAlternatives_0()); }
+	{ before(grammarAccess.getCreationStatementAccess().getClassElementAssignment_0()); }
+	(rule__CreationStatement__ClassElementAssignment_0)
+	{ after(grammarAccess.getCreationStatementAccess().getClassElementAssignment_0()); }
 )
 ;
 finally {
@@ -965,7 +943,6 @@ rule__CreationStatement__Group__3
 	}
 :
 	rule__CreationStatement__Group__3__Impl
-	rule__CreationStatement__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -980,32 +957,6 @@ rule__CreationStatement__Group__3__Impl
 	{ before(grammarAccess.getCreationStatementAccess().getAlternatives_3()); }
 	(rule__CreationStatement__Alternatives_3)
 	{ after(grammarAccess.getCreationStatementAccess().getAlternatives_3()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CreationStatement__Group__4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CreationStatement__Group__4__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CreationStatement__Group__4__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCreationStatementAccess().getClassElementAssignment_4()); }
-	(rule__CreationStatement__ClassElementAssignment_4)
-	{ after(grammarAccess.getCreationStatementAccess().getClassElementAssignment_4()); }
 )
 ;
 finally {
@@ -1998,6 +1949,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__CreationStatement__ClassElementAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_0_0()); }
+		ruleClass
+		{ after(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__CreationStatement__PriorityAssignment_1
 	@init {
 		int stackSize = keepStackSize();
@@ -2026,21 +1992,6 @@ rule__CreationStatement__NegationAssignment_2
 			{ after(grammarAccess.getCreationStatementAccess().getNegationNotKeyword_2_0()); }
 		)
 		{ after(grammarAccess.getCreationStatementAccess().getNegationNotKeyword_2_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CreationStatement__ClassElementAssignment_4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_4_0()); }
-		ruleClass
-		{ after(grammarAccess.getCreationStatementAccess().getClassElementClassParserRuleCall_4_0()); }
 	)
 ;
 finally {

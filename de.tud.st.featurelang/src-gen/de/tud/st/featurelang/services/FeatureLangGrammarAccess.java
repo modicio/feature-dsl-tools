@@ -132,9 +132,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class CreationStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreationStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cItKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cThereKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cClassElementAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cClassElementClassParserRuleCall_0_0 = (RuleCall)cClassElementAssignment_0.eContents().get(0);
 		private final Assignment cPriorityAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cPriorityPriorityParserRuleCall_1_0 = (RuleCall)cPriorityAssignment_1.eContents().get(0);
 		private final Assignment cNegationAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -142,25 +141,20 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Keyword cExistKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
 		private final Keyword cBeKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
-		private final Assignment cClassElementAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cClassElementClassParserRuleCall_4_0 = (RuleCall)cClassElementAssignment_4.eContents().get(0);
 		
 		//CreationStatement hidden(WS):
-		//    ('it' | 'there') priority=Priority (negation ?= 'not')? ('exist' | 'be') classElement=Class
+		//    classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('it' | 'there') priority=Priority (negation ?= 'not')? ('exist' | 'be') classElement=Class
+		//classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
 		public Group getGroup() { return cGroup; }
 		
-		//('it' | 'there')
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		//classElement=Class
+		public Assignment getClassElementAssignment_0() { return cClassElementAssignment_0; }
 		
-		//'it'
-		public Keyword getItKeyword_0_0() { return cItKeyword_0_0; }
-		
-		//'there'
-		public Keyword getThereKeyword_0_1() { return cThereKeyword_0_1; }
+		//Class
+		public RuleCall getClassElementClassParserRuleCall_0_0() { return cClassElementClassParserRuleCall_0_0; }
 		
 		//priority=Priority
 		public Assignment getPriorityAssignment_1() { return cPriorityAssignment_1; }
@@ -182,12 +176,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//'be'
 		public Keyword getBeKeyword_3_1() { return cBeKeyword_3_1; }
-		
-		//classElement=Class
-		public Assignment getClassElementAssignment_4() { return cClassElementAssignment_4; }
-		
-		//Class
-		public RuleCall getClassElementClassParserRuleCall_4_0() { return cClassElementClassParserRuleCall_4_0; }
 	}
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Action");
@@ -664,7 +652,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//CreationStatement hidden(WS):
-	//    ('it' | 'there') priority=Priority (negation ?= 'not')? ('exist' | 'be') classElement=Class
+	//    classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
 	//;
 	public CreationStatementElements getCreationStatementAccess() {
 		return pCreationStatement;
