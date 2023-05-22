@@ -35,6 +35,7 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getChangeStatementAccess().getAlternatives_1(), "rule__ChangeStatement__Alternatives_1");
 			builder.put(grammarAccess.getCreationStatementAccess().getAlternatives_3(), "rule__CreationStatement__Alternatives_3");
 			builder.put(grammarAccess.getActionAccess().getTypeAlternatives_0(), "rule__Action__TypeAlternatives_0");
+			builder.put(grammarAccess.getUpdateActionAccess().getAlternatives_1(), "rule__UpdateAction__Alternatives_1");
 			builder.put(grammarAccess.getAttributeActionAccess().getAlternatives_1(), "rule__AttributeAction__Alternatives_1");
 			builder.put(grammarAccess.getClassAccess().getAlternatives_0(), "rule__Class__Alternatives_0");
 			builder.put(grammarAccess.getPriorityValueAccess().getAlternatives(), "rule__PriorityValue__Alternatives");

@@ -453,14 +453,21 @@ ruleUpdateAction returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getUpdateActionAccess().getHasKeyword_0());
 		}
-		otherlv_1=An
-		{
-			newLeafNode(otherlv_1, grammarAccess.getUpdateActionAccess().getAnKeyword_1());
-		}
 		(
-			otherlv_2=Existing
+			otherlv_1=An
 			{
-				newLeafNode(otherlv_2, grammarAccess.getUpdateActionAccess().getExistingKeyword_2());
+				newLeafNode(otherlv_1, grammarAccess.getUpdateActionAccess().getAnKeyword_1_0());
+			}
+			    |
+			otherlv_2=A
+			{
+				newLeafNode(otherlv_2, grammarAccess.getUpdateActionAccess().getAKeyword_1_1());
+			}
+		)
+		(
+			otherlv_3=Existing
+			{
+				newLeafNode(otherlv_3, grammarAccess.getUpdateActionAccess().getExistingKeyword_2());
 			}
 		)?
 		(
@@ -468,7 +475,7 @@ ruleUpdateAction returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getUpdateActionAccess().getAttributeAttributeParserRuleCall_3_0());
 				}
-				lv_attribute_3_0=ruleAttribute
+				lv_attribute_4_0=ruleAttribute
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUpdateActionRule());
@@ -476,26 +483,26 @@ ruleUpdateAction returns [EObject current=null]
 					set(
 						$current,
 						"attribute",
-						lv_attribute_3_0,
+						lv_attribute_4_0,
 						"de.tud.st.featurelang.FeatureLang.Attribute");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=FullStop
+		otherlv_5=FullStop
 		{
-			newLeafNode(otherlv_4, grammarAccess.getUpdateActionAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getUpdateActionAccess().getFullStopKeyword_4());
 		}
-		otherlv_5=It
+		otherlv_6=It
 		{
-			newLeafNode(otherlv_5, grammarAccess.getUpdateActionAccess().getItKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getUpdateActionAccess().getItKeyword_5());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getUpdateActionAccess().getPriorityPriorityParserRuleCall_6_0());
 				}
-				lv_priority_6_0=rulePriority
+				lv_priority_7_0=rulePriority
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUpdateActionRule());
@@ -503,26 +510,26 @@ ruleUpdateAction returns [EObject current=null]
 					set(
 						$current,
 						"priority",
-						lv_priority_6_0,
+						lv_priority_7_0,
 						"de.tud.st.featurelang.FeatureLang.Priority");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7=Be
+		otherlv_8=Be
 		{
-			newLeafNode(otherlv_7, grammarAccess.getUpdateActionAccess().getBeKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getUpdateActionAccess().getBeKeyword_7());
 		}
-		otherlv_8=A
+		otherlv_9=A
 		{
-			newLeafNode(otherlv_8, grammarAccess.getUpdateActionAccess().getAKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getUpdateActionAccess().getAKeyword_8());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getUpdateActionAccess().getTypeDatatypeEnumRuleCall_9_0());
 				}
-				lv_type_9_0=ruleDatatype
+				lv_type_10_0=ruleDatatype
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUpdateActionRule());
@@ -530,7 +537,7 @@ ruleUpdateAction returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_9_0,
+						lv_type_10_0,
 						"de.tud.st.featurelang.FeatureLang.Datatype");
 					afterParserOrEnumRuleCall();
 				}
@@ -578,13 +585,18 @@ ruleAttributeAction returns [EObject current=null]
 			{
 				newLeafNode(otherlv_2, grammarAccess.getAttributeActionAccess().getAnKeyword_1_1());
 			}
+			    |
+			otherlv_3=A
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAttributeActionAccess().getAKeyword_1_2());
+			}
 		)
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getAttributeActionAccess().getAttributeAttributeParserRuleCall_2_0());
 				}
-				lv_attribute_3_0=ruleAttribute
+				lv_attribute_4_0=ruleAttribute
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeActionRule());
@@ -592,35 +604,35 @@ ruleAttributeAction returns [EObject current=null]
 					set(
 						$current,
 						"attribute",
-						lv_attribute_3_0,
+						lv_attribute_4_0,
 						"de.tud.st.featurelang.FeatureLang.Attribute");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=FullStop
+		otherlv_5=FullStop
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3());
 		}
 		(
-			otherlv_5=It
+			otherlv_6=It
 			{
-				newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getItKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getItKeyword_4_0());
 			}
-			otherlv_6=Is
+			otherlv_7=Is
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getIsKeyword_4_1());
+				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getIsKeyword_4_1());
 			}
-			otherlv_7=A
+			otherlv_8=A
 			{
-				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getAKeyword_4_2());
+				newLeafNode(otherlv_8, grammarAccess.getAttributeActionAccess().getAKeyword_4_2());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_4_3_0());
 					}
-					lv_type_8_0=ruleDatatype
+					lv_type_9_0=ruleDatatype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAttributeActionRule());
@@ -628,7 +640,7 @@ ruleAttributeAction returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_8_0,
+							lv_type_9_0,
 							"de.tud.st.featurelang.FeatureLang.Datatype");
 						afterParserOrEnumRuleCall();
 					}

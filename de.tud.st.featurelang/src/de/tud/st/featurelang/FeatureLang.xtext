@@ -25,12 +25,12 @@ Action hidden(WS):
 ;
 
 UpdateAction hidden(WS):
-	'has' 'an' ('existing')?
+	'has' ('an' | 'a') ('existing')?
 	attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
 ;
 
 AttributeAction hidden(WS):
-	'have' ('the' | 'an') attribute=Attribute '.'
+	'have' ('the' | 'an' | 'a') attribute=Attribute '.'
 	('it' 'is' 'a' type=Datatype)?
 ;
 

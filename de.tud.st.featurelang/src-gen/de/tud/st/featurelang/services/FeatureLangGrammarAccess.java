@@ -209,7 +209,9 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.UpdateAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHasKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAnKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cAnKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cAKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Keyword cExistingKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttributeAttributeParserRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
@@ -223,20 +225,26 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cTypeDatatypeEnumRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
 		
 		//UpdateAction hidden(WS):
-		//    'has' 'an' ('existing')?
+		//    'has' ('an' | 'a') ('existing')?
 		//    attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'has' 'an' ('existing')?
+		//'has' ('an' | 'a') ('existing')?
 		//attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
 		public Group getGroup() { return cGroup; }
 		
 		//'has'
 		public Keyword getHasKeyword_0() { return cHasKeyword_0; }
 		
+		//('an' | 'a')
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//'an'
-		public Keyword getAnKeyword_1() { return cAnKeyword_1; }
+		public Keyword getAnKeyword_1_0() { return cAnKeyword_1_0; }
+		
+		//'a'
+		public Keyword getAKeyword_1_1() { return cAKeyword_1_1; }
 		
 		//('existing')?
 		public Keyword getExistingKeyword_2() { return cExistingKeyword_2; }
@@ -278,6 +286,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cTheKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cAnKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Keyword cAKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		private final Assignment cAttributeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAttributeAttributeParserRuleCall_2_0 = (RuleCall)cAttributeAssignment_2.eContents().get(0);
 		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -289,19 +298,19 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cTypeDatatypeEnumRuleCall_4_3_0 = (RuleCall)cTypeAssignment_4_3.eContents().get(0);
 		
 		//AttributeAction hidden(WS):
-		//    'have' ('the' | 'an') attribute=Attribute '.'
+		//    'have' ('the' | 'an' | 'a') attribute=Attribute '.'
 		//    ('it' 'is' 'a' type=Datatype)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('the' | 'an') attribute=Attribute '.'
+		//'have' ('the' | 'an' | 'a') attribute=Attribute '.'
 		//('it' 'is' 'a' type=Datatype)?
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
 		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
 		
-		//('the' | 'an')
+		//('the' | 'an' | 'a')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'the'
@@ -309,6 +318,9 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//'an'
 		public Keyword getAnKeyword_1_1() { return cAnKeyword_1_1; }
+		
+		//'a'
+		public Keyword getAKeyword_1_2() { return cAKeyword_1_2; }
 		
 		//attribute=Attribute
 		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
@@ -674,7 +686,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAction hidden(WS):
-	//    'has' 'an' ('existing')?
+	//    'has' ('an' | 'a') ('existing')?
 	//    attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
 	//;
 	public UpdateActionElements getUpdateActionAccess() {
@@ -686,7 +698,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AttributeAction hidden(WS):
-	//    'have' ('the' | 'an') attribute=Attribute '.'
+	//    'have' ('the' | 'an' | 'a') attribute=Attribute '.'
 	//    ('it' 'is' 'a' type=Datatype)?
 	//;
 	public AttributeActionElements getAttributeActionAccess() {

@@ -577,6 +577,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__UpdateAction__Alternatives_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getUpdateActionAccess().getAnKeyword_1_0()); }
+		An
+		{ after(grammarAccess.getUpdateActionAccess().getAnKeyword_1_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getUpdateActionAccess().getAKeyword_1_1()); }
+		A
+		{ after(grammarAccess.getUpdateActionAccess().getAKeyword_1_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__AttributeAction__Alternatives_1
 	@init {
 		int stackSize = keepStackSize();
@@ -592,6 +613,12 @@ rule__AttributeAction__Alternatives_1
 		{ before(grammarAccess.getAttributeActionAccess().getAnKeyword_1_1()); }
 		An
 		{ after(grammarAccess.getAttributeActionAccess().getAnKeyword_1_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getAttributeActionAccess().getAKeyword_1_2()); }
+		A
+		{ after(grammarAccess.getAttributeActionAccess().getAKeyword_1_2()); }
 	)
 ;
 finally {
@@ -1009,9 +1036,9 @@ rule__UpdateAction__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUpdateActionAccess().getAnKeyword_1()); }
-	An
-	{ after(grammarAccess.getUpdateActionAccess().getAnKeyword_1()); }
+	{ before(grammarAccess.getUpdateActionAccess().getAlternatives_1()); }
+	(rule__UpdateAction__Alternatives_1)
+	{ after(grammarAccess.getUpdateActionAccess().getAlternatives_1()); }
 )
 ;
 finally {
