@@ -688,11 +688,17 @@ ruleAssociationAction returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getToKeyword_2());
 		}
 		(
+			otherlv_3=Other
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAssociationActionAccess().getOtherKeyword_3());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0());
 				}
-				lv_target_3_0=ruleClass
+				lv_target_4_0=ruleClass
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAssociationActionRule());
@@ -700,21 +706,21 @@ ruleAssociationAction returns [EObject current=null]
 					set(
 						$current,
 						"target",
-						lv_target_3_0,
+						lv_target_4_0,
 						"de.tud.st.featurelang.FeatureLang.Class");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=Called
+		otherlv_5=Called
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAssociationActionAccess().getCalledKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getAssociationActionAccess().getCalledKeyword_5());
 		}
 		(
 			(
-				lv_relation_5_0=RULE_ID
+				lv_relation_6_0=RULE_ID
 				{
-					newLeafNode(lv_relation_5_0, grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_5_0());
+					newLeafNode(lv_relation_6_0, grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -723,7 +729,7 @@ ruleAssociationAction returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"relation",
-						lv_relation_5_0,
+						lv_relation_6_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)

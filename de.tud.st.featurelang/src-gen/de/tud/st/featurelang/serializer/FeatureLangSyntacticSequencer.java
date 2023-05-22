@@ -21,6 +21,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FeatureLangGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AssociationAction_OtherKeyword_3_q;
 	protected AbstractElementAlias match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0;
 	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_q;
 	protected AbstractElementAlias match_Class_ClassKeyword_1_q;
@@ -33,6 +34,7 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FeatureLangGrammarAccess) access;
+		match_AssociationAction_OtherKeyword_3_q = new TokenAlias(false, true, grammarAccess.getAssociationActionAccess().getOtherKeyword_3());
 		match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getAKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getAnKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getTheKeyword_1_0()));
 		match_Attribute_AttributeKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
 		match_Class_ClassKeyword_1_q = new TokenAlias(false, true, grammarAccess.getClassAccess().getClassKeyword_1());
@@ -55,7 +57,9 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0.equals(syntax))
+			if (match_AssociationAction_OtherKeyword_3_q.equals(syntax))
+				emit_AssociationAction_OtherKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0.equals(syntax))
 				emit_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Attribute_AttributeKeyword_0_q.equals(syntax))
 				emit_Attribute_AttributeKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -75,6 +79,20 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'other'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'have' 'associations' 'to' (ambiguity) target=Class
+	 
+	 * </pre>
+	 */
+	protected void emit_AssociationAction_OtherKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:

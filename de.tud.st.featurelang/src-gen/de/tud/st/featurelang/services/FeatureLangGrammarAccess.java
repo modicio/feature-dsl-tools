@@ -355,18 +355,19 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cAssociationsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTargetClassParserRuleCall_3_0 = (RuleCall)cTargetAssignment_3.eContents().get(0);
-		private final Keyword cCalledKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cRelationAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRelationIDTerminalRuleCall_5_0 = (RuleCall)cRelationAssignment_5.eContents().get(0);
+		private final Keyword cOtherKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTargetClassParserRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
+		private final Keyword cCalledKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRelationAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cRelationIDTerminalRuleCall_6_0 = (RuleCall)cRelationAssignment_6.eContents().get(0);
 		
 		//AssociationAction hidden(WS):
-		//    'have' 'associations' 'to' target=Class 'called' relation=ID
+		//    'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' 'associations' 'to' target=Class 'called' relation=ID
+		//'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -378,20 +379,23 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'to'
 		public Keyword getToKeyword_2() { return cToKeyword_2; }
 		
+		//('other')?
+		public Keyword getOtherKeyword_3() { return cOtherKeyword_3; }
+		
 		//target=Class
-		public Assignment getTargetAssignment_3() { return cTargetAssignment_3; }
+		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
 		
 		//Class
-		public RuleCall getTargetClassParserRuleCall_3_0() { return cTargetClassParserRuleCall_3_0; }
+		public RuleCall getTargetClassParserRuleCall_4_0() { return cTargetClassParserRuleCall_4_0; }
 		
 		//'called'
-		public Keyword getCalledKeyword_4() { return cCalledKeyword_4; }
+		public Keyword getCalledKeyword_5() { return cCalledKeyword_5; }
 		
 		//relation=ID
-		public Assignment getRelationAssignment_5() { return cRelationAssignment_5; }
+		public Assignment getRelationAssignment_6() { return cRelationAssignment_6; }
 		
 		//ID
-		public RuleCall getRelationIDTerminalRuleCall_5_0() { return cRelationIDTerminalRuleCall_5_0; }
+		public RuleCall getRelationIDTerminalRuleCall_6_0() { return cRelationIDTerminalRuleCall_6_0; }
 	}
 	public class InheritanceActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.InheritanceAction");
@@ -710,7 +714,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AssociationAction hidden(WS):
-	//    'have' 'associations' 'to' target=Class 'called' relation=ID
+	//    'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
 	//;
 	public AssociationActionElements getAssociationActionAccess() {
 		return pAssociationAction;

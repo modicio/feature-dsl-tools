@@ -109,8 +109,8 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__RELATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_3_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_5_0(), semanticObject.getRelation());
+		feeder.accept(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0(), semanticObject.getRelation());
 		feeder.finish();
 	}
 	

@@ -47,6 +47,7 @@ import de.tud.st.featurelang.services.FeatureLangGrammarAccess;
 		tokenNameToValue.put("Time", "'time'");
 		tokenNameToValue.put("Class", "'class'");
 		tokenNameToValue.put("Exist", "'exist'");
+		tokenNameToValue.put("Other", "'other'");
 		tokenNameToValue.put("Called", "'called'");
 		tokenNameToValue.put("Number", "'number'");
 		tokenNameToValue.put("Phrase", "'phrase'");
@@ -1603,9 +1604,9 @@ rule__AssociationAction__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssociationActionAccess().getTargetAssignment_3()); }
-	(rule__AssociationAction__TargetAssignment_3)
-	{ after(grammarAccess.getAssociationActionAccess().getTargetAssignment_3()); }
+	{ before(grammarAccess.getAssociationActionAccess().getOtherKeyword_3()); }
+	(Other)?
+	{ after(grammarAccess.getAssociationActionAccess().getOtherKeyword_3()); }
 )
 ;
 finally {
@@ -1630,9 +1631,9 @@ rule__AssociationAction__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssociationActionAccess().getCalledKeyword_4()); }
-	Called
-	{ after(grammarAccess.getAssociationActionAccess().getCalledKeyword_4()); }
+	{ before(grammarAccess.getAssociationActionAccess().getTargetAssignment_4()); }
+	(rule__AssociationAction__TargetAssignment_4)
+	{ after(grammarAccess.getAssociationActionAccess().getTargetAssignment_4()); }
 )
 ;
 finally {
@@ -1645,6 +1646,7 @@ rule__AssociationAction__Group__5
 	}
 :
 	rule__AssociationAction__Group__5__Impl
+	rule__AssociationAction__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1656,9 +1658,35 @@ rule__AssociationAction__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAssociationActionAccess().getRelationAssignment_5()); }
-	(rule__AssociationAction__RelationAssignment_5)
-	{ after(grammarAccess.getAssociationActionAccess().getRelationAssignment_5()); }
+	{ before(grammarAccess.getAssociationActionAccess().getCalledKeyword_5()); }
+	Called
+	{ after(grammarAccess.getAssociationActionAccess().getCalledKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AssociationAction__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__AssociationAction__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AssociationAction__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAssociationActionAccess().getRelationAssignment_6()); }
+	(rule__AssociationAction__RelationAssignment_6)
+	{ after(grammarAccess.getAssociationActionAccess().getRelationAssignment_6()); }
 )
 ;
 finally {
@@ -2115,30 +2143,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AssociationAction__TargetAssignment_3
+rule__AssociationAction__TargetAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_3_0()); }
+		{ before(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0()); }
 		ruleClass
-		{ after(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_3_0()); }
+		{ after(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AssociationAction__RelationAssignment_5
+rule__AssociationAction__RelationAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0()); }
 	)
 ;
 finally {

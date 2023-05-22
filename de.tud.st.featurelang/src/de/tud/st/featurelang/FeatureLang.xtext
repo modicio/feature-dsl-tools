@@ -35,7 +35,7 @@ AttributeAction hidden(WS):
 ;
 
 AssociationAction hidden(WS):
-	'have' 'associations' 'to' target=Class 'called' relation=ID
+	'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
 ;
 	
 InheritanceAction hidden(WS):
