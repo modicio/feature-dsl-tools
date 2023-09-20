@@ -14,3 +14,19 @@ This project is developed and tested with:
 * Java 17 (OpenJDK Eclipse Temurin)
 * Eclipse (Eclipse Modeling Tools) version 2023-03
 * Xtext version 2.30.0
+
+## Getting Started
+
+1. Have an OpenJDK 17 aktiv on your system (`java --version` must return 17.x)
+2. Install Eclipse Modeling Tools https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-modeling-tools
+3. Open Eclipse for the first time and create an empty workspace
+4. Go to Help -> Eclipse Marketplace and install the Xtext plugin. Follow the instructions and restart eclipse once it asks you to do so.
+5. Clone this repository somewhere
+6. Go to File -> Import -> General -> Existing Projects into Workspace
+7. Select the feature-dsl-tools root folder in the top selection. Under "Projects" select all shown parts. Make sure nothing is selected under "Options"
+8. Finish the import. Some tasks will be executed and the project parts appear on the left side Model Explorer. Some errors and warnings may appear.
+9. The important files are located in `de.tud.st.featurelang/src`. There you find the `FeatureLang.xtext`, the `GenerateFeatureLang.mwe2` and under generator the `Main.java`
+and `FeatureLangGenerator.xtend` files.
+10. Right-click on the mwe2 file and select Run-As -> mwe2 Workflow. This step should lead to a successful build process.
+      * If the build output looks succesfull, but there are still error icons in the Model Explorer, open the Problems view (typically on the right side) and delete all warnings. Repeat the mwe2 build. The errors should be gone now.
+      * This build step is always necessary to synchronise changes made in the .xtext file to the project.   
