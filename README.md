@@ -29,4 +29,9 @@ This project is developed and tested with:
 and `FeatureLangGenerator.xtend` files.
 10. Right-click on the mwe2 file and select Run-As -> mwe2 Workflow. This step should lead to a successful build process.
       * If the build output looks succesfull, but there are still error icons in the Model Explorer, open the Problems view (typically on the right side) and delete all warnings. Repeat the mwe2 build. The errors should be gone now.
-      * This build step is always necessary to synchronise changes made in the .xtext file to the project.   
+      * This build step is always necessary to synchronise changes made in the .xtext file to the project.
+11. The `.xtext` file contains the grammar specification. See the official Xtext docs for more information
+12. The `.xtend` file contains the compiler translating the grammar syntax tree into the output string sequence.
+13. To export the project, go to File -> Export as Runnable Jar and select "Copy libraries into JAR". The Lauch configuration must be the `Main.java`.
+      * In case no launch configuration can be selected, go to the Main class in the Model Explorer -> Right click -> Run. The will fail due to missing input parameters but afterwards it is selectable in the export dialog.
+14. To actually execute the language tool, create a file with the ending `.featurelang` and place your input request inside. Call `java -jar [export].jar [input path] [output path]`
