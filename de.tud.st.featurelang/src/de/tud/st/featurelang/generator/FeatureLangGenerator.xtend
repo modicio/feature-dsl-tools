@@ -16,6 +16,9 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import de.tud.st.featurelang.featureLang.CreationStatement
 import de.tud.st.featurelang.featureLang.ChangeStatement
 import de.tud.st.featurelang.featureLang.Statement
+import de.tud.st.featurelang.featureLang.CompositionAction
+import de.tud.st.featurelang.featureLang.Abstraction
+import de.tud.st.featurelang.featureLang.IdentifierValue
 
 /**
  * Generates code from your model files on save.
@@ -56,6 +59,15 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«s.getAction().getType().compileAction(s.isNegation())»
 		«ELSEIF s.getUpdate() !== null»
 			«s.getUpdate().compileUpdate()»
+		«ELSEIF s.getIdentifier() !== null»	
+			«val identifier = s.getIdentifier()»
+			«val nameId = identifier.getValue() === IdentifierValue.NAME»
+			«val newIdentifier = identifier.getName()»
+			«IF nameId»
+				CHANGE NAME TO «newIdentifier»
+			«ELSE» 
+				CHANGE URI TO «newIdentifier»	
+			«ENDIF»	
 		«ENDIF»
 		CLOSE CLASS «s.getTarget().name»
 		«IF should»
@@ -66,13 +78,18 @@ class FeatureLangGenerator extends AbstractGenerator {
     private def compile(CreationStatement s)'''
 		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
 		«val name = s.getClassElement().getName()»
+		«val abstract = s.getClassElement().getAbstract() !== null && s.getClassElement().getAbstract() === Abstraction.ABSTRACT»
 		«IF should»
 			START OPTIONAL
 		«ENDIF»
 		«IF s.isNegation() »
 			DELETE CLASS «name»
 		«ELSE»
-			CREATE CLASS «name»
+			«IF abstract» 
+				CREATE ABSTRACT CLASS «name»
+			«ELSE»	
+				CREATE CLASS «name»
+			«ENDIF»	
 		«ENDIF»
 		«IF should»
 			END OPTIONAL
@@ -84,6 +101,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 			AttributeAction : a.compileAttributeAction(negation)
 			AssociationAction : a.compileAssociationAction(negation)
 			InheritanceAction : a.compileInheritanceAction(negation)
+			CompositionAction : a.compileCompositionAction(negation)
 			default : 'NOP'
 		}
 	}
@@ -119,6 +137,18 @@ class FeatureLangGenerator extends AbstractGenerator {
 		'''
 	}
 	
+	private def compileCompositionAction(CompositionAction a, boolean negation) {
+		val targetClass = a.getTarget().getName()
+		val relation = a.getRelation()
+		'''
+		«IF negation»
+			DELETE COMPOSITION «targetClass»
+		«ELSE»
+			ADD COMPOSITION «relation» TARGET «targetClass»
+		«ENDIF»
+		'''
+	}
+	
 	private def compileInheritanceAction(InheritanceAction a, boolean negation){
 		val targetClass = a.getParent().getName()
 		'''
@@ -132,11 +162,27 @@ class FeatureLangGenerator extends AbstractGenerator {
 	
 	private def compileUpdate(UpdateAction a) '''
 		«val should = a.getPriority() !== null && a.getPriority().getPriority() === PriorityValue.SHOULD»
+		«val changeType = a.getDatatype() !== null»
+		«val changeIdentifier = a.getIdentifier() !== null»
 		«IF should»
 		START OPTIONAL
-		«ENDIF»
+		«ENDIF» 
 		OPEN ATTRIBUTE «a.getAttribute().getName()»
-		SET TYPE «a.getType()»
+		«IF changeType»
+			SET TYPE «a.getDatatype().getType()»
+		«ELSEIF changeIdentifier» 
+			«val identifier = a.getIdentifier().getIdentifier()»
+			«val nameId = identifier.getValue() === IdentifierValue.NAME»
+			«val newIdentifier = identifier.getName()»
+			«IF nameId»
+				CHANGE ATTRIBUTE NAME TO «newIdentifier»
+			«ELSE» 
+				CHANGE ATTRIBUTE URI TO «newIdentifier»
+			«ENDIF»	
+		«ELSE»
+			«val value = a.getValue().getValue()»
+			SET ATTRIBUTE VALUE TO «value»
+		«ENDIF»	
 		CLOSE ATTRIBUTE «a.getAttribute().getName()»
 		«IF should»
 		END OPTIONAL

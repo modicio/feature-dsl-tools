@@ -13,7 +13,7 @@ Statement:
 	
 ChangeStatement hidden(WS):
 	target=Class
-	((priority=Priority (negation ?= 'not')? action=Action) | update=UpdateAction)
+	((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
 ;	
 
 CreationStatement hidden(WS):
@@ -21,12 +21,27 @@ CreationStatement hidden(WS):
 ;
 
 Action hidden(WS):
-	type=(AttributeAction | AssociationAction | InheritanceAction)
+	type=(AttributeAction | AssociationAction | InheritanceAction | CompositionAction)
 ;
 
 UpdateAction hidden(WS):
 	'has' ('an' | 'a') ('existing')?
-	attribute=Attribute '.' 'it' priority=Priority 'be' 'a' type=Datatype
+	attribute=Attribute '.' 'it' priority=Priority (datatype=UpdateAttributeDatatype | 
+													identifier=UpdateAttributeIdentifier |
+													value=UpdateAttributeValue
+	)
+;
+
+UpdateAttributeDatatype hidden (WS):
+	'be' 'a' type=Datatype
+;
+
+UpdateAttributeIdentifier hidden (WS):
+	'have' ('a' | 'an')? identifier=Identifier
+;
+
+UpdateAttributeValue hidden (WS): 
+	'have' ('a')? 'value' value=ID
 ;
 
 AttributeAction hidden(WS):
@@ -42,12 +57,20 @@ InheritanceAction hidden(WS):
 	'inherit' 'from' parent=Class
 ;
 
+CompositionAction hidden(WS):
+	('compose' | 'composes') target=Class 'called' relation=ID
+;
+
 Class hidden(WS):
-	('the' | 'a')? ('class')? name=ID
+	('the' | 'a')? (abstract=Abstraction)? ('class')? name=ID
 ;
 
 Attribute hidden(WS):
 	('attribute')? name=ID
+;
+
+Identifier hidden(WS):
+	value=IdentifierValue name=ID
 ;
 	
 Priority hidden(WS):
@@ -56,6 +79,14 @@ Priority hidden(WS):
 
 enum PriorityValue:
 	SHOULD='should' | MUST='must'
+;
+
+enum Abstraction:
+	ABSTRACT='abstract'
+;
+
+enum IdentifierValue:
+	NAME='name' | URI='URI'
 ;
 
 enum Datatype:

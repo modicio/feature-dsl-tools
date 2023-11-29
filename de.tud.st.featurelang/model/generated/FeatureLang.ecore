@@ -16,6 +16,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" eType="#//Identifier"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="update" eType="#//UpdateAction"
         containment="true"/>
   </eClassifiers>
@@ -32,7 +34,22 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="#//Priority"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" eType="#//UpdateAttributeDatatype"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" eType="#//UpdateAttributeIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//UpdateAttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeDatatype">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeIdentifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" eType="#//Identifier"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"
@@ -48,10 +65,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Class"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Class"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//Abstraction"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//IdentifierValue"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Priority">
@@ -60,6 +87,13 @@
   <eClassifiers xsi:type="ecore:EEnum" name="PriorityValue">
     <eLiterals name="SHOULD" literal="should"/>
     <eLiterals name="MUST" value="1" literal="must"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Abstraction">
+    <eLiterals name="ABSTRACT" literal="abstract"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IdentifierValue">
+    <eLiterals name="NAME" literal="name"/>
+    <eLiterals name="URI" value="1" literal="URI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Datatype">
     <eLiterals name="WORD" literal="time"/>
