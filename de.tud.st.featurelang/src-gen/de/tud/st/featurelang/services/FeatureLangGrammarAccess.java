@@ -506,59 +506,359 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AssociationAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAssociationsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cOtherKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTargetClassParserRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
-		private final Keyword cCalledKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRelationAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRelationIDTerminalRuleCall_6_0 = (RuleCall)cRelationAssignment_6.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cAssociationsKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cAssociationKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cCreateAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cCreateCreateAssociationParserRuleCall_2_0_0 = (RuleCall)cCreateAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Assignment cNameAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0_0 = (RuleCall)cNameAssignment_2_1_0.eContents().get(0);
+		private final Assignment cEditAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cEditEditAssociationParserRuleCall_2_1_1_0 = (RuleCall)cEditAssignment_2_1_1.eContents().get(0);
 		
 		//AssociationAction hidden(WS):
-		//    'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
+		//    'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
+		//'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
 		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
 		
+		//('associations' | 'association')
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//'associations'
-		public Keyword getAssociationsKeyword_1() { return cAssociationsKeyword_1; }
+		public Keyword getAssociationsKeyword_1_0() { return cAssociationsKeyword_1_0; }
 		
-		//'to'
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
+		//'association'
+		public Keyword getAssociationKeyword_1_1() { return cAssociationKeyword_1_1; }
 		
-		//('other')?
-		public Keyword getOtherKeyword_3() { return cOtherKeyword_3; }
+		//(create=CreateAssociation | name=ID edit=EditAssociation)
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//target=Class
-		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+		//create=CreateAssociation
+		public Assignment getCreateAssignment_2_0() { return cCreateAssignment_2_0; }
 		
-		//Class
-		public RuleCall getTargetClassParserRuleCall_4_0() { return cTargetClassParserRuleCall_4_0; }
+		//CreateAssociation
+		public RuleCall getCreateCreateAssociationParserRuleCall_2_0_0() { return cCreateCreateAssociationParserRuleCall_2_0_0; }
 		
-		//'called'
-		public Keyword getCalledKeyword_5() { return cCalledKeyword_5; }
+		//name=ID edit=EditAssociation
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//relation=ID
-		public Assignment getRelationAssignment_6() { return cRelationAssignment_6; }
+		//name=ID
+		public Assignment getNameAssignment_2_1_0() { return cNameAssignment_2_1_0; }
 		
 		//ID
-		public RuleCall getRelationIDTerminalRuleCall_6_0() { return cRelationIDTerminalRuleCall_6_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_1_0_0() { return cNameIDTerminalRuleCall_2_1_0_0; }
+		
+		//edit=EditAssociation
+		public Assignment getEditAssignment_2_1_1() { return cEditAssignment_2_1_1; }
+		
+		//EditAssociation
+		public RuleCall getEditEditAssociationParserRuleCall_2_1_1_0() { return cEditEditAssociationParserRuleCall_2_1_1_0; }
+	}
+	public class CreateAssociationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreateAssociation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cToKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOtherKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetClassParserRuleCall_2_0 = (RuleCall)cTargetAssignment_2.eContents().get(0);
+		private final Keyword cCalledKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRelationAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRelationIDTerminalRuleCall_4_0 = (RuleCall)cRelationAssignment_4.eContents().get(0);
+		
+		//CreateAssociation hidden(WS):
+		//    'to' ('other')? target=Class 'called' relation=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'to' ('other')? target=Class 'called' relation=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'to'
+		public Keyword getToKeyword_0() { return cToKeyword_0; }
+		
+		//('other')?
+		public Keyword getOtherKeyword_1() { return cOtherKeyword_1; }
+		
+		//target=Class
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+		
+		//Class
+		public RuleCall getTargetClassParserRuleCall_2_0() { return cTargetClassParserRuleCall_2_0; }
+		
+		//'called'
+		public Keyword getCalledKeyword_3() { return cCalledKeyword_3; }
+		
+		//relation=ID
+		public Assignment getRelationAssignment_4() { return cRelationAssignment_4; }
+		
+		//ID
+		public RuleCall getRelationIDTerminalRuleCall_4_0() { return cRelationIDTerminalRuleCall_4_0; }
+	}
+	public class EditAssociationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.EditAssociation");
+		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeAlternatives_0 = (Alternatives)cTypeAssignment.eContents().get(0);
+		private final RuleCall cTypeSetCompatibleParserRuleCall_0_0 = (RuleCall)cTypeAlternatives_0.eContents().get(0);
+		private final RuleCall cTypeSetVersionRangeParserRuleCall_0_1 = (RuleCall)cTypeAlternatives_0.eContents().get(1);
+		private final RuleCall cTypeSetVariantParserRuleCall_0_2 = (RuleCall)cTypeAlternatives_0.eContents().get(2);
+		private final RuleCall cTypeSetRightOpenParserRuleCall_0_3 = (RuleCall)cTypeAlternatives_0.eContents().get(3);
+		private final RuleCall cTypeSetLeftOpenParserRuleCall_0_4 = (RuleCall)cTypeAlternatives_0.eContents().get(4);
+		
+		//EditAssociation hidden(WS):
+		//    type=(SetCompatible | SetVersionRange | SetVariant | SetRightOpen | SetLeftOpen)
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//type=(SetCompatible | SetVersionRange | SetVariant | SetRightOpen | SetLeftOpen)
+		public Assignment getTypeAssignment() { return cTypeAssignment; }
+		
+		//(SetCompatible | SetVersionRange | SetVariant | SetRightOpen | SetLeftOpen)
+		public Alternatives getTypeAlternatives_0() { return cTypeAlternatives_0; }
+		
+		//SetCompatible
+		public RuleCall getTypeSetCompatibleParserRuleCall_0_0() { return cTypeSetCompatibleParserRuleCall_0_0; }
+		
+		//SetVersionRange
+		public RuleCall getTypeSetVersionRangeParserRuleCall_0_1() { return cTypeSetVersionRangeParserRuleCall_0_1; }
+		
+		//SetVariant
+		public RuleCall getTypeSetVariantParserRuleCall_0_2() { return cTypeSetVariantParserRuleCall_0_2; }
+		
+		//SetRightOpen
+		public RuleCall getTypeSetRightOpenParserRuleCall_0_3() { return cTypeSetRightOpenParserRuleCall_0_3; }
+		
+		//SetLeftOpen
+		public RuleCall getTypeSetLeftOpenParserRuleCall_0_4() { return cTypeSetLeftOpenParserRuleCall_0_4; }
+	}
+	public class SetCompatibleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetCompatible");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCompatibleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cWithKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cVersionKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		
+		//SetCompatible hidden(WS):
+		//    'compatible' 'with' 'version' name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'compatible' 'with' 'version' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'compatible'
+		public Keyword getCompatibleKeyword_0() { return cCompatibleKeyword_0; }
+		
+		//'with'
+		public Keyword getWithKeyword_1() { return cWithKeyword_1; }
+		
+		//'version'
+		public Keyword getVersionKeyword_2() { return cVersionKeyword_2; }
+		
+		//name=ID
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+	}
+	public class SetVersionRangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetVersionRange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWithKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cVersionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cRangeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStartAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStartIDTerminalRuleCall_4_0 = (RuleCall)cStartAssignment_4.eContents().get(0);
+		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cEndAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cEndIDTerminalRuleCall_6_0 = (RuleCall)cEndAssignment_6.eContents().get(0);
+		
+		//SetVersionRange hidden(WS):
+		//    'with' 'version' 'range' 'from' start=ID 'to' end=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'with' 'version' 'range' 'from' start=ID 'to' end=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'with'
+		public Keyword getWithKeyword_0() { return cWithKeyword_0; }
+		
+		//'version'
+		public Keyword getVersionKeyword_1() { return cVersionKeyword_1; }
+		
+		//'range'
+		public Keyword getRangeKeyword_2() { return cRangeKeyword_2; }
+		
+		//'from'
+		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
+		
+		//start=ID
+		public Assignment getStartAssignment_4() { return cStartAssignment_4; }
+		
+		//ID
+		public RuleCall getStartIDTerminalRuleCall_4_0() { return cStartIDTerminalRuleCall_4_0; }
+		
+		//'to'
+		public Keyword getToKeyword_5() { return cToKeyword_5; }
+		
+		//end=ID
+		public Assignment getEndAssignment_6() { return cEndAssignment_6; }
+		
+		//ID
+		public RuleCall getEndIDTerminalRuleCall_6_0() { return cEndIDTerminalRuleCall_6_0; }
+	}
+	public class SetVariantElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetVariant");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWithKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAllKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cVersionsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cOfKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cVariantKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		
+		//SetVariant hidden(WS):
+		//    'with' 'all' 'versions' 'of' 'variant' name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'with' 'all' 'versions' 'of' 'variant' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'with'
+		public Keyword getWithKeyword_0() { return cWithKeyword_0; }
+		
+		//'all'
+		public Keyword getAllKeyword_1() { return cAllKeyword_1; }
+		
+		//'versions'
+		public Keyword getVersionsKeyword_2() { return cVersionsKeyword_2; }
+		
+		//'of'
+		public Keyword getOfKeyword_3() { return cOfKeyword_3; }
+		
+		//'variant'
+		public Keyword getVariantKeyword_4() { return cVariantKeyword_4; }
+		
+		//name=ID
+		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_5_0() { return cNameIDTerminalRuleCall_5_0; }
+	}
+	public class SetRightOpenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetRightOpen");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUpKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cToKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDateKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDateIDTerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
+		
+		//SetRightOpen hidden(WS):
+		//    'up' 'to' 'date' date=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'up' 'to' 'date' date=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'up'
+		public Keyword getUpKeyword_0() { return cUpKeyword_0; }
+		
+		//'to'
+		public Keyword getToKeyword_1() { return cToKeyword_1; }
+		
+		//'date'
+		public Keyword getDateKeyword_2() { return cDateKeyword_2; }
+		
+		//date=ID
+		public Assignment getDateAssignment_3() { return cDateAssignment_3; }
+		
+		//ID
+		public RuleCall getDateIDTerminalRuleCall_3_0() { return cDateIDTerminalRuleCall_3_0; }
+	}
+	public class SetLeftOpenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetLeftOpen");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStartingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDateKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDateIDTerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
+		
+		//SetLeftOpen hidden(WS):
+		//    'starting' 'from' 'date' date=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'starting' 'from' 'date' date=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'starting'
+		public Keyword getStartingKeyword_0() { return cStartingKeyword_0; }
+		
+		//'from'
+		public Keyword getFromKeyword_1() { return cFromKeyword_1; }
+		
+		//'date'
+		public Keyword getDateKeyword_2() { return cDateKeyword_2; }
+		
+		//date=ID
+		public Assignment getDateAssignment_3() { return cDateAssignment_3; }
+		
+		//ID
+		public RuleCall getDateIDTerminalRuleCall_3_0() { return cDateIDTerminalRuleCall_3_0; }
 	}
 	public class InheritanceActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.InheritanceAction");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCreateAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCreateCreateInheritanceParserRuleCall_0_0 = (RuleCall)cCreateAssignment_0.eContents().get(0);
+		private final Assignment cEditAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cEditEditInheritanceParserRuleCall_1_0 = (RuleCall)cEditAssignment_1.eContents().get(0);
+		
+		//InheritanceAction hidden(WS):
+		//    create=CreateInheritance | edit=EditInheritance
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//create=CreateInheritance | edit=EditInheritance
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//create=CreateInheritance
+		public Assignment getCreateAssignment_0() { return cCreateAssignment_0; }
+		
+		//CreateInheritance
+		public RuleCall getCreateCreateInheritanceParserRuleCall_0_0() { return cCreateCreateInheritanceParserRuleCall_0_0; }
+		
+		//edit=EditInheritance
+		public Assignment getEditAssignment_1() { return cEditAssignment_1; }
+		
+		//EditInheritance
+		public RuleCall getEditEditInheritanceParserRuleCall_1_0() { return cEditEditInheritanceParserRuleCall_1_0; }
+	}
+	public class CreateInheritanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreateInheritance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInheritKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParentClassParserRuleCall_2_0 = (RuleCall)cParentAssignment_2.eContents().get(0);
 		
-		//InheritanceAction hidden(WS):
+		//CreateInheritance hidden(WS):
 		//    'inherit' 'from' parent=Class
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -578,34 +878,96 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Class
 		public RuleCall getParentClassParserRuleCall_2_0() { return cParentClassParserRuleCall_2_0; }
 	}
+	public class EditInheritanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.EditInheritance");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInheritanceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cURIKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cUriAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cUriIDTerminalRuleCall_3_0 = (RuleCall)cUriAssignment_3.eContents().get(0);
+		
+		//EditInheritance hidden(WS):
+		//    'have' 'inheritance' 'URI' uri=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'have' 'inheritance' 'URI' uri=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'have'
+		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
+		
+		//'inheritance'
+		public Keyword getInheritanceKeyword_1() { return cInheritanceKeyword_1; }
+		
+		//'URI'
+		public Keyword getURIKeyword_2() { return cURIKeyword_2; }
+		
+		//uri=ID
+		public Assignment getUriAssignment_3() { return cUriAssignment_3; }
+		
+		//ID
+		public RuleCall getUriIDTerminalRuleCall_3_0() { return cUriIDTerminalRuleCall_3_0; }
+	}
 	public class CompositionActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CompositionAction");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCreateAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCreateCreateCompositionParserRuleCall_0_0 = (RuleCall)cCreateAssignment_0.eContents().get(0);
+		private final Assignment cEditAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cEditEditCompositionParserRuleCall_1_0 = (RuleCall)cEditAssignment_1.eContents().get(0);
+		
+		//CompositionAction hidden(WS):
+		//    create=CreateComposition | edit=EditComposition
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//create=CreateComposition | edit=EditComposition
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//create=CreateComposition
+		public Assignment getCreateAssignment_0() { return cCreateAssignment_0; }
+		
+		//CreateComposition
+		public RuleCall getCreateCreateCompositionParserRuleCall_0_0() { return cCreateCreateCompositionParserRuleCall_0_0; }
+		
+		//edit=EditComposition
+		public Assignment getEditAssignment_1() { return cEditAssignment_1; }
+		
+		//EditComposition
+		public RuleCall getEditEditCompositionParserRuleCall_1_0() { return cEditEditCompositionParserRuleCall_1_0; }
+	}
+	public class CreateCompositionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreateComposition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cComposeKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cComposesKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cComposeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTargetClassParserRuleCall_1_0 = (RuleCall)cTargetAssignment_1.eContents().get(0);
 		private final Keyword cCalledKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRelationAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cRelationIDTerminalRuleCall_3_0 = (RuleCall)cRelationAssignment_3.eContents().get(0);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cItKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cPriorityAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cPriorityPriorityParserRuleCall_5_1_0 = (RuleCall)cPriorityAssignment_5_1.eContents().get(0);
+		private final Keyword cBeKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cPublicityAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cPublicityPublicityEnumRuleCall_5_3_0 = (RuleCall)cPublicityAssignment_5_3.eContents().get(0);
 		
-		//CompositionAction hidden(WS):
-		//    ('compose' | 'composes') target=Class 'called' relation=ID
+		//CreateComposition hidden(WS):
+		//    'compose' target=Class 'called' relation=ID '.'
+		//    ('it' priority=Priority 'be' publicity=Publicity)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('compose' | 'composes') target=Class 'called' relation=ID
+		//'compose' target=Class 'called' relation=ID '.'
+		//('it' priority=Priority 'be' publicity=Publicity)?
 		public Group getGroup() { return cGroup; }
 		
-		//('compose' | 'composes')
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
 		//'compose'
-		public Keyword getComposeKeyword_0_0() { return cComposeKeyword_0_0; }
-		
-		//'composes'
-		public Keyword getComposesKeyword_0_1() { return cComposesKeyword_0_1; }
+		public Keyword getComposeKeyword_0() { return cComposeKeyword_0; }
 		
 		//target=Class
 		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
@@ -621,6 +983,78 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//ID
 		public RuleCall getRelationIDTerminalRuleCall_3_0() { return cRelationIDTerminalRuleCall_3_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//('it' priority=Priority 'be' publicity=Publicity)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'it'
+		public Keyword getItKeyword_5_0() { return cItKeyword_5_0; }
+		
+		//priority=Priority
+		public Assignment getPriorityAssignment_5_1() { return cPriorityAssignment_5_1; }
+		
+		//Priority
+		public RuleCall getPriorityPriorityParserRuleCall_5_1_0() { return cPriorityPriorityParserRuleCall_5_1_0; }
+		
+		//'be'
+		public Keyword getBeKeyword_5_2() { return cBeKeyword_5_2; }
+		
+		//publicity=Publicity
+		public Assignment getPublicityAssignment_5_3() { return cPublicityAssignment_5_3; }
+		
+		//Publicity
+		public RuleCall getPublicityPublicityEnumRuleCall_5_3_0() { return cPublicityPublicityEnumRuleCall_5_3_0; }
+	}
+	public class EditCompositionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.EditComposition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCompositionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCompositionNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCompositionNameIDTerminalRuleCall_2_0 = (RuleCall)cCompositionNameAssignment_2.eContents().get(0);
+		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cParameterAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cParameterCompositionParameterEnumRuleCall_4_0 = (RuleCall)cParameterAssignment_4.eContents().get(0);
+		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		
+		//EditComposition hidden(WS):
+		//    'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'have'
+		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
+		
+		//'composition'
+		public Keyword getCompositionKeyword_1() { return cCompositionKeyword_1; }
+		
+		//compositionName=ID
+		public Assignment getCompositionNameAssignment_2() { return cCompositionNameAssignment_2; }
+		
+		//ID
+		public RuleCall getCompositionNameIDTerminalRuleCall_2_0() { return cCompositionNameIDTerminalRuleCall_2_0; }
+		
+		//'with'
+		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
+		
+		//parameter=CompositionParameter
+		public Assignment getParameterAssignment_4() { return cParameterAssignment_4; }
+		
+		//CompositionParameter
+		public RuleCall getParameterCompositionParameterEnumRuleCall_4_0() { return cParameterCompositionParameterEnumRuleCall_4_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_5_0() { return cNameIDTerminalRuleCall_5_0; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Class");
@@ -735,6 +1169,70 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		public RuleCall getPriorityPriorityValueEnumRuleCall_0() { return cPriorityPriorityValueEnumRuleCall_0; }
 	}
 	
+	public class CompositionParameterElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CompositionParameter");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cURIEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cURIURIKeyword_0_0 = (Keyword)cURIEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cROLEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cROLERoleKeyword_1_0 = (Keyword)cROLEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTARGETEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTARGETTargetKeyword_2_0 = (Keyword)cTARGETEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum CompositionParameter:
+		//    URI='URI' | ROLE='role' | TARGET='target'
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//URI='URI' | ROLE='role' | TARGET='target'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//URI='URI'
+		public EnumLiteralDeclaration getURIEnumLiteralDeclaration_0() { return cURIEnumLiteralDeclaration_0; }
+		
+		//'URI'
+		public Keyword getURIURIKeyword_0_0() { return cURIURIKeyword_0_0; }
+		
+		//ROLE='role'
+		public EnumLiteralDeclaration getROLEEnumLiteralDeclaration_1() { return cROLEEnumLiteralDeclaration_1; }
+		
+		//'role'
+		public Keyword getROLERoleKeyword_1_0() { return cROLERoleKeyword_1_0; }
+		
+		//TARGET='target'
+		public EnumLiteralDeclaration getTARGETEnumLiteralDeclaration_2() { return cTARGETEnumLiteralDeclaration_2; }
+		
+		//'target'
+		public Keyword getTARGETTargetKeyword_2_0() { return cTARGETTargetKeyword_2_0; }
+	}
+	public class PublicityElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Publicity");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPUBLICEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPUBLICPublicKeyword_0_0 = (Keyword)cPUBLICEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPRIVATEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPRIVATEPrivateKeyword_1_0 = (Keyword)cPRIVATEEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Publicity:
+		//    PUBLIC='public' | PRIVATE='private'
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//PUBLIC='public' | PRIVATE='private'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//PUBLIC='public'
+		public EnumLiteralDeclaration getPUBLICEnumLiteralDeclaration_0() { return cPUBLICEnumLiteralDeclaration_0; }
+		
+		//'public'
+		public Keyword getPUBLICPublicKeyword_0_0() { return cPUBLICPublicKeyword_0_0; }
+		
+		//PRIVATE='private'
+		public EnumLiteralDeclaration getPRIVATEEnumLiteralDeclaration_1() { return cPRIVATEEnumLiteralDeclaration_1; }
+		
+		//'private'
+		public Keyword getPRIVATEPrivateKeyword_1_0() { return cPRIVATEPrivateKeyword_1_0; }
+	}
 	public class PriorityValueElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.PriorityValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -855,12 +1353,25 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final UpdateAttributeValueElements pUpdateAttributeValue;
 	private final AttributeActionElements pAttributeAction;
 	private final AssociationActionElements pAssociationAction;
+	private final CreateAssociationElements pCreateAssociation;
+	private final EditAssociationElements pEditAssociation;
+	private final SetCompatibleElements pSetCompatible;
+	private final SetVersionRangeElements pSetVersionRange;
+	private final SetVariantElements pSetVariant;
+	private final SetRightOpenElements pSetRightOpen;
+	private final SetLeftOpenElements pSetLeftOpen;
 	private final InheritanceActionElements pInheritanceAction;
+	private final CreateInheritanceElements pCreateInheritance;
+	private final EditInheritanceElements pEditInheritance;
 	private final CompositionActionElements pCompositionAction;
+	private final CreateCompositionElements pCreateComposition;
+	private final EditCompositionElements pEditComposition;
 	private final ClassElements pClass;
 	private final AttributeElements pAttribute;
 	private final IdentifierElements pIdentifier;
 	private final PriorityElements pPriority;
+	private final CompositionParameterElements eCompositionParameter;
+	private final PublicityElements ePublicity;
 	private final PriorityValueElements ePriorityValue;
 	private final AbstractionElements eAbstraction;
 	private final IdentifierValueElements eIdentifierValue;
@@ -886,12 +1397,25 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pUpdateAttributeValue = new UpdateAttributeValueElements();
 		this.pAttributeAction = new AttributeActionElements();
 		this.pAssociationAction = new AssociationActionElements();
+		this.pCreateAssociation = new CreateAssociationElements();
+		this.pEditAssociation = new EditAssociationElements();
+		this.pSetCompatible = new SetCompatibleElements();
+		this.pSetVersionRange = new SetVersionRangeElements();
+		this.pSetVariant = new SetVariantElements();
+		this.pSetRightOpen = new SetRightOpenElements();
+		this.pSetLeftOpen = new SetLeftOpenElements();
 		this.pInheritanceAction = new InheritanceActionElements();
+		this.pCreateInheritance = new CreateInheritanceElements();
+		this.pEditInheritance = new EditInheritanceElements();
 		this.pCompositionAction = new CompositionActionElements();
+		this.pCreateComposition = new CreateCompositionElements();
+		this.pEditComposition = new EditCompositionElements();
 		this.pClass = new ClassElements();
 		this.pAttribute = new AttributeElements();
 		this.pIdentifier = new IdentifierElements();
 		this.pPriority = new PriorityElements();
+		this.eCompositionParameter = new CompositionParameterElements();
+		this.ePublicity = new PublicityElements();
 		this.ePriorityValue = new PriorityValueElements();
 		this.eAbstraction = new AbstractionElements();
 		this.eIdentifierValue = new IdentifierValueElements();
@@ -1041,7 +1565,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AssociationAction hidden(WS):
-	//    'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
+	//    'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 	//;
 	public AssociationActionElements getAssociationActionAccess() {
 		return pAssociationAction;
@@ -1051,8 +1575,85 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getAssociationActionAccess().getRule();
 	}
 	
+	//CreateAssociation hidden(WS):
+	//    'to' ('other')? target=Class 'called' relation=ID
+	//;
+	public CreateAssociationElements getCreateAssociationAccess() {
+		return pCreateAssociation;
+	}
+	
+	public ParserRule getCreateAssociationRule() {
+		return getCreateAssociationAccess().getRule();
+	}
+	
+	//EditAssociation hidden(WS):
+	//    type=(SetCompatible | SetVersionRange | SetVariant | SetRightOpen | SetLeftOpen)
+	//;
+	public EditAssociationElements getEditAssociationAccess() {
+		return pEditAssociation;
+	}
+	
+	public ParserRule getEditAssociationRule() {
+		return getEditAssociationAccess().getRule();
+	}
+	
+	//SetCompatible hidden(WS):
+	//    'compatible' 'with' 'version' name=ID
+	//;
+	public SetCompatibleElements getSetCompatibleAccess() {
+		return pSetCompatible;
+	}
+	
+	public ParserRule getSetCompatibleRule() {
+		return getSetCompatibleAccess().getRule();
+	}
+	
+	//SetVersionRange hidden(WS):
+	//    'with' 'version' 'range' 'from' start=ID 'to' end=ID
+	//;
+	public SetVersionRangeElements getSetVersionRangeAccess() {
+		return pSetVersionRange;
+	}
+	
+	public ParserRule getSetVersionRangeRule() {
+		return getSetVersionRangeAccess().getRule();
+	}
+	
+	//SetVariant hidden(WS):
+	//    'with' 'all' 'versions' 'of' 'variant' name=ID
+	//;
+	public SetVariantElements getSetVariantAccess() {
+		return pSetVariant;
+	}
+	
+	public ParserRule getSetVariantRule() {
+		return getSetVariantAccess().getRule();
+	}
+	
+	//SetRightOpen hidden(WS):
+	//    'up' 'to' 'date' date=ID
+	//;
+	public SetRightOpenElements getSetRightOpenAccess() {
+		return pSetRightOpen;
+	}
+	
+	public ParserRule getSetRightOpenRule() {
+		return getSetRightOpenAccess().getRule();
+	}
+	
+	//SetLeftOpen hidden(WS):
+	//    'starting' 'from' 'date' date=ID
+	//;
+	public SetLeftOpenElements getSetLeftOpenAccess() {
+		return pSetLeftOpen;
+	}
+	
+	public ParserRule getSetLeftOpenRule() {
+		return getSetLeftOpenAccess().getRule();
+	}
+	
 	//InheritanceAction hidden(WS):
-	//    'inherit' 'from' parent=Class
+	//    create=CreateInheritance | edit=EditInheritance
 	//;
 	public InheritanceActionElements getInheritanceActionAccess() {
 		return pInheritanceAction;
@@ -1062,8 +1663,30 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getInheritanceActionAccess().getRule();
 	}
 	
+	//CreateInheritance hidden(WS):
+	//    'inherit' 'from' parent=Class
+	//;
+	public CreateInheritanceElements getCreateInheritanceAccess() {
+		return pCreateInheritance;
+	}
+	
+	public ParserRule getCreateInheritanceRule() {
+		return getCreateInheritanceAccess().getRule();
+	}
+	
+	//EditInheritance hidden(WS):
+	//    'have' 'inheritance' 'URI' uri=ID
+	//;
+	public EditInheritanceElements getEditInheritanceAccess() {
+		return pEditInheritance;
+	}
+	
+	public ParserRule getEditInheritanceRule() {
+		return getEditInheritanceAccess().getRule();
+	}
+	
 	//CompositionAction hidden(WS):
-	//    ('compose' | 'composes') target=Class 'called' relation=ID
+	//    create=CreateComposition | edit=EditComposition
 	//;
 	public CompositionActionElements getCompositionActionAccess() {
 		return pCompositionAction;
@@ -1071,6 +1694,29 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getCompositionActionRule() {
 		return getCompositionActionAccess().getRule();
+	}
+	
+	//CreateComposition hidden(WS):
+	//    'compose' target=Class 'called' relation=ID '.'
+	//    ('it' priority=Priority 'be' publicity=Publicity)?
+	//;
+	public CreateCompositionElements getCreateCompositionAccess() {
+		return pCreateComposition;
+	}
+	
+	public ParserRule getCreateCompositionRule() {
+		return getCreateCompositionAccess().getRule();
+	}
+	
+	//EditComposition hidden(WS):
+	//    'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+	//;
+	public EditCompositionElements getEditCompositionAccess() {
+		return pEditComposition;
+	}
+	
+	public ParserRule getEditCompositionRule() {
+		return getEditCompositionAccess().getRule();
 	}
 	
 	//Class hidden(WS):
@@ -1115,6 +1761,28 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getPriorityRule() {
 		return getPriorityAccess().getRule();
+	}
+	
+	//enum CompositionParameter:
+	//    URI='URI' | ROLE='role' | TARGET='target'
+	//;
+	public CompositionParameterElements getCompositionParameterAccess() {
+		return eCompositionParameter;
+	}
+	
+	public EnumRule getCompositionParameterRule() {
+		return getCompositionParameterAccess().getRule();
+	}
+	
+	//enum Publicity:
+	//    PUBLIC='public' | PRIVATE='private'
+	//;
+	public PublicityElements getPublicityAccess() {
+		return ePublicity;
+	}
+	
+	public EnumRule getPublicityRule() {
+		return getPublicityAccess().getRule();
 	}
 	
 	//enum PriorityValue:

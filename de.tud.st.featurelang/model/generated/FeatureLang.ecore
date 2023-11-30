@@ -57,18 +57,68 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateAssociation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edit" eType="#//EditAssociation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateAssociation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Class"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetCompatible">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetVersionRange">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetVariant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetRightOpen">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetLeftOpen">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InheritanceAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateInheritance"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edit" eType="#//EditInheritance"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateInheritance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Class"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditInheritance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositionAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateComposition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edit" eType="#//EditComposition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateComposition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Class"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="#//Priority"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicity" eType="#//Publicity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditComposition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="#//CompositionParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//Abstraction"/>
@@ -83,6 +133,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Priority">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//PriorityValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompositionParameter">
+    <eLiterals name="URI" literal="URI"/>
+    <eLiterals name="ROLE" value="1" literal="role"/>
+    <eLiterals name="TARGET" value="2" literal="target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Publicity">
+    <eLiterals name="PUBLIC" literal="public"/>
+    <eLiterals name="PRIVATE" value="1" literal="private"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PriorityValue">
     <eLiterals name="SHOULD" literal="should"/>

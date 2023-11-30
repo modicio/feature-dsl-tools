@@ -50,15 +50,60 @@ AttributeAction hidden(WS):
 ;
 
 AssociationAction hidden(WS):
-	'have' 'associations' 'to' ('other')? target=Class 'called' relation=ID
+	'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation) 
+;
+
+CreateAssociation hidden(WS):
+	'to' ('other')? target=Class 'called' relation=ID
+;
+
+EditAssociation hidden(WS):
+	type=(SetCompatible | SetVersionRange | SetVariant | SetRightOpen | SetLeftOpen)
+;
+
+SetCompatible hidden(WS):
+	'compatible' 'with' 'version' name=ID
+;
+
+SetVersionRange hidden(WS):
+	'with' 'version' 'range' 'from' start=ID 'to' end=ID
+;
+
+SetVariant hidden(WS):
+	'with' 'all' 'versions' 'of' 'variant' name=ID
+;
+
+SetRightOpen hidden(WS):
+	'up' 'to' 'date' date=ID
+;
+
+SetLeftOpen hidden(WS):
+	'starting' 'from' 'date' date=ID
 ;
 	
 InheritanceAction hidden(WS):
+	create=CreateInheritance | edit=EditInheritance
+;
+
+CreateInheritance hidden(WS):
 	'inherit' 'from' parent=Class
 ;
 
+EditInheritance hidden(WS):
+	'have' 'inheritance' 'URI' uri=ID
+;
+
 CompositionAction hidden(WS):
-	('compose' | 'composes') target=Class 'called' relation=ID
+	create=CreateComposition | edit=EditComposition
+;
+
+CreateComposition hidden(WS):
+	'compose' target=Class 'called' relation=ID '.'
+	('it' priority=Priority 'be' publicity=Publicity)?
+;
+
+EditComposition hidden(WS):
+	'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
 ;
 
 Class hidden(WS):
@@ -75,6 +120,14 @@ Identifier hidden(WS):
 	
 Priority hidden(WS):
 	priority=PriorityValue
+;
+
+enum CompositionParameter:
+	URI='URI' | ROLE='role' | TARGET='target'
+;
+
+enum Publicity:
+	PUBLIC='public' | PRIVATE='private'
 ;
 
 enum PriorityValue:

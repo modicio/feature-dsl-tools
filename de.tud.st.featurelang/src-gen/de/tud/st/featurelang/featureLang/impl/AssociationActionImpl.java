@@ -4,6 +4,8 @@
 package de.tud.st.featurelang.featureLang.impl;
 
 import de.tud.st.featurelang.featureLang.AssociationAction;
+import de.tud.st.featurelang.featureLang.CreateAssociation;
+import de.tud.st.featurelang.featureLang.EditAssociation;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,8 +25,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl#getRelation <em>Relation</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl#getCreate <em>Create</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl#getEdit <em>Edit</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,34 +35,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AssociationActionImpl extends MinimalEObjectImpl.Container implements AssociationAction
 {
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
+   * The cached value of the '{@link #getCreate() <em>Create</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTarget()
+   * @see #getCreate()
    * @generated
    * @ordered
    */
-  protected de.tud.st.featurelang.featureLang.Class target;
+  protected CreateAssociation create;
 
   /**
-   * The default value of the '{@link #getRelation() <em>Relation</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRelation()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String RELATION_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRelation() <em>Relation</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRelation()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String relation = RELATION_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEdit() <em>Edit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEdit()
+   * @generated
+   * @ordered
+   */
+  protected EditAssociation edit;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,9 +101,9 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public de.tud.st.featurelang.featureLang.Class getTarget()
+  public CreateAssociation getCreate()
   {
-    return target;
+    return create;
   }
 
   /**
@@ -98,13 +111,13 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTarget(de.tud.st.featurelang.featureLang.Class newTarget, NotificationChain msgs)
+  public NotificationChain basicSetCreate(CreateAssociation newCreate, NotificationChain msgs)
   {
-    de.tud.st.featurelang.featureLang.Class oldTarget = target;
-    target = newTarget;
+    CreateAssociation oldCreate = create;
+    create = newCreate;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__TARGET, oldTarget, newTarget);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__CREATE, oldCreate, newCreate);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -116,20 +129,20 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public void setTarget(de.tud.st.featurelang.featureLang.Class newTarget)
+  public void setCreate(CreateAssociation newCreate)
   {
-    if (newTarget != target)
+    if (newCreate != create)
     {
       NotificationChain msgs = null;
-      if (target != null)
-        msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__TARGET, null, msgs);
-      if (newTarget != null)
-        msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__TARGET, null, msgs);
-      msgs = basicSetTarget(newTarget, msgs);
+      if (create != null)
+        msgs = ((InternalEObject)create).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__CREATE, null, msgs);
+      if (newCreate != null)
+        msgs = ((InternalEObject)newCreate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__CREATE, null, msgs);
+      msgs = basicSetCreate(newCreate, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__TARGET, newTarget, newTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__CREATE, newCreate, newCreate));
   }
 
   /**
@@ -138,9 +151,9 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public String getRelation()
+  public String getName()
   {
-    return relation;
+    return name;
   }
 
   /**
@@ -149,12 +162,62 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public void setRelation(String newRelation)
+  public void setName(String newName)
   {
-    String oldRelation = relation;
-    relation = newRelation;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__RELATION, oldRelation, relation));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EditAssociation getEdit()
+  {
+    return edit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEdit(EditAssociation newEdit, NotificationChain msgs)
+  {
+    EditAssociation oldEdit = edit;
+    edit = newEdit;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__EDIT, oldEdit, newEdit);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEdit(EditAssociation newEdit)
+  {
+    if (newEdit != edit)
+    {
+      NotificationChain msgs = null;
+      if (edit != null)
+        msgs = ((InternalEObject)edit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__EDIT, null, msgs);
+      if (newEdit != null)
+        msgs = ((InternalEObject)newEdit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ASSOCIATION_ACTION__EDIT, null, msgs);
+      msgs = basicSetEdit(newEdit, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ASSOCIATION_ACTION__EDIT, newEdit, newEdit));
   }
 
   /**
@@ -167,8 +230,10 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.ASSOCIATION_ACTION__TARGET:
-        return basicSetTarget(null, msgs);
+      case FeatureLangPackage.ASSOCIATION_ACTION__CREATE:
+        return basicSetCreate(null, msgs);
+      case FeatureLangPackage.ASSOCIATION_ACTION__EDIT:
+        return basicSetEdit(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,10 +248,12 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.ASSOCIATION_ACTION__TARGET:
-        return getTarget();
-      case FeatureLangPackage.ASSOCIATION_ACTION__RELATION:
-        return getRelation();
+      case FeatureLangPackage.ASSOCIATION_ACTION__CREATE:
+        return getCreate();
+      case FeatureLangPackage.ASSOCIATION_ACTION__NAME:
+        return getName();
+      case FeatureLangPackage.ASSOCIATION_ACTION__EDIT:
+        return getEdit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,11 +268,14 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.ASSOCIATION_ACTION__TARGET:
-        setTarget((de.tud.st.featurelang.featureLang.Class)newValue);
+      case FeatureLangPackage.ASSOCIATION_ACTION__CREATE:
+        setCreate((CreateAssociation)newValue);
         return;
-      case FeatureLangPackage.ASSOCIATION_ACTION__RELATION:
-        setRelation((String)newValue);
+      case FeatureLangPackage.ASSOCIATION_ACTION__NAME:
+        setName((String)newValue);
+        return;
+      case FeatureLangPackage.ASSOCIATION_ACTION__EDIT:
+        setEdit((EditAssociation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,11 +291,14 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.ASSOCIATION_ACTION__TARGET:
-        setTarget((de.tud.st.featurelang.featureLang.Class)null);
+      case FeatureLangPackage.ASSOCIATION_ACTION__CREATE:
+        setCreate((CreateAssociation)null);
         return;
-      case FeatureLangPackage.ASSOCIATION_ACTION__RELATION:
-        setRelation(RELATION_EDEFAULT);
+      case FeatureLangPackage.ASSOCIATION_ACTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case FeatureLangPackage.ASSOCIATION_ACTION__EDIT:
+        setEdit((EditAssociation)null);
         return;
     }
     super.eUnset(featureID);
@@ -241,10 +314,12 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.ASSOCIATION_ACTION__TARGET:
-        return target != null;
-      case FeatureLangPackage.ASSOCIATION_ACTION__RELATION:
-        return RELATION_EDEFAULT == null ? relation != null : !RELATION_EDEFAULT.equals(relation);
+      case FeatureLangPackage.ASSOCIATION_ACTION__CREATE:
+        return create != null;
+      case FeatureLangPackage.ASSOCIATION_ACTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case FeatureLangPackage.ASSOCIATION_ACTION__EDIT:
+        return edit != null;
     }
     return super.eIsSet(featureID);
   }
@@ -260,8 +335,8 @@ public class AssociationActionImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (relation: ");
-    result.append(relation);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

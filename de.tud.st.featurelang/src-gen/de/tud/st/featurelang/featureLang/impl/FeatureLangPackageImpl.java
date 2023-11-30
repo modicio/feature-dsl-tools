@@ -10,8 +10,15 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
+import de.tud.st.featurelang.featureLang.CompositionParameter;
+import de.tud.st.featurelang.featureLang.CreateAssociation;
+import de.tud.st.featurelang.featureLang.CreateComposition;
+import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
+import de.tud.st.featurelang.featureLang.EditAssociation;
+import de.tud.st.featurelang.featureLang.EditComposition;
+import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
@@ -20,6 +27,12 @@ import de.tud.st.featurelang.featureLang.IdentifierValue;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 import de.tud.st.featurelang.featureLang.Priority;
 import de.tud.st.featurelang.featureLang.PriorityValue;
+import de.tud.st.featurelang.featureLang.Publicity;
+import de.tud.st.featurelang.featureLang.SetCompatible;
+import de.tud.st.featurelang.featureLang.SetLeftOpen;
+import de.tud.st.featurelang.featureLang.SetRightOpen;
+import de.tud.st.featurelang.featureLang.SetVariant;
+import de.tud.st.featurelang.featureLang.SetVersionRange;
 import de.tud.st.featurelang.featureLang.Statement;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 import de.tud.st.featurelang.featureLang.UpdateAttributeDatatype;
@@ -124,6 +137,55 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass createAssociationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editAssociationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setCompatibleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setVersionRangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setVariantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setRightOpenEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setLeftOpenEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass inheritanceActionEClass = null;
 
   /**
@@ -131,7 +193,35 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass createInheritanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editInheritanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass compositionActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass createCompositionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass editCompositionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -160,6 +250,20 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   private EClass priorityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum compositionParameterEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum publicityEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -587,7 +691,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getAssociationAction_Target()
+  public EReference getAssociationAction_Create()
   {
     return (EReference)associationActionEClass.getEStructuralFeatures().get(0);
   }
@@ -598,9 +702,196 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EAttribute getAssociationAction_Relation()
+  public EAttribute getAssociationAction_Name()
   {
     return (EAttribute)associationActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAssociationAction_Edit()
+  {
+    return (EReference)associationActionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCreateAssociation()
+  {
+    return createAssociationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreateAssociation_Target()
+  {
+    return (EReference)createAssociationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCreateAssociation_Relation()
+  {
+    return (EAttribute)createAssociationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEditAssociation()
+  {
+    return editAssociationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEditAssociation_Type()
+  {
+    return (EReference)editAssociationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetCompatible()
+  {
+    return setCompatibleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetCompatible_Name()
+  {
+    return (EAttribute)setCompatibleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetVersionRange()
+  {
+    return setVersionRangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetVersionRange_Start()
+  {
+    return (EAttribute)setVersionRangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetVersionRange_End()
+  {
+    return (EAttribute)setVersionRangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetVariant()
+  {
+    return setVariantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetVariant_Name()
+  {
+    return (EAttribute)setVariantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetRightOpen()
+  {
+    return setRightOpenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetRightOpen_Date()
+  {
+    return (EAttribute)setRightOpenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetLeftOpen()
+  {
+    return setLeftOpenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetLeftOpen_Date()
+  {
+    return (EAttribute)setLeftOpenEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -620,9 +911,64 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getInheritanceAction_Parent()
+  public EReference getInheritanceAction_Create()
   {
     return (EReference)inheritanceActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInheritanceAction_Edit()
+  {
+    return (EReference)inheritanceActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCreateInheritance()
+  {
+    return createInheritanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreateInheritance_Parent()
+  {
+    return (EReference)createInheritanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEditInheritance()
+  {
+    return editInheritanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEditInheritance_Uri()
+  {
+    return (EAttribute)editInheritanceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -642,7 +988,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getCompositionAction_Target()
+  public EReference getCompositionAction_Create()
   {
     return (EReference)compositionActionEClass.getEStructuralFeatures().get(0);
   }
@@ -653,9 +999,108 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EAttribute getCompositionAction_Relation()
+  public EReference getCompositionAction_Edit()
   {
-    return (EAttribute)compositionActionEClass.getEStructuralFeatures().get(1);
+    return (EReference)compositionActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCreateComposition()
+  {
+    return createCompositionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreateComposition_Target()
+  {
+    return (EReference)createCompositionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCreateComposition_Relation()
+  {
+    return (EAttribute)createCompositionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCreateComposition_Priority()
+  {
+    return (EReference)createCompositionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCreateComposition_Publicity()
+  {
+    return (EAttribute)createCompositionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEditComposition()
+  {
+    return editCompositionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEditComposition_CompositionName()
+  {
+    return (EAttribute)editCompositionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEditComposition_Parameter()
+  {
+    return (EAttribute)editCompositionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEditComposition_Name()
+  {
+    return (EAttribute)editCompositionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -774,6 +1219,28 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
+  public EEnum getCompositionParameter()
+  {
+    return compositionParameterEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getPublicity()
+  {
+    return publicityEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getPriorityValue()
   {
     return priorityValueEEnum;
@@ -883,15 +1350,57 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(attributeActionEClass, ATTRIBUTE_ACTION__TYPE);
 
     associationActionEClass = createEClass(ASSOCIATION_ACTION);
-    createEReference(associationActionEClass, ASSOCIATION_ACTION__TARGET);
-    createEAttribute(associationActionEClass, ASSOCIATION_ACTION__RELATION);
+    createEReference(associationActionEClass, ASSOCIATION_ACTION__CREATE);
+    createEAttribute(associationActionEClass, ASSOCIATION_ACTION__NAME);
+    createEReference(associationActionEClass, ASSOCIATION_ACTION__EDIT);
+
+    createAssociationEClass = createEClass(CREATE_ASSOCIATION);
+    createEReference(createAssociationEClass, CREATE_ASSOCIATION__TARGET);
+    createEAttribute(createAssociationEClass, CREATE_ASSOCIATION__RELATION);
+
+    editAssociationEClass = createEClass(EDIT_ASSOCIATION);
+    createEReference(editAssociationEClass, EDIT_ASSOCIATION__TYPE);
+
+    setCompatibleEClass = createEClass(SET_COMPATIBLE);
+    createEAttribute(setCompatibleEClass, SET_COMPATIBLE__NAME);
+
+    setVersionRangeEClass = createEClass(SET_VERSION_RANGE);
+    createEAttribute(setVersionRangeEClass, SET_VERSION_RANGE__START);
+    createEAttribute(setVersionRangeEClass, SET_VERSION_RANGE__END);
+
+    setVariantEClass = createEClass(SET_VARIANT);
+    createEAttribute(setVariantEClass, SET_VARIANT__NAME);
+
+    setRightOpenEClass = createEClass(SET_RIGHT_OPEN);
+    createEAttribute(setRightOpenEClass, SET_RIGHT_OPEN__DATE);
+
+    setLeftOpenEClass = createEClass(SET_LEFT_OPEN);
+    createEAttribute(setLeftOpenEClass, SET_LEFT_OPEN__DATE);
 
     inheritanceActionEClass = createEClass(INHERITANCE_ACTION);
-    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__PARENT);
+    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__CREATE);
+    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__EDIT);
+
+    createInheritanceEClass = createEClass(CREATE_INHERITANCE);
+    createEReference(createInheritanceEClass, CREATE_INHERITANCE__PARENT);
+
+    editInheritanceEClass = createEClass(EDIT_INHERITANCE);
+    createEAttribute(editInheritanceEClass, EDIT_INHERITANCE__URI);
 
     compositionActionEClass = createEClass(COMPOSITION_ACTION);
-    createEReference(compositionActionEClass, COMPOSITION_ACTION__TARGET);
-    createEAttribute(compositionActionEClass, COMPOSITION_ACTION__RELATION);
+    createEReference(compositionActionEClass, COMPOSITION_ACTION__CREATE);
+    createEReference(compositionActionEClass, COMPOSITION_ACTION__EDIT);
+
+    createCompositionEClass = createEClass(CREATE_COMPOSITION);
+    createEReference(createCompositionEClass, CREATE_COMPOSITION__TARGET);
+    createEAttribute(createCompositionEClass, CREATE_COMPOSITION__RELATION);
+    createEReference(createCompositionEClass, CREATE_COMPOSITION__PRIORITY);
+    createEAttribute(createCompositionEClass, CREATE_COMPOSITION__PUBLICITY);
+
+    editCompositionEClass = createEClass(EDIT_COMPOSITION);
+    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__COMPOSITION_NAME);
+    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__PARAMETER);
+    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__NAME);
 
     classEClass = createEClass(CLASS);
     createEAttribute(classEClass, CLASS__ABSTRACT);
@@ -908,6 +1417,8 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(priorityEClass, PRIORITY__PRIORITY);
 
     // Create enums
+    compositionParameterEEnum = createEEnum(COMPOSITION_PARAMETER);
+    publicityEEnum = createEEnum(PUBLICITY);
     priorityValueEEnum = createEEnum(PRIORITY_VALUE);
     abstractionEEnum = createEEnum(ABSTRACTION);
     identifierValueEEnum = createEEnum(IDENTIFIER_VALUE);
@@ -987,15 +1498,57 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getAttributeAction_Type(), this.getDatatype(), "type", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(associationActionEClass, AssociationAction.class, "AssociationAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssociationAction_Target(), this.getClass_(), null, "target", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAssociationAction_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssociationAction_Create(), this.getCreateAssociation(), null, "create", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAssociationAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssociationAction_Edit(), this.getEditAssociation(), null, "edit", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createAssociationEClass, CreateAssociation.class, "CreateAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateAssociation_Target(), this.getClass_(), null, "target", null, 0, 1, CreateAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateAssociation_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, CreateAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(editAssociationEClass, EditAssociation.class, "EditAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEditAssociation_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, EditAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setCompatibleEClass, SetCompatible.class, "SetCompatible", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetCompatible_Name(), ecorePackage.getEString(), "name", null, 0, 1, SetCompatible.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setVersionRangeEClass, SetVersionRange.class, "SetVersionRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetVersionRange_Start(), ecorePackage.getEString(), "start", null, 0, 1, SetVersionRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetVersionRange_End(), ecorePackage.getEString(), "end", null, 0, 1, SetVersionRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setVariantEClass, SetVariant.class, "SetVariant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetVariant_Name(), ecorePackage.getEString(), "name", null, 0, 1, SetVariant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setRightOpenEClass, SetRightOpen.class, "SetRightOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetRightOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetRightOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setLeftOpenEClass, SetLeftOpen.class, "SetLeftOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetLeftOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetLeftOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inheritanceActionEClass, InheritanceAction.class, "InheritanceAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInheritanceAction_Parent(), this.getClass_(), null, "parent", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInheritanceAction_Create(), this.getCreateInheritance(), null, "create", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInheritanceAction_Edit(), this.getEditInheritance(), null, "edit", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createInheritanceEClass, CreateInheritance.class, "CreateInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateInheritance_Parent(), this.getClass_(), null, "parent", null, 0, 1, CreateInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(editInheritanceEClass, EditInheritance.class, "EditInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEditInheritance_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, EditInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositionActionEClass, CompositionAction.class, "CompositionAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCompositionAction_Target(), this.getClass_(), null, "target", null, 0, 1, CompositionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCompositionAction_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, CompositionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositionAction_Create(), this.getCreateComposition(), null, "create", null, 0, 1, CompositionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositionAction_Edit(), this.getEditComposition(), null, "edit", null, 0, 1, CompositionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(createCompositionEClass, CreateComposition.class, "CreateComposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCreateComposition_Target(), this.getClass_(), null, "target", null, 0, 1, CreateComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateComposition_Relation(), ecorePackage.getEString(), "relation", null, 0, 1, CreateComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCreateComposition_Priority(), this.getPriority(), null, "priority", null, 0, 1, CreateComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCreateComposition_Publicity(), this.getPublicity(), "publicity", null, 0, 1, CreateComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(editCompositionEClass, EditComposition.class, "EditComposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEditComposition_CompositionName(), ecorePackage.getEString(), "compositionName", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEditComposition_Parameter(), this.getCompositionParameter(), "parameter", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEditComposition_Name(), ecorePackage.getEString(), "name", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classEClass, de.tud.st.featurelang.featureLang.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClass_Abstract(), this.getAbstraction(), "abstract", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1012,6 +1565,15 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getPriority_Priority(), this.getPriorityValue(), "priority", null, 0, 1, Priority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
+    initEEnum(compositionParameterEEnum, CompositionParameter.class, "CompositionParameter");
+    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.URI);
+    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.ROLE);
+    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.TARGET);
+
+    initEEnum(publicityEEnum, Publicity.class, "Publicity");
+    addEEnumLiteral(publicityEEnum, Publicity.PUBLIC);
+    addEEnumLiteral(publicityEEnum, Publicity.PRIVATE);
+
     initEEnum(priorityValueEEnum, PriorityValue.class, "PriorityValue");
     addEEnumLiteral(priorityValueEEnum, PriorityValue.SHOULD);
     addEEnumLiteral(priorityValueEEnum, PriorityValue.MUST);

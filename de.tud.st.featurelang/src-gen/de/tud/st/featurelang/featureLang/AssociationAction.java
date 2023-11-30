@@ -14,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getCreate <em>Create</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getName <em>Name</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AssociationAction#getEdit <em>Edit</em>}</li>
  * </ul>
  *
  * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction()
@@ -25,47 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface AssociationAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Target</b></em>' containment reference.
+   * Returns the value of the '<em><b>Create</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' containment reference.
-   * @see #setTarget(de.tud.st.featurelang.featureLang.Class)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Target()
+   * @return the value of the '<em>Create</em>' containment reference.
+   * @see #setCreate(CreateAssociation)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Create()
    * @model containment="true"
    * @generated
    */
-  de.tud.st.featurelang.featureLang.Class getTarget();
+  CreateAssociation getCreate();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}' containment reference.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getCreate <em>Create</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' containment reference.
-   * @see #getTarget()
+   * @param value the new value of the '<em>Create</em>' containment reference.
+   * @see #getCreate()
    * @generated
    */
-  void setTarget(de.tud.st.featurelang.featureLang.Class value);
+  void setCreate(CreateAssociation value);
 
   /**
-   * Returns the value of the '<em><b>Relation</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Relation</em>' attribute.
-   * @see #setRelation(String)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Relation()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Name()
    * @model
    * @generated
    */
-  String getRelation();
+  String getName();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}' attribute.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Relation</em>' attribute.
-   * @see #getRelation()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setRelation(String value);
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Edit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Edit</em>' containment reference.
+   * @see #setEdit(EditAssociation)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAssociationAction_Edit()
+   * @model containment="true"
+   * @generated
+   */
+  EditAssociation getEdit();
+
+  /**
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AssociationAction#getEdit <em>Edit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Edit</em>' containment reference.
+   * @see #getEdit()
+   * @generated
+   */
+  void setEdit(EditAssociation value);
 
 } // AssociationAction

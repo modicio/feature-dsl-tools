@@ -22,47 +22,64 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Associations", "Attribute", "Abstract", "Composes", "Existing", "Compose", "Inherit", "Called", "Number", "Phrase", "Should", "Class", "Exist", "Other", "Value", "From", "Have", "Must", "Name", "Time", "URI", "Has", "Not", "The", "An", "Be", "Is", "It", "To", "FullStop", "A", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Associations", "Association", "Composition", "Inheritance", "Compatible", "Attribute", "Abstract", "Existing", "Starting", "Versions", "Compose", "Inherit", "Private", "Variant", "Version", "Called", "Number", "Phrase", "Public", "Should", "Target", "Class", "Exist", "Other", "Range", "Value", "Date", "From", "Have", "Must", "Name", "Role", "Time", "With", "URI", "All", "Has", "Not", "The", "An", "Be", "Is", "It", "Of", "To", "Up", "FullStop", "A", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int A=34;
-    public static final int Called=11;
-    public static final int Should=14;
-    public static final int Attribute=5;
-    public static final int Time=23;
-    public static final int Is=30;
-    public static final int RULE_STRING=37;
-    public static final int It=31;
-    public static final int Must=21;
-    public static final int URI=24;
-    public static final int An=28;
-    public static final int Name=22;
-    public static final int RULE_SL_COMMENT=39;
-    public static final int The=27;
-    public static final int Compose=9;
-    public static final int Exist=16;
-    public static final int Number=12;
-    public static final int To=32;
-    public static final int EOF=-1;
-    public static final int Inherit=10;
-    public static final int Composes=7;
-    public static final int FullStop=33;
-    public static final int Be=29;
-    public static final int RULE_ID=35;
-    public static final int RULE_WS=40;
-    public static final int Abstract=6;
-    public static final int Have=20;
-    public static final int Phrase=13;
-    public static final int From=19;
-    public static final int RULE_ANY_OTHER=41;
+    public static final int All=39;
+    public static final int Inheritance=7;
+    public static final int Must=33;
+    public static final int Name=34;
+    public static final int Compose=14;
+    public static final int Version=18;
+    public static final int Private=16;
+    public static final int To=48;
+    public static final int Inherit=15;
+    public static final int RULE_ID=52;
+    public static final int Have=32;
+    public static final int Phrase=21;
+    public static final int Public=22;
     public static final int Associations=4;
-    public static final int Not=26;
-    public static final int RULE_INT=36;
-    public static final int Value=18;
-    public static final int RULE_ML_COMMENT=38;
-    public static final int Class=15;
-    public static final int Has=25;
-    public static final int Existing=8;
-    public static final int Other=17;
+    public static final int Range=28;
+    public static final int Variant=17;
+    public static final int Role=35;
+    public static final int Not=41;
+    public static final int Versions=13;
+    public static final int RULE_INT=53;
+    public static final int Starting=12;
+    public static final int Value=29;
+    public static final int RULE_ML_COMMENT=55;
+    public static final int Class=25;
+    public static final int Up=49;
+    public static final int A=51;
+    public static final int Called=19;
+    public static final int Should=23;
+    public static final int Attribute=9;
+    public static final int Time=36;
+    public static final int Is=45;
+    public static final int RULE_STRING=54;
+    public static final int It=46;
+    public static final int URI=38;
+    public static final int An=43;
+    public static final int With=37;
+    public static final int RULE_SL_COMMENT=56;
+    public static final int The=42;
+    public static final int Target=24;
+    public static final int Association=5;
+    public static final int Exist=26;
+    public static final int Number=20;
+    public static final int EOF=-1;
+    public static final int FullStop=50;
+    public static final int Composition=6;
+    public static final int Be=44;
+    public static final int RULE_WS=57;
+    public static final int Abstract=10;
+    public static final int From=31;
+    public static final int RULE_ANY_OTHER=58;
+    public static final int Compatible=8;
+    public static final int Date=30;
+    public static final int Of=47;
+    public static final int Has=40;
+    public static final int Existing=11;
+    public static final int Other=27;
 
     // delegates
     // delegators
@@ -605,6 +622,9 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case Associations:
+                        case Association:
+                        case Composition:
+                        case Inheritance:
                         case The:
                             {
                             alt6=1;
@@ -618,7 +638,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                         }
 
                     }
-                    else if ( (LA6_0==Composes||(LA6_0>=Compose && LA6_0<=Inherit)) ) {
+                    else if ( ((LA6_0>=Compose && LA6_0<=Inherit)) ) {
                         alt6=1;
                     }
                     else {
@@ -1121,20 +1141,37 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             switch ( input.LA(1) ) {
             case Have:
                 {
-                int LA10_1 = input.LA(2);
-
-                if ( (LA10_1==Associations) ) {
+                switch ( input.LA(2) ) {
+                case Associations:
+                case Association:
+                    {
                     alt10=2;
-                }
-                else if ( ((LA10_1>=The && LA10_1<=An)||LA10_1==A) ) {
+                    }
+                    break;
+                case Inheritance:
+                    {
+                    alt10=3;
+                    }
+                    break;
+                case The:
+                case An:
+                case A:
+                    {
                     alt10=1;
-                }
-                else {
+                    }
+                    break;
+                case Composition:
+                    {
+                    alt10=4;
+                    }
+                    break;
+                default:
                     NoViableAltException nvae =
                         new NoViableAltException("", 10, 1, input);
 
                     throw nvae;
                 }
+
                 }
                 break;
             case Inherit:
@@ -1142,7 +1179,6 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 alt10=3;
                 }
                 break;
-            case Composes:
             case Compose:
                 {
                 alt10=4;
@@ -2415,17 +2451,17 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssociationAction"
-    // InternalFeatureLangParser.g:935:1: ruleAssociationAction returns [EObject current=null] : (otherlv_0= Have otherlv_1= Associations otherlv_2= To (otherlv_3= Other )? ( (lv_target_4_0= ruleClass ) ) otherlv_5= Called ( (lv_relation_6_0= RULE_ID ) ) ) ;
+    // InternalFeatureLangParser.g:935:1: ruleAssociationAction returns [EObject current=null] : (otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) ) ) ;
     public final EObject ruleAssociationAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        Token lv_relation_6_0=null;
-        EObject lv_target_4_0 = null;
+        Token lv_name_4_0=null;
+        EObject lv_create_3_0 = null;
+
+        EObject lv_edit_5_0 = null;
 
 
 
@@ -2433,38 +2469,49 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:942:2: ( (otherlv_0= Have otherlv_1= Associations otherlv_2= To (otherlv_3= Other )? ( (lv_target_4_0= ruleClass ) ) otherlv_5= Called ( (lv_relation_6_0= RULE_ID ) ) ) )
-            // InternalFeatureLangParser.g:943:2: (otherlv_0= Have otherlv_1= Associations otherlv_2= To (otherlv_3= Other )? ( (lv_target_4_0= ruleClass ) ) otherlv_5= Called ( (lv_relation_6_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:942:2: ( (otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) ) ) )
+            // InternalFeatureLangParser.g:943:2: (otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) ) )
             {
-            // InternalFeatureLangParser.g:943:2: (otherlv_0= Have otherlv_1= Associations otherlv_2= To (otherlv_3= Other )? ( (lv_target_4_0= ruleClass ) ) otherlv_5= Called ( (lv_relation_6_0= RULE_ID ) ) )
-            // InternalFeatureLangParser.g:944:3: otherlv_0= Have otherlv_1= Associations otherlv_2= To (otherlv_3= Other )? ( (lv_target_4_0= ruleClass ) ) otherlv_5= Called ( (lv_relation_6_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:943:2: (otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) ) )
+            // InternalFeatureLangParser.g:944:3: otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) )
             {
             otherlv_0=(Token)match(input,Have,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssociationActionAccess().getHaveKeyword_0());
             		
-            otherlv_1=(Token)match(input,Associations,FOLLOW_26); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1());
-            		
-            otherlv_2=(Token)match(input,To,FOLLOW_27); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getToKeyword_2());
-            		
-            // InternalFeatureLangParser.g:956:3: (otherlv_3= Other )?
+            // InternalFeatureLangParser.g:948:3: (otherlv_1= Associations | otherlv_2= Association )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==Other) ) {
+            if ( (LA18_0==Associations) ) {
                 alt18=1;
+            }
+            else if ( (LA18_0==Association) ) {
+                alt18=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 18, 0, input);
+
+                throw nvae;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalFeatureLangParser.g:957:4: otherlv_3= Other
+                    // InternalFeatureLangParser.g:949:4: otherlv_1= Associations
                     {
-                    otherlv_3=(Token)match(input,Other,FOLLOW_28); 
+                    otherlv_1=(Token)match(input,Associations,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getAssociationActionAccess().getOtherKeyword_3());
+                    				newLeafNode(otherlv_1, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1_0());
+                    			
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:954:4: otherlv_2= Association
+                    {
+                    otherlv_2=(Token)match(input,Association,FOLLOW_26); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getAssociationKeyword_1_1());
                     			
 
                     }
@@ -2472,28 +2519,269 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:962:3: ( (lv_target_4_0= ruleClass ) )
-            // InternalFeatureLangParser.g:963:4: (lv_target_4_0= ruleClass )
+            // InternalFeatureLangParser.g:959:3: ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
+
+            if ( (LA19_0==To) ) {
+                alt19=1;
+            }
+            else if ( (LA19_0==RULE_ID) ) {
+                alt19=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 19, 0, input);
+
+                throw nvae;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalFeatureLangParser.g:960:4: ( (lv_create_3_0= ruleCreateAssociation ) )
+                    {
+                    // InternalFeatureLangParser.g:960:4: ( (lv_create_3_0= ruleCreateAssociation ) )
+                    // InternalFeatureLangParser.g:961:5: (lv_create_3_0= ruleCreateAssociation )
+                    {
+                    // InternalFeatureLangParser.g:961:5: (lv_create_3_0= ruleCreateAssociation )
+                    // InternalFeatureLangParser.g:962:6: lv_create_3_0= ruleCreateAssociation
+                    {
+
+                    						newCompositeNode(grammarAccess.getAssociationActionAccess().getCreateCreateAssociationParserRuleCall_2_0_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_create_3_0=ruleCreateAssociation();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+                    						}
+                    						set(
+                    							current,
+                    							"create",
+                    							lv_create_3_0,
+                    							"de.tud.st.featurelang.FeatureLang.CreateAssociation");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:980:4: ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) )
+                    {
+                    // InternalFeatureLangParser.g:980:4: ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) )
+                    // InternalFeatureLangParser.g:981:5: ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) )
+                    {
+                    // InternalFeatureLangParser.g:981:5: ( (lv_name_4_0= RULE_ID ) )
+                    // InternalFeatureLangParser.g:982:6: (lv_name_4_0= RULE_ID )
+                    {
+                    // InternalFeatureLangParser.g:982:6: (lv_name_4_0= RULE_ID )
+                    // InternalFeatureLangParser.g:983:7: lv_name_4_0= RULE_ID
+                    {
+                    lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_27); 
+
+                    							newLeafNode(lv_name_4_0, grammarAccess.getAssociationActionAccess().getNameIDTerminalRuleCall_2_1_0_0());
+                    						
+
+                    							if (current==null) {
+                    								current = createModelElement(grammarAccess.getAssociationActionRule());
+                    							}
+                    							setWithLastConsumed(
+                    								current,
+                    								"name",
+                    								lv_name_4_0,
+                    								"org.eclipse.xtext.common.Terminals.ID");
+                    						
+
+                    }
+
+
+                    }
+
+                    // InternalFeatureLangParser.g:999:5: ( (lv_edit_5_0= ruleEditAssociation ) )
+                    // InternalFeatureLangParser.g:1000:6: (lv_edit_5_0= ruleEditAssociation )
+                    {
+                    // InternalFeatureLangParser.g:1000:6: (lv_edit_5_0= ruleEditAssociation )
+                    // InternalFeatureLangParser.g:1001:7: lv_edit_5_0= ruleEditAssociation
+                    {
+
+                    							newCompositeNode(grammarAccess.getAssociationActionAccess().getEditEditAssociationParserRuleCall_2_1_1_0());
+                    						
+                    pushFollow(FOLLOW_2);
+                    lv_edit_5_0=ruleEditAssociation();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+                    							}
+                    							set(
+                    								current,
+                    								"edit",
+                    								lv_edit_5_0,
+                    								"de.tud.st.featurelang.FeatureLang.EditAssociation");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAssociationAction"
+
+
+    // $ANTLR start "entryRuleCreateAssociation"
+    // InternalFeatureLangParser.g:1027:1: entryRuleCreateAssociation returns [EObject current=null] : iv_ruleCreateAssociation= ruleCreateAssociation EOF ;
+    public final EObject entryRuleCreateAssociation() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCreateAssociation = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1029:2: (iv_ruleCreateAssociation= ruleCreateAssociation EOF )
+            // InternalFeatureLangParser.g:1030:2: iv_ruleCreateAssociation= ruleCreateAssociation EOF
             {
-            // InternalFeatureLangParser.g:963:4: (lv_target_4_0= ruleClass )
-            // InternalFeatureLangParser.g:964:5: lv_target_4_0= ruleClass
+             newCompositeNode(grammarAccess.getCreateAssociationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCreateAssociation=ruleCreateAssociation();
+
+            state._fsp--;
+
+             current =iv_ruleCreateAssociation; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCreateAssociation"
+
+
+    // $ANTLR start "ruleCreateAssociation"
+    // InternalFeatureLangParser.g:1039:1: ruleCreateAssociation returns [EObject current=null] : (otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) ) ;
+    public final EObject ruleCreateAssociation() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token lv_relation_4_0=null;
+        EObject lv_target_2_0 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1046:2: ( (otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1047:2: (otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1047:2: (otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1048:3: otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,To,FOLLOW_28); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getCreateAssociationAccess().getToKeyword_0());
+            		
+            // InternalFeatureLangParser.g:1052:3: (otherlv_1= Other )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==Other) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalFeatureLangParser.g:1053:4: otherlv_1= Other
+                    {
+                    otherlv_1=(Token)match(input,Other,FOLLOW_29); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getCreateAssociationAccess().getOtherKeyword_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalFeatureLangParser.g:1058:3: ( (lv_target_2_0= ruleClass ) )
+            // InternalFeatureLangParser.g:1059:4: (lv_target_2_0= ruleClass )
+            {
+            // InternalFeatureLangParser.g:1059:4: (lv_target_2_0= ruleClass )
+            // InternalFeatureLangParser.g:1060:5: lv_target_2_0= ruleClass
             {
 
-            					newCompositeNode(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getCreateAssociationAccess().getTargetClassParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_29);
-            lv_target_4_0=ruleClass();
+            pushFollow(FOLLOW_30);
+            lv_target_2_0=ruleClass();
 
             state._fsp--;
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+            						current = createModelElementForParent(grammarAccess.getCreateAssociationRule());
             					}
             					set(
             						current,
             						"target",
-            						lv_target_4_0,
+            						lv_target_2_0,
             						"de.tud.st.featurelang.FeatureLang.Class");
             					afterParserOrEnumRuleCall();
             				
@@ -2503,28 +2791,28 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,Called,FOLLOW_21); 
+            otherlv_3=(Token)match(input,Called,FOLLOW_21); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getAssociationActionAccess().getCalledKeyword_5());
+            			newLeafNode(otherlv_3, grammarAccess.getCreateAssociationAccess().getCalledKeyword_3());
             		
-            // InternalFeatureLangParser.g:985:3: ( (lv_relation_6_0= RULE_ID ) )
-            // InternalFeatureLangParser.g:986:4: (lv_relation_6_0= RULE_ID )
+            // InternalFeatureLangParser.g:1081:3: ( (lv_relation_4_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1082:4: (lv_relation_4_0= RULE_ID )
             {
-            // InternalFeatureLangParser.g:986:4: (lv_relation_6_0= RULE_ID )
-            // InternalFeatureLangParser.g:987:5: lv_relation_6_0= RULE_ID
+            // InternalFeatureLangParser.g:1082:4: (lv_relation_4_0= RULE_ID )
+            // InternalFeatureLangParser.g:1083:5: lv_relation_4_0= RULE_ID
             {
-            lv_relation_6_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_relation_4_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_relation_6_0, grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0());
+            					newLeafNode(lv_relation_4_0, grammarAccess.getCreateAssociationAccess().getRelationIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getAssociationActionRule());
+            						current = createModelElement(grammarAccess.getCreateAssociationRule());
             					}
             					setWithLastConsumed(
             						current,
             						"relation",
-            						lv_relation_6_0,
+            						lv_relation_4_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2555,11 +2843,960 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAssociationAction"
+    // $ANTLR end "ruleCreateAssociation"
+
+
+    // $ANTLR start "entryRuleEditAssociation"
+    // InternalFeatureLangParser.g:1106:1: entryRuleEditAssociation returns [EObject current=null] : iv_ruleEditAssociation= ruleEditAssociation EOF ;
+    public final EObject entryRuleEditAssociation() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEditAssociation = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1108:2: (iv_ruleEditAssociation= ruleEditAssociation EOF )
+            // InternalFeatureLangParser.g:1109:2: iv_ruleEditAssociation= ruleEditAssociation EOF
+            {
+             newCompositeNode(grammarAccess.getEditAssociationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEditAssociation=ruleEditAssociation();
+
+            state._fsp--;
+
+             current =iv_ruleEditAssociation; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEditAssociation"
+
+
+    // $ANTLR start "ruleEditAssociation"
+    // InternalFeatureLangParser.g:1118:1: ruleEditAssociation returns [EObject current=null] : ( ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) ) ) ;
+    public final EObject ruleEditAssociation() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_type_0_1 = null;
+
+        EObject lv_type_0_2 = null;
+
+        EObject lv_type_0_3 = null;
+
+        EObject lv_type_0_4 = null;
+
+        EObject lv_type_0_5 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1125:2: ( ( ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) ) ) )
+            // InternalFeatureLangParser.g:1126:2: ( ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) ) )
+            {
+            // InternalFeatureLangParser.g:1126:2: ( ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) ) )
+            // InternalFeatureLangParser.g:1127:3: ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) )
+            {
+            // InternalFeatureLangParser.g:1127:3: ( (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen ) )
+            // InternalFeatureLangParser.g:1128:4: (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen )
+            {
+            // InternalFeatureLangParser.g:1128:4: (lv_type_0_1= ruleSetCompatible | lv_type_0_2= ruleSetVersionRange | lv_type_0_3= ruleSetVariant | lv_type_0_4= ruleSetRightOpen | lv_type_0_5= ruleSetLeftOpen )
+            int alt21=5;
+            switch ( input.LA(1) ) {
+            case Compatible:
+                {
+                alt21=1;
+                }
+                break;
+            case With:
+                {
+                int LA21_2 = input.LA(2);
+
+                if ( (LA21_2==Version) ) {
+                    alt21=2;
+                }
+                else if ( (LA21_2==All) ) {
+                    alt21=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 21, 2, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case Up:
+                {
+                alt21=4;
+                }
+                break;
+            case Starting:
+                {
+                alt21=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 21, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt21) {
+                case 1 :
+                    // InternalFeatureLangParser.g:1129:5: lv_type_0_1= ruleSetCompatible
+                    {
+
+                    					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetCompatibleParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_type_0_1=ruleSetCompatible();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+                    					}
+                    					set(
+                    						current,
+                    						"type",
+                    						lv_type_0_1,
+                    						"de.tud.st.featurelang.FeatureLang.SetCompatible");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:1145:5: lv_type_0_2= ruleSetVersionRange
+                    {
+
+                    					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetVersionRangeParserRuleCall_0_1());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_type_0_2=ruleSetVersionRange();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+                    					}
+                    					set(
+                    						current,
+                    						"type",
+                    						lv_type_0_2,
+                    						"de.tud.st.featurelang.FeatureLang.SetVersionRange");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+                    break;
+                case 3 :
+                    // InternalFeatureLangParser.g:1161:5: lv_type_0_3= ruleSetVariant
+                    {
+
+                    					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetVariantParserRuleCall_0_2());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_type_0_3=ruleSetVariant();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+                    					}
+                    					set(
+                    						current,
+                    						"type",
+                    						lv_type_0_3,
+                    						"de.tud.st.featurelang.FeatureLang.SetVariant");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+                    break;
+                case 4 :
+                    // InternalFeatureLangParser.g:1177:5: lv_type_0_4= ruleSetRightOpen
+                    {
+
+                    					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetRightOpenParserRuleCall_0_3());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_type_0_4=ruleSetRightOpen();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+                    					}
+                    					set(
+                    						current,
+                    						"type",
+                    						lv_type_0_4,
+                    						"de.tud.st.featurelang.FeatureLang.SetRightOpen");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+                    break;
+                case 5 :
+                    // InternalFeatureLangParser.g:1193:5: lv_type_0_5= ruleSetLeftOpen
+                    {
+
+                    					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetLeftOpenParserRuleCall_0_4());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_type_0_5=ruleSetLeftOpen();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+                    					}
+                    					set(
+                    						current,
+                    						"type",
+                    						lv_type_0_5,
+                    						"de.tud.st.featurelang.FeatureLang.SetLeftOpen");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEditAssociation"
+
+
+    // $ANTLR start "entryRuleSetCompatible"
+    // InternalFeatureLangParser.g:1217:1: entryRuleSetCompatible returns [EObject current=null] : iv_ruleSetCompatible= ruleSetCompatible EOF ;
+    public final EObject entryRuleSetCompatible() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetCompatible = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1219:2: (iv_ruleSetCompatible= ruleSetCompatible EOF )
+            // InternalFeatureLangParser.g:1220:2: iv_ruleSetCompatible= ruleSetCompatible EOF
+            {
+             newCompositeNode(grammarAccess.getSetCompatibleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetCompatible=ruleSetCompatible();
+
+            state._fsp--;
+
+             current =iv_ruleSetCompatible; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetCompatible"
+
+
+    // $ANTLR start "ruleSetCompatible"
+    // InternalFeatureLangParser.g:1229:1: ruleSetCompatible returns [EObject current=null] : (otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) ) ) ;
+    public final EObject ruleSetCompatible() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1236:2: ( (otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1237:2: (otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1237:2: (otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1238:3: otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,Compatible,FOLLOW_31); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetCompatibleAccess().getCompatibleKeyword_0());
+            		
+            otherlv_1=(Token)match(input,With,FOLLOW_32); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetCompatibleAccess().getWithKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Version,FOLLOW_21); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetCompatibleAccess().getVersionKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1250:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1251:4: (lv_name_3_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1251:4: (lv_name_3_0= RULE_ID )
+            // InternalFeatureLangParser.g:1252:5: lv_name_3_0= RULE_ID
+            {
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getSetCompatibleAccess().getNameIDTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetCompatibleRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_3_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetCompatible"
+
+
+    // $ANTLR start "entryRuleSetVersionRange"
+    // InternalFeatureLangParser.g:1275:1: entryRuleSetVersionRange returns [EObject current=null] : iv_ruleSetVersionRange= ruleSetVersionRange EOF ;
+    public final EObject entryRuleSetVersionRange() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetVersionRange = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1277:2: (iv_ruleSetVersionRange= ruleSetVersionRange EOF )
+            // InternalFeatureLangParser.g:1278:2: iv_ruleSetVersionRange= ruleSetVersionRange EOF
+            {
+             newCompositeNode(grammarAccess.getSetVersionRangeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetVersionRange=ruleSetVersionRange();
+
+            state._fsp--;
+
+             current =iv_ruleSetVersionRange; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetVersionRange"
+
+
+    // $ANTLR start "ruleSetVersionRange"
+    // InternalFeatureLangParser.g:1287:1: ruleSetVersionRange returns [EObject current=null] : (otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) ) ) ;
+    public final EObject ruleSetVersionRange() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_start_4_0=null;
+        Token otherlv_5=null;
+        Token lv_end_6_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1294:2: ( (otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1295:2: (otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1295:2: (otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1296:3: otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,With,FOLLOW_32); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetVersionRangeAccess().getWithKeyword_0());
+            		
+            otherlv_1=(Token)match(input,Version,FOLLOW_33); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetVersionRangeAccess().getVersionKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Range,FOLLOW_34); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetVersionRangeAccess().getRangeKeyword_2());
+            		
+            otherlv_3=(Token)match(input,From,FOLLOW_21); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSetVersionRangeAccess().getFromKeyword_3());
+            		
+            // InternalFeatureLangParser.g:1312:3: ( (lv_start_4_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1313:4: (lv_start_4_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1313:4: (lv_start_4_0= RULE_ID )
+            // InternalFeatureLangParser.g:1314:5: lv_start_4_0= RULE_ID
+            {
+            lv_start_4_0=(Token)match(input,RULE_ID,FOLLOW_35); 
+
+            					newLeafNode(lv_start_4_0, grammarAccess.getSetVersionRangeAccess().getStartIDTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetVersionRangeRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"start",
+            						lv_start_4_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,To,FOLLOW_21); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getSetVersionRangeAccess().getToKeyword_5());
+            		
+            // InternalFeatureLangParser.g:1334:3: ( (lv_end_6_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1335:4: (lv_end_6_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1335:4: (lv_end_6_0= RULE_ID )
+            // InternalFeatureLangParser.g:1336:5: lv_end_6_0= RULE_ID
+            {
+            lv_end_6_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_end_6_0, grammarAccess.getSetVersionRangeAccess().getEndIDTerminalRuleCall_6_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetVersionRangeRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"end",
+            						lv_end_6_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetVersionRange"
+
+
+    // $ANTLR start "entryRuleSetVariant"
+    // InternalFeatureLangParser.g:1359:1: entryRuleSetVariant returns [EObject current=null] : iv_ruleSetVariant= ruleSetVariant EOF ;
+    public final EObject entryRuleSetVariant() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetVariant = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1361:2: (iv_ruleSetVariant= ruleSetVariant EOF )
+            // InternalFeatureLangParser.g:1362:2: iv_ruleSetVariant= ruleSetVariant EOF
+            {
+             newCompositeNode(grammarAccess.getSetVariantRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetVariant=ruleSetVariant();
+
+            state._fsp--;
+
+             current =iv_ruleSetVariant; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetVariant"
+
+
+    // $ANTLR start "ruleSetVariant"
+    // InternalFeatureLangParser.g:1371:1: ruleSetVariant returns [EObject current=null] : (otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) ) ) ;
+    public final EObject ruleSetVariant() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token lv_name_5_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1378:2: ( (otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1379:2: (otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1379:2: (otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1380:3: otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,With,FOLLOW_36); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetVariantAccess().getWithKeyword_0());
+            		
+            otherlv_1=(Token)match(input,All,FOLLOW_37); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetVariantAccess().getAllKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Versions,FOLLOW_38); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetVariantAccess().getVersionsKeyword_2());
+            		
+            otherlv_3=(Token)match(input,Of,FOLLOW_39); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSetVariantAccess().getOfKeyword_3());
+            		
+            otherlv_4=(Token)match(input,Variant,FOLLOW_21); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getSetVariantAccess().getVariantKeyword_4());
+            		
+            // InternalFeatureLangParser.g:1400:3: ( (lv_name_5_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1401:4: (lv_name_5_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1401:4: (lv_name_5_0= RULE_ID )
+            // InternalFeatureLangParser.g:1402:5: lv_name_5_0= RULE_ID
+            {
+            lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_5_0, grammarAccess.getSetVariantAccess().getNameIDTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetVariantRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_5_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetVariant"
+
+
+    // $ANTLR start "entryRuleSetRightOpen"
+    // InternalFeatureLangParser.g:1425:1: entryRuleSetRightOpen returns [EObject current=null] : iv_ruleSetRightOpen= ruleSetRightOpen EOF ;
+    public final EObject entryRuleSetRightOpen() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetRightOpen = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1427:2: (iv_ruleSetRightOpen= ruleSetRightOpen EOF )
+            // InternalFeatureLangParser.g:1428:2: iv_ruleSetRightOpen= ruleSetRightOpen EOF
+            {
+             newCompositeNode(grammarAccess.getSetRightOpenRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetRightOpen=ruleSetRightOpen();
+
+            state._fsp--;
+
+             current =iv_ruleSetRightOpen; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetRightOpen"
+
+
+    // $ANTLR start "ruleSetRightOpen"
+    // InternalFeatureLangParser.g:1437:1: ruleSetRightOpen returns [EObject current=null] : (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) ) ;
+    public final EObject ruleSetRightOpen() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_date_3_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1444:2: ( (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1445:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1445:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1446:3: otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,Up,FOLLOW_35); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getUpKeyword_0());
+            		
+            otherlv_1=(Token)match(input,To,FOLLOW_40); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getToKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Date,FOLLOW_21); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1458:3: ( (lv_date_3_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1459:4: (lv_date_3_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1459:4: (lv_date_3_0= RULE_ID )
+            // InternalFeatureLangParser.g:1460:5: lv_date_3_0= RULE_ID
+            {
+            lv_date_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateIDTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetRightOpenRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"date",
+            						lv_date_3_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetRightOpen"
+
+
+    // $ANTLR start "entryRuleSetLeftOpen"
+    // InternalFeatureLangParser.g:1483:1: entryRuleSetLeftOpen returns [EObject current=null] : iv_ruleSetLeftOpen= ruleSetLeftOpen EOF ;
+    public final EObject entryRuleSetLeftOpen() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetLeftOpen = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1485:2: (iv_ruleSetLeftOpen= ruleSetLeftOpen EOF )
+            // InternalFeatureLangParser.g:1486:2: iv_ruleSetLeftOpen= ruleSetLeftOpen EOF
+            {
+             newCompositeNode(grammarAccess.getSetLeftOpenRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetLeftOpen=ruleSetLeftOpen();
+
+            state._fsp--;
+
+             current =iv_ruleSetLeftOpen; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetLeftOpen"
+
+
+    // $ANTLR start "ruleSetLeftOpen"
+    // InternalFeatureLangParser.g:1495:1: ruleSetLeftOpen returns [EObject current=null] : (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) ) ;
+    public final EObject ruleSetLeftOpen() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_date_3_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1502:2: ( (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1503:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1503:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1504:3: otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,Starting,FOLLOW_34); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0());
+            		
+            otherlv_1=(Token)match(input,From,FOLLOW_40); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getFromKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Date,FOLLOW_21); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetLeftOpenAccess().getDateKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1516:3: ( (lv_date_3_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1517:4: (lv_date_3_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1517:4: (lv_date_3_0= RULE_ID )
+            // InternalFeatureLangParser.g:1518:5: lv_date_3_0= RULE_ID
+            {
+            lv_date_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_date_3_0, grammarAccess.getSetLeftOpenAccess().getDateIDTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetLeftOpenRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"date",
+            						lv_date_3_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetLeftOpen"
 
 
     // $ANTLR start "entryRuleInheritanceAction"
-    // InternalFeatureLangParser.g:1010:1: entryRuleInheritanceAction returns [EObject current=null] : iv_ruleInheritanceAction= ruleInheritanceAction EOF ;
+    // InternalFeatureLangParser.g:1541:1: entryRuleInheritanceAction returns [EObject current=null] : iv_ruleInheritanceAction= ruleInheritanceAction EOF ;
     public final EObject entryRuleInheritanceAction() throws RecognitionException {
         EObject current = null;
 
@@ -2570,8 +3807,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1012:2: (iv_ruleInheritanceAction= ruleInheritanceAction EOF )
-            // InternalFeatureLangParser.g:1013:2: iv_ruleInheritanceAction= ruleInheritanceAction EOF
+            // InternalFeatureLangParser.g:1543:2: (iv_ruleInheritanceAction= ruleInheritanceAction EOF )
+            // InternalFeatureLangParser.g:1544:2: iv_ruleInheritanceAction= ruleInheritanceAction EOF
             {
              newCompositeNode(grammarAccess.getInheritanceActionRule()); 
             pushFollow(FOLLOW_1);
@@ -2601,8 +3838,184 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInheritanceAction"
-    // InternalFeatureLangParser.g:1022:1: ruleInheritanceAction returns [EObject current=null] : (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) ) ;
+    // InternalFeatureLangParser.g:1553:1: ruleInheritanceAction returns [EObject current=null] : ( ( (lv_create_0_0= ruleCreateInheritance ) ) | ( (lv_edit_1_0= ruleEditInheritance ) ) ) ;
     public final EObject ruleInheritanceAction() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_create_0_0 = null;
+
+        EObject lv_edit_1_0 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1560:2: ( ( ( (lv_create_0_0= ruleCreateInheritance ) ) | ( (lv_edit_1_0= ruleEditInheritance ) ) ) )
+            // InternalFeatureLangParser.g:1561:2: ( ( (lv_create_0_0= ruleCreateInheritance ) ) | ( (lv_edit_1_0= ruleEditInheritance ) ) )
+            {
+            // InternalFeatureLangParser.g:1561:2: ( ( (lv_create_0_0= ruleCreateInheritance ) ) | ( (lv_edit_1_0= ruleEditInheritance ) ) )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
+
+            if ( (LA22_0==Inherit) ) {
+                alt22=1;
+            }
+            else if ( (LA22_0==Have) ) {
+                alt22=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 22, 0, input);
+
+                throw nvae;
+            }
+            switch (alt22) {
+                case 1 :
+                    // InternalFeatureLangParser.g:1562:3: ( (lv_create_0_0= ruleCreateInheritance ) )
+                    {
+                    // InternalFeatureLangParser.g:1562:3: ( (lv_create_0_0= ruleCreateInheritance ) )
+                    // InternalFeatureLangParser.g:1563:4: (lv_create_0_0= ruleCreateInheritance )
+                    {
+                    // InternalFeatureLangParser.g:1563:4: (lv_create_0_0= ruleCreateInheritance )
+                    // InternalFeatureLangParser.g:1564:5: lv_create_0_0= ruleCreateInheritance
+                    {
+
+                    					newCompositeNode(grammarAccess.getInheritanceActionAccess().getCreateCreateInheritanceParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_create_0_0=ruleCreateInheritance();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+                    					}
+                    					set(
+                    						current,
+                    						"create",
+                    						lv_create_0_0,
+                    						"de.tud.st.featurelang.FeatureLang.CreateInheritance");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:1582:3: ( (lv_edit_1_0= ruleEditInheritance ) )
+                    {
+                    // InternalFeatureLangParser.g:1582:3: ( (lv_edit_1_0= ruleEditInheritance ) )
+                    // InternalFeatureLangParser.g:1583:4: (lv_edit_1_0= ruleEditInheritance )
+                    {
+                    // InternalFeatureLangParser.g:1583:4: (lv_edit_1_0= ruleEditInheritance )
+                    // InternalFeatureLangParser.g:1584:5: lv_edit_1_0= ruleEditInheritance
+                    {
+
+                    					newCompositeNode(grammarAccess.getInheritanceActionAccess().getEditEditInheritanceParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_edit_1_0=ruleEditInheritance();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+                    					}
+                    					set(
+                    						current,
+                    						"edit",
+                    						lv_edit_1_0,
+                    						"de.tud.st.featurelang.FeatureLang.EditInheritance");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleInheritanceAction"
+
+
+    // $ANTLR start "entryRuleCreateInheritance"
+    // InternalFeatureLangParser.g:1608:1: entryRuleCreateInheritance returns [EObject current=null] : iv_ruleCreateInheritance= ruleCreateInheritance EOF ;
+    public final EObject entryRuleCreateInheritance() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCreateInheritance = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1610:2: (iv_ruleCreateInheritance= ruleCreateInheritance EOF )
+            // InternalFeatureLangParser.g:1611:2: iv_ruleCreateInheritance= ruleCreateInheritance EOF
+            {
+             newCompositeNode(grammarAccess.getCreateInheritanceRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCreateInheritance=ruleCreateInheritance();
+
+            state._fsp--;
+
+             current =iv_ruleCreateInheritance; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCreateInheritance"
+
+
+    // $ANTLR start "ruleCreateInheritance"
+    // InternalFeatureLangParser.g:1620:1: ruleCreateInheritance returns [EObject current=null] : (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) ) ;
+    public final EObject ruleCreateInheritance() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -2615,28 +4028,28 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1029:2: ( (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) ) )
-            // InternalFeatureLangParser.g:1030:2: (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) )
+            // InternalFeatureLangParser.g:1627:2: ( (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) ) )
+            // InternalFeatureLangParser.g:1628:2: (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) )
             {
-            // InternalFeatureLangParser.g:1030:2: (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) )
-            // InternalFeatureLangParser.g:1031:3: otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) )
+            // InternalFeatureLangParser.g:1628:2: (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) )
+            // InternalFeatureLangParser.g:1629:3: otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) )
             {
-            otherlv_0=(Token)match(input,Inherit,FOLLOW_30); 
+            otherlv_0=(Token)match(input,Inherit,FOLLOW_34); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getInheritanceActionAccess().getInheritKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getCreateInheritanceAccess().getInheritKeyword_0());
             		
-            otherlv_1=(Token)match(input,From,FOLLOW_28); 
+            otherlv_1=(Token)match(input,From,FOLLOW_29); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getInheritanceActionAccess().getFromKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getCreateInheritanceAccess().getFromKeyword_1());
             		
-            // InternalFeatureLangParser.g:1039:3: ( (lv_parent_2_0= ruleClass ) )
-            // InternalFeatureLangParser.g:1040:4: (lv_parent_2_0= ruleClass )
+            // InternalFeatureLangParser.g:1637:3: ( (lv_parent_2_0= ruleClass ) )
+            // InternalFeatureLangParser.g:1638:4: (lv_parent_2_0= ruleClass )
             {
-            // InternalFeatureLangParser.g:1040:4: (lv_parent_2_0= ruleClass )
-            // InternalFeatureLangParser.g:1041:5: lv_parent_2_0= ruleClass
+            // InternalFeatureLangParser.g:1638:4: (lv_parent_2_0= ruleClass )
+            // InternalFeatureLangParser.g:1639:5: lv_parent_2_0= ruleClass
             {
 
-            					newCompositeNode(grammarAccess.getInheritanceActionAccess().getParentClassParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getCreateInheritanceAccess().getParentClassParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
             lv_parent_2_0=ruleClass();
@@ -2645,7 +4058,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+            						current = createModelElementForParent(grammarAccess.getCreateInheritanceRule());
             					}
             					set(
             						current,
@@ -2682,31 +4095,31 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleInheritanceAction"
+    // $ANTLR end "ruleCreateInheritance"
 
 
-    // $ANTLR start "entryRuleCompositionAction"
-    // InternalFeatureLangParser.g:1065:1: entryRuleCompositionAction returns [EObject current=null] : iv_ruleCompositionAction= ruleCompositionAction EOF ;
-    public final EObject entryRuleCompositionAction() throws RecognitionException {
+    // $ANTLR start "entryRuleEditInheritance"
+    // InternalFeatureLangParser.g:1663:1: entryRuleEditInheritance returns [EObject current=null] : iv_ruleEditInheritance= ruleEditInheritance EOF ;
+    public final EObject entryRuleEditInheritance() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleCompositionAction = null;
+        EObject iv_ruleEditInheritance = null;
 
 
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1067:2: (iv_ruleCompositionAction= ruleCompositionAction EOF )
-            // InternalFeatureLangParser.g:1068:2: iv_ruleCompositionAction= ruleCompositionAction EOF
+            // InternalFeatureLangParser.g:1665:2: (iv_ruleEditInheritance= ruleEditInheritance EOF )
+            // InternalFeatureLangParser.g:1666:2: iv_ruleEditInheritance= ruleEditInheritance EOF
             {
-             newCompositeNode(grammarAccess.getCompositionActionRule()); 
+             newCompositeNode(grammarAccess.getEditInheritanceRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleCompositionAction=ruleCompositionAction();
+            iv_ruleEditInheritance=ruleEditInheritance();
 
             state._fsp--;
 
-             current =iv_ruleCompositionAction; 
+             current =iv_ruleEditInheritance; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2724,125 +4137,60 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleCompositionAction"
+    // $ANTLR end "entryRuleEditInheritance"
 
 
-    // $ANTLR start "ruleCompositionAction"
-    // InternalFeatureLangParser.g:1077:1: ruleCompositionAction returns [EObject current=null] : ( (otherlv_0= Compose | otherlv_1= Composes ) ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) ) ;
-    public final EObject ruleCompositionAction() throws RecognitionException {
+    // $ANTLR start "ruleEditInheritance"
+    // InternalFeatureLangParser.g:1675:1: ruleEditInheritance returns [EObject current=null] : (otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) ) ) ;
+    public final EObject ruleEditInheritance() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token lv_relation_4_0=null;
-        EObject lv_target_2_0 = null;
-
+        Token otherlv_2=null;
+        Token lv_uri_3_0=null;
 
 
         	enterRule();
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1084:2: ( ( (otherlv_0= Compose | otherlv_1= Composes ) ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) ) )
-            // InternalFeatureLangParser.g:1085:2: ( (otherlv_0= Compose | otherlv_1= Composes ) ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1682:2: ( (otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1683:2: (otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) ) )
             {
-            // InternalFeatureLangParser.g:1085:2: ( (otherlv_0= Compose | otherlv_1= Composes ) ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) )
-            // InternalFeatureLangParser.g:1086:3: (otherlv_0= Compose | otherlv_1= Composes ) ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1683:2: (otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1684:3: otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) )
             {
-            // InternalFeatureLangParser.g:1086:3: (otherlv_0= Compose | otherlv_1= Composes )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            otherlv_0=(Token)match(input,Have,FOLLOW_41); 
 
-            if ( (LA19_0==Compose) ) {
-                alt19=1;
-            }
-            else if ( (LA19_0==Composes) ) {
-                alt19=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
-
-                throw nvae;
-            }
-            switch (alt19) {
-                case 1 :
-                    // InternalFeatureLangParser.g:1087:4: otherlv_0= Compose
-                    {
-                    otherlv_0=(Token)match(input,Compose,FOLLOW_28); 
-
-                    				newLeafNode(otherlv_0, grammarAccess.getCompositionActionAccess().getComposeKeyword_0_0());
-                    			
-
-                    }
-                    break;
-                case 2 :
-                    // InternalFeatureLangParser.g:1092:4: otherlv_1= Composes
-                    {
-                    otherlv_1=(Token)match(input,Composes,FOLLOW_28); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getCompositionActionAccess().getComposesKeyword_0_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalFeatureLangParser.g:1097:3: ( (lv_target_2_0= ruleClass ) )
-            // InternalFeatureLangParser.g:1098:4: (lv_target_2_0= ruleClass )
-            {
-            // InternalFeatureLangParser.g:1098:4: (lv_target_2_0= ruleClass )
-            // InternalFeatureLangParser.g:1099:5: lv_target_2_0= ruleClass
-            {
-
-            					newCompositeNode(grammarAccess.getCompositionActionAccess().getTargetClassParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_29);
-            lv_target_2_0=ruleClass();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getCompositionActionRule());
-            					}
-            					set(
-            						current,
-            						"target",
-            						lv_target_2_0,
-            						"de.tud.st.featurelang.FeatureLang.Class");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_3=(Token)match(input,Called,FOLLOW_21); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getCompositionActionAccess().getCalledKeyword_2());
+            			newLeafNode(otherlv_0, grammarAccess.getEditInheritanceAccess().getHaveKeyword_0());
             		
-            // InternalFeatureLangParser.g:1120:3: ( (lv_relation_4_0= RULE_ID ) )
-            // InternalFeatureLangParser.g:1121:4: (lv_relation_4_0= RULE_ID )
-            {
-            // InternalFeatureLangParser.g:1121:4: (lv_relation_4_0= RULE_ID )
-            // InternalFeatureLangParser.g:1122:5: lv_relation_4_0= RULE_ID
-            {
-            lv_relation_4_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            otherlv_1=(Token)match(input,Inheritance,FOLLOW_42); 
 
-            					newLeafNode(lv_relation_4_0, grammarAccess.getCompositionActionAccess().getRelationIDTerminalRuleCall_3_0());
+            			newLeafNode(otherlv_1, grammarAccess.getEditInheritanceAccess().getInheritanceKeyword_1());
+            		
+            otherlv_2=(Token)match(input,URI,FOLLOW_21); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getEditInheritanceAccess().getURIKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1696:3: ( (lv_uri_3_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1697:4: (lv_uri_3_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1697:4: (lv_uri_3_0= RULE_ID )
+            // InternalFeatureLangParser.g:1698:5: lv_uri_3_0= RULE_ID
+            {
+            lv_uri_3_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_uri_3_0, grammarAccess.getEditInheritanceAccess().getUriIDTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getCompositionActionRule());
+            						current = createModelElement(grammarAccess.getEditInheritanceRule());
             					}
             					setWithLastConsumed(
             						current,
-            						"relation",
-            						lv_relation_4_0,
+            						"uri",
+            						lv_uri_3_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -2873,11 +4221,625 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleEditInheritance"
+
+
+    // $ANTLR start "entryRuleCompositionAction"
+    // InternalFeatureLangParser.g:1721:1: entryRuleCompositionAction returns [EObject current=null] : iv_ruleCompositionAction= ruleCompositionAction EOF ;
+    public final EObject entryRuleCompositionAction() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCompositionAction = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1723:2: (iv_ruleCompositionAction= ruleCompositionAction EOF )
+            // InternalFeatureLangParser.g:1724:2: iv_ruleCompositionAction= ruleCompositionAction EOF
+            {
+             newCompositeNode(grammarAccess.getCompositionActionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCompositionAction=ruleCompositionAction();
+
+            state._fsp--;
+
+             current =iv_ruleCompositionAction; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCompositionAction"
+
+
+    // $ANTLR start "ruleCompositionAction"
+    // InternalFeatureLangParser.g:1733:1: ruleCompositionAction returns [EObject current=null] : ( ( (lv_create_0_0= ruleCreateComposition ) ) | ( (lv_edit_1_0= ruleEditComposition ) ) ) ;
+    public final EObject ruleCompositionAction() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_create_0_0 = null;
+
+        EObject lv_edit_1_0 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1740:2: ( ( ( (lv_create_0_0= ruleCreateComposition ) ) | ( (lv_edit_1_0= ruleEditComposition ) ) ) )
+            // InternalFeatureLangParser.g:1741:2: ( ( (lv_create_0_0= ruleCreateComposition ) ) | ( (lv_edit_1_0= ruleEditComposition ) ) )
+            {
+            // InternalFeatureLangParser.g:1741:2: ( ( (lv_create_0_0= ruleCreateComposition ) ) | ( (lv_edit_1_0= ruleEditComposition ) ) )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( (LA23_0==Compose) ) {
+                alt23=1;
+            }
+            else if ( (LA23_0==Have) ) {
+                alt23=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 23, 0, input);
+
+                throw nvae;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalFeatureLangParser.g:1742:3: ( (lv_create_0_0= ruleCreateComposition ) )
+                    {
+                    // InternalFeatureLangParser.g:1742:3: ( (lv_create_0_0= ruleCreateComposition ) )
+                    // InternalFeatureLangParser.g:1743:4: (lv_create_0_0= ruleCreateComposition )
+                    {
+                    // InternalFeatureLangParser.g:1743:4: (lv_create_0_0= ruleCreateComposition )
+                    // InternalFeatureLangParser.g:1744:5: lv_create_0_0= ruleCreateComposition
+                    {
+
+                    					newCompositeNode(grammarAccess.getCompositionActionAccess().getCreateCreateCompositionParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_create_0_0=ruleCreateComposition();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getCompositionActionRule());
+                    					}
+                    					set(
+                    						current,
+                    						"create",
+                    						lv_create_0_0,
+                    						"de.tud.st.featurelang.FeatureLang.CreateComposition");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:1762:3: ( (lv_edit_1_0= ruleEditComposition ) )
+                    {
+                    // InternalFeatureLangParser.g:1762:3: ( (lv_edit_1_0= ruleEditComposition ) )
+                    // InternalFeatureLangParser.g:1763:4: (lv_edit_1_0= ruleEditComposition )
+                    {
+                    // InternalFeatureLangParser.g:1763:4: (lv_edit_1_0= ruleEditComposition )
+                    // InternalFeatureLangParser.g:1764:5: lv_edit_1_0= ruleEditComposition
+                    {
+
+                    					newCompositeNode(grammarAccess.getCompositionActionAccess().getEditEditCompositionParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_edit_1_0=ruleEditComposition();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getCompositionActionRule());
+                    					}
+                    					set(
+                    						current,
+                    						"edit",
+                    						lv_edit_1_0,
+                    						"de.tud.st.featurelang.FeatureLang.EditComposition");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleCompositionAction"
 
 
+    // $ANTLR start "entryRuleCreateComposition"
+    // InternalFeatureLangParser.g:1788:1: entryRuleCreateComposition returns [EObject current=null] : iv_ruleCreateComposition= ruleCreateComposition EOF ;
+    public final EObject entryRuleCreateComposition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCreateComposition = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1790:2: (iv_ruleCreateComposition= ruleCreateComposition EOF )
+            // InternalFeatureLangParser.g:1791:2: iv_ruleCreateComposition= ruleCreateComposition EOF
+            {
+             newCompositeNode(grammarAccess.getCreateCompositionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCreateComposition=ruleCreateComposition();
+
+            state._fsp--;
+
+             current =iv_ruleCreateComposition; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCreateComposition"
+
+
+    // $ANTLR start "ruleCreateComposition"
+    // InternalFeatureLangParser.g:1800:1: ruleCreateComposition returns [EObject current=null] : (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) ;
+    public final EObject ruleCreateComposition() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token lv_relation_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        EObject lv_target_1_0 = null;
+
+        EObject lv_priority_6_0 = null;
+
+        Enumerator lv_publicity_8_0 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1807:2: ( (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) )
+            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
+            {
+            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
+            // InternalFeatureLangParser.g:1809:3: otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
+            {
+            otherlv_0=(Token)match(input,Compose,FOLLOW_29); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getCreateCompositionAccess().getComposeKeyword_0());
+            		
+            // InternalFeatureLangParser.g:1813:3: ( (lv_target_1_0= ruleClass ) )
+            // InternalFeatureLangParser.g:1814:4: (lv_target_1_0= ruleClass )
+            {
+            // InternalFeatureLangParser.g:1814:4: (lv_target_1_0= ruleClass )
+            // InternalFeatureLangParser.g:1815:5: lv_target_1_0= ruleClass
+            {
+
+            					newCompositeNode(grammarAccess.getCreateCompositionAccess().getTargetClassParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_30);
+            lv_target_1_0=ruleClass();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+            					}
+            					set(
+            						current,
+            						"target",
+            						lv_target_1_0,
+            						"de.tud.st.featurelang.FeatureLang.Class");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,Called,FOLLOW_21); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getCreateCompositionAccess().getCalledKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1836:3: ( (lv_relation_3_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1837:4: (lv_relation_3_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1837:4: (lv_relation_3_0= RULE_ID )
+            // InternalFeatureLangParser.g:1838:5: lv_relation_3_0= RULE_ID
+            {
+            lv_relation_3_0=(Token)match(input,RULE_ID,FOLLOW_14); 
+
+            					newLeafNode(lv_relation_3_0, grammarAccess.getCreateCompositionAccess().getRelationIDTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getCreateCompositionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"relation",
+            						lv_relation_3_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,FullStop,FOLLOW_23); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4());
+            		
+            // InternalFeatureLangParser.g:1858:3: (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
+
+            if ( (LA24_0==It) ) {
+                alt24=1;
+            }
+            switch (alt24) {
+                case 1 :
+                    // InternalFeatureLangParser.g:1859:4: otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) )
+                    {
+                    otherlv_5=(Token)match(input,It,FOLLOW_9); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_5_0());
+                    			
+                    // InternalFeatureLangParser.g:1863:4: ( (lv_priority_6_0= rulePriority ) )
+                    // InternalFeatureLangParser.g:1864:5: (lv_priority_6_0= rulePriority )
+                    {
+                    // InternalFeatureLangParser.g:1864:5: (lv_priority_6_0= rulePriority )
+                    // InternalFeatureLangParser.g:1865:6: lv_priority_6_0= rulePriority
+                    {
+
+                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0());
+                    					
+                    pushFollow(FOLLOW_43);
+                    lv_priority_6_0=rulePriority();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+                    						}
+                    						set(
+                    							current,
+                    							"priority",
+                    							lv_priority_6_0,
+                    							"de.tud.st.featurelang.FeatureLang.Priority");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,Be,FOLLOW_44); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2());
+                    			
+                    // InternalFeatureLangParser.g:1886:4: ( (lv_publicity_8_0= rulePublicity ) )
+                    // InternalFeatureLangParser.g:1887:5: (lv_publicity_8_0= rulePublicity )
+                    {
+                    // InternalFeatureLangParser.g:1887:5: (lv_publicity_8_0= rulePublicity )
+                    // InternalFeatureLangParser.g:1888:6: lv_publicity_8_0= rulePublicity
+                    {
+
+                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_publicity_8_0=rulePublicity();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+                    						}
+                    						set(
+                    							current,
+                    							"publicity",
+                    							lv_publicity_8_0,
+                    							"de.tud.st.featurelang.FeatureLang.Publicity");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCreateComposition"
+
+
+    // $ANTLR start "entryRuleEditComposition"
+    // InternalFeatureLangParser.g:1913:1: entryRuleEditComposition returns [EObject current=null] : iv_ruleEditComposition= ruleEditComposition EOF ;
+    public final EObject entryRuleEditComposition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEditComposition = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1915:2: (iv_ruleEditComposition= ruleEditComposition EOF )
+            // InternalFeatureLangParser.g:1916:2: iv_ruleEditComposition= ruleEditComposition EOF
+            {
+             newCompositeNode(grammarAccess.getEditCompositionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEditComposition=ruleEditComposition();
+
+            state._fsp--;
+
+             current =iv_ruleEditComposition; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEditComposition"
+
+
+    // $ANTLR start "ruleEditComposition"
+    // InternalFeatureLangParser.g:1925:1: ruleEditComposition returns [EObject current=null] : (otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) ) ) ;
+    public final EObject ruleEditComposition() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_compositionName_2_0=null;
+        Token otherlv_3=null;
+        Token lv_name_5_0=null;
+        Enumerator lv_parameter_4_0 = null;
+
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1932:2: ( (otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:1933:2: (otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) ) )
+            {
+            // InternalFeatureLangParser.g:1933:2: (otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:1934:3: otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,Have,FOLLOW_45); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getEditCompositionAccess().getHaveKeyword_0());
+            		
+            otherlv_1=(Token)match(input,Composition,FOLLOW_21); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getEditCompositionAccess().getCompositionKeyword_1());
+            		
+            // InternalFeatureLangParser.g:1942:3: ( (lv_compositionName_2_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1943:4: (lv_compositionName_2_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1943:4: (lv_compositionName_2_0= RULE_ID )
+            // InternalFeatureLangParser.g:1944:5: lv_compositionName_2_0= RULE_ID
+            {
+            lv_compositionName_2_0=(Token)match(input,RULE_ID,FOLLOW_31); 
+
+            					newLeafNode(lv_compositionName_2_0, grammarAccess.getEditCompositionAccess().getCompositionNameIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEditCompositionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"compositionName",
+            						lv_compositionName_2_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,With,FOLLOW_46); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getEditCompositionAccess().getWithKeyword_3());
+            		
+            // InternalFeatureLangParser.g:1964:3: ( (lv_parameter_4_0= ruleCompositionParameter ) )
+            // InternalFeatureLangParser.g:1965:4: (lv_parameter_4_0= ruleCompositionParameter )
+            {
+            // InternalFeatureLangParser.g:1965:4: (lv_parameter_4_0= ruleCompositionParameter )
+            // InternalFeatureLangParser.g:1966:5: lv_parameter_4_0= ruleCompositionParameter
+            {
+
+            					newCompositeNode(grammarAccess.getEditCompositionAccess().getParameterCompositionParameterEnumRuleCall_4_0());
+            				
+            pushFollow(FOLLOW_21);
+            lv_parameter_4_0=ruleCompositionParameter();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getEditCompositionRule());
+            					}
+            					set(
+            						current,
+            						"parameter",
+            						lv_parameter_4_0,
+            						"de.tud.st.featurelang.FeatureLang.CompositionParameter");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalFeatureLangParser.g:1983:3: ( (lv_name_5_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:1984:4: (lv_name_5_0= RULE_ID )
+            {
+            // InternalFeatureLangParser.g:1984:4: (lv_name_5_0= RULE_ID )
+            // InternalFeatureLangParser.g:1985:5: lv_name_5_0= RULE_ID
+            {
+            lv_name_5_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_name_5_0, grammarAccess.getEditCompositionAccess().getNameIDTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEditCompositionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_5_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEditComposition"
+
+
     // $ANTLR start "entryRuleClass"
-    // InternalFeatureLangParser.g:1145:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
+    // InternalFeatureLangParser.g:2008:1: entryRuleClass returns [EObject current=null] : iv_ruleClass= ruleClass EOF ;
     public final EObject entryRuleClass() throws RecognitionException {
         EObject current = null;
 
@@ -2888,8 +4850,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1147:2: (iv_ruleClass= ruleClass EOF )
-            // InternalFeatureLangParser.g:1148:2: iv_ruleClass= ruleClass EOF
+            // InternalFeatureLangParser.g:2010:2: (iv_ruleClass= ruleClass EOF )
+            // InternalFeatureLangParser.g:2011:2: iv_ruleClass= ruleClass EOF
             {
              newCompositeNode(grammarAccess.getClassRule()); 
             pushFollow(FOLLOW_1);
@@ -2919,7 +4881,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClass"
-    // InternalFeatureLangParser.g:1157:1: ruleClass returns [EObject current=null] : ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) ) ;
+    // InternalFeatureLangParser.g:2020:1: ruleClass returns [EObject current=null] : ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) ) ;
     public final EObject ruleClass() throws RecognitionException {
         EObject current = null;
 
@@ -2935,27 +4897,27 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1164:2: ( ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) ) )
-            // InternalFeatureLangParser.g:1165:2: ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2027:2: ( ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:2028:2: ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) )
             {
-            // InternalFeatureLangParser.g:1165:2: ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) )
-            // InternalFeatureLangParser.g:1166:3: (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2028:2: ( (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2029:3: (otherlv_0= The | otherlv_1= A )? ( (lv_abstract_2_0= ruleAbstraction ) )? (otherlv_3= Class )? ( (lv_name_4_0= RULE_ID ) )
             {
-            // InternalFeatureLangParser.g:1166:3: (otherlv_0= The | otherlv_1= A )?
-            int alt20=3;
-            int LA20_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2029:3: (otherlv_0= The | otherlv_1= A )?
+            int alt25=3;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA20_0==The) ) {
-                alt20=1;
+            if ( (LA25_0==The) ) {
+                alt25=1;
             }
-            else if ( (LA20_0==A) ) {
-                alt20=2;
+            else if ( (LA25_0==A) ) {
+                alt25=2;
             }
-            switch (alt20) {
+            switch (alt25) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1167:4: otherlv_0= The
+                    // InternalFeatureLangParser.g:2030:4: otherlv_0= The
                     {
-                    otherlv_0=(Token)match(input,The,FOLLOW_31); 
+                    otherlv_0=(Token)match(input,The,FOLLOW_47); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getClassAccess().getTheKeyword_0_0());
                     			
@@ -2963,9 +4925,9 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalFeatureLangParser.g:1172:4: otherlv_1= A
+                    // InternalFeatureLangParser.g:2035:4: otherlv_1= A
                     {
-                    otherlv_1=(Token)match(input,A,FOLLOW_31); 
+                    otherlv_1=(Token)match(input,A,FOLLOW_47); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getClassAccess().getAKeyword_0_1());
                     			
@@ -2975,24 +4937,24 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:1177:3: ( (lv_abstract_2_0= ruleAbstraction ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2040:3: ( (lv_abstract_2_0= ruleAbstraction ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA21_0==Abstract) ) {
-                alt21=1;
+            if ( (LA26_0==Abstract) ) {
+                alt26=1;
             }
-            switch (alt21) {
+            switch (alt26) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1178:4: (lv_abstract_2_0= ruleAbstraction )
+                    // InternalFeatureLangParser.g:2041:4: (lv_abstract_2_0= ruleAbstraction )
                     {
-                    // InternalFeatureLangParser.g:1178:4: (lv_abstract_2_0= ruleAbstraction )
-                    // InternalFeatureLangParser.g:1179:5: lv_abstract_2_0= ruleAbstraction
+                    // InternalFeatureLangParser.g:2041:4: (lv_abstract_2_0= ruleAbstraction )
+                    // InternalFeatureLangParser.g:2042:5: lv_abstract_2_0= ruleAbstraction
                     {
 
                     					newCompositeNode(grammarAccess.getClassAccess().getAbstractAbstractionEnumRuleCall_1_0());
                     				
-                    pushFollow(FOLLOW_32);
+                    pushFollow(FOLLOW_48);
                     lv_abstract_2_0=ruleAbstraction();
 
                     state._fsp--;
@@ -3017,16 +4979,16 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:1196:3: (otherlv_3= Class )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2059:3: (otherlv_3= Class )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA22_0==Class) ) {
-                alt22=1;
+            if ( (LA27_0==Class) ) {
+                alt27=1;
             }
-            switch (alt22) {
+            switch (alt27) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1197:4: otherlv_3= Class
+                    // InternalFeatureLangParser.g:2060:4: otherlv_3= Class
                     {
                     otherlv_3=(Token)match(input,Class,FOLLOW_21); 
 
@@ -3038,11 +5000,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:1202:3: ( (lv_name_4_0= RULE_ID ) )
-            // InternalFeatureLangParser.g:1203:4: (lv_name_4_0= RULE_ID )
+            // InternalFeatureLangParser.g:2065:3: ( (lv_name_4_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2066:4: (lv_name_4_0= RULE_ID )
             {
-            // InternalFeatureLangParser.g:1203:4: (lv_name_4_0= RULE_ID )
-            // InternalFeatureLangParser.g:1204:5: lv_name_4_0= RULE_ID
+            // InternalFeatureLangParser.g:2066:4: (lv_name_4_0= RULE_ID )
+            // InternalFeatureLangParser.g:2067:5: lv_name_4_0= RULE_ID
             {
             lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3090,7 +5052,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalFeatureLangParser.g:1227:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalFeatureLangParser.g:2090:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3101,8 +5063,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1229:2: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalFeatureLangParser.g:1230:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalFeatureLangParser.g:2092:2: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalFeatureLangParser.g:2093:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -3132,7 +5094,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalFeatureLangParser.g:1239:1: ruleAttribute returns [EObject current=null] : ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalFeatureLangParser.g:2102:1: ruleAttribute returns [EObject current=null] : ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3144,22 +5106,22 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1246:2: ( ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalFeatureLangParser.g:1247:2: ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2109:2: ( ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:2110:2: ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalFeatureLangParser.g:1247:2: ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalFeatureLangParser.g:1248:3: (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2110:2: ( (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2111:3: (otherlv_0= Attribute )? ( (lv_name_1_0= RULE_ID ) )
             {
-            // InternalFeatureLangParser.g:1248:3: (otherlv_0= Attribute )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2111:3: (otherlv_0= Attribute )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA23_0==Attribute) ) {
-                alt23=1;
+            if ( (LA28_0==Attribute) ) {
+                alt28=1;
             }
-            switch (alt23) {
+            switch (alt28) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1249:4: otherlv_0= Attribute
+                    // InternalFeatureLangParser.g:2112:4: otherlv_0= Attribute
                     {
                     otherlv_0=(Token)match(input,Attribute,FOLLOW_21); 
 
@@ -3171,11 +5133,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:1254:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalFeatureLangParser.g:1255:4: (lv_name_1_0= RULE_ID )
+            // InternalFeatureLangParser.g:2117:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2118:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalFeatureLangParser.g:1255:4: (lv_name_1_0= RULE_ID )
-            // InternalFeatureLangParser.g:1256:5: lv_name_1_0= RULE_ID
+            // InternalFeatureLangParser.g:2118:4: (lv_name_1_0= RULE_ID )
+            // InternalFeatureLangParser.g:2119:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3223,7 +5185,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdentifier"
-    // InternalFeatureLangParser.g:1279:1: entryRuleIdentifier returns [EObject current=null] : iv_ruleIdentifier= ruleIdentifier EOF ;
+    // InternalFeatureLangParser.g:2142:1: entryRuleIdentifier returns [EObject current=null] : iv_ruleIdentifier= ruleIdentifier EOF ;
     public final EObject entryRuleIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -3234,8 +5196,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1281:2: (iv_ruleIdentifier= ruleIdentifier EOF )
-            // InternalFeatureLangParser.g:1282:2: iv_ruleIdentifier= ruleIdentifier EOF
+            // InternalFeatureLangParser.g:2144:2: (iv_ruleIdentifier= ruleIdentifier EOF )
+            // InternalFeatureLangParser.g:2145:2: iv_ruleIdentifier= ruleIdentifier EOF
             {
              newCompositeNode(grammarAccess.getIdentifierRule()); 
             pushFollow(FOLLOW_1);
@@ -3265,7 +5227,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifier"
-    // InternalFeatureLangParser.g:1291:1: ruleIdentifier returns [EObject current=null] : ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalFeatureLangParser.g:2154:1: ruleIdentifier returns [EObject current=null] : ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleIdentifier() throws RecognitionException {
         EObject current = null;
 
@@ -3278,17 +5240,17 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1298:2: ( ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalFeatureLangParser.g:1299:2: ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2161:2: ( ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalFeatureLangParser.g:2162:2: ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalFeatureLangParser.g:1299:2: ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalFeatureLangParser.g:1300:3: ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2162:2: ( ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalFeatureLangParser.g:2163:3: ( (lv_value_0_0= ruleIdentifierValue ) ) ( (lv_name_1_0= RULE_ID ) )
             {
-            // InternalFeatureLangParser.g:1300:3: ( (lv_value_0_0= ruleIdentifierValue ) )
-            // InternalFeatureLangParser.g:1301:4: (lv_value_0_0= ruleIdentifierValue )
+            // InternalFeatureLangParser.g:2163:3: ( (lv_value_0_0= ruleIdentifierValue ) )
+            // InternalFeatureLangParser.g:2164:4: (lv_value_0_0= ruleIdentifierValue )
             {
-            // InternalFeatureLangParser.g:1301:4: (lv_value_0_0= ruleIdentifierValue )
-            // InternalFeatureLangParser.g:1302:5: lv_value_0_0= ruleIdentifierValue
+            // InternalFeatureLangParser.g:2164:4: (lv_value_0_0= ruleIdentifierValue )
+            // InternalFeatureLangParser.g:2165:5: lv_value_0_0= ruleIdentifierValue
             {
 
             					newCompositeNode(grammarAccess.getIdentifierAccess().getValueIdentifierValueEnumRuleCall_0_0());
@@ -3315,11 +5277,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalFeatureLangParser.g:1319:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalFeatureLangParser.g:1320:4: (lv_name_1_0= RULE_ID )
+            // InternalFeatureLangParser.g:2182:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalFeatureLangParser.g:2183:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalFeatureLangParser.g:1320:4: (lv_name_1_0= RULE_ID )
-            // InternalFeatureLangParser.g:1321:5: lv_name_1_0= RULE_ID
+            // InternalFeatureLangParser.g:2183:4: (lv_name_1_0= RULE_ID )
+            // InternalFeatureLangParser.g:2184:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3367,7 +5329,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePriority"
-    // InternalFeatureLangParser.g:1344:1: entryRulePriority returns [EObject current=null] : iv_rulePriority= rulePriority EOF ;
+    // InternalFeatureLangParser.g:2207:1: entryRulePriority returns [EObject current=null] : iv_rulePriority= rulePriority EOF ;
     public final EObject entryRulePriority() throws RecognitionException {
         EObject current = null;
 
@@ -3378,8 +5340,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1346:2: (iv_rulePriority= rulePriority EOF )
-            // InternalFeatureLangParser.g:1347:2: iv_rulePriority= rulePriority EOF
+            // InternalFeatureLangParser.g:2209:2: (iv_rulePriority= rulePriority EOF )
+            // InternalFeatureLangParser.g:2210:2: iv_rulePriority= rulePriority EOF
             {
              newCompositeNode(grammarAccess.getPriorityRule()); 
             pushFollow(FOLLOW_1);
@@ -3409,7 +5371,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePriority"
-    // InternalFeatureLangParser.g:1356:1: rulePriority returns [EObject current=null] : ( (lv_priority_0_0= rulePriorityValue ) ) ;
+    // InternalFeatureLangParser.g:2219:1: rulePriority returns [EObject current=null] : ( (lv_priority_0_0= rulePriorityValue ) ) ;
     public final EObject rulePriority() throws RecognitionException {
         EObject current = null;
 
@@ -3421,14 +5383,14 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1363:2: ( ( (lv_priority_0_0= rulePriorityValue ) ) )
-            // InternalFeatureLangParser.g:1364:2: ( (lv_priority_0_0= rulePriorityValue ) )
+            // InternalFeatureLangParser.g:2226:2: ( ( (lv_priority_0_0= rulePriorityValue ) ) )
+            // InternalFeatureLangParser.g:2227:2: ( (lv_priority_0_0= rulePriorityValue ) )
             {
-            // InternalFeatureLangParser.g:1364:2: ( (lv_priority_0_0= rulePriorityValue ) )
-            // InternalFeatureLangParser.g:1365:3: (lv_priority_0_0= rulePriorityValue )
+            // InternalFeatureLangParser.g:2227:2: ( (lv_priority_0_0= rulePriorityValue ) )
+            // InternalFeatureLangParser.g:2228:3: (lv_priority_0_0= rulePriorityValue )
             {
-            // InternalFeatureLangParser.g:1365:3: (lv_priority_0_0= rulePriorityValue )
-            // InternalFeatureLangParser.g:1366:4: lv_priority_0_0= rulePriorityValue
+            // InternalFeatureLangParser.g:2228:3: (lv_priority_0_0= rulePriorityValue )
+            // InternalFeatureLangParser.g:2229:4: lv_priority_0_0= rulePriorityValue
             {
 
             				newCompositeNode(grammarAccess.getPriorityAccess().getPriorityPriorityValueEnumRuleCall_0());
@@ -3477,8 +5439,211 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePriority"
 
 
+    // $ANTLR start "ruleCompositionParameter"
+    // InternalFeatureLangParser.g:2252:1: ruleCompositionParameter returns [Enumerator current=null] : ( (enumLiteral_0= URI ) | (enumLiteral_1= Role ) | (enumLiteral_2= Target ) ) ;
+    public final Enumerator ruleCompositionParameter() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalFeatureLangParser.g:2258:2: ( ( (enumLiteral_0= URI ) | (enumLiteral_1= Role ) | (enumLiteral_2= Target ) ) )
+            // InternalFeatureLangParser.g:2259:2: ( (enumLiteral_0= URI ) | (enumLiteral_1= Role ) | (enumLiteral_2= Target ) )
+            {
+            // InternalFeatureLangParser.g:2259:2: ( (enumLiteral_0= URI ) | (enumLiteral_1= Role ) | (enumLiteral_2= Target ) )
+            int alt29=3;
+            switch ( input.LA(1) ) {
+            case URI:
+                {
+                alt29=1;
+                }
+                break;
+            case Role:
+                {
+                alt29=2;
+                }
+                break;
+            case Target:
+                {
+                alt29=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 29, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt29) {
+                case 1 :
+                    // InternalFeatureLangParser.g:2260:3: (enumLiteral_0= URI )
+                    {
+                    // InternalFeatureLangParser.g:2260:3: (enumLiteral_0= URI )
+                    // InternalFeatureLangParser.g:2261:4: enumLiteral_0= URI
+                    {
+                    enumLiteral_0=(Token)match(input,URI,FOLLOW_2); 
+
+                    				current = grammarAccess.getCompositionParameterAccess().getURIEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getCompositionParameterAccess().getURIEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:2268:3: (enumLiteral_1= Role )
+                    {
+                    // InternalFeatureLangParser.g:2268:3: (enumLiteral_1= Role )
+                    // InternalFeatureLangParser.g:2269:4: enumLiteral_1= Role
+                    {
+                    enumLiteral_1=(Token)match(input,Role,FOLLOW_2); 
+
+                    				current = grammarAccess.getCompositionParameterAccess().getROLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getCompositionParameterAccess().getROLEEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalFeatureLangParser.g:2276:3: (enumLiteral_2= Target )
+                    {
+                    // InternalFeatureLangParser.g:2276:3: (enumLiteral_2= Target )
+                    // InternalFeatureLangParser.g:2277:4: enumLiteral_2= Target
+                    {
+                    enumLiteral_2=(Token)match(input,Target,FOLLOW_2); 
+
+                    				current = grammarAccess.getCompositionParameterAccess().getTARGETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getCompositionParameterAccess().getTARGETEnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCompositionParameter"
+
+
+    // $ANTLR start "rulePublicity"
+    // InternalFeatureLangParser.g:2287:1: rulePublicity returns [Enumerator current=null] : ( (enumLiteral_0= Public ) | (enumLiteral_1= Private ) ) ;
+    public final Enumerator rulePublicity() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalFeatureLangParser.g:2293:2: ( ( (enumLiteral_0= Public ) | (enumLiteral_1= Private ) ) )
+            // InternalFeatureLangParser.g:2294:2: ( (enumLiteral_0= Public ) | (enumLiteral_1= Private ) )
+            {
+            // InternalFeatureLangParser.g:2294:2: ( (enumLiteral_0= Public ) | (enumLiteral_1= Private ) )
+            int alt30=2;
+            int LA30_0 = input.LA(1);
+
+            if ( (LA30_0==Public) ) {
+                alt30=1;
+            }
+            else if ( (LA30_0==Private) ) {
+                alt30=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 30, 0, input);
+
+                throw nvae;
+            }
+            switch (alt30) {
+                case 1 :
+                    // InternalFeatureLangParser.g:2295:3: (enumLiteral_0= Public )
+                    {
+                    // InternalFeatureLangParser.g:2295:3: (enumLiteral_0= Public )
+                    // InternalFeatureLangParser.g:2296:4: enumLiteral_0= Public
+                    {
+                    enumLiteral_0=(Token)match(input,Public,FOLLOW_2); 
+
+                    				current = grammarAccess.getPublicityAccess().getPUBLICEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getPublicityAccess().getPUBLICEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalFeatureLangParser.g:2303:3: (enumLiteral_1= Private )
+                    {
+                    // InternalFeatureLangParser.g:2303:3: (enumLiteral_1= Private )
+                    // InternalFeatureLangParser.g:2304:4: enumLiteral_1= Private
+                    {
+                    enumLiteral_1=(Token)match(input,Private,FOLLOW_2); 
+
+                    				current = grammarAccess.getPublicityAccess().getPRIVATEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getPublicityAccess().getPRIVATEEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePublicity"
+
+
     // $ANTLR start "rulePriorityValue"
-    // InternalFeatureLangParser.g:1389:1: rulePriorityValue returns [Enumerator current=null] : ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) ) ;
+    // InternalFeatureLangParser.g:2314:1: rulePriorityValue returns [Enumerator current=null] : ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) ) ;
     public final Enumerator rulePriorityValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -3489,31 +5654,31 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalFeatureLangParser.g:1395:2: ( ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) ) )
-            // InternalFeatureLangParser.g:1396:2: ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) )
+            // InternalFeatureLangParser.g:2320:2: ( ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) ) )
+            // InternalFeatureLangParser.g:2321:2: ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) )
             {
-            // InternalFeatureLangParser.g:1396:2: ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2321:2: ( (enumLiteral_0= Should ) | (enumLiteral_1= Must ) )
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA24_0==Should) ) {
-                alt24=1;
+            if ( (LA31_0==Should) ) {
+                alt31=1;
             }
-            else if ( (LA24_0==Must) ) {
-                alt24=2;
+            else if ( (LA31_0==Must) ) {
+                alt31=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt31) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1397:3: (enumLiteral_0= Should )
+                    // InternalFeatureLangParser.g:2322:3: (enumLiteral_0= Should )
                     {
-                    // InternalFeatureLangParser.g:1397:3: (enumLiteral_0= Should )
-                    // InternalFeatureLangParser.g:1398:4: enumLiteral_0= Should
+                    // InternalFeatureLangParser.g:2322:3: (enumLiteral_0= Should )
+                    // InternalFeatureLangParser.g:2323:4: enumLiteral_0= Should
                     {
                     enumLiteral_0=(Token)match(input,Should,FOLLOW_2); 
 
@@ -3527,10 +5692,10 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalFeatureLangParser.g:1405:3: (enumLiteral_1= Must )
+                    // InternalFeatureLangParser.g:2330:3: (enumLiteral_1= Must )
                     {
-                    // InternalFeatureLangParser.g:1405:3: (enumLiteral_1= Must )
-                    // InternalFeatureLangParser.g:1406:4: enumLiteral_1= Must
+                    // InternalFeatureLangParser.g:2330:3: (enumLiteral_1= Must )
+                    // InternalFeatureLangParser.g:2331:4: enumLiteral_1= Must
                     {
                     enumLiteral_1=(Token)match(input,Must,FOLLOW_2); 
 
@@ -3566,7 +5731,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstraction"
-    // InternalFeatureLangParser.g:1416:1: ruleAbstraction returns [Enumerator current=null] : (enumLiteral_0= Abstract ) ;
+    // InternalFeatureLangParser.g:2341:1: ruleAbstraction returns [Enumerator current=null] : (enumLiteral_0= Abstract ) ;
     public final Enumerator ruleAbstraction() throws RecognitionException {
         Enumerator current = null;
 
@@ -3576,11 +5741,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalFeatureLangParser.g:1422:2: ( (enumLiteral_0= Abstract ) )
-            // InternalFeatureLangParser.g:1423:2: (enumLiteral_0= Abstract )
+            // InternalFeatureLangParser.g:2347:2: ( (enumLiteral_0= Abstract ) )
+            // InternalFeatureLangParser.g:2348:2: (enumLiteral_0= Abstract )
             {
-            // InternalFeatureLangParser.g:1423:2: (enumLiteral_0= Abstract )
-            // InternalFeatureLangParser.g:1424:3: enumLiteral_0= Abstract
+            // InternalFeatureLangParser.g:2348:2: (enumLiteral_0= Abstract )
+            // InternalFeatureLangParser.g:2349:3: enumLiteral_0= Abstract
             {
             enumLiteral_0=(Token)match(input,Abstract,FOLLOW_2); 
 
@@ -3610,7 +5775,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifierValue"
-    // InternalFeatureLangParser.g:1433:1: ruleIdentifierValue returns [Enumerator current=null] : ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) ) ;
+    // InternalFeatureLangParser.g:2358:1: ruleIdentifierValue returns [Enumerator current=null] : ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) ) ;
     public final Enumerator ruleIdentifierValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -3621,31 +5786,31 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalFeatureLangParser.g:1439:2: ( ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) ) )
-            // InternalFeatureLangParser.g:1440:2: ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) )
+            // InternalFeatureLangParser.g:2364:2: ( ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) ) )
+            // InternalFeatureLangParser.g:2365:2: ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) )
             {
-            // InternalFeatureLangParser.g:1440:2: ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalFeatureLangParser.g:2365:2: ( (enumLiteral_0= Name ) | (enumLiteral_1= URI ) )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA25_0==Name) ) {
-                alt25=1;
+            if ( (LA32_0==Name) ) {
+                alt32=1;
             }
-            else if ( (LA25_0==URI) ) {
-                alt25=2;
+            else if ( (LA32_0==URI) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+            switch (alt32) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1441:3: (enumLiteral_0= Name )
+                    // InternalFeatureLangParser.g:2366:3: (enumLiteral_0= Name )
                     {
-                    // InternalFeatureLangParser.g:1441:3: (enumLiteral_0= Name )
-                    // InternalFeatureLangParser.g:1442:4: enumLiteral_0= Name
+                    // InternalFeatureLangParser.g:2366:3: (enumLiteral_0= Name )
+                    // InternalFeatureLangParser.g:2367:4: enumLiteral_0= Name
                     {
                     enumLiteral_0=(Token)match(input,Name,FOLLOW_2); 
 
@@ -3659,10 +5824,10 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalFeatureLangParser.g:1449:3: (enumLiteral_1= URI )
+                    // InternalFeatureLangParser.g:2374:3: (enumLiteral_1= URI )
                     {
-                    // InternalFeatureLangParser.g:1449:3: (enumLiteral_1= URI )
-                    // InternalFeatureLangParser.g:1450:4: enumLiteral_1= URI
+                    // InternalFeatureLangParser.g:2374:3: (enumLiteral_1= URI )
+                    // InternalFeatureLangParser.g:2375:4: enumLiteral_1= URI
                     {
                     enumLiteral_1=(Token)match(input,URI,FOLLOW_2); 
 
@@ -3698,7 +5863,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDatatype"
-    // InternalFeatureLangParser.g:1460:1: ruleDatatype returns [Enumerator current=null] : ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) ) ;
+    // InternalFeatureLangParser.g:2385:1: ruleDatatype returns [Enumerator current=null] : ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) ) ;
     public final Enumerator ruleDatatype() throws RecognitionException {
         Enumerator current = null;
 
@@ -3710,40 +5875,40 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalFeatureLangParser.g:1466:2: ( ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) ) )
-            // InternalFeatureLangParser.g:1467:2: ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) )
+            // InternalFeatureLangParser.g:2391:2: ( ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) ) )
+            // InternalFeatureLangParser.g:2392:2: ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) )
             {
-            // InternalFeatureLangParser.g:1467:2: ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) )
-            int alt26=3;
+            // InternalFeatureLangParser.g:2392:2: ( (enumLiteral_0= Time ) | (enumLiteral_1= Phrase ) | (enumLiteral_2= Number ) )
+            int alt33=3;
             switch ( input.LA(1) ) {
             case Time:
                 {
-                alt26=1;
+                alt33=1;
                 }
                 break;
             case Phrase:
                 {
-                alt26=2;
+                alt33=2;
                 }
                 break;
             case Number:
                 {
-                alt26=3;
+                alt33=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt33) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1468:3: (enumLiteral_0= Time )
+                    // InternalFeatureLangParser.g:2393:3: (enumLiteral_0= Time )
                     {
-                    // InternalFeatureLangParser.g:1468:3: (enumLiteral_0= Time )
-                    // InternalFeatureLangParser.g:1469:4: enumLiteral_0= Time
+                    // InternalFeatureLangParser.g:2393:3: (enumLiteral_0= Time )
+                    // InternalFeatureLangParser.g:2394:4: enumLiteral_0= Time
                     {
                     enumLiteral_0=(Token)match(input,Time,FOLLOW_2); 
 
@@ -3757,10 +5922,10 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalFeatureLangParser.g:1476:3: (enumLiteral_1= Phrase )
+                    // InternalFeatureLangParser.g:2401:3: (enumLiteral_1= Phrase )
                     {
-                    // InternalFeatureLangParser.g:1476:3: (enumLiteral_1= Phrase )
-                    // InternalFeatureLangParser.g:1477:4: enumLiteral_1= Phrase
+                    // InternalFeatureLangParser.g:2401:3: (enumLiteral_1= Phrase )
+                    // InternalFeatureLangParser.g:2402:4: enumLiteral_1= Phrase
                     {
                     enumLiteral_1=(Token)match(input,Phrase,FOLLOW_2); 
 
@@ -3774,10 +5939,10 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalFeatureLangParser.g:1484:3: (enumLiteral_2= Number )
+                    // InternalFeatureLangParser.g:2409:3: (enumLiteral_2= Number )
                     {
-                    // InternalFeatureLangParser.g:1484:3: (enumLiteral_2= Number )
-                    // InternalFeatureLangParser.g:1485:4: enumLiteral_2= Number
+                    // InternalFeatureLangParser.g:2409:3: (enumLiteral_2= Number )
+                    // InternalFeatureLangParser.g:2410:4: enumLiteral_2= Number
                     {
                     enumLiteral_2=(Token)match(input,Number,FOLLOW_2); 
 
@@ -3816,21 +5981,21 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
     protected DFA2 dfa2 = new DFA2(this);
     static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\3\6\1\17\1\43\1\16\2\7\1\uffff\1\7\1\uffff";
-    static final String dfa_3s = "\5\43\1\31\2\35\1\uffff\1\35\1\uffff";
+    static final String dfa_2s = "\3\12\1\31\1\64\1\27\2\16\1\uffff\1\16\1\uffff";
+    static final String dfa_3s = "\5\64\1\50\2\54\1\uffff\1\54\1\uffff";
     static final String dfa_4s = "\10\uffff\1\1\1\uffff\1\2";
     static final String dfa_5s = "\13\uffff}>";
     static final String[] dfa_6s = {
-            "\1\3\10\uffff\1\4\13\uffff\1\1\6\uffff\1\2\1\5",
-            "\1\3\10\uffff\1\4\23\uffff\1\5",
-            "\1\3\10\uffff\1\4\23\uffff\1\5",
-            "\1\4\23\uffff\1\5",
+            "\1\3\16\uffff\1\4\20\uffff\1\1\10\uffff\1\2\1\5",
+            "\1\3\16\uffff\1\4\32\uffff\1\5",
+            "\1\3\16\uffff\1\4\32\uffff\1\5",
+            "\1\4\32\uffff\1\5",
             "\1\5",
-            "\1\6\6\uffff\1\7\3\uffff\1\10",
-            "\1\10\1\uffff\2\10\5\uffff\1\12\3\uffff\1\10\5\uffff\1\11\2\uffff\1\12",
-            "\1\10\1\uffff\2\10\5\uffff\1\12\3\uffff\1\10\5\uffff\1\11\2\uffff\1\12",
+            "\1\6\11\uffff\1\7\6\uffff\1\10",
+            "\2\10\12\uffff\1\12\5\uffff\1\10\10\uffff\1\11\2\uffff\1\12",
+            "\2\10\12\uffff\1\12\5\uffff\1\10\10\uffff\1\11\2\uffff\1\12",
             "",
-            "\1\10\1\uffff\2\10\5\uffff\1\12\3\uffff\1\10\10\uffff\1\12",
+            "\2\10\12\uffff\1\12\5\uffff\1\10\13\uffff\1\12",
             ""
     };
 
@@ -3862,35 +6027,51 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000C08008042L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000002204000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000004100680L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000100680L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000411400000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000204000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000024010000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000020010000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000410000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000800000120L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000020100000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000803000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000400040000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000418000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000C08028040L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000C08008040L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0018040002000402L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000010200800000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000002010000C000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000010000C000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0008084400000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000200800000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000120004000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000100004000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0008080000000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0010000000000A00L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000100100000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000001000300000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0008000020000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00080C0000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0011000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0002002000001100L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x001804000A000400L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0018040002000400L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000800008040L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000800008000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000004801000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0010000002000400L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0010000002000000L});
 
 }

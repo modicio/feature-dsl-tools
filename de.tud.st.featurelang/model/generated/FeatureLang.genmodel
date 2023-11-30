@@ -6,6 +6,15 @@
     complianceLevel="11.0" copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="FeatureLang" basePackage="de.tud.st.featurelang" disposableProviderFactory="true"
       fileExtensions="featurelang" ecorePackage="FeatureLang.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//CompositionParameter">
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/URI"/>
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/ROLE"/>
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/TARGET"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//Publicity">
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Publicity/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Publicity/PRIVATE"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//PriorityValue">
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//PriorityValue/SHOULD"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//PriorityValue/MUST"/>
@@ -62,15 +71,57 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AttributeAction/type"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//AssociationAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AssociationAction/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/create"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AssociationAction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/edit"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//CreateAssociation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreateAssociation/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//CreateAssociation/relation"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//EditAssociation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//EditAssociation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetCompatible">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetCompatible/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetVersionRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetVersionRange/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetVersionRange/end"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetVariant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetVariant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetRightOpen">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetRightOpen/date"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetLeftOpen">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetLeftOpen/date"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//InheritanceAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/create"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/edit"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//CreateInheritance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreateInheritance/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//EditInheritance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditInheritance/uri"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//CompositionAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CompositionAction/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//CompositionAction/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CompositionAction/create"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CompositionAction/edit"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//CreateComposition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreateComposition/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//CreateComposition/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreateComposition/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//CreateComposition/publicity"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//EditComposition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/compositionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/name"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/abstract"/>

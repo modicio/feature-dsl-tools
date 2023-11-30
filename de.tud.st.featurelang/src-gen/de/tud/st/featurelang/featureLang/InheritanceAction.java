@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.InheritanceAction#getCreate <em>Create</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.InheritanceAction#getEdit <em>Edit</em>}</li>
  * </ul>
  *
  * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction()
@@ -24,25 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface InheritanceAction extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Parent</b></em>' containment reference.
+   * Returns the value of the '<em><b>Create</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parent</em>' containment reference.
-   * @see #setParent(de.tud.st.featurelang.featureLang.Class)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction_Parent()
+   * @return the value of the '<em>Create</em>' containment reference.
+   * @see #setCreate(CreateInheritance)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction_Create()
    * @model containment="true"
    * @generated
    */
-  de.tud.st.featurelang.featureLang.Class getParent();
+  CreateInheritance getCreate();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}' containment reference.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getCreate <em>Create</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parent</em>' containment reference.
-   * @see #getParent()
+   * @param value the new value of the '<em>Create</em>' containment reference.
+   * @see #getCreate()
    * @generated
    */
-  void setParent(de.tud.st.featurelang.featureLang.Class value);
+  void setCreate(CreateInheritance value);
+
+  /**
+   * Returns the value of the '<em><b>Edit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Edit</em>' containment reference.
+   * @see #setEdit(EditInheritance)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getInheritanceAction_Edit()
+   * @model containment="true"
+   * @generated
+   */
+  EditInheritance getEdit();
+
+  /**
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getEdit <em>Edit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Edit</em>' containment reference.
+   * @see #getEdit()
+   * @generated
+   */
+  void setEdit(EditInheritance value);
 
 } // InheritanceAction

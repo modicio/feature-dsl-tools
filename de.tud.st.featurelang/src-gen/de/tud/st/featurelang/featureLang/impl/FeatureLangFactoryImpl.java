@@ -10,8 +10,15 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
+import de.tud.st.featurelang.featureLang.CompositionParameter;
+import de.tud.st.featurelang.featureLang.CreateAssociation;
+import de.tud.st.featurelang.featureLang.CreateComposition;
+import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
+import de.tud.st.featurelang.featureLang.EditAssociation;
+import de.tud.st.featurelang.featureLang.EditComposition;
+import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
@@ -20,6 +27,12 @@ import de.tud.st.featurelang.featureLang.IdentifierValue;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 import de.tud.st.featurelang.featureLang.Priority;
 import de.tud.st.featurelang.featureLang.PriorityValue;
+import de.tud.st.featurelang.featureLang.Publicity;
+import de.tud.st.featurelang.featureLang.SetCompatible;
+import de.tud.st.featurelang.featureLang.SetLeftOpen;
+import de.tud.st.featurelang.featureLang.SetRightOpen;
+import de.tud.st.featurelang.featureLang.SetVariant;
+import de.tud.st.featurelang.featureLang.SetVersionRange;
 import de.tud.st.featurelang.featureLang.Statement;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 import de.tud.st.featurelang.featureLang.UpdateAttributeDatatype;
@@ -98,8 +111,19 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
       case FeatureLangPackage.UPDATE_ATTRIBUTE_VALUE: return createUpdateAttributeValue();
       case FeatureLangPackage.ATTRIBUTE_ACTION: return createAttributeAction();
       case FeatureLangPackage.ASSOCIATION_ACTION: return createAssociationAction();
+      case FeatureLangPackage.CREATE_ASSOCIATION: return createCreateAssociation();
+      case FeatureLangPackage.EDIT_ASSOCIATION: return createEditAssociation();
+      case FeatureLangPackage.SET_COMPATIBLE: return createSetCompatible();
+      case FeatureLangPackage.SET_VERSION_RANGE: return createSetVersionRange();
+      case FeatureLangPackage.SET_VARIANT: return createSetVariant();
+      case FeatureLangPackage.SET_RIGHT_OPEN: return createSetRightOpen();
+      case FeatureLangPackage.SET_LEFT_OPEN: return createSetLeftOpen();
       case FeatureLangPackage.INHERITANCE_ACTION: return createInheritanceAction();
+      case FeatureLangPackage.CREATE_INHERITANCE: return createCreateInheritance();
+      case FeatureLangPackage.EDIT_INHERITANCE: return createEditInheritance();
       case FeatureLangPackage.COMPOSITION_ACTION: return createCompositionAction();
+      case FeatureLangPackage.CREATE_COMPOSITION: return createCreateComposition();
+      case FeatureLangPackage.EDIT_COMPOSITION: return createEditComposition();
       case FeatureLangPackage.CLASS: return createClass();
       case FeatureLangPackage.ATTRIBUTE: return createAttribute();
       case FeatureLangPackage.IDENTIFIER: return createIdentifier();
@@ -119,6 +143,10 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     switch (eDataType.getClassifierID())
     {
+      case FeatureLangPackage.COMPOSITION_PARAMETER:
+        return createCompositionParameterFromString(eDataType, initialValue);
+      case FeatureLangPackage.PUBLICITY:
+        return createPublicityFromString(eDataType, initialValue);
       case FeatureLangPackage.PRIORITY_VALUE:
         return createPriorityValueFromString(eDataType, initialValue);
       case FeatureLangPackage.ABSTRACTION:
@@ -142,6 +170,10 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     switch (eDataType.getClassifierID())
     {
+      case FeatureLangPackage.COMPOSITION_PARAMETER:
+        return convertCompositionParameterToString(eDataType, instanceValue);
+      case FeatureLangPackage.PUBLICITY:
+        return convertPublicityToString(eDataType, instanceValue);
       case FeatureLangPackage.PRIORITY_VALUE:
         return convertPriorityValueToString(eDataType, instanceValue);
       case FeatureLangPackage.ABSTRACTION:
@@ -293,6 +325,90 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
    * @generated
    */
   @Override
+  public CreateAssociation createCreateAssociation()
+  {
+    CreateAssociationImpl createAssociation = new CreateAssociationImpl();
+    return createAssociation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EditAssociation createEditAssociation()
+  {
+    EditAssociationImpl editAssociation = new EditAssociationImpl();
+    return editAssociation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetCompatible createSetCompatible()
+  {
+    SetCompatibleImpl setCompatible = new SetCompatibleImpl();
+    return setCompatible;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetVersionRange createSetVersionRange()
+  {
+    SetVersionRangeImpl setVersionRange = new SetVersionRangeImpl();
+    return setVersionRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetVariant createSetVariant()
+  {
+    SetVariantImpl setVariant = new SetVariantImpl();
+    return setVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetRightOpen createSetRightOpen()
+  {
+    SetRightOpenImpl setRightOpen = new SetRightOpenImpl();
+    return setRightOpen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SetLeftOpen createSetLeftOpen()
+  {
+    SetLeftOpenImpl setLeftOpen = new SetLeftOpenImpl();
+    return setLeftOpen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public InheritanceAction createInheritanceAction()
   {
     InheritanceActionImpl inheritanceAction = new InheritanceActionImpl();
@@ -305,10 +421,58 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
    * @generated
    */
   @Override
+  public CreateInheritance createCreateInheritance()
+  {
+    CreateInheritanceImpl createInheritance = new CreateInheritanceImpl();
+    return createInheritance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EditInheritance createEditInheritance()
+  {
+    EditInheritanceImpl editInheritance = new EditInheritanceImpl();
+    return editInheritance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public CompositionAction createCompositionAction()
   {
     CompositionActionImpl compositionAction = new CompositionActionImpl();
     return compositionAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CreateComposition createCreateComposition()
+  {
+    CreateCompositionImpl createComposition = new CreateCompositionImpl();
+    return createComposition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EditComposition createEditComposition()
+  {
+    EditCompositionImpl editComposition = new EditCompositionImpl();
+    return editComposition;
   }
 
   /**
@@ -357,6 +521,50 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     PriorityImpl priority = new PriorityImpl();
     return priority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CompositionParameter createCompositionParameterFromString(EDataType eDataType, String initialValue)
+  {
+    CompositionParameter result = CompositionParameter.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCompositionParameterToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Publicity createPublicityFromString(EDataType eDataType, String initialValue)
+  {
+    Publicity result = Publicity.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertPublicityToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

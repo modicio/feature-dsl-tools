@@ -9,12 +9,23 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
+import de.tud.st.featurelang.featureLang.CreateAssociation;
+import de.tud.st.featurelang.featureLang.CreateComposition;
+import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
+import de.tud.st.featurelang.featureLang.EditAssociation;
+import de.tud.st.featurelang.featureLang.EditComposition;
+import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.Identifier;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 import de.tud.st.featurelang.featureLang.Priority;
+import de.tud.st.featurelang.featureLang.SetCompatible;
+import de.tud.st.featurelang.featureLang.SetLeftOpen;
+import de.tud.st.featurelang.featureLang.SetRightOpen;
+import de.tud.st.featurelang.featureLang.SetVariant;
+import de.tud.st.featurelang.featureLang.SetVersionRange;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 import de.tud.st.featurelang.featureLang.UpdateAttributeDatatype;
 import de.tud.st.featurelang.featureLang.UpdateAttributeIdentifier;
@@ -66,8 +77,26 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case FeatureLangPackage.COMPOSITION_ACTION:
 				sequence_CompositionAction(context, (CompositionAction) semanticObject); 
 				return; 
+			case FeatureLangPackage.CREATE_ASSOCIATION:
+				sequence_CreateAssociation(context, (CreateAssociation) semanticObject); 
+				return; 
+			case FeatureLangPackage.CREATE_COMPOSITION:
+				sequence_CreateComposition(context, (CreateComposition) semanticObject); 
+				return; 
+			case FeatureLangPackage.CREATE_INHERITANCE:
+				sequence_CreateInheritance(context, (CreateInheritance) semanticObject); 
+				return; 
 			case FeatureLangPackage.CREATION_STATEMENT:
 				sequence_CreationStatement(context, (CreationStatement) semanticObject); 
+				return; 
+			case FeatureLangPackage.EDIT_ASSOCIATION:
+				sequence_EditAssociation(context, (EditAssociation) semanticObject); 
+				return; 
+			case FeatureLangPackage.EDIT_COMPOSITION:
+				sequence_EditComposition(context, (EditComposition) semanticObject); 
+				return; 
+			case FeatureLangPackage.EDIT_INHERITANCE:
+				sequence_EditInheritance(context, (EditInheritance) semanticObject); 
 				return; 
 			case FeatureLangPackage.FEATURE_REQUEST:
 				sequence_FeatureRequest(context, (FeatureRequest) semanticObject); 
@@ -80,6 +109,21 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case FeatureLangPackage.PRIORITY:
 				sequence_Priority(context, (Priority) semanticObject); 
+				return; 
+			case FeatureLangPackage.SET_COMPATIBLE:
+				sequence_SetCompatible(context, (SetCompatible) semanticObject); 
+				return; 
+			case FeatureLangPackage.SET_LEFT_OPEN:
+				sequence_SetLeftOpen(context, (SetLeftOpen) semanticObject); 
+				return; 
+			case FeatureLangPackage.SET_RIGHT_OPEN:
+				sequence_SetRightOpen(context, (SetRightOpen) semanticObject); 
+				return; 
+			case FeatureLangPackage.SET_VARIANT:
+				sequence_SetVariant(context, (SetVariant) semanticObject); 
+				return; 
+			case FeatureLangPackage.SET_VERSION_RANGE:
+				sequence_SetVersionRange(context, (SetVersionRange) semanticObject); 
 				return; 
 			case FeatureLangPackage.UPDATE_ACTION:
 				sequence_UpdateAction(context, (UpdateAction) semanticObject); 
@@ -118,20 +162,11 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AssociationAction returns AssociationAction
 	 *
 	 * Constraint:
-	 *     (target=Class relation=ID)
+	 *     (create=CreateAssociation | (name=ID edit=EditAssociation))
 	 * </pre>
 	 */
 	protected void sequence_AssociationAction(ISerializationContext context, AssociationAction semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__TARGET));
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__RELATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.ASSOCIATION_ACTION__RELATION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0(), semanticObject.getRelation());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -204,19 +239,67 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CompositionAction returns CompositionAction
 	 *
 	 * Constraint:
-	 *     (target=Class relation=ID)
+	 *     (create=CreateComposition | edit=EditComposition)
 	 * </pre>
 	 */
 	protected void sequence_CompositionAction(ISerializationContext context, CompositionAction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CreateAssociation returns CreateAssociation
+	 *
+	 * Constraint:
+	 *     (target=Class relation=ID)
+	 * </pre>
+	 */
+	protected void sequence_CreateAssociation(ISerializationContext context, CreateAssociation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.COMPOSITION_ACTION__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.COMPOSITION_ACTION__TARGET));
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.COMPOSITION_ACTION__RELATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.COMPOSITION_ACTION__RELATION));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.CREATE_ASSOCIATION__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.CREATE_ASSOCIATION__TARGET));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.CREATE_ASSOCIATION__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.CREATE_ASSOCIATION__RELATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCompositionActionAccess().getTargetClassParserRuleCall_1_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getCompositionActionAccess().getRelationIDTerminalRuleCall_3_0(), semanticObject.getRelation());
+		feeder.accept(grammarAccess.getCreateAssociationAccess().getTargetClassParserRuleCall_2_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getCreateAssociationAccess().getRelationIDTerminalRuleCall_4_0(), semanticObject.getRelation());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CreateComposition returns CreateComposition
+	 *
+	 * Constraint:
+	 *     (target=Class relation=ID (priority=Priority publicity=Publicity)?)
+	 * </pre>
+	 */
+	protected void sequence_CreateComposition(ISerializationContext context, CreateComposition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CreateInheritance returns CreateInheritance
+	 *
+	 * Constraint:
+	 *     parent=Class
+	 * </pre>
+	 */
+	protected void sequence_CreateInheritance(ISerializationContext context, CreateInheritance semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.CREATE_INHERITANCE__PARENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.CREATE_INHERITANCE__PARENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCreateInheritanceAccess().getParentClassParserRuleCall_2_0(), semanticObject.getParent());
 		feeder.finish();
 	}
 	
@@ -233,6 +316,66 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_CreationStatement(ISerializationContext context, CreationStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EditAssociation returns EditAssociation
+	 *
+	 * Constraint:
+	 *     (type=SetCompatible | type=SetVersionRange | type=SetVariant | type=SetRightOpen | type=SetLeftOpen)
+	 * </pre>
+	 */
+	protected void sequence_EditAssociation(ISerializationContext context, EditAssociation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EditComposition returns EditComposition
+	 *
+	 * Constraint:
+	 *     (compositionName=ID parameter=CompositionParameter name=ID)
+	 * </pre>
+	 */
+	protected void sequence_EditComposition(ISerializationContext context, EditComposition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__COMPOSITION_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__COMPOSITION_NAME));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__PARAMETER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__PARAMETER));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.EDIT_COMPOSITION__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEditCompositionAccess().getCompositionNameIDTerminalRuleCall_2_0(), semanticObject.getCompositionName());
+		feeder.accept(grammarAccess.getEditCompositionAccess().getParameterCompositionParameterEnumRuleCall_4_0(), semanticObject.getParameter());
+		feeder.accept(grammarAccess.getEditCompositionAccess().getNameIDTerminalRuleCall_5_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EditInheritance returns EditInheritance
+	 *
+	 * Constraint:
+	 *     uri=ID
+	 * </pre>
+	 */
+	protected void sequence_EditInheritance(ISerializationContext context, EditInheritance semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.EDIT_INHERITANCE__URI) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.EDIT_INHERITANCE__URI));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEditInheritanceAccess().getUriIDTerminalRuleCall_3_0(), semanticObject.getUri());
+		feeder.finish();
 	}
 	
 	
@@ -279,17 +422,11 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     InheritanceAction returns InheritanceAction
 	 *
 	 * Constraint:
-	 *     parent=Class
+	 *     (create=CreateInheritance | edit=EditInheritance)
 	 * </pre>
 	 */
 	protected void sequence_InheritanceAction(ISerializationContext context, InheritanceAction semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__PARENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.INHERITANCE_ACTION__PARENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInheritanceActionAccess().getParentClassParserRuleCall_2_0(), semanticObject.getParent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -309,6 +446,109 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPriorityAccess().getPriorityPriorityValueEnumRuleCall_0(), semanticObject.getPriority());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SetCompatible returns SetCompatible
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_SetCompatible(ISerializationContext context, SetCompatible semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_COMPATIBLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_COMPATIBLE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetCompatibleAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SetLeftOpen returns SetLeftOpen
+	 *
+	 * Constraint:
+	 *     date=ID
+	 * </pre>
+	 */
+	protected void sequence_SetLeftOpen(ISerializationContext context, SetLeftOpen semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_LEFT_OPEN__DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_LEFT_OPEN__DATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetLeftOpenAccess().getDateIDTerminalRuleCall_3_0(), semanticObject.getDate());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SetRightOpen returns SetRightOpen
+	 *
+	 * Constraint:
+	 *     date=ID
+	 * </pre>
+	 */
+	protected void sequence_SetRightOpen(ISerializationContext context, SetRightOpen semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_RIGHT_OPEN__DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_RIGHT_OPEN__DATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetRightOpenAccess().getDateIDTerminalRuleCall_3_0(), semanticObject.getDate());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SetVariant returns SetVariant
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_SetVariant(ISerializationContext context, SetVariant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_VARIANT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_VARIANT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetVariantAccess().getNameIDTerminalRuleCall_5_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SetVersionRange returns SetVersionRange
+	 *
+	 * Constraint:
+	 *     (start=ID end=ID)
+	 * </pre>
+	 */
+	protected void sequence_SetVersionRange(ISerializationContext context, SetVersionRange semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_VERSION_RANGE__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_VERSION_RANGE__START));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.SET_VERSION_RANGE__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_VERSION_RANGE__END));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSetVersionRangeAccess().getStartIDTerminalRuleCall_4_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getSetVersionRangeAccess().getEndIDTerminalRuleCall_6_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	

@@ -123,6 +123,69 @@ public interface FeatureLangFactory extends EFactory
   AssociationAction createAssociationAction();
 
   /**
+   * Returns a new object of class '<em>Create Association</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Association</em>'.
+   * @generated
+   */
+  CreateAssociation createCreateAssociation();
+
+  /**
+   * Returns a new object of class '<em>Edit Association</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edit Association</em>'.
+   * @generated
+   */
+  EditAssociation createEditAssociation();
+
+  /**
+   * Returns a new object of class '<em>Set Compatible</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Compatible</em>'.
+   * @generated
+   */
+  SetCompatible createSetCompatible();
+
+  /**
+   * Returns a new object of class '<em>Set Version Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Version Range</em>'.
+   * @generated
+   */
+  SetVersionRange createSetVersionRange();
+
+  /**
+   * Returns a new object of class '<em>Set Variant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Variant</em>'.
+   * @generated
+   */
+  SetVariant createSetVariant();
+
+  /**
+   * Returns a new object of class '<em>Set Right Open</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Right Open</em>'.
+   * @generated
+   */
+  SetRightOpen createSetRightOpen();
+
+  /**
+   * Returns a new object of class '<em>Set Left Open</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Left Open</em>'.
+   * @generated
+   */
+  SetLeftOpen createSetLeftOpen();
+
+  /**
    * Returns a new object of class '<em>Inheritance Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -132,6 +195,24 @@ public interface FeatureLangFactory extends EFactory
   InheritanceAction createInheritanceAction();
 
   /**
+   * Returns a new object of class '<em>Create Inheritance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Inheritance</em>'.
+   * @generated
+   */
+  CreateInheritance createCreateInheritance();
+
+  /**
+   * Returns a new object of class '<em>Edit Inheritance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edit Inheritance</em>'.
+   * @generated
+   */
+  EditInheritance createEditInheritance();
+
+  /**
    * Returns a new object of class '<em>Composition Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +220,24 @@ public interface FeatureLangFactory extends EFactory
    * @generated
    */
   CompositionAction createCompositionAction();
+
+  /**
+   * Returns a new object of class '<em>Create Composition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Create Composition</em>'.
+   * @generated
+   */
+  CreateComposition createCreateComposition();
+
+  /**
+   * Returns a new object of class '<em>Edit Composition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Edit Composition</em>'.
+   * @generated
+   */
+  EditComposition createEditComposition();
 
   /**
    * Returns a new object of class '<em>Class</em>'.

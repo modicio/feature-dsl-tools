@@ -945,57 +945,588 @@ ruleAssociationAction returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAssociationActionAccess().getHaveKeyword_0());
 		}
-		otherlv_1=Associations
+		(
+			otherlv_1=Associations
+			{
+				newLeafNode(otherlv_1, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1_0());
+			}
+			    |
+			otherlv_2=Association
+			{
+				newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getAssociationKeyword_1_1());
+			}
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAssociationActionAccess().getCreateCreateAssociationParserRuleCall_2_0_0());
+					}
+					lv_create_3_0=ruleCreateAssociation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+						}
+						set(
+							$current,
+							"create",
+							lv_create_3_0,
+							"de.tud.st.featurelang.FeatureLang.CreateAssociation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					(
+						lv_name_4_0=RULE_ID
+						{
+							newLeafNode(lv_name_4_0, grammarAccess.getAssociationActionAccess().getNameIDTerminalRuleCall_2_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getAssociationActionRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"name",
+								lv_name_4_0,
+								"org.eclipse.xtext.common.Terminals.ID");
+						}
+					)
+				)
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAssociationActionAccess().getEditEditAssociationParserRuleCall_2_1_1_0());
+						}
+						lv_edit_5_0=ruleEditAssociation
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+							}
+							set(
+								$current,
+								"edit",
+								lv_edit_5_0,
+								"de.tud.st.featurelang.FeatureLang.EditAssociation");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleCreateAssociation
+entryRuleCreateAssociation returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getCreateAssociationRule()); }
+	iv_ruleCreateAssociation=ruleCreateAssociation
+	{ $current=$iv_ruleCreateAssociation.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule CreateAssociation
+ruleCreateAssociation returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=To
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1());
-		}
-		otherlv_2=To
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getToKeyword_2());
+			newLeafNode(otherlv_0, grammarAccess.getCreateAssociationAccess().getToKeyword_0());
 		}
 		(
-			otherlv_3=Other
+			otherlv_1=Other
 			{
-				newLeafNode(otherlv_3, grammarAccess.getAssociationActionAccess().getOtherKeyword_3());
+				newLeafNode(otherlv_1, grammarAccess.getCreateAssociationAccess().getOtherKeyword_1());
 			}
 		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAssociationActionAccess().getTargetClassParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getCreateAssociationAccess().getTargetClassParserRuleCall_2_0());
 				}
-				lv_target_4_0=ruleClass
+				lv_target_2_0=ruleClass
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAssociationActionRule());
+						$current = createModelElementForParent(grammarAccess.getCreateAssociationRule());
 					}
 					set(
 						$current,
 						"target",
-						lv_target_4_0,
+						lv_target_2_0,
 						"de.tud.st.featurelang.FeatureLang.Class");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5=Called
+		otherlv_3=Called
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAssociationActionAccess().getCalledKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getCreateAssociationAccess().getCalledKeyword_3());
 		}
 		(
 			(
-				lv_relation_6_0=RULE_ID
+				lv_relation_4_0=RULE_ID
 				{
-					newLeafNode(lv_relation_6_0, grammarAccess.getAssociationActionAccess().getRelationIDTerminalRuleCall_6_0());
+					newLeafNode(lv_relation_4_0, grammarAccess.getCreateAssociationAccess().getRelationIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociationActionRule());
+						$current = createModelElement(grammarAccess.getCreateAssociationRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"relation",
-						lv_relation_6_0,
+						lv_relation_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleEditAssociation
+entryRuleEditAssociation returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getEditAssociationRule()); }
+	iv_ruleEditAssociation=ruleEditAssociation
+	{ $current=$iv_ruleEditAssociation.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule EditAssociation
+ruleEditAssociation returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetCompatibleParserRuleCall_0_0());
+				}
+				lv_type_0_1=ruleSetCompatible
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_1,
+						"de.tud.st.featurelang.FeatureLang.SetCompatible");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetVersionRangeParserRuleCall_0_1());
+				}
+				lv_type_0_2=ruleSetVersionRange
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_2,
+						"de.tud.st.featurelang.FeatureLang.SetVersionRange");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetVariantParserRuleCall_0_2());
+				}
+				lv_type_0_3=ruleSetVariant
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_3,
+						"de.tud.st.featurelang.FeatureLang.SetVariant");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetRightOpenParserRuleCall_0_3());
+				}
+				lv_type_0_4=ruleSetRightOpen
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_4,
+						"de.tud.st.featurelang.FeatureLang.SetRightOpen");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getEditAssociationAccess().getTypeSetLeftOpenParserRuleCall_0_4());
+				}
+				lv_type_0_5=ruleSetLeftOpen
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditAssociationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_5,
+						"de.tud.st.featurelang.FeatureLang.SetLeftOpen");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetCompatible
+entryRuleSetCompatible returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetCompatibleRule()); }
+	iv_ruleSetCompatible=ruleSetCompatible
+	{ $current=$iv_ruleSetCompatible.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetCompatible
+ruleSetCompatible returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Compatible
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetCompatibleAccess().getCompatibleKeyword_0());
+		}
+		otherlv_1=With
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetCompatibleAccess().getWithKeyword_1());
+		}
+		otherlv_2=Version
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetCompatibleAccess().getVersionKeyword_2());
+		}
+		(
+			(
+				lv_name_3_0=RULE_ID
+				{
+					newLeafNode(lv_name_3_0, grammarAccess.getSetCompatibleAccess().getNameIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetCompatibleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetVersionRange
+entryRuleSetVersionRange returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetVersionRangeRule()); }
+	iv_ruleSetVersionRange=ruleSetVersionRange
+	{ $current=$iv_ruleSetVersionRange.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetVersionRange
+ruleSetVersionRange returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=With
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetVersionRangeAccess().getWithKeyword_0());
+		}
+		otherlv_1=Version
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetVersionRangeAccess().getVersionKeyword_1());
+		}
+		otherlv_2=Range
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetVersionRangeAccess().getRangeKeyword_2());
+		}
+		otherlv_3=From
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSetVersionRangeAccess().getFromKeyword_3());
+		}
+		(
+			(
+				lv_start_4_0=RULE_ID
+				{
+					newLeafNode(lv_start_4_0, grammarAccess.getSetVersionRangeAccess().getStartIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetVersionRangeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"start",
+						lv_start_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_5=To
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSetVersionRangeAccess().getToKeyword_5());
+		}
+		(
+			(
+				lv_end_6_0=RULE_ID
+				{
+					newLeafNode(lv_end_6_0, grammarAccess.getSetVersionRangeAccess().getEndIDTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetVersionRangeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"end",
+						lv_end_6_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetVariant
+entryRuleSetVariant returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetVariantRule()); }
+	iv_ruleSetVariant=ruleSetVariant
+	{ $current=$iv_ruleSetVariant.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetVariant
+ruleSetVariant returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=With
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetVariantAccess().getWithKeyword_0());
+		}
+		otherlv_1=All
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetVariantAccess().getAllKeyword_1());
+		}
+		otherlv_2=Versions
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetVariantAccess().getVersionsKeyword_2());
+		}
+		otherlv_3=Of
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSetVariantAccess().getOfKeyword_3());
+		}
+		otherlv_4=Variant
+		{
+			newLeafNode(otherlv_4, grammarAccess.getSetVariantAccess().getVariantKeyword_4());
+		}
+		(
+			(
+				lv_name_5_0=RULE_ID
+				{
+					newLeafNode(lv_name_5_0, grammarAccess.getSetVariantAccess().getNameIDTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetVariantRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_5_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetRightOpen
+entryRuleSetRightOpen returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetRightOpenRule()); }
+	iv_ruleSetRightOpen=ruleSetRightOpen
+	{ $current=$iv_ruleSetRightOpen.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetRightOpen
+ruleSetRightOpen returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Up
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getUpKeyword_0());
+		}
+		otherlv_1=To
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getToKeyword_1());
+		}
+		otherlv_2=Date
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
+		}
+		(
+			(
+				lv_date_3_0=RULE_ID
+				{
+					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetRightOpenRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"date",
+						lv_date_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetLeftOpen
+entryRuleSetLeftOpen returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetLeftOpenRule()); }
+	iv_ruleSetLeftOpen=ruleSetLeftOpen
+	{ $current=$iv_ruleSetLeftOpen.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetLeftOpen
+ruleSetLeftOpen returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Starting
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0());
+		}
+		otherlv_1=From
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getFromKeyword_1());
+		}
+		otherlv_2=Date
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetLeftOpenAccess().getDateKeyword_2());
+		}
+		(
+			(
+				lv_date_3_0=RULE_ID
+				{
+					newLeafNode(lv_date_3_0, grammarAccess.getSetLeftOpenAccess().getDateIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetLeftOpenRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"date",
+						lv_date_3_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -1028,23 +1559,90 @@ ruleInheritanceAction returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInheritanceActionAccess().getCreateCreateInheritanceParserRuleCall_0_0());
+				}
+				lv_create_0_0=ruleCreateInheritance
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+					}
+					set(
+						$current,
+						"create",
+						lv_create_0_0,
+						"de.tud.st.featurelang.FeatureLang.CreateInheritance");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInheritanceActionAccess().getEditEditInheritanceParserRuleCall_1_0());
+				}
+				lv_edit_1_0=ruleEditInheritance
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+					}
+					set(
+						$current,
+						"edit",
+						lv_edit_1_0,
+						"de.tud.st.featurelang.FeatureLang.EditInheritance");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleCreateInheritance
+entryRuleCreateInheritance returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getCreateInheritanceRule()); }
+	iv_ruleCreateInheritance=ruleCreateInheritance
+	{ $current=$iv_ruleCreateInheritance.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule CreateInheritance
+ruleCreateInheritance returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
 		otherlv_0=Inherit
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInheritanceActionAccess().getInheritKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getCreateInheritanceAccess().getInheritKeyword_0());
 		}
 		otherlv_1=From
 		{
-			newLeafNode(otherlv_1, grammarAccess.getInheritanceActionAccess().getFromKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCreateInheritanceAccess().getFromKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInheritanceActionAccess().getParentClassParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCreateInheritanceAccess().getParentClassParserRuleCall_2_0());
 				}
 				lv_parent_2_0=ruleClass
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInheritanceActionRule());
+						$current = createModelElementForParent(grammarAccess.getCreateInheritanceRule());
 					}
 					set(
 						$current,
@@ -1052,6 +1650,64 @@ ruleInheritanceAction returns [EObject current=null]
 						lv_parent_2_0,
 						"de.tud.st.featurelang.FeatureLang.Class");
 					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleEditInheritance
+entryRuleEditInheritance returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getEditInheritanceRule()); }
+	iv_ruleEditInheritance=ruleEditInheritance
+	{ $current=$iv_ruleEditInheritance.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule EditInheritance
+ruleEditInheritance returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Have
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEditInheritanceAccess().getHaveKeyword_0());
+		}
+		otherlv_1=Inheritance
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEditInheritanceAccess().getInheritanceKeyword_1());
+		}
+		otherlv_2=URI
+		{
+			newLeafNode(otherlv_2, grammarAccess.getEditInheritanceAccess().getURIKeyword_2());
+		}
+		(
+			(
+				lv_uri_3_0=RULE_ID
+				{
+					newLeafNode(lv_uri_3_0, grammarAccess.getEditInheritanceAccess().getUriIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEditInheritanceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"uri",
+						lv_uri_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1084,53 +1740,260 @@ ruleCompositionAction returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0=Compose
-			{
-				newLeafNode(otherlv_0, grammarAccess.getCompositionActionAccess().getComposeKeyword_0_0());
-			}
-			    |
-			otherlv_1=Composes
-			{
-				newLeafNode(otherlv_1, grammarAccess.getCompositionActionAccess().getComposesKeyword_0_1());
-			}
-		)
-		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompositionActionAccess().getTargetClassParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCompositionActionAccess().getCreateCreateCompositionParserRuleCall_0_0());
 				}
-				lv_target_2_0=ruleClass
+				lv_create_0_0=ruleCreateComposition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCompositionActionRule());
 					}
 					set(
 						$current,
+						"create",
+						lv_create_0_0,
+						"de.tud.st.featurelang.FeatureLang.CreateComposition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositionActionAccess().getEditEditCompositionParserRuleCall_1_0());
+				}
+				lv_edit_1_0=ruleEditComposition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositionActionRule());
+					}
+					set(
+						$current,
+						"edit",
+						lv_edit_1_0,
+						"de.tud.st.featurelang.FeatureLang.EditComposition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleCreateComposition
+entryRuleCreateComposition returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getCreateCompositionRule()); }
+	iv_ruleCreateComposition=ruleCreateComposition
+	{ $current=$iv_ruleCreateComposition.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule CreateComposition
+ruleCreateComposition returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Compose
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCreateCompositionAccess().getComposeKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCreateCompositionAccess().getTargetClassParserRuleCall_1_0());
+				}
+				lv_target_1_0=ruleClass
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+					}
+					set(
+						$current,
 						"target",
-						lv_target_2_0,
+						lv_target_1_0,
 						"de.tud.st.featurelang.FeatureLang.Class");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3=Called
+		otherlv_2=Called
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCompositionActionAccess().getCalledKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getCreateCompositionAccess().getCalledKeyword_2());
 		}
 		(
 			(
-				lv_relation_4_0=RULE_ID
+				lv_relation_3_0=RULE_ID
 				{
-					newLeafNode(lv_relation_4_0, grammarAccess.getCompositionActionAccess().getRelationIDTerminalRuleCall_3_0());
+					newLeafNode(lv_relation_3_0, grammarAccess.getCreateCompositionAccess().getRelationIDTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCompositionActionRule());
+						$current = createModelElement(grammarAccess.getCreateCompositionRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"relation",
-						lv_relation_4_0,
+						lv_relation_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_4=FullStop
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4());
+		}
+		(
+			otherlv_5=It
+			{
+				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0());
+					}
+					lv_priority_6_0=rulePriority
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+						}
+						set(
+							$current,
+							"priority",
+							lv_priority_6_0,
+							"de.tud.st.featurelang.FeatureLang.Priority");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_7=Be
+			{
+				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0());
+					}
+					lv_publicity_8_0=rulePublicity
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCreateCompositionRule());
+						}
+						set(
+							$current,
+							"publicity",
+							lv_publicity_8_0,
+							"de.tud.st.featurelang.FeatureLang.Publicity");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleEditComposition
+entryRuleEditComposition returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getEditCompositionRule()); }
+	iv_ruleEditComposition=ruleEditComposition
+	{ $current=$iv_ruleEditComposition.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule EditComposition
+ruleEditComposition returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Have
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEditCompositionAccess().getHaveKeyword_0());
+		}
+		otherlv_1=Composition
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEditCompositionAccess().getCompositionKeyword_1());
+		}
+		(
+			(
+				lv_compositionName_2_0=RULE_ID
+				{
+					newLeafNode(lv_compositionName_2_0, grammarAccess.getEditCompositionAccess().getCompositionNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEditCompositionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"compositionName",
+						lv_compositionName_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3=With
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEditCompositionAccess().getWithKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEditCompositionAccess().getParameterCompositionParameterEnumRuleCall_4_0());
+				}
+				lv_parameter_4_0=ruleCompositionParameter
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEditCompositionRule());
+					}
+					set(
+						$current,
+						"parameter",
+						lv_parameter_4_0,
+						"de.tud.st.featurelang.FeatureLang.CompositionParameter");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_name_5_0=RULE_ID
+				{
+					newLeafNode(lv_name_5_0, grammarAccess.getEditCompositionAccess().getNameIDTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEditCompositionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_5_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -1384,6 +2247,68 @@ rulePriority returns [EObject current=null]
 finally {
 	myHiddenTokenState.restore();
 }
+
+// Rule CompositionParameter
+ruleCompositionParameter returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0=URI
+			{
+				$current = grammarAccess.getCompositionParameterAccess().getURIEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getCompositionParameterAccess().getURIEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1=Role
+			{
+				$current = grammarAccess.getCompositionParameterAccess().getROLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getCompositionParameterAccess().getROLEEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2=Target
+			{
+				$current = grammarAccess.getCompositionParameterAccess().getTARGETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getCompositionParameterAccess().getTARGETEnumLiteralDeclaration_2());
+			}
+		)
+	)
+;
+
+// Rule Publicity
+rulePublicity returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0=Public
+			{
+				$current = grammarAccess.getPublicityAccess().getPUBLICEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getPublicityAccess().getPUBLICEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1=Private
+			{
+				$current = grammarAccess.getPublicityAccess().getPRIVATEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getPublicityAccess().getPRIVATEEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
 
 // Rule PriorityValue
 rulePriorityValue returns [Enumerator current=null]

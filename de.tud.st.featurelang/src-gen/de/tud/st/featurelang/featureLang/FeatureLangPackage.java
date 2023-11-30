@@ -466,22 +466,31 @@ public interface FeatureLangPackage extends EPackage
   int ASSOCIATION_ACTION = 10;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * The feature id for the '<em><b>Create</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSOCIATION_ACTION__TARGET = 0;
+  int ASSOCIATION_ACTION__CREATE = 0;
 
   /**
-   * The feature id for the '<em><b>Relation</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSOCIATION_ACTION__RELATION = 1;
+  int ASSOCIATION_ACTION__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Edit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_ACTION__EDIT = 2;
 
   /**
    * The number of structural features of the '<em>Association Action</em>' class.
@@ -490,7 +499,221 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSOCIATION_ACTION_FEATURE_COUNT = 2;
+  int ASSOCIATION_ACTION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreateAssociationImpl <em>Create Association</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.CreateAssociationImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateAssociation()
+   * @generated
+   */
+  int CREATE_ASSOCIATION = 11;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_ASSOCIATION__TARGET = 0;
+
+  /**
+   * The feature id for the '<em><b>Relation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_ASSOCIATION__RELATION = 1;
+
+  /**
+   * The number of structural features of the '<em>Create Association</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_ASSOCIATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.EditAssociationImpl <em>Edit Association</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.EditAssociationImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditAssociation()
+   * @generated
+   */
+  int EDIT_ASSOCIATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_ASSOCIATION__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Edit Association</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_ASSOCIATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetCompatibleImpl <em>Set Compatible</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetCompatibleImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetCompatible()
+   * @generated
+   */
+  int SET_COMPATIBLE = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_COMPATIBLE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Compatible</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_COMPATIBLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetVersionRangeImpl <em>Set Version Range</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetVersionRangeImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetVersionRange()
+   * @generated
+   */
+  int SET_VERSION_RANGE = 14;
+
+  /**
+   * The feature id for the '<em><b>Start</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_VERSION_RANGE__START = 0;
+
+  /**
+   * The feature id for the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_VERSION_RANGE__END = 1;
+
+  /**
+   * The number of structural features of the '<em>Set Version Range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_VERSION_RANGE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetVariantImpl <em>Set Variant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetVariantImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetVariant()
+   * @generated
+   */
+  int SET_VARIANT = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_VARIANT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Variant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_VARIANT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
+   * @generated
+   */
+  int SET_RIGHT_OPEN = 16;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_RIGHT_OPEN__DATE = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Right Open</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_RIGHT_OPEN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl <em>Set Left Open</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetLeftOpen()
+   * @generated
+   */
+  int SET_LEFT_OPEN = 17;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_LEFT_OPEN__DATE = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Left Open</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_LEFT_OPEN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.
@@ -500,16 +723,25 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getInheritanceAction()
    * @generated
    */
-  int INHERITANCE_ACTION = 11;
+  int INHERITANCE_ACTION = 18;
 
   /**
-   * The feature id for the '<em><b>Parent</b></em>' containment reference.
+   * The feature id for the '<em><b>Create</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INHERITANCE_ACTION__PARENT = 0;
+  int INHERITANCE_ACTION__CREATE = 0;
+
+  /**
+   * The feature id for the '<em><b>Edit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INHERITANCE_ACTION__EDIT = 1;
 
   /**
    * The number of structural features of the '<em>Inheritance Action</em>' class.
@@ -518,7 +750,63 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INHERITANCE_ACTION_FEATURE_COUNT = 1;
+  int INHERITANCE_ACTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl <em>Create Inheritance</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateInheritance()
+   * @generated
+   */
+  int CREATE_INHERITANCE = 19;
+
+  /**
+   * The feature id for the '<em><b>Parent</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INHERITANCE__PARENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Create Inheritance</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_INHERITANCE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl <em>Edit Inheritance</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditInheritance()
+   * @generated
+   */
+  int EDIT_INHERITANCE = 20;
+
+  /**
+   * The feature id for the '<em><b>Uri</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_INHERITANCE__URI = 0;
+
+  /**
+   * The number of structural features of the '<em>Edit Inheritance</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_INHERITANCE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CompositionActionImpl <em>Composition Action</em>}' class.
@@ -528,25 +816,25 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionAction()
    * @generated
    */
-  int COMPOSITION_ACTION = 12;
+  int COMPOSITION_ACTION = 21;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * The feature id for the '<em><b>Create</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION_ACTION__TARGET = 0;
+  int COMPOSITION_ACTION__CREATE = 0;
 
   /**
-   * The feature id for the '<em><b>Relation</b></em>' attribute.
+   * The feature id for the '<em><b>Edit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION_ACTION__RELATION = 1;
+  int COMPOSITION_ACTION__EDIT = 1;
 
   /**
    * The number of structural features of the '<em>Composition Action</em>' class.
@@ -558,6 +846,107 @@ public interface FeatureLangPackage extends EPackage
   int COMPOSITION_ACTION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreateCompositionImpl <em>Create Composition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.CreateCompositionImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateComposition()
+   * @generated
+   */
+  int CREATE_COMPOSITION = 22;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_COMPOSITION__TARGET = 0;
+
+  /**
+   * The feature id for the '<em><b>Relation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_COMPOSITION__RELATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Priority</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_COMPOSITION__PRIORITY = 2;
+
+  /**
+   * The feature id for the '<em><b>Publicity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_COMPOSITION__PUBLICITY = 3;
+
+  /**
+   * The number of structural features of the '<em>Create Composition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREATE_COMPOSITION_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.EditCompositionImpl <em>Edit Composition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.EditCompositionImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditComposition()
+   * @generated
+   */
+  int EDIT_COMPOSITION = 23;
+
+  /**
+   * The feature id for the '<em><b>Composition Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_COMPOSITION__COMPOSITION_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_COMPOSITION__PARAMETER = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_COMPOSITION__NAME = 2;
+
+  /**
+   * The number of structural features of the '<em>Edit Composition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDIT_COMPOSITION_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.ClassImpl <em>Class</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -565,7 +954,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getClass_()
    * @generated
    */
-  int CLASS = 13;
+  int CLASS = 24;
 
   /**
    * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -602,7 +991,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 14;
+  int ATTRIBUTE = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -630,7 +1019,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getIdentifier()
    * @generated
    */
-  int IDENTIFIER = 15;
+  int IDENTIFIER = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -667,7 +1056,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriority()
    * @generated
    */
-  int PRIORITY = 16;
+  int PRIORITY = 27;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -688,6 +1077,26 @@ public interface FeatureLangPackage extends EPackage
   int PRIORITY_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.CompositionParameter
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionParameter()
+   * @generated
+   */
+  int COMPOSITION_PARAMETER = 28;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.Publicity
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPublicity()
+   * @generated
+   */
+  int PUBLICITY = 29;
+
+  /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.PriorityValue <em>Priority Value</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -695,7 +1104,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriorityValue()
    * @generated
    */
-  int PRIORITY_VALUE = 17;
+  int PRIORITY_VALUE = 30;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Abstraction <em>Abstraction</em>}' enum.
@@ -705,7 +1114,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAbstraction()
    * @generated
    */
-  int ABSTRACTION = 18;
+  int ABSTRACTION = 31;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.IdentifierValue <em>Identifier Value</em>}' enum.
@@ -715,7 +1124,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getIdentifierValue()
    * @generated
    */
-  int IDENTIFIER_VALUE = 19;
+  int IDENTIFIER_VALUE = 32;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Datatype <em>Datatype</em>}' enum.
@@ -725,7 +1134,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getDatatype()
    * @generated
    */
-  int DATATYPE = 20;
+  int DATATYPE = 33;
 
 
   /**
@@ -1048,26 +1457,206 @@ public interface FeatureLangPackage extends EPackage
   EClass getAssociationAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AssociationAction#getTarget <em>Target</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AssociationAction#getCreate <em>Create</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Create</em>'.
+   * @see de.tud.st.featurelang.featureLang.AssociationAction#getCreate()
+   * @see #getAssociationAction()
+   * @generated
+   */
+  EReference getAssociationAction_Create();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.AssociationAction#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.tud.st.featurelang.featureLang.AssociationAction#getName()
+   * @see #getAssociationAction()
+   * @generated
+   */
+  EAttribute getAssociationAction_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AssociationAction#getEdit <em>Edit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Edit</em>'.
+   * @see de.tud.st.featurelang.featureLang.AssociationAction#getEdit()
+   * @see #getAssociationAction()
+   * @generated
+   */
+  EReference getAssociationAction_Edit();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CreateAssociation <em>Create Association</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Association</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateAssociation
+   * @generated
+   */
+  EClass getCreateAssociation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreateAssociation#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see de.tud.st.featurelang.featureLang.AssociationAction#getTarget()
-   * @see #getAssociationAction()
+   * @see de.tud.st.featurelang.featureLang.CreateAssociation#getTarget()
+   * @see #getCreateAssociation()
    * @generated
    */
-  EReference getAssociationAction_Target();
+  EReference getCreateAssociation_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.AssociationAction#getRelation <em>Relation</em>}'.
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.CreateAssociation#getRelation <em>Relation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Relation</em>'.
-   * @see de.tud.st.featurelang.featureLang.AssociationAction#getRelation()
-   * @see #getAssociationAction()
+   * @see de.tud.st.featurelang.featureLang.CreateAssociation#getRelation()
+   * @see #getCreateAssociation()
    * @generated
    */
-  EAttribute getAssociationAction_Relation();
+  EAttribute getCreateAssociation_Relation();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.EditAssociation <em>Edit Association</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edit Association</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditAssociation
+   * @generated
+   */
+  EClass getEditAssociation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.EditAssociation#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditAssociation#getType()
+   * @see #getEditAssociation()
+   * @generated
+   */
+  EReference getEditAssociation_Type();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetCompatible <em>Set Compatible</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Compatible</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetCompatible
+   * @generated
+   */
+  EClass getSetCompatible();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetCompatible#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetCompatible#getName()
+   * @see #getSetCompatible()
+   * @generated
+   */
+  EAttribute getSetCompatible_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetVersionRange <em>Set Version Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Version Range</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetVersionRange
+   * @generated
+   */
+  EClass getSetVersionRange();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetVersionRange#getStart <em>Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetVersionRange#getStart()
+   * @see #getSetVersionRange()
+   * @generated
+   */
+  EAttribute getSetVersionRange_Start();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetVersionRange#getEnd <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetVersionRange#getEnd()
+   * @see #getSetVersionRange()
+   * @generated
+   */
+  EAttribute getSetVersionRange_End();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetVariant <em>Set Variant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Variant</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetVariant
+   * @generated
+   */
+  EClass getSetVariant();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetVariant#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetVariant#getName()
+   * @see #getSetVariant()
+   * @generated
+   */
+  EAttribute getSetVariant_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetRightOpen <em>Set Right Open</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Right Open</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetRightOpen
+   * @generated
+   */
+  EClass getSetRightOpen();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetRightOpen#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Date</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetRightOpen#getDate()
+   * @see #getSetRightOpen()
+   * @generated
+   */
+  EAttribute getSetRightOpen_Date();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetLeftOpen <em>Set Left Open</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Left Open</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetLeftOpen
+   * @generated
+   */
+  EClass getSetLeftOpen();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetLeftOpen#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Date</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetLeftOpen#getDate()
+   * @see #getSetLeftOpen()
+   * @generated
+   */
+  EAttribute getSetLeftOpen_Date();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.InheritanceAction <em>Inheritance Action</em>}'.
@@ -1080,15 +1669,68 @@ public interface FeatureLangPackage extends EPackage
   EClass getInheritanceAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getCreate <em>Create</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parent</em>'.
-   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getParent()
+   * @return the meta object for the containment reference '<em>Create</em>'.
+   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getCreate()
    * @see #getInheritanceAction()
    * @generated
    */
-  EReference getInheritanceAction_Parent();
+  EReference getInheritanceAction_Create();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getEdit <em>Edit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Edit</em>'.
+   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getEdit()
+   * @see #getInheritanceAction()
+   * @generated
+   */
+  EReference getInheritanceAction_Edit();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CreateInheritance <em>Create Inheritance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Inheritance</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateInheritance
+   * @generated
+   */
+  EClass getCreateInheritance();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreateInheritance#getParent <em>Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parent</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateInheritance#getParent()
+   * @see #getCreateInheritance()
+   * @generated
+   */
+  EReference getCreateInheritance_Parent();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.EditInheritance <em>Edit Inheritance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edit Inheritance</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditInheritance
+   * @generated
+   */
+  EClass getEditInheritance();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditInheritance#getUri <em>Uri</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Uri</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditInheritance#getUri()
+   * @see #getEditInheritance()
+   * @generated
+   */
+  EAttribute getEditInheritance_Uri();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CompositionAction <em>Composition Action</em>}'.
@@ -1101,26 +1743,123 @@ public interface FeatureLangPackage extends EPackage
   EClass getCompositionAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CompositionAction#getTarget <em>Target</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CompositionAction#getCreate <em>Create</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Create</em>'.
+   * @see de.tud.st.featurelang.featureLang.CompositionAction#getCreate()
+   * @see #getCompositionAction()
+   * @generated
+   */
+  EReference getCompositionAction_Create();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CompositionAction#getEdit <em>Edit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Edit</em>'.
+   * @see de.tud.st.featurelang.featureLang.CompositionAction#getEdit()
+   * @see #getCompositionAction()
+   * @generated
+   */
+  EReference getCompositionAction_Edit();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CreateComposition <em>Create Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Create Composition</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateComposition
+   * @generated
+   */
+  EClass getCreateComposition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreateComposition#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see de.tud.st.featurelang.featureLang.CompositionAction#getTarget()
-   * @see #getCompositionAction()
+   * @see de.tud.st.featurelang.featureLang.CreateComposition#getTarget()
+   * @see #getCreateComposition()
    * @generated
    */
-  EReference getCompositionAction_Target();
+  EReference getCreateComposition_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.CompositionAction#getRelation <em>Relation</em>}'.
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.CreateComposition#getRelation <em>Relation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Relation</em>'.
-   * @see de.tud.st.featurelang.featureLang.CompositionAction#getRelation()
-   * @see #getCompositionAction()
+   * @see de.tud.st.featurelang.featureLang.CreateComposition#getRelation()
+   * @see #getCreateComposition()
    * @generated
    */
-  EAttribute getCompositionAction_Relation();
+  EAttribute getCreateComposition_Relation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreateComposition#getPriority <em>Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Priority</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateComposition#getPriority()
+   * @see #getCreateComposition()
+   * @generated
+   */
+  EReference getCreateComposition_Priority();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.CreateComposition#getPublicity <em>Publicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Publicity</em>'.
+   * @see de.tud.st.featurelang.featureLang.CreateComposition#getPublicity()
+   * @see #getCreateComposition()
+   * @generated
+   */
+  EAttribute getCreateComposition_Publicity();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.EditComposition <em>Edit Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Edit Composition</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditComposition
+   * @generated
+   */
+  EClass getEditComposition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getCompositionName <em>Composition Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Composition Name</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditComposition#getCompositionName()
+   * @see #getEditComposition()
+   * @generated
+   */
+  EAttribute getEditComposition_CompositionName();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Parameter</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditComposition#getParameter()
+   * @see #getEditComposition()
+   * @generated
+   */
+  EAttribute getEditComposition_Parameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditComposition#getName()
+   * @see #getEditComposition()
+   * @generated
+   */
+  EAttribute getEditComposition_Name();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.Class <em>Class</em>}'.
@@ -1227,6 +1966,26 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    */
   EAttribute getPriority_Priority();
+
+  /**
+   * Returns the meta object for enum '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Composition Parameter</em>'.
+   * @see de.tud.st.featurelang.featureLang.CompositionParameter
+   * @generated
+   */
+  EEnum getCompositionParameter();
+
+  /**
+   * Returns the meta object for enum '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Publicity</em>'.
+   * @see de.tud.st.featurelang.featureLang.Publicity
+   * @generated
+   */
+  EEnum getPublicity();
 
   /**
    * Returns the meta object for enum '{@link de.tud.st.featurelang.featureLang.PriorityValue <em>Priority Value</em>}'.
@@ -1554,12 +2313,46 @@ public interface FeatureLangPackage extends EPackage
     EClass ASSOCIATION_ACTION = eINSTANCE.getAssociationAction();
 
     /**
+     * The meta object literal for the '<em><b>Create</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSOCIATION_ACTION__CREATE = eINSTANCE.getAssociationAction_Create();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSOCIATION_ACTION__NAME = eINSTANCE.getAssociationAction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Edit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSOCIATION_ACTION__EDIT = eINSTANCE.getAssociationAction_Edit();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CreateAssociationImpl <em>Create Association</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.CreateAssociationImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateAssociation()
+     * @generated
+     */
+    EClass CREATE_ASSOCIATION = eINSTANCE.getCreateAssociation();
+
+    /**
      * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ASSOCIATION_ACTION__TARGET = eINSTANCE.getAssociationAction_Target();
+    EReference CREATE_ASSOCIATION__TARGET = eINSTANCE.getCreateAssociation_Target();
 
     /**
      * The meta object literal for the '<em><b>Relation</b></em>' attribute feature.
@@ -1567,7 +2360,123 @@ public interface FeatureLangPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ASSOCIATION_ACTION__RELATION = eINSTANCE.getAssociationAction_Relation();
+    EAttribute CREATE_ASSOCIATION__RELATION = eINSTANCE.getCreateAssociation_Relation();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.EditAssociationImpl <em>Edit Association</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.EditAssociationImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditAssociation()
+     * @generated
+     */
+    EClass EDIT_ASSOCIATION = eINSTANCE.getEditAssociation();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDIT_ASSOCIATION__TYPE = eINSTANCE.getEditAssociation_Type();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetCompatibleImpl <em>Set Compatible</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetCompatibleImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetCompatible()
+     * @generated
+     */
+    EClass SET_COMPATIBLE = eINSTANCE.getSetCompatible();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_COMPATIBLE__NAME = eINSTANCE.getSetCompatible_Name();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetVersionRangeImpl <em>Set Version Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetVersionRangeImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetVersionRange()
+     * @generated
+     */
+    EClass SET_VERSION_RANGE = eINSTANCE.getSetVersionRange();
+
+    /**
+     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_VERSION_RANGE__START = eINSTANCE.getSetVersionRange_Start();
+
+    /**
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_VERSION_RANGE__END = eINSTANCE.getSetVersionRange_End();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetVariantImpl <em>Set Variant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetVariantImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetVariant()
+     * @generated
+     */
+    EClass SET_VARIANT = eINSTANCE.getSetVariant();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_VARIANT__NAME = eINSTANCE.getSetVariant_Name();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
+     * @generated
+     */
+    EClass SET_RIGHT_OPEN = eINSTANCE.getSetRightOpen();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_RIGHT_OPEN__DATE = eINSTANCE.getSetRightOpen_Date();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl <em>Set Left Open</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetLeftOpen()
+     * @generated
+     */
+    EClass SET_LEFT_OPEN = eINSTANCE.getSetLeftOpen();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_LEFT_OPEN__DATE = eINSTANCE.getSetLeftOpen_Date();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.
@@ -1580,12 +2489,56 @@ public interface FeatureLangPackage extends EPackage
     EClass INHERITANCE_ACTION = eINSTANCE.getInheritanceAction();
 
     /**
+     * The meta object literal for the '<em><b>Create</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INHERITANCE_ACTION__CREATE = eINSTANCE.getInheritanceAction_Create();
+
+    /**
+     * The meta object literal for the '<em><b>Edit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INHERITANCE_ACTION__EDIT = eINSTANCE.getInheritanceAction_Edit();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl <em>Create Inheritance</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateInheritance()
+     * @generated
+     */
+    EClass CREATE_INHERITANCE = eINSTANCE.getCreateInheritance();
+
+    /**
      * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INHERITANCE_ACTION__PARENT = eINSTANCE.getInheritanceAction_Parent();
+    EReference CREATE_INHERITANCE__PARENT = eINSTANCE.getCreateInheritance_Parent();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl <em>Edit Inheritance</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditInheritance()
+     * @generated
+     */
+    EClass EDIT_INHERITANCE = eINSTANCE.getEditInheritance();
+
+    /**
+     * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDIT_INHERITANCE__URI = eINSTANCE.getEditInheritance_Uri();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CompositionActionImpl <em>Composition Action</em>}' class.
@@ -1598,12 +2551,38 @@ public interface FeatureLangPackage extends EPackage
     EClass COMPOSITION_ACTION = eINSTANCE.getCompositionAction();
 
     /**
+     * The meta object literal for the '<em><b>Create</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITION_ACTION__CREATE = eINSTANCE.getCompositionAction_Create();
+
+    /**
+     * The meta object literal for the '<em><b>Edit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITION_ACTION__EDIT = eINSTANCE.getCompositionAction_Edit();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CreateCompositionImpl <em>Create Composition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.CreateCompositionImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateComposition()
+     * @generated
+     */
+    EClass CREATE_COMPOSITION = eINSTANCE.getCreateComposition();
+
+    /**
      * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOSITION_ACTION__TARGET = eINSTANCE.getCompositionAction_Target();
+    EReference CREATE_COMPOSITION__TARGET = eINSTANCE.getCreateComposition_Target();
 
     /**
      * The meta object literal for the '<em><b>Relation</b></em>' attribute feature.
@@ -1611,7 +2590,57 @@ public interface FeatureLangPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPOSITION_ACTION__RELATION = eINSTANCE.getCompositionAction_Relation();
+    EAttribute CREATE_COMPOSITION__RELATION = eINSTANCE.getCreateComposition_Relation();
+
+    /**
+     * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CREATE_COMPOSITION__PRIORITY = eINSTANCE.getCreateComposition_Priority();
+
+    /**
+     * The meta object literal for the '<em><b>Publicity</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CREATE_COMPOSITION__PUBLICITY = eINSTANCE.getCreateComposition_Publicity();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.EditCompositionImpl <em>Edit Composition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.EditCompositionImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditComposition()
+     * @generated
+     */
+    EClass EDIT_COMPOSITION = eINSTANCE.getEditComposition();
+
+    /**
+     * The meta object literal for the '<em><b>Composition Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDIT_COMPOSITION__COMPOSITION_NAME = eINSTANCE.getEditComposition_CompositionName();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDIT_COMPOSITION__PARAMETER = eINSTANCE.getEditComposition_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDIT_COMPOSITION__NAME = eINSTANCE.getEditComposition_Name();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.ClassImpl <em>Class</em>}' class.
@@ -1700,6 +2729,26 @@ public interface FeatureLangPackage extends EPackage
      * @generated
      */
     EAttribute PRIORITY__PRIORITY = eINSTANCE.getPriority_Priority();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.CompositionParameter
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionParameter()
+     * @generated
+     */
+    EEnum COMPOSITION_PARAMETER = eINSTANCE.getCompositionParameter();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.Publicity
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPublicity()
+     * @generated
+     */
+    EEnum PUBLICITY = eINSTANCE.getPublicity();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.PriorityValue <em>Priority Value</em>}' enum.

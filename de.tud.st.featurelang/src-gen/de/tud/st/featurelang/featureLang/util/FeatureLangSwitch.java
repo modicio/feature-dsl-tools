@@ -9,12 +9,23 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
+import de.tud.st.featurelang.featureLang.CreateAssociation;
+import de.tud.st.featurelang.featureLang.CreateComposition;
+import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
+import de.tud.st.featurelang.featureLang.EditAssociation;
+import de.tud.st.featurelang.featureLang.EditComposition;
+import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.Identifier;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 import de.tud.st.featurelang.featureLang.Priority;
+import de.tud.st.featurelang.featureLang.SetCompatible;
+import de.tud.st.featurelang.featureLang.SetLeftOpen;
+import de.tud.st.featurelang.featureLang.SetRightOpen;
+import de.tud.st.featurelang.featureLang.SetVariant;
+import de.tud.st.featurelang.featureLang.SetVersionRange;
 import de.tud.st.featurelang.featureLang.Statement;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 import de.tud.st.featurelang.featureLang.UpdateAttributeDatatype;
@@ -168,6 +179,55 @@ public class FeatureLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FeatureLangPackage.CREATE_ASSOCIATION:
+      {
+        CreateAssociation createAssociation = (CreateAssociation)theEObject;
+        T result = caseCreateAssociation(createAssociation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.EDIT_ASSOCIATION:
+      {
+        EditAssociation editAssociation = (EditAssociation)theEObject;
+        T result = caseEditAssociation(editAssociation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_COMPATIBLE:
+      {
+        SetCompatible setCompatible = (SetCompatible)theEObject;
+        T result = caseSetCompatible(setCompatible);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_VERSION_RANGE:
+      {
+        SetVersionRange setVersionRange = (SetVersionRange)theEObject;
+        T result = caseSetVersionRange(setVersionRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_VARIANT:
+      {
+        SetVariant setVariant = (SetVariant)theEObject;
+        T result = caseSetVariant(setVariant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_RIGHT_OPEN:
+      {
+        SetRightOpen setRightOpen = (SetRightOpen)theEObject;
+        T result = caseSetRightOpen(setRightOpen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_LEFT_OPEN:
+      {
+        SetLeftOpen setLeftOpen = (SetLeftOpen)theEObject;
+        T result = caseSetLeftOpen(setLeftOpen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FeatureLangPackage.INHERITANCE_ACTION:
       {
         InheritanceAction inheritanceAction = (InheritanceAction)theEObject;
@@ -175,10 +235,38 @@ public class FeatureLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FeatureLangPackage.CREATE_INHERITANCE:
+      {
+        CreateInheritance createInheritance = (CreateInheritance)theEObject;
+        T result = caseCreateInheritance(createInheritance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.EDIT_INHERITANCE:
+      {
+        EditInheritance editInheritance = (EditInheritance)theEObject;
+        T result = caseEditInheritance(editInheritance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FeatureLangPackage.COMPOSITION_ACTION:
       {
         CompositionAction compositionAction = (CompositionAction)theEObject;
         T result = caseCompositionAction(compositionAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.CREATE_COMPOSITION:
+      {
+        CreateComposition createComposition = (CreateComposition)theEObject;
+        T result = caseCreateComposition(createComposition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.EDIT_COMPOSITION:
+      {
+        EditComposition editComposition = (EditComposition)theEObject;
+        T result = caseEditComposition(editComposition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -391,6 +479,118 @@ public class FeatureLangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Association</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Association</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateAssociation(CreateAssociation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edit Association</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edit Association</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEditAssociation(EditAssociation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Compatible</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Compatible</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetCompatible(SetCompatible object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Version Range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Version Range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetVersionRange(SetVersionRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Variant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Variant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetVariant(SetVariant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetRightOpen(SetRightOpen object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Left Open</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Left Open</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetLeftOpen(SetLeftOpen object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Inheritance Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -407,6 +607,38 @@ public class FeatureLangSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Inheritance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Inheritance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateInheritance(CreateInheritance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edit Inheritance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edit Inheritance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEditInheritance(EditInheritance object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Composition Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -418,6 +650,38 @@ public class FeatureLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCompositionAction(CompositionAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Create Composition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Create Composition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCreateComposition(CreateComposition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Edit Composition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Edit Composition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEditComposition(EditComposition object)
   {
     return null;
   }

@@ -19,6 +19,13 @@ import de.tud.st.featurelang.featureLang.Statement
 import de.tud.st.featurelang.featureLang.CompositionAction
 import de.tud.st.featurelang.featureLang.Abstraction
 import de.tud.st.featurelang.featureLang.IdentifierValue
+import de.tud.st.featurelang.featureLang.SetCompatible
+import de.tud.st.featurelang.featureLang.SetVersionRange
+import de.tud.st.featurelang.featureLang.SetVariant
+import de.tud.st.featurelang.featureLang.SetRightOpen
+import de.tud.st.featurelang.featureLang.SetLeftOpen
+import de.tud.st.featurelang.featureLang.Publicity
+import de.tud.st.featurelang.featureLang.CompositionParameter
 
 /**
  * Generates code from your model files on save.
@@ -126,37 +133,126 @@ class FeatureLangGenerator extends AbstractGenerator {
 	}
 	
 	private def compileAssociationAction(AssociationAction a, boolean negation){
-		val targetClass = a.getTarget().getName()
-		val relation = a.getRelation()
 		'''
-		«IF negation»
-			DELETE ASSOCIATION «relation»
-		«ELSE»
-			ADD ASSOCIATION «relation» TARGET «targetClass»
+		«IF a.getCreate() !== null»
+			«val targetClass = a.getCreate().getTarget().getName()»
+			«val relation = a.getCreate().getRelation()»
+			«IF negation»
+				DELETE ASSOCIATION «relation»
+			«ELSE»
+				ADD ASSOCIATION «relation» TARGET «targetClass»
+			«ENDIF» 
+		«ELSE» 
+			«val associationName = a.getName()»
+			OPEN ASSOCIATION «associationName»
+			«a.getEdit().getType().compileEditAssociation()»
+			CLOSE ASSOCIATION «associationName»
 		«ENDIF»
+		'''
+	}
+	
+	private def compileEditAssociation(EObject a){
+		switch a {
+			SetCompatible : a.compileSetCompatible()
+			SetVersionRange : a.compileSetVersionRange()
+			SetVariant : a.compileSetVariant()
+			SetLeftOpen : a.compileSetLeftOpen()
+			SetRightOpen : a.compileSetRightOpen()
+			default : 'NOP'
+		}
+	}
+	
+	private def compileSetCompatible(SetCompatible a) {
+		val versionName = a.getName() 
+		'''
+		SET COMPATIBLE WITH VERSION «versionName»
+		'''
+	}
+	
+	private def compileSetVersionRange(SetVersionRange a) {
+		val start = a.getStart()
+		val end = a.getEnd() 
+		'''
+		SET VERSION RANGE FROM «start» TO «end»
+		'''
+	}
+	
+	private def compileSetVariant(SetVariant a) {
+		val variantName = a.getName()
+		'''
+		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantName»
+		'''
+	}
+	
+	private def compileSetLeftOpen(SetLeftOpen a) {
+		val date = a.getDate()
+		'''
+		SET VERSION UP TO DATE «date»
+		'''
+	}
+	
+	private def compileSetRightOpen(SetRightOpen a) {
+		val date = a.getDate()
+		'''
+		SET VERSION STARTING FROM DATE «date»
 		'''
 	}
 	
 	private def compileCompositionAction(CompositionAction a, boolean negation) {
-		val targetClass = a.getTarget().getName()
-		val relation = a.getRelation()
 		'''
-		«IF negation»
-			DELETE COMPOSITION «targetClass»
-		«ELSE»
-			ADD COMPOSITION «relation» TARGET «targetClass»
-		«ENDIF»
+		«IF a.getCreate() !== null»
+			«val targetClass = a.getCreate().getTarget().getName()»
+			«val relation = a.getCreate().getRelation()»
+			«IF negation»
+				DELETE COMPOSITION «targetClass»
+			«ELSE»
+				ADD COMPOSITION «relation» TARGET «targetClass»
+				«IF a.getCreate().getPublicity() !== null»
+					«val should = a.getCreate().getPriority() !== null && a.getCreate().getPriority().getPriority() === PriorityValue.SHOULD»	
+					«IF should»
+						START OPTIONAL
+					«ENDIF»
+					«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
+					«IF public»
+						MAKE COMPOSITION PUBLIC
+					«ELSE» 
+						MAKE COMPOSITION PRIVATE
+					«ENDIF»
+					«IF should»
+						END OPTIONAL
+					«ENDIF»	
+				«ENDIF»	
+			«ENDIF»
+		«ELSE» 
+			«val compositionName = a.getEdit().getCompositionName()»
+			«val parameter = a.getEdit().getParameter()»
+			«val newName = a.getEdit().getName()»
+			OPEN COMPOSITION «compositionName»
+			«IF parameter === CompositionParameter.URI»
+				SET URI TO «newName»
+			«ELSEIF parameter === CompositionParameter.ROLE»
+				SET ROLE TO «newName»
+			«ELSE»
+				SET TARGET TO «newName»
+			«ENDIF»	
+			CLOSE COMPOSITION «compositionName»
+		«ENDIF»	
 		'''
 	}
 	
 	private def compileInheritanceAction(InheritanceAction a, boolean negation){
-		val targetClass = a.getParent().getName()
 		'''
-		«IF negation»
-			DELETE PARENT_RELATION «targetClass»
-		«ELSE»
-			ADD PARENT_RELATION «targetClass»
-		«ENDIF»
+		«IF a.getCreate() !== null»
+			«val targetClass = a.getCreate().getParent().getName()»
+			«IF negation»
+				DELETE PARENT_RELATION «targetClass»
+			«ELSE»
+				ADD PARENT_RELATION «targetClass»
+			«ENDIF»
+		«ELSE» 
+			«val newUri = a.getEdit().getUri()»
+			SET INHERITANCE URI TO «newUri»
+		«ENDIF»	
 		'''
 	}
 	
