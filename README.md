@@ -35,3 +35,9 @@ and `FeatureLangGenerator.xtend` files.
 13. To export the project, go to File -> Export as Runnable Jar and select "Copy libraries into JAR". The Lauch configuration must be the `Main.java`.
       * In case no launch configuration can be selected, go to the Main class in the Model Explorer -> Right click -> Run. The will fail due to missing input parameters but afterwards it is selectable in the export dialog.
 14. To actually execute the language tool, create a file with the ending `.featurelang` and place your input request inside. Call `java -jar [export].jar [input path] [output path]`
+
+## Request examples
+HINT: words in brackets are optional; words divided with slash '/' could be varied.
+
+1. The/a (abstract) class `className` must/should (not) be/exist.
+2. tbd 
