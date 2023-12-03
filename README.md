@@ -37,7 +37,22 @@ and `FeatureLangGenerator.xtend` files.
 14. To actually execute the language tool, create a file with the ending `.featurelang` and place your input request inside. Call `java -jar [export].jar [input path] [output path]`
 
 ## Request examples
-HINT: words in brackets are optional; words divided with slash '/' could be varied.
+HINT #1: words in brackets are optional; words divided with slash '/' could be varied.
+HINT #2: every MUST could be replaced with SHOULD to add optional.
 
 1. The/a (abstract) class `className` must/should (not) be/exist.
-2. tbd 
+2. The/a class `className` must (not) have (a/an) name/URI `actualName`.
+3. The/a class `className` has (a/an) (existing) attribute `attributeName`. It must be a time/phrase/number.
+4. The/a class `className` has (a/an) (existing) attribute `attributeName`. It must have (a/an) name/URI `actualName`.
+5. The/a class `className` has (a/an) (existing) attribute `attributeName`. It must have (a) value `actualValue`.
+6. The/a class `className` must (not) have the/a/an attribute `attributeName`. It is a time/phrase/number.
+7. The/a class `className` must (not) have association/associations to (other) class `className` called `associationName`.
+8. The/a class `className` must (not) have association/associations `associationName` compatible with version `versionName`.
+9. The/a class `className` must (not) have association/associations `associationName` with version range from `start` to `end`.
+10. The/a class `className` must (not) have association/associations `associationName` with all versions of variant `variantName`.
+11. The/a class `className` must (not) have association/associations `associationName` up to date `date`.
+12. The/a class `className` must (not) have association/associations `associationName` starting from date `date`.
+13. The/a class `className` must (not) inherit from class `className`.
+14. The/a class `className` must (not) have inheritance URI `uriString`.
+15. The/a class `className` must (not) compose class `className` called `compositionName`. (It must be public/private.)
+16. The/a class `className` must (not) have composition `compositionName` with URI/target/role `newName`.
