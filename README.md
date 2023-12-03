@@ -37,8 +37,8 @@ and `FeatureLangGenerator.xtend` files.
 14. To actually execute the language tool, create a file with the ending `.featurelang` and place your input request inside. Call `java -jar [export].jar [input path] [output path]`
 
 ## Request examples
-HINT #1: words in brackets are optional; words divided with slash '/' could be varied.
-HINT #2: every MUST could be replaced with SHOULD to add optional.
+* HINT #1: words in brackets are optional; words divided with slash '/' could be varied.
+* HINT #2: every MUST could be replaced with SHOULD to add optional.
 
 1. The/a (abstract) class `className` must/should (not) be/exist.
 2. The/a class `className` must (not) have (a/an) name/URI `actualName`.
