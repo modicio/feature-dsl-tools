@@ -4443,7 +4443,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCreateComposition"
-    // InternalFeatureLangParser.g:1800:1: ruleCreateComposition returns [EObject current=null] : (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) ;
+    // InternalFeatureLangParser.g:1800:1: ruleCreateComposition returns [EObject current=null] : (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) ;
     public final EObject ruleCreateComposition() throws RecognitionException {
         EObject current = null;
 
@@ -4465,11 +4465,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1807:2: ( (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) )
-            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
+            // InternalFeatureLangParser.g:1807:2: ( (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? ) )
+            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
             {
-            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
-            // InternalFeatureLangParser.g:1809:3: otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) otherlv_4= FullStop (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
+            // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
+            // InternalFeatureLangParser.g:1809:3: otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
             {
             otherlv_0=(Token)match(input,Compose,FOLLOW_29); 
 
@@ -4516,7 +4516,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1837:4: (lv_relation_3_0= RULE_ID )
             // InternalFeatureLangParser.g:1838:5: lv_relation_3_0= RULE_ID
             {
-            lv_relation_3_0=(Token)match(input,RULE_ID,FOLLOW_14); 
+            lv_relation_3_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
             					newLeafNode(lv_relation_3_0, grammarAccess.getCreateCompositionAccess().getRelationIDTerminalRuleCall_3_0());
             				
@@ -4536,24 +4536,28 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,FullStop,FOLLOW_23); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4());
-            		
-            // InternalFeatureLangParser.g:1858:3: (otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
+            // InternalFeatureLangParser.g:1854:3: (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==It) ) {
-                alt24=1;
+            if ( (LA24_0==FullStop) ) {
+                int LA24_1 = input.LA(2);
+
+                if ( (LA24_1==It) ) {
+                    alt24=1;
+                }
             }
             switch (alt24) {
                 case 1 :
-                    // InternalFeatureLangParser.g:1859:4: otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) )
+                    // InternalFeatureLangParser.g:1855:4: otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) )
                     {
+                    otherlv_4=(Token)match(input,FullStop,FOLLOW_15); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0());
+                    			
                     otherlv_5=(Token)match(input,It,FOLLOW_9); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_5_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_4_1());
                     			
                     // InternalFeatureLangParser.g:1863:4: ( (lv_priority_6_0= rulePriority ) )
                     // InternalFeatureLangParser.g:1864:5: (lv_priority_6_0= rulePriority )
@@ -4562,7 +4566,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     // InternalFeatureLangParser.g:1865:6: lv_priority_6_0= rulePriority
                     {
 
-                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0());
                     					
                     pushFollow(FOLLOW_43);
                     lv_priority_6_0=rulePriority();
@@ -4588,7 +4592,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
                     otherlv_7=(Token)match(input,Be,FOLLOW_44); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2());
+                    				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3());
                     			
                     // InternalFeatureLangParser.g:1886:4: ( (lv_publicity_8_0= rulePublicity ) )
                     // InternalFeatureLangParser.g:1887:5: (lv_publicity_8_0= rulePublicity )
@@ -4597,7 +4601,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     // InternalFeatureLangParser.g:1888:6: lv_publicity_8_0= rulePublicity
                     {
 
-                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0());
+                    						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0());
                     					
                     pushFollow(FOLLOW_2);
                     lv_publicity_8_0=rulePublicity();

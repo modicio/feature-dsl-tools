@@ -947,23 +947,23 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCalledKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRelationAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cRelationIDTerminalRuleCall_3_0 = (RuleCall)cRelationAssignment_3.eContents().get(0);
-		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cItKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cPriorityAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cPriorityPriorityParserRuleCall_5_1_0 = (RuleCall)cPriorityAssignment_5_1.eContents().get(0);
-		private final Keyword cBeKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cPublicityAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cPublicityPublicityEnumRuleCall_5_3_0 = (RuleCall)cPublicityAssignment_5_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFullStopKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cItKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cPriorityAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cPriorityPriorityParserRuleCall_4_2_0 = (RuleCall)cPriorityAssignment_4_2.eContents().get(0);
+		private final Keyword cBeKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Assignment cPublicityAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
+		private final RuleCall cPublicityPublicityEnumRuleCall_4_4_0 = (RuleCall)cPublicityAssignment_4_4.eContents().get(0);
 		
 		//CreateComposition hidden(WS):
-		//    'compose' target=Class 'called' relation=ID '.'
-		//    ('it' priority=Priority 'be' publicity=Publicity)?
+		//    'compose' target=Class 'called' relation=ID
+		//    ('.' 'it' priority=Priority 'be' publicity=Publicity)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'compose' target=Class 'called' relation=ID '.'
-		//('it' priority=Priority 'be' publicity=Publicity)?
+		//'compose' target=Class 'called' relation=ID
+		//('.' 'it' priority=Priority 'be' publicity=Publicity)?
 		public Group getGroup() { return cGroup; }
 		
 		//'compose'
@@ -984,29 +984,29 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getRelationIDTerminalRuleCall_3_0() { return cRelationIDTerminalRuleCall_3_0; }
 		
-		//'.'
-		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		//('.' 'it' priority=Priority 'be' publicity=Publicity)?
+		public Group getGroup_4() { return cGroup_4; }
 		
-		//('it' priority=Priority 'be' publicity=Publicity)?
-		public Group getGroup_5() { return cGroup_5; }
+		//'.'
+		public Keyword getFullStopKeyword_4_0() { return cFullStopKeyword_4_0; }
 		
 		//'it'
-		public Keyword getItKeyword_5_0() { return cItKeyword_5_0; }
+		public Keyword getItKeyword_4_1() { return cItKeyword_4_1; }
 		
 		//priority=Priority
-		public Assignment getPriorityAssignment_5_1() { return cPriorityAssignment_5_1; }
+		public Assignment getPriorityAssignment_4_2() { return cPriorityAssignment_4_2; }
 		
 		//Priority
-		public RuleCall getPriorityPriorityParserRuleCall_5_1_0() { return cPriorityPriorityParserRuleCall_5_1_0; }
+		public RuleCall getPriorityPriorityParserRuleCall_4_2_0() { return cPriorityPriorityParserRuleCall_4_2_0; }
 		
 		//'be'
-		public Keyword getBeKeyword_5_2() { return cBeKeyword_5_2; }
+		public Keyword getBeKeyword_4_3() { return cBeKeyword_4_3; }
 		
 		//publicity=Publicity
-		public Assignment getPublicityAssignment_5_3() { return cPublicityAssignment_5_3; }
+		public Assignment getPublicityAssignment_4_4() { return cPublicityAssignment_4_4; }
 		
 		//Publicity
-		public RuleCall getPublicityPublicityEnumRuleCall_5_3_0() { return cPublicityPublicityEnumRuleCall_5_3_0; }
+		public RuleCall getPublicityPublicityEnumRuleCall_4_4_0() { return cPublicityPublicityEnumRuleCall_4_4_0; }
 	}
 	public class EditCompositionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.EditComposition");
@@ -1697,8 +1697,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//CreateComposition hidden(WS):
-	//    'compose' target=Class 'called' relation=ID '.'
-	//    ('it' priority=Priority 'be' publicity=Publicity)?
+	//    'compose' target=Class 'called' relation=ID
+	//    ('.' 'it' priority=Priority 'be' publicity=Publicity)?
 	//;
 	public CreateCompositionElements getCreateCompositionAccess() {
 		return pCreateComposition;

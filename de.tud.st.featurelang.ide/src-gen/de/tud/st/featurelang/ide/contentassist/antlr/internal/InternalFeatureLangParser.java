@@ -11824,22 +11824,17 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CreateComposition__Group__4"
-    // InternalFeatureLangParser.g:3950:1: rule__CreateComposition__Group__4 : rule__CreateComposition__Group__4__Impl rule__CreateComposition__Group__5 ;
+    // InternalFeatureLangParser.g:3950:1: rule__CreateComposition__Group__4 : rule__CreateComposition__Group__4__Impl ;
     public final void rule__CreateComposition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:3954:1: ( rule__CreateComposition__Group__4__Impl rule__CreateComposition__Group__5 )
-            // InternalFeatureLangParser.g:3955:2: rule__CreateComposition__Group__4__Impl rule__CreateComposition__Group__5
+            // InternalFeatureLangParser.g:3954:1: ( rule__CreateComposition__Group__4__Impl )
+            // InternalFeatureLangParser.g:3955:2: rule__CreateComposition__Group__4__Impl
             {
-            pushFollow(FOLLOW_12);
-            rule__CreateComposition__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group__5();
+            rule__CreateComposition__Group__4__Impl();
 
             state._fsp--;
 
@@ -11862,21 +11857,46 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__CreateComposition__Group__4__Impl"
-    // InternalFeatureLangParser.g:3962:1: rule__CreateComposition__Group__4__Impl : ( FullStop ) ;
+    // InternalFeatureLangParser.g:3961:1: rule__CreateComposition__Group__4__Impl : ( ( rule__CreateComposition__Group_4__0 )? ) ;
     public final void rule__CreateComposition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:3966:1: ( ( FullStop ) )
-            // InternalFeatureLangParser.g:3967:1: ( FullStop )
+            // InternalFeatureLangParser.g:3965:1: ( ( ( rule__CreateComposition__Group_4__0 )? ) )
+            // InternalFeatureLangParser.g:3966:1: ( ( rule__CreateComposition__Group_4__0 )? )
             {
-            // InternalFeatureLangParser.g:3967:1: ( FullStop )
-            // InternalFeatureLangParser.g:3968:2: FullStop
+            // InternalFeatureLangParser.g:3966:1: ( ( rule__CreateComposition__Group_4__0 )? )
+            // InternalFeatureLangParser.g:3967:2: ( rule__CreateComposition__Group_4__0 )?
             {
-             before(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4()); 
-            match(input,FullStop,FOLLOW_2); 
-             after(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4()); 
+             before(grammarAccess.getCreateCompositionAccess().getGroup_4()); 
+            // InternalFeatureLangParser.g:3968:2: ( rule__CreateComposition__Group_4__0 )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
+
+            if ( (LA32_0==FullStop) ) {
+                int LA32_1 = input.LA(2);
+
+                if ( (LA32_1==It) ) {
+                    alt32=1;
+                }
+            }
+            switch (alt32) {
+                case 1 :
+                    // InternalFeatureLangParser.g:3968:3: rule__CreateComposition__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__CreateComposition__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getCreateCompositionAccess().getGroup_4()); 
 
             }
 
@@ -11898,18 +11918,23 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__CreateComposition__Group__4__Impl"
 
 
-    // $ANTLR start "rule__CreateComposition__Group__5"
-    // InternalFeatureLangParser.g:3977:1: rule__CreateComposition__Group__5 : rule__CreateComposition__Group__5__Impl ;
-    public final void rule__CreateComposition__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__0"
+    // InternalFeatureLangParser.g:3977:1: rule__CreateComposition__Group_4__0 : rule__CreateComposition__Group_4__0__Impl rule__CreateComposition__Group_4__1 ;
+    public final void rule__CreateComposition__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:3981:1: ( rule__CreateComposition__Group__5__Impl )
-            // InternalFeatureLangParser.g:3982:2: rule__CreateComposition__Group__5__Impl
+            // InternalFeatureLangParser.g:3981:1: ( rule__CreateComposition__Group_4__0__Impl rule__CreateComposition__Group_4__1 )
+            // InternalFeatureLangParser.g:3982:2: rule__CreateComposition__Group_4__0__Impl rule__CreateComposition__Group_4__1
             {
+            pushFollow(FOLLOW_12);
+            rule__CreateComposition__Group_4__0__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group__5__Impl();
+            rule__CreateComposition__Group_4__1();
 
             state._fsp--;
 
@@ -11928,46 +11953,25 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group__5"
+    // $ANTLR end "rule__CreateComposition__Group_4__0"
 
 
-    // $ANTLR start "rule__CreateComposition__Group__5__Impl"
-    // InternalFeatureLangParser.g:3988:1: rule__CreateComposition__Group__5__Impl : ( ( rule__CreateComposition__Group_5__0 )? ) ;
-    public final void rule__CreateComposition__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__0__Impl"
+    // InternalFeatureLangParser.g:3989:1: rule__CreateComposition__Group_4__0__Impl : ( FullStop ) ;
+    public final void rule__CreateComposition__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:3992:1: ( ( ( rule__CreateComposition__Group_5__0 )? ) )
-            // InternalFeatureLangParser.g:3993:1: ( ( rule__CreateComposition__Group_5__0 )? )
+            // InternalFeatureLangParser.g:3993:1: ( ( FullStop ) )
+            // InternalFeatureLangParser.g:3994:1: ( FullStop )
             {
-            // InternalFeatureLangParser.g:3993:1: ( ( rule__CreateComposition__Group_5__0 )? )
-            // InternalFeatureLangParser.g:3994:2: ( rule__CreateComposition__Group_5__0 )?
+            // InternalFeatureLangParser.g:3994:1: ( FullStop )
+            // InternalFeatureLangParser.g:3995:2: FullStop
             {
-             before(grammarAccess.getCreateCompositionAccess().getGroup_5()); 
-            // InternalFeatureLangParser.g:3995:2: ( rule__CreateComposition__Group_5__0 )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
-
-            if ( (LA32_0==It) ) {
-                alt32=1;
-            }
-            switch (alt32) {
-                case 1 :
-                    // InternalFeatureLangParser.g:3995:3: rule__CreateComposition__Group_5__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__CreateComposition__Group_5__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getCreateCompositionAccess().getGroup_5()); 
+             before(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0()); 
+            match(input,FullStop,FOLLOW_2); 
+             after(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0()); 
 
             }
 
@@ -11986,26 +11990,26 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group__5__Impl"
+    // $ANTLR end "rule__CreateComposition__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__0"
-    // InternalFeatureLangParser.g:4004:1: rule__CreateComposition__Group_5__0 : rule__CreateComposition__Group_5__0__Impl rule__CreateComposition__Group_5__1 ;
-    public final void rule__CreateComposition__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__1"
+    // InternalFeatureLangParser.g:4004:1: rule__CreateComposition__Group_4__1 : rule__CreateComposition__Group_4__1__Impl rule__CreateComposition__Group_4__2 ;
+    public final void rule__CreateComposition__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4008:1: ( rule__CreateComposition__Group_5__0__Impl rule__CreateComposition__Group_5__1 )
-            // InternalFeatureLangParser.g:4009:2: rule__CreateComposition__Group_5__0__Impl rule__CreateComposition__Group_5__1
+            // InternalFeatureLangParser.g:4008:1: ( rule__CreateComposition__Group_4__1__Impl rule__CreateComposition__Group_4__2 )
+            // InternalFeatureLangParser.g:4009:2: rule__CreateComposition__Group_4__1__Impl rule__CreateComposition__Group_4__2
             {
             pushFollow(FOLLOW_8);
-            rule__CreateComposition__Group_5__0__Impl();
+            rule__CreateComposition__Group_4__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group_5__1();
+            rule__CreateComposition__Group_4__2();
 
             state._fsp--;
 
@@ -12024,12 +12028,12 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__0"
+    // $ANTLR end "rule__CreateComposition__Group_4__1"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__0__Impl"
-    // InternalFeatureLangParser.g:4016:1: rule__CreateComposition__Group_5__0__Impl : ( It ) ;
-    public final void rule__CreateComposition__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__1__Impl"
+    // InternalFeatureLangParser.g:4016:1: rule__CreateComposition__Group_4__1__Impl : ( It ) ;
+    public final void rule__CreateComposition__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12040,9 +12044,9 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
             // InternalFeatureLangParser.g:4021:1: ( It )
             // InternalFeatureLangParser.g:4022:2: It
             {
-             before(grammarAccess.getCreateCompositionAccess().getItKeyword_5_0()); 
+             before(grammarAccess.getCreateCompositionAccess().getItKeyword_4_1()); 
             match(input,It,FOLLOW_2); 
-             after(grammarAccess.getCreateCompositionAccess().getItKeyword_5_0()); 
+             after(grammarAccess.getCreateCompositionAccess().getItKeyword_4_1()); 
 
             }
 
@@ -12061,26 +12065,26 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__0__Impl"
+    // $ANTLR end "rule__CreateComposition__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__1"
-    // InternalFeatureLangParser.g:4031:1: rule__CreateComposition__Group_5__1 : rule__CreateComposition__Group_5__1__Impl rule__CreateComposition__Group_5__2 ;
-    public final void rule__CreateComposition__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__2"
+    // InternalFeatureLangParser.g:4031:1: rule__CreateComposition__Group_4__2 : rule__CreateComposition__Group_4__2__Impl rule__CreateComposition__Group_4__3 ;
+    public final void rule__CreateComposition__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4035:1: ( rule__CreateComposition__Group_5__1__Impl rule__CreateComposition__Group_5__2 )
-            // InternalFeatureLangParser.g:4036:2: rule__CreateComposition__Group_5__1__Impl rule__CreateComposition__Group_5__2
+            // InternalFeatureLangParser.g:4035:1: ( rule__CreateComposition__Group_4__2__Impl rule__CreateComposition__Group_4__3 )
+            // InternalFeatureLangParser.g:4036:2: rule__CreateComposition__Group_4__2__Impl rule__CreateComposition__Group_4__3
             {
             pushFollow(FOLLOW_38);
-            rule__CreateComposition__Group_5__1__Impl();
+            rule__CreateComposition__Group_4__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group_5__2();
+            rule__CreateComposition__Group_4__3();
 
             state._fsp--;
 
@@ -12099,35 +12103,35 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__1"
+    // $ANTLR end "rule__CreateComposition__Group_4__2"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__1__Impl"
-    // InternalFeatureLangParser.g:4043:1: rule__CreateComposition__Group_5__1__Impl : ( ( rule__CreateComposition__PriorityAssignment_5_1 ) ) ;
-    public final void rule__CreateComposition__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__2__Impl"
+    // InternalFeatureLangParser.g:4043:1: rule__CreateComposition__Group_4__2__Impl : ( ( rule__CreateComposition__PriorityAssignment_4_2 ) ) ;
+    public final void rule__CreateComposition__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4047:1: ( ( ( rule__CreateComposition__PriorityAssignment_5_1 ) ) )
-            // InternalFeatureLangParser.g:4048:1: ( ( rule__CreateComposition__PriorityAssignment_5_1 ) )
+            // InternalFeatureLangParser.g:4047:1: ( ( ( rule__CreateComposition__PriorityAssignment_4_2 ) ) )
+            // InternalFeatureLangParser.g:4048:1: ( ( rule__CreateComposition__PriorityAssignment_4_2 ) )
             {
-            // InternalFeatureLangParser.g:4048:1: ( ( rule__CreateComposition__PriorityAssignment_5_1 ) )
-            // InternalFeatureLangParser.g:4049:2: ( rule__CreateComposition__PriorityAssignment_5_1 )
+            // InternalFeatureLangParser.g:4048:1: ( ( rule__CreateComposition__PriorityAssignment_4_2 ) )
+            // InternalFeatureLangParser.g:4049:2: ( rule__CreateComposition__PriorityAssignment_4_2 )
             {
-             before(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_5_1()); 
-            // InternalFeatureLangParser.g:4050:2: ( rule__CreateComposition__PriorityAssignment_5_1 )
-            // InternalFeatureLangParser.g:4050:3: rule__CreateComposition__PriorityAssignment_5_1
+             before(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_4_2()); 
+            // InternalFeatureLangParser.g:4050:2: ( rule__CreateComposition__PriorityAssignment_4_2 )
+            // InternalFeatureLangParser.g:4050:3: rule__CreateComposition__PriorityAssignment_4_2
             {
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__PriorityAssignment_5_1();
+            rule__CreateComposition__PriorityAssignment_4_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_5_1()); 
+             after(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_4_2()); 
 
             }
 
@@ -12146,26 +12150,26 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__1__Impl"
+    // $ANTLR end "rule__CreateComposition__Group_4__2__Impl"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__2"
-    // InternalFeatureLangParser.g:4058:1: rule__CreateComposition__Group_5__2 : rule__CreateComposition__Group_5__2__Impl rule__CreateComposition__Group_5__3 ;
-    public final void rule__CreateComposition__Group_5__2() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__3"
+    // InternalFeatureLangParser.g:4058:1: rule__CreateComposition__Group_4__3 : rule__CreateComposition__Group_4__3__Impl rule__CreateComposition__Group_4__4 ;
+    public final void rule__CreateComposition__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4062:1: ( rule__CreateComposition__Group_5__2__Impl rule__CreateComposition__Group_5__3 )
-            // InternalFeatureLangParser.g:4063:2: rule__CreateComposition__Group_5__2__Impl rule__CreateComposition__Group_5__3
+            // InternalFeatureLangParser.g:4062:1: ( rule__CreateComposition__Group_4__3__Impl rule__CreateComposition__Group_4__4 )
+            // InternalFeatureLangParser.g:4063:2: rule__CreateComposition__Group_4__3__Impl rule__CreateComposition__Group_4__4
             {
             pushFollow(FOLLOW_39);
-            rule__CreateComposition__Group_5__2__Impl();
+            rule__CreateComposition__Group_4__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group_5__3();
+            rule__CreateComposition__Group_4__4();
 
             state._fsp--;
 
@@ -12184,12 +12188,12 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__2"
+    // $ANTLR end "rule__CreateComposition__Group_4__3"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__2__Impl"
-    // InternalFeatureLangParser.g:4070:1: rule__CreateComposition__Group_5__2__Impl : ( Be ) ;
-    public final void rule__CreateComposition__Group_5__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__3__Impl"
+    // InternalFeatureLangParser.g:4070:1: rule__CreateComposition__Group_4__3__Impl : ( Be ) ;
+    public final void rule__CreateComposition__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12200,9 +12204,9 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
             // InternalFeatureLangParser.g:4075:1: ( Be )
             // InternalFeatureLangParser.g:4076:2: Be
             {
-             before(grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2()); 
+             before(grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3()); 
             match(input,Be,FOLLOW_2); 
-             after(grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2()); 
+             after(grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3()); 
 
             }
 
@@ -12221,21 +12225,21 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__2__Impl"
+    // $ANTLR end "rule__CreateComposition__Group_4__3__Impl"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__3"
-    // InternalFeatureLangParser.g:4085:1: rule__CreateComposition__Group_5__3 : rule__CreateComposition__Group_5__3__Impl ;
-    public final void rule__CreateComposition__Group_5__3() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__4"
+    // InternalFeatureLangParser.g:4085:1: rule__CreateComposition__Group_4__4 : rule__CreateComposition__Group_4__4__Impl ;
+    public final void rule__CreateComposition__Group_4__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4089:1: ( rule__CreateComposition__Group_5__3__Impl )
-            // InternalFeatureLangParser.g:4090:2: rule__CreateComposition__Group_5__3__Impl
+            // InternalFeatureLangParser.g:4089:1: ( rule__CreateComposition__Group_4__4__Impl )
+            // InternalFeatureLangParser.g:4090:2: rule__CreateComposition__Group_4__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__Group_5__3__Impl();
+            rule__CreateComposition__Group_4__4__Impl();
 
             state._fsp--;
 
@@ -12254,35 +12258,35 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__3"
+    // $ANTLR end "rule__CreateComposition__Group_4__4"
 
 
-    // $ANTLR start "rule__CreateComposition__Group_5__3__Impl"
-    // InternalFeatureLangParser.g:4096:1: rule__CreateComposition__Group_5__3__Impl : ( ( rule__CreateComposition__PublicityAssignment_5_3 ) ) ;
-    public final void rule__CreateComposition__Group_5__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__Group_4__4__Impl"
+    // InternalFeatureLangParser.g:4096:1: rule__CreateComposition__Group_4__4__Impl : ( ( rule__CreateComposition__PublicityAssignment_4_4 ) ) ;
+    public final void rule__CreateComposition__Group_4__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4100:1: ( ( ( rule__CreateComposition__PublicityAssignment_5_3 ) ) )
-            // InternalFeatureLangParser.g:4101:1: ( ( rule__CreateComposition__PublicityAssignment_5_3 ) )
+            // InternalFeatureLangParser.g:4100:1: ( ( ( rule__CreateComposition__PublicityAssignment_4_4 ) ) )
+            // InternalFeatureLangParser.g:4101:1: ( ( rule__CreateComposition__PublicityAssignment_4_4 ) )
             {
-            // InternalFeatureLangParser.g:4101:1: ( ( rule__CreateComposition__PublicityAssignment_5_3 ) )
-            // InternalFeatureLangParser.g:4102:2: ( rule__CreateComposition__PublicityAssignment_5_3 )
+            // InternalFeatureLangParser.g:4101:1: ( ( rule__CreateComposition__PublicityAssignment_4_4 ) )
+            // InternalFeatureLangParser.g:4102:2: ( rule__CreateComposition__PublicityAssignment_4_4 )
             {
-             before(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_5_3()); 
-            // InternalFeatureLangParser.g:4103:2: ( rule__CreateComposition__PublicityAssignment_5_3 )
-            // InternalFeatureLangParser.g:4103:3: rule__CreateComposition__PublicityAssignment_5_3
+             before(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_4_4()); 
+            // InternalFeatureLangParser.g:4103:2: ( rule__CreateComposition__PublicityAssignment_4_4 )
+            // InternalFeatureLangParser.g:4103:3: rule__CreateComposition__PublicityAssignment_4_4
             {
             pushFollow(FOLLOW_2);
-            rule__CreateComposition__PublicityAssignment_5_3();
+            rule__CreateComposition__PublicityAssignment_4_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_5_3()); 
+             after(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_4_4()); 
 
             }
 
@@ -12301,7 +12305,7 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__Group_5__3__Impl"
+    // $ANTLR end "rule__CreateComposition__Group_4__4__Impl"
 
 
     // $ANTLR start "rule__EditComposition__Group__0"
@@ -15137,9 +15141,9 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__CreateComposition__RelationAssignment_3"
 
 
-    // $ANTLR start "rule__CreateComposition__PriorityAssignment_5_1"
-    // InternalFeatureLangParser.g:5113:1: rule__CreateComposition__PriorityAssignment_5_1 : ( rulePriority ) ;
-    public final void rule__CreateComposition__PriorityAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__PriorityAssignment_4_2"
+    // InternalFeatureLangParser.g:5113:1: rule__CreateComposition__PriorityAssignment_4_2 : ( rulePriority ) ;
+    public final void rule__CreateComposition__PriorityAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -15150,13 +15154,13 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
             // InternalFeatureLangParser.g:5118:2: ( rulePriority )
             // InternalFeatureLangParser.g:5119:3: rulePriority
             {
-             before(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0()); 
+             before(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
             rulePriority();
 
             state._fsp--;
 
-             after(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0()); 
+             after(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0()); 
 
             }
 
@@ -15175,12 +15179,12 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__PriorityAssignment_5_1"
+    // $ANTLR end "rule__CreateComposition__PriorityAssignment_4_2"
 
 
-    // $ANTLR start "rule__CreateComposition__PublicityAssignment_5_3"
-    // InternalFeatureLangParser.g:5128:1: rule__CreateComposition__PublicityAssignment_5_3 : ( rulePublicity ) ;
-    public final void rule__CreateComposition__PublicityAssignment_5_3() throws RecognitionException {
+    // $ANTLR start "rule__CreateComposition__PublicityAssignment_4_4"
+    // InternalFeatureLangParser.g:5128:1: rule__CreateComposition__PublicityAssignment_4_4 : ( rulePublicity ) ;
+    public final void rule__CreateComposition__PublicityAssignment_4_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -15191,13 +15195,13 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
             // InternalFeatureLangParser.g:5133:2: ( rulePublicity )
             // InternalFeatureLangParser.g:5134:3: rulePublicity
             {
-             before(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0()); 
+             before(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0()); 
             pushFollow(FOLLOW_2);
             rulePublicity();
 
             state._fsp--;
 
-             after(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0()); 
+             after(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0()); 
 
             }
 
@@ -15216,7 +15220,7 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__CreateComposition__PublicityAssignment_5_3"
+    // $ANTLR end "rule__CreateComposition__PublicityAssignment_4_4"
 
 
     // $ANTLR start "rule__EditComposition__CompositionNameAssignment_2"

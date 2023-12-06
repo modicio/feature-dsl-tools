@@ -1851,19 +1851,19 @@ ruleCreateComposition returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=FullStop
-		{
-			newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4());
-		}
 		(
+			otherlv_4=FullStop
+			{
+				newLeafNode(otherlv_4, grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0());
+			}
 			otherlv_5=It
 			{
-				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getCreateCompositionAccess().getItKeyword_4_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0());
 					}
 					lv_priority_6_0=rulePriority
 					{
@@ -1881,12 +1881,12 @@ ruleCreateComposition returns [EObject current=null]
 			)
 			otherlv_7=Be
 			{
-				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2());
+				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0());
+						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0());
 					}
 					lv_publicity_8_0=rulePublicity
 					{

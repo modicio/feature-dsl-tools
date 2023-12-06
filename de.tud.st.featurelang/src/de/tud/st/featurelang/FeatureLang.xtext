@@ -98,8 +98,8 @@ CompositionAction hidden(WS):
 ;
 
 CreateComposition hidden(WS):
-	'compose' target=Class 'called' relation=ID '.'
-	('it' priority=Priority 'be' publicity=Publicity)?
+	'compose' target=Class 'called' relation=ID
+	('.' 'it' priority=Priority 'be' publicity=Publicity)?
 ;
 
 EditComposition hidden(WS):

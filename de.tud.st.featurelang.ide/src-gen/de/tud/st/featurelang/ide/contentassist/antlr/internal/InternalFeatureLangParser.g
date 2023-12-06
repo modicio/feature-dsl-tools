@@ -3953,7 +3953,6 @@ rule__CreateComposition__Group__4
 	}
 :
 	rule__CreateComposition__Group__4__Impl
-	rule__CreateComposition__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3965,143 +3964,144 @@ rule__CreateComposition__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4()); }
+	{ before(grammarAccess.getCreateCompositionAccess().getGroup_4()); }
+	(rule__CreateComposition__Group_4__0)?
+	{ after(grammarAccess.getCreateCompositionAccess().getGroup_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__CreateComposition__Group_4__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CreateComposition__Group_4__0__Impl
+	rule__CreateComposition__Group_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CreateComposition__Group_4__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0()); }
 	FullStop
-	{ after(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4()); }
+	{ after(grammarAccess.getCreateCompositionAccess().getFullStopKeyword_4_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group__5
+rule__CreateComposition__Group_4__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CreateComposition__Group__5__Impl
+	rule__CreateComposition__Group_4__1__Impl
+	rule__CreateComposition__Group_4__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group__5__Impl
+rule__CreateComposition__Group_4__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCreateCompositionAccess().getGroup_5()); }
-	(rule__CreateComposition__Group_5__0)?
-	{ after(grammarAccess.getCreateCompositionAccess().getGroup_5()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__CreateComposition__Group_5__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CreateComposition__Group_5__0__Impl
-	rule__CreateComposition__Group_5__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CreateComposition__Group_5__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCreateCompositionAccess().getItKeyword_5_0()); }
+	{ before(grammarAccess.getCreateCompositionAccess().getItKeyword_4_1()); }
 	It
-	{ after(grammarAccess.getCreateCompositionAccess().getItKeyword_5_0()); }
+	{ after(grammarAccess.getCreateCompositionAccess().getItKeyword_4_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__1
+rule__CreateComposition__Group_4__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CreateComposition__Group_5__1__Impl
-	rule__CreateComposition__Group_5__2
+	rule__CreateComposition__Group_4__2__Impl
+	rule__CreateComposition__Group_4__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__1__Impl
+rule__CreateComposition__Group_4__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_5_1()); }
-	(rule__CreateComposition__PriorityAssignment_5_1)
-	{ after(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_5_1()); }
+	{ before(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_4_2()); }
+	(rule__CreateComposition__PriorityAssignment_4_2)
+	{ after(grammarAccess.getCreateCompositionAccess().getPriorityAssignment_4_2()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__2
+rule__CreateComposition__Group_4__3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CreateComposition__Group_5__2__Impl
-	rule__CreateComposition__Group_5__3
+	rule__CreateComposition__Group_4__3__Impl
+	rule__CreateComposition__Group_4__4
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__2__Impl
+rule__CreateComposition__Group_4__3__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2()); }
+	{ before(grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3()); }
 	Be
-	{ after(grammarAccess.getCreateCompositionAccess().getBeKeyword_5_2()); }
+	{ after(grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__3
+rule__CreateComposition__Group_4__4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__CreateComposition__Group_5__3__Impl
+	rule__CreateComposition__Group_4__4__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__Group_5__3__Impl
+rule__CreateComposition__Group_4__4__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_5_3()); }
-	(rule__CreateComposition__PublicityAssignment_5_3)
-	{ after(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_5_3()); }
+	{ before(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_4_4()); }
+	(rule__CreateComposition__PublicityAssignment_4_4)
+	{ after(grammarAccess.getCreateCompositionAccess().getPublicityAssignment_4_4()); }
 )
 ;
 finally {
@@ -5110,30 +5110,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__PriorityAssignment_5_1
+rule__CreateComposition__PriorityAssignment_4_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0()); }
+		{ before(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0()); }
 		rulePriority
-		{ after(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_5_1_0()); }
+		{ after(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CreateComposition__PublicityAssignment_5_3
+rule__CreateComposition__PublicityAssignment_4_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0()); }
+		{ before(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0()); }
 		rulePublicity
-		{ after(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_5_3_0()); }
+		{ after(grammarAccess.getCreateCompositionAccess().getPublicityPublicityEnumRuleCall_4_4_0()); }
 	)
 ;
 finally {
