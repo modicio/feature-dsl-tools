@@ -442,22 +442,22 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cAKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		private final Assignment cAttributeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAttributeAttributeParserRuleCall_2_0 = (RuleCall)cAttributeAssignment_2.eContents().get(0);
-		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cItKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cIsKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Keyword cAKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Assignment cTypeAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cTypeDatatypeEnumRuleCall_4_3_0 = (RuleCall)cTypeAssignment_4_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cFullStopKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cItKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cIsKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cAKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Assignment cTypeAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cTypeDatatypeEnumRuleCall_3_4_0 = (RuleCall)cTypeAssignment_3_4.eContents().get(0);
 		
 		//AttributeAction hidden(WS):
-		//    'have' ('the' | 'an' | 'a') attribute=Attribute '.'
-		//    ('it' 'is' 'a' type=Datatype)?
+		//    'have' ('the' | 'an' | 'a') attribute=Attribute
+		//    ('.' 'it' 'is' 'a' type=Datatype)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('the' | 'an' | 'a') attribute=Attribute '.'
-		//('it' 'is' 'a' type=Datatype)?
+		//'have' ('the' | 'an' | 'a') attribute=Attribute
+		//('.' 'it' 'is' 'a' type=Datatype)?
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -481,26 +481,26 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_2_0() { return cAttributeAttributeParserRuleCall_2_0; }
 		
-		//'.'
-		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
+		//('.' 'it' 'is' 'a' type=Datatype)?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//('it' 'is' 'a' type=Datatype)?
-		public Group getGroup_4() { return cGroup_4; }
+		//'.'
+		public Keyword getFullStopKeyword_3_0() { return cFullStopKeyword_3_0; }
 		
 		//'it'
-		public Keyword getItKeyword_4_0() { return cItKeyword_4_0; }
+		public Keyword getItKeyword_3_1() { return cItKeyword_3_1; }
 		
 		//'is'
-		public Keyword getIsKeyword_4_1() { return cIsKeyword_4_1; }
+		public Keyword getIsKeyword_3_2() { return cIsKeyword_3_2; }
 		
 		//'a'
-		public Keyword getAKeyword_4_2() { return cAKeyword_4_2; }
+		public Keyword getAKeyword_3_3() { return cAKeyword_3_3; }
 		
 		//type=Datatype
-		public Assignment getTypeAssignment_4_3() { return cTypeAssignment_4_3; }
+		public Assignment getTypeAssignment_3_4() { return cTypeAssignment_3_4; }
 		
 		//Datatype
-		public RuleCall getTypeDatatypeEnumRuleCall_4_3_0() { return cTypeDatatypeEnumRuleCall_4_3_0; }
+		public RuleCall getTypeDatatypeEnumRuleCall_3_4_0() { return cTypeDatatypeEnumRuleCall_3_4_0; }
 	}
 	public class AssociationActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AssociationAction");
@@ -1553,8 +1553,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AttributeAction hidden(WS):
-	//    'have' ('the' | 'an' | 'a') attribute=Attribute '.'
-	//    ('it' 'is' 'a' type=Datatype)?
+	//    'have' ('the' | 'an' | 'a') attribute=Attribute
+	//    ('.' 'it' 'is' 'a' type=Datatype)?
 	//;
 	public AttributeActionElements getAttributeActionAccess() {
 		return pAttributeAction;

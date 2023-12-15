@@ -62,7 +62,7 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUpdateAttributeIdentifierAccess().getGroup(), "rule__UpdateAttributeIdentifier__Group__0");
 			builder.put(grammarAccess.getUpdateAttributeValueAccess().getGroup(), "rule__UpdateAttributeValue__Group__0");
 			builder.put(grammarAccess.getAttributeActionAccess().getGroup(), "rule__AttributeAction__Group__0");
-			builder.put(grammarAccess.getAttributeActionAccess().getGroup_4(), "rule__AttributeAction__Group_4__0");
+			builder.put(grammarAccess.getAttributeActionAccess().getGroup_3(), "rule__AttributeAction__Group_3__0");
 			builder.put(grammarAccess.getAssociationActionAccess().getGroup(), "rule__AssociationAction__Group__0");
 			builder.put(grammarAccess.getAssociationActionAccess().getGroup_2_1(), "rule__AssociationAction__Group_2_1__0");
 			builder.put(grammarAccess.getCreateAssociationAccess().getGroup(), "rule__CreateAssociation__Group__0");
@@ -99,7 +99,7 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUpdateAttributeIdentifierAccess().getIdentifierAssignment_2(), "rule__UpdateAttributeIdentifier__IdentifierAssignment_2");
 			builder.put(grammarAccess.getUpdateAttributeValueAccess().getValueAssignment_3(), "rule__UpdateAttributeValue__ValueAssignment_3");
 			builder.put(grammarAccess.getAttributeActionAccess().getAttributeAssignment_2(), "rule__AttributeAction__AttributeAssignment_2");
-			builder.put(grammarAccess.getAttributeActionAccess().getTypeAssignment_4_3(), "rule__AttributeAction__TypeAssignment_4_3");
+			builder.put(grammarAccess.getAttributeActionAccess().getTypeAssignment_3_4(), "rule__AttributeAction__TypeAssignment_3_4");
 			builder.put(grammarAccess.getAssociationActionAccess().getCreateAssignment_2_0(), "rule__AssociationAction__CreateAssignment_2_0");
 			builder.put(grammarAccess.getAssociationActionAccess().getNameAssignment_2_1_0(), "rule__AssociationAction__NameAssignment_2_1_0");
 			builder.put(grammarAccess.getAssociationActionAccess().getEditAssignment_2_1_1(), "rule__AssociationAction__EditAssignment_2_1_1");

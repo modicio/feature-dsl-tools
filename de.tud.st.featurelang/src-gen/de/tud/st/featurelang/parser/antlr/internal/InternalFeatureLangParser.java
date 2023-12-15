@@ -2197,7 +2197,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeAction"
-    // InternalFeatureLangParser.g:831:1: ruleAttributeAction returns [EObject current=null] : (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) otherlv_5= FullStop (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? ) ;
+    // InternalFeatureLangParser.g:831:1: ruleAttributeAction returns [EObject current=null] : (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? ) ;
     public final EObject ruleAttributeAction() throws RecognitionException {
         EObject current = null;
 
@@ -2219,11 +2219,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:838:2: ( (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) otherlv_5= FullStop (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? ) )
-            // InternalFeatureLangParser.g:839:2: (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) otherlv_5= FullStop (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? )
+            // InternalFeatureLangParser.g:838:2: ( (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? ) )
+            // InternalFeatureLangParser.g:839:2: (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? )
             {
-            // InternalFeatureLangParser.g:839:2: (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) otherlv_5= FullStop (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? )
-            // InternalFeatureLangParser.g:840:3: otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) otherlv_5= FullStop (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )?
+            // InternalFeatureLangParser.g:839:2: (otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )? )
+            // InternalFeatureLangParser.g:840:3: otherlv_0= Have (otherlv_1= The | otherlv_2= An | otherlv_3= A ) ( (lv_attribute_4_0= ruleAttribute ) ) (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )?
             {
             otherlv_0=(Token)match(input,Have,FOLLOW_22); 
 
@@ -2297,7 +2297,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getAttributeActionAccess().getAttributeAttributeParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_4);
             lv_attribute_4_0=ruleAttribute();
 
             state._fsp--;
@@ -2319,32 +2319,36 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,FullStop,FOLLOW_23); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3());
-            		
-            // InternalFeatureLangParser.g:883:3: (otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )?
+            // InternalFeatureLangParser.g:879:3: (otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==It) ) {
-                alt17=1;
+            if ( (LA17_0==FullStop) ) {
+                int LA17_1 = input.LA(2);
+
+                if ( (LA17_1==It) ) {
+                    alt17=1;
+                }
             }
             switch (alt17) {
                 case 1 :
-                    // InternalFeatureLangParser.g:884:4: otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) )
+                    // InternalFeatureLangParser.g:880:4: otherlv_5= FullStop otherlv_6= It otherlv_7= Is otherlv_8= A ( (lv_type_9_0= ruleDatatype ) )
                     {
-                    otherlv_6=(Token)match(input,It,FOLLOW_24); 
+                    otherlv_5=(Token)match(input,FullStop,FOLLOW_15); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getItKeyword_4_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3_0());
+                    			
+                    otherlv_6=(Token)match(input,It,FOLLOW_23); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getItKeyword_3_1());
                     			
                     otherlv_7=(Token)match(input,Is,FOLLOW_17); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getIsKeyword_4_1());
+                    				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getIsKeyword_3_2());
                     			
                     otherlv_8=(Token)match(input,A,FOLLOW_18); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getAttributeActionAccess().getAKeyword_4_2());
+                    				newLeafNode(otherlv_8, grammarAccess.getAttributeActionAccess().getAKeyword_3_3());
                     			
                     // InternalFeatureLangParser.g:896:4: ( (lv_type_9_0= ruleDatatype ) )
                     // InternalFeatureLangParser.g:897:5: (lv_type_9_0= ruleDatatype )
@@ -2353,7 +2357,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     // InternalFeatureLangParser.g:898:6: lv_type_9_0= ruleDatatype
                     {
 
-                    						newCompositeNode(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_4_3_0());
+                    						newCompositeNode(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_3_4_0());
                     					
                     pushFollow(FOLLOW_2);
                     lv_type_9_0=ruleDatatype();
@@ -2475,7 +2479,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:943:2: (otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) ) )
             // InternalFeatureLangParser.g:944:3: otherlv_0= Have (otherlv_1= Associations | otherlv_2= Association ) ( ( (lv_create_3_0= ruleCreateAssociation ) ) | ( ( (lv_name_4_0= RULE_ID ) ) ( (lv_edit_5_0= ruleEditAssociation ) ) ) )
             {
-            otherlv_0=(Token)match(input,Have,FOLLOW_25); 
+            otherlv_0=(Token)match(input,Have,FOLLOW_24); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAssociationActionAccess().getHaveKeyword_0());
             		
@@ -2499,7 +2503,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalFeatureLangParser.g:949:4: otherlv_1= Associations
                     {
-                    otherlv_1=(Token)match(input,Associations,FOLLOW_26); 
+                    otherlv_1=(Token)match(input,Associations,FOLLOW_25); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1_0());
                     			
@@ -2509,7 +2513,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // InternalFeatureLangParser.g:954:4: otherlv_2= Association
                     {
-                    otherlv_2=(Token)match(input,Association,FOLLOW_26); 
+                    otherlv_2=(Token)match(input,Association,FOLLOW_25); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getAssociationActionAccess().getAssociationKeyword_1_1());
                     			
@@ -2585,7 +2589,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                     // InternalFeatureLangParser.g:982:6: (lv_name_4_0= RULE_ID )
                     // InternalFeatureLangParser.g:983:7: lv_name_4_0= RULE_ID
                     {
-                    lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_27); 
+                    lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_26); 
 
                     							newLeafNode(lv_name_4_0, grammarAccess.getAssociationActionAccess().getNameIDTerminalRuleCall_2_1_0_0());
                     						
@@ -2735,7 +2739,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1047:2: (otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1048:3: otherlv_0= To (otherlv_1= Other )? ( (lv_target_2_0= ruleClass ) ) otherlv_3= Called ( (lv_relation_4_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,To,FOLLOW_28); 
+            otherlv_0=(Token)match(input,To,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCreateAssociationAccess().getToKeyword_0());
             		
@@ -2750,7 +2754,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalFeatureLangParser.g:1053:4: otherlv_1= Other
                     {
-                    otherlv_1=(Token)match(input,Other,FOLLOW_29); 
+                    otherlv_1=(Token)match(input,Other,FOLLOW_28); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getCreateAssociationAccess().getOtherKeyword_1());
                     			
@@ -2769,7 +2773,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getCreateAssociationAccess().getTargetClassParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             lv_target_2_0=ruleClass();
 
             state._fsp--;
@@ -3181,11 +3185,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1237:2: (otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1238:3: otherlv_0= Compatible otherlv_1= With otherlv_2= Version ( (lv_name_3_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Compatible,FOLLOW_31); 
+            otherlv_0=(Token)match(input,Compatible,FOLLOW_30); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSetCompatibleAccess().getCompatibleKeyword_0());
             		
-            otherlv_1=(Token)match(input,With,FOLLOW_32); 
+            otherlv_1=(Token)match(input,With,FOLLOW_31); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSetCompatibleAccess().getWithKeyword_1());
             		
@@ -3310,15 +3314,15 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1295:2: (otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1296:3: otherlv_0= With otherlv_1= Version otherlv_2= Range otherlv_3= From ( (lv_start_4_0= RULE_ID ) ) otherlv_5= To ( (lv_end_6_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,With,FOLLOW_32); 
+            otherlv_0=(Token)match(input,With,FOLLOW_31); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSetVersionRangeAccess().getWithKeyword_0());
             		
-            otherlv_1=(Token)match(input,Version,FOLLOW_33); 
+            otherlv_1=(Token)match(input,Version,FOLLOW_32); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSetVersionRangeAccess().getVersionKeyword_1());
             		
-            otherlv_2=(Token)match(input,Range,FOLLOW_34); 
+            otherlv_2=(Token)match(input,Range,FOLLOW_33); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSetVersionRangeAccess().getRangeKeyword_2());
             		
@@ -3332,7 +3336,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1313:4: (lv_start_4_0= RULE_ID )
             // InternalFeatureLangParser.g:1314:5: lv_start_4_0= RULE_ID
             {
-            lv_start_4_0=(Token)match(input,RULE_ID,FOLLOW_35); 
+            lv_start_4_0=(Token)match(input,RULE_ID,FOLLOW_34); 
 
             					newLeafNode(lv_start_4_0, grammarAccess.getSetVersionRangeAccess().getStartIDTerminalRuleCall_4_0());
             				
@@ -3472,19 +3476,19 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1379:2: (otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1380:3: otherlv_0= With otherlv_1= All otherlv_2= Versions otherlv_3= Of otherlv_4= Variant ( (lv_name_5_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,With,FOLLOW_36); 
+            otherlv_0=(Token)match(input,With,FOLLOW_35); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSetVariantAccess().getWithKeyword_0());
             		
-            otherlv_1=(Token)match(input,All,FOLLOW_37); 
+            otherlv_1=(Token)match(input,All,FOLLOW_36); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSetVariantAccess().getAllKeyword_1());
             		
-            otherlv_2=(Token)match(input,Versions,FOLLOW_38); 
+            otherlv_2=(Token)match(input,Versions,FOLLOW_37); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSetVariantAccess().getVersionsKeyword_2());
             		
-            otherlv_3=(Token)match(input,Of,FOLLOW_39); 
+            otherlv_3=(Token)match(input,Of,FOLLOW_38); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSetVariantAccess().getOfKeyword_3());
             		
@@ -3606,11 +3610,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1445:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1446:3: otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Up,FOLLOW_35); 
+            otherlv_0=(Token)match(input,Up,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getUpKeyword_0());
             		
-            otherlv_1=(Token)match(input,To,FOLLOW_40); 
+            otherlv_1=(Token)match(input,To,FOLLOW_39); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getToKeyword_1());
             		
@@ -3732,11 +3736,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1503:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1504:3: otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Starting,FOLLOW_34); 
+            otherlv_0=(Token)match(input,Starting,FOLLOW_33); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0());
             		
-            otherlv_1=(Token)match(input,From,FOLLOW_40); 
+            otherlv_1=(Token)match(input,From,FOLLOW_39); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getFromKeyword_1());
             		
@@ -4034,11 +4038,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1628:2: (otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) ) )
             // InternalFeatureLangParser.g:1629:3: otherlv_0= Inherit otherlv_1= From ( (lv_parent_2_0= ruleClass ) )
             {
-            otherlv_0=(Token)match(input,Inherit,FOLLOW_34); 
+            otherlv_0=(Token)match(input,Inherit,FOLLOW_33); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCreateInheritanceAccess().getInheritKeyword_0());
             		
-            otherlv_1=(Token)match(input,From,FOLLOW_29); 
+            otherlv_1=(Token)match(input,From,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCreateInheritanceAccess().getFromKeyword_1());
             		
@@ -4161,11 +4165,11 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1683:2: (otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1684:3: otherlv_0= Have otherlv_1= Inheritance otherlv_2= URI ( (lv_uri_3_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Have,FOLLOW_41); 
+            otherlv_0=(Token)match(input,Have,FOLLOW_40); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEditInheritanceAccess().getHaveKeyword_0());
             		
-            otherlv_1=(Token)match(input,Inheritance,FOLLOW_42); 
+            otherlv_1=(Token)match(input,Inheritance,FOLLOW_41); 
 
             			newLeafNode(otherlv_1, grammarAccess.getEditInheritanceAccess().getInheritanceKeyword_1());
             		
@@ -4471,7 +4475,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1808:2: (otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )? )
             // InternalFeatureLangParser.g:1809:3: otherlv_0= Compose ( (lv_target_1_0= ruleClass ) ) otherlv_2= Called ( (lv_relation_3_0= RULE_ID ) ) (otherlv_4= FullStop otherlv_5= It ( (lv_priority_6_0= rulePriority ) ) otherlv_7= Be ( (lv_publicity_8_0= rulePublicity ) ) )?
             {
-            otherlv_0=(Token)match(input,Compose,FOLLOW_29); 
+            otherlv_0=(Token)match(input,Compose,FOLLOW_28); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCreateCompositionAccess().getComposeKeyword_0());
             		
@@ -4484,7 +4488,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getCreateCompositionAccess().getTargetClassParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             lv_target_1_0=ruleClass();
 
             state._fsp--;
@@ -4568,7 +4572,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getCreateCompositionAccess().getPriorityPriorityParserRuleCall_4_2_0());
                     					
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_42);
                     lv_priority_6_0=rulePriority();
 
                     state._fsp--;
@@ -4590,7 +4594,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,Be,FOLLOW_44); 
+                    otherlv_7=(Token)match(input,Be,FOLLOW_43); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getCreateCompositionAccess().getBeKeyword_4_3());
                     			
@@ -4722,7 +4726,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1933:2: (otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) ) )
             // InternalFeatureLangParser.g:1934:3: otherlv_0= Have otherlv_1= Composition ( (lv_compositionName_2_0= RULE_ID ) ) otherlv_3= With ( (lv_parameter_4_0= ruleCompositionParameter ) ) ( (lv_name_5_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,Have,FOLLOW_45); 
+            otherlv_0=(Token)match(input,Have,FOLLOW_44); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEditCompositionAccess().getHaveKeyword_0());
             		
@@ -4736,7 +4740,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
             // InternalFeatureLangParser.g:1943:4: (lv_compositionName_2_0= RULE_ID )
             // InternalFeatureLangParser.g:1944:5: lv_compositionName_2_0= RULE_ID
             {
-            lv_compositionName_2_0=(Token)match(input,RULE_ID,FOLLOW_31); 
+            lv_compositionName_2_0=(Token)match(input,RULE_ID,FOLLOW_30); 
 
             					newLeafNode(lv_compositionName_2_0, grammarAccess.getEditCompositionAccess().getCompositionNameIDTerminalRuleCall_2_0());
             				
@@ -4756,7 +4760,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,With,FOLLOW_46); 
+            otherlv_3=(Token)match(input,With,FOLLOW_45); 
 
             			newLeafNode(otherlv_3, grammarAccess.getEditCompositionAccess().getWithKeyword_3());
             		
@@ -4921,7 +4925,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalFeatureLangParser.g:2030:4: otherlv_0= The
                     {
-                    otherlv_0=(Token)match(input,The,FOLLOW_47); 
+                    otherlv_0=(Token)match(input,The,FOLLOW_46); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getClassAccess().getTheKeyword_0_0());
                     			
@@ -4931,7 +4935,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // InternalFeatureLangParser.g:2035:4: otherlv_1= A
                     {
-                    otherlv_1=(Token)match(input,A,FOLLOW_47); 
+                    otherlv_1=(Token)match(input,A,FOLLOW_46); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getClassAccess().getAKeyword_0_1());
                     			
@@ -4958,7 +4962,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
                     					newCompositeNode(grammarAccess.getClassAccess().getAbstractAbstractionEnumRuleCall_1_0());
                     				
-                    pushFollow(FOLLOW_48);
+                    pushFollow(FOLLOW_47);
                     lv_abstract_2_0=ruleAbstraction();
 
                     state._fsp--;
@@ -6051,31 +6055,30 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00080C0000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0002002000001100L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x001804000A000400L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0018040002000400L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000004801000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0010000002000400L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0010000002000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0011000000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0002002000001100L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x001804000A000400L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0018040002000400L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000004801000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0010000002000400L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0010000002000000L});
 
 }

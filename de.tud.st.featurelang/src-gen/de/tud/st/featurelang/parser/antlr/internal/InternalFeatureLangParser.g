@@ -876,27 +876,27 @@ ruleAttributeAction returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5=FullStop
-		{
-			newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3());
-		}
 		(
+			otherlv_5=FullStop
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAttributeActionAccess().getFullStopKeyword_3_0());
+			}
 			otherlv_6=It
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getItKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getAttributeActionAccess().getItKeyword_3_1());
 			}
 			otherlv_7=Is
 			{
-				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getIsKeyword_4_1());
+				newLeafNode(otherlv_7, grammarAccess.getAttributeActionAccess().getIsKeyword_3_2());
 			}
 			otherlv_8=A
 			{
-				newLeafNode(otherlv_8, grammarAccess.getAttributeActionAccess().getAKeyword_4_2());
+				newLeafNode(otherlv_8, grammarAccess.getAttributeActionAccess().getAKeyword_3_3());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_4_3_0());
+						newCompositeNode(grammarAccess.getAttributeActionAccess().getTypeDatatypeEnumRuleCall_3_4_0());
 					}
 					lv_type_9_0=ruleDatatype
 					{

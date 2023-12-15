@@ -45,8 +45,8 @@ UpdateAttributeValue hidden (WS):
 ;
 
 AttributeAction hidden(WS):
-	'have' ('the' | 'an' | 'a') attribute=Attribute '.'
-	('it' 'is' 'a' type=Datatype)?
+	'have' ('the' | 'an' | 'a') attribute=Attribute
+	('.' 'it' 'is' 'a' type=Datatype)?
 ;
 
 AssociationAction hidden(WS):

@@ -59,9 +59,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 	private def compile(ChangeStatement s) '''
 		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
 		«IF should»
-				START OPTIONAL
+				START OPTIONAL,
 		«ENDIF»
-		OPEN CLASS «s.getTarget().name»
+		OPEN CLASS «s.getTarget().name»,
 		«IF s.getAction() !== null »
 			«s.getAction().getType().compileAction(s.isNegation())»
 		«ELSEIF s.getUpdate() !== null»
@@ -71,14 +71,14 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val nameId = identifier.getValue() === IdentifierValue.NAME»
 			«val newIdentifier = identifier.getName()»
 			«IF nameId»
-				CHANGE NAME TO «newIdentifier»
+				CHANGE NAME TO «newIdentifier»,
 			«ELSE» 
-				CHANGE URI TO «newIdentifier»	
+				CHANGE URI TO «newIdentifier»,
 			«ENDIF»	
 		«ENDIF»
-		CLOSE CLASS «s.getTarget().name»
+		CLOSE CLASS «s.getTarget().name»,
 		«IF should»
-				END OPTIONAL
+				END OPTIONAL,
 		«ENDIF»
     '''
     
@@ -87,19 +87,19 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«val name = s.getClassElement().getName()»
 		«val abstract = s.getClassElement().getAbstract() !== null && s.getClassElement().getAbstract() === Abstraction.ABSTRACT»
 		«IF should»
-			START OPTIONAL
+			START OPTIONAL,
 		«ENDIF»
 		«IF s.isNegation() »
-			DELETE CLASS «name»
+			DELETE CLASS «name»,
 		«ELSE»
 			«IF abstract» 
-				CREATE ABSTRACT CLASS «name»
+				CREATE ABSTRACT CLASS «name»,
 			«ELSE»	
-				CREATE CLASS «name»
+				CREATE CLASS «name»,
 			«ENDIF»	
 		«ENDIF»
 		«IF should»
-			END OPTIONAL
+			END OPTIONAL,
 		«ENDIF»
     '''
     
@@ -118,16 +118,16 @@ class FeatureLangGenerator extends AbstractGenerator {
 		val attrName = attr.getName()
 		'''
 		«IF negation»
-			DELETE ATTRIBUTE «attrName»
+			DELETE ATTRIBUTE «attrName»,
 		«ELSE»
-			ADD ATTRIBUTE «attrName»
-			OPEN ATTRIBUTE «attrName»
+			ADD ATTRIBUTE «attrName»,
+			OPEN ATTRIBUTE «attrName»,
 			«IF a.getType() !== null»
-				SET TYPE «a.getType()»
+				SET TYPE «a.getType()»,
 			«ELSE»
-				SET TYPE DEFAULT
+				SET TYPE DEFAULT,
 			«ENDIF»
-			CLOSE ATTRIBUTE «attrName»
+			CLOSE ATTRIBUTE «attrName»,
 		«ENDIF»
 		'''
 	}
@@ -138,15 +138,15 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val targetClass = a.getCreate().getTarget().getName()»
 			«val relation = a.getCreate().getRelation()»
 			«IF negation»
-				DELETE ASSOCIATION «relation»
+				DELETE ASSOCIATION «relation»,
 			«ELSE»
-				ADD ASSOCIATION «relation» TARGET «targetClass»
+				ADD ASSOCIATION «relation» TARGET «targetClass»,
 			«ENDIF» 
 		«ELSE» 
 			«val associationName = a.getName()»
-			OPEN ASSOCIATION «associationName»
+			OPEN ASSOCIATION «associationName»,
 			«a.getEdit().getType().compileEditAssociation()»
-			CLOSE ASSOCIATION «associationName»
+			CLOSE ASSOCIATION «associationName»,
 		«ENDIF»
 		'''
 	}
@@ -165,7 +165,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 	private def compileSetCompatible(SetCompatible a) {
 		val versionName = a.getName() 
 		'''
-		SET COMPATIBLE WITH VERSION «versionName»
+		SET COMPATIBLE WITH VERSION «versionName»,
 		'''
 	}
 	
@@ -173,28 +173,28 @@ class FeatureLangGenerator extends AbstractGenerator {
 		val start = a.getStart()
 		val end = a.getEnd() 
 		'''
-		SET VERSION RANGE FROM «start» TO «end»
+		SET VERSION RANGE FROM «start» TO «end»,
 		'''
 	}
 	
 	private def compileSetVariant(SetVariant a) {
 		val variantName = a.getName()
 		'''
-		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantName»
+		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantName»,
 		'''
 	}
 	
 	private def compileSetLeftOpen(SetLeftOpen a) {
 		val date = a.getDate()
 		'''
-		SET VERSION UP TO DATE «date»
+		SET VERSION UP TO DATE «date»,
 		'''
 	}
 	
 	private def compileSetRightOpen(SetRightOpen a) {
 		val date = a.getDate()
 		'''
-		SET VERSION STARTING FROM DATE «date»
+		SET VERSION STARTING FROM DATE «date»,
 		'''
 	}
 	
@@ -204,22 +204,22 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val targetClass = a.getCreate().getTarget().getName()»
 			«val relation = a.getCreate().getRelation()»
 			«IF negation»
-				DELETE COMPOSITION «targetClass»
+				DELETE COMPOSITION «targetClass»,
 			«ELSE»
-				ADD COMPOSITION «relation» TARGET «targetClass»
+				ADD COMPOSITION «relation» TARGET «targetClass»,
 				«IF a.getCreate().getPublicity() !== null»
 					«val should = a.getCreate().getPriority() !== null && a.getCreate().getPriority().getPriority() === PriorityValue.SHOULD»	
 					«IF should»
-						START OPTIONAL
+						START OPTIONAL,
 					«ENDIF»
 					«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
 					«IF public»
-						MAKE COMPOSITION PUBLIC
+						MAKE COMPOSITION PUBLIC,
 					«ELSE» 
-						MAKE COMPOSITION PRIVATE
+						MAKE COMPOSITION PRIVATE,
 					«ENDIF»
 					«IF should»
-						END OPTIONAL
+						END OPTIONAL,
 					«ENDIF»	
 				«ENDIF»	
 			«ENDIF»
@@ -227,15 +227,15 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val compositionName = a.getEdit().getCompositionName()»
 			«val parameter = a.getEdit().getParameter()»
 			«val newName = a.getEdit().getName()»
-			OPEN COMPOSITION «compositionName»
+			OPEN COMPOSITION «compositionName»,
 			«IF parameter === CompositionParameter.URI»
-				SET URI TO «newName»
+				SET URI TO «newName»,
 			«ELSEIF parameter === CompositionParameter.ROLE»
-				SET ROLE TO «newName»
+				SET ROLE TO «newName»,
 			«ELSE»
-				SET TARGET TO «newName»
+				SET TARGET TO «newName»,
 			«ENDIF»	
-			CLOSE COMPOSITION «compositionName»
+			CLOSE COMPOSITION «compositionName»,
 		«ENDIF»	
 		'''
 	}
@@ -245,13 +245,13 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF a.getCreate() !== null»
 			«val targetClass = a.getCreate().getParent().getName()»
 			«IF negation»
-				DELETE PARENT_RELATION «targetClass»
+				DELETE PARENT_RELATION «targetClass»,
 			«ELSE»
-				ADD PARENT_RELATION «targetClass»
+				ADD PARENT_RELATION «targetClass»,
 			«ENDIF»
 		«ELSE» 
 			«val newUri = a.getEdit().getUri()»
-			SET INHERITANCE URI TO «newUri»
+			SET INHERITANCE URI TO «newUri»,
 		«ENDIF»	
 		'''
 	}
@@ -261,27 +261,27 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«val changeType = a.getDatatype() !== null»
 		«val changeIdentifier = a.getIdentifier() !== null»
 		«IF should»
-		START OPTIONAL
+		START OPTIONAL,
 		«ENDIF» 
-		OPEN ATTRIBUTE «a.getAttribute().getName()»
+		OPEN ATTRIBUTE «a.getAttribute().getName()»,
 		«IF changeType»
-			SET TYPE «a.getDatatype().getType()»
+			SET TYPE «a.getDatatype().getType()»,
 		«ELSEIF changeIdentifier» 
 			«val identifier = a.getIdentifier().getIdentifier()»
 			«val nameId = identifier.getValue() === IdentifierValue.NAME»
 			«val newIdentifier = identifier.getName()»
 			«IF nameId»
-				CHANGE ATTRIBUTE NAME TO «newIdentifier»
+				CHANGE ATTRIBUTE NAME TO «newIdentifier»,
 			«ELSE» 
-				CHANGE ATTRIBUTE URI TO «newIdentifier»
+				CHANGE ATTRIBUTE URI TO «newIdentifier»,
 			«ENDIF»	
 		«ELSE»
 			«val value = a.getValue().getValue()»
-			SET ATTRIBUTE VALUE TO «value»
+			SET ATTRIBUTE VALUE TO «value»,
 		«ENDIF»	
-		CLOSE ATTRIBUTE «a.getAttribute().getName()»
+		CLOSE ATTRIBUTE «a.getAttribute().getName()»,
 		«IF should»
-		END OPTIONAL
+		END OPTIONAL,
 		«ENDIF»
 	'''
 }
