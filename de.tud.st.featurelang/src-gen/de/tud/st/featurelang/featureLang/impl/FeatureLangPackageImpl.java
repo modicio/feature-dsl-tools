@@ -10,15 +10,12 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
-import de.tud.st.featurelang.featureLang.CompositionParameter;
 import de.tud.st.featurelang.featureLang.CreateAssociation;
 import de.tud.st.featurelang.featureLang.CreateComposition;
-import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
 import de.tud.st.featurelang.featureLang.EditAssociation;
 import de.tud.st.featurelang.featureLang.EditComposition;
-import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
@@ -193,20 +190,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass createInheritanceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass editInheritanceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass compositionActionEClass = null;
 
   /**
@@ -250,13 +233,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   private EClass priorityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum compositionParameterEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -911,64 +887,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getInheritanceAction_Create()
+  public EReference getInheritanceAction_Parent()
   {
     return (EReference)inheritanceActionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getInheritanceAction_Edit()
-  {
-    return (EReference)inheritanceActionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getCreateInheritance()
-  {
-    return createInheritanceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getCreateInheritance_Parent()
-  {
-    return (EReference)createInheritanceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getEditInheritance()
-  {
-    return editInheritanceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEditInheritance_Uri()
-  {
-    return (EAttribute)editInheritanceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1087,20 +1008,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EAttribute getEditComposition_Parameter()
+  public EAttribute getEditComposition_Publicity()
   {
     return (EAttribute)editCompositionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEditComposition_Name()
-  {
-    return (EAttribute)editCompositionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1211,17 +1121,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
   public EAttribute getPriority_Priority()
   {
     return (EAttribute)priorityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EEnum getCompositionParameter()
-  {
-    return compositionParameterEEnum;
   }
 
   /**
@@ -1378,14 +1277,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(setLeftOpenEClass, SET_LEFT_OPEN__DATE);
 
     inheritanceActionEClass = createEClass(INHERITANCE_ACTION);
-    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__CREATE);
-    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__EDIT);
-
-    createInheritanceEClass = createEClass(CREATE_INHERITANCE);
-    createEReference(createInheritanceEClass, CREATE_INHERITANCE__PARENT);
-
-    editInheritanceEClass = createEClass(EDIT_INHERITANCE);
-    createEAttribute(editInheritanceEClass, EDIT_INHERITANCE__URI);
+    createEReference(inheritanceActionEClass, INHERITANCE_ACTION__PARENT);
 
     compositionActionEClass = createEClass(COMPOSITION_ACTION);
     createEReference(compositionActionEClass, COMPOSITION_ACTION__CREATE);
@@ -1399,8 +1291,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
 
     editCompositionEClass = createEClass(EDIT_COMPOSITION);
     createEAttribute(editCompositionEClass, EDIT_COMPOSITION__COMPOSITION_NAME);
-    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__PARAMETER);
-    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__NAME);
+    createEAttribute(editCompositionEClass, EDIT_COMPOSITION__PUBLICITY);
 
     classEClass = createEClass(CLASS);
     createEAttribute(classEClass, CLASS__ABSTRACT);
@@ -1417,7 +1308,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(priorityEClass, PRIORITY__PRIORITY);
 
     // Create enums
-    compositionParameterEEnum = createEEnum(COMPOSITION_PARAMETER);
     publicityEEnum = createEEnum(PUBLICITY);
     priorityValueEEnum = createEEnum(PRIORITY_VALUE);
     abstractionEEnum = createEEnum(ABSTRACTION);
@@ -1526,14 +1416,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getSetLeftOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetLeftOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inheritanceActionEClass, InheritanceAction.class, "InheritanceAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInheritanceAction_Create(), this.getCreateInheritance(), null, "create", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInheritanceAction_Edit(), this.getEditInheritance(), null, "edit", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(createInheritanceEClass, CreateInheritance.class, "CreateInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCreateInheritance_Parent(), this.getClass_(), null, "parent", null, 0, 1, CreateInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(editInheritanceEClass, EditInheritance.class, "EditInheritance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEditInheritance_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, EditInheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInheritanceAction_Parent(), this.getClass_(), null, "parent", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositionActionEClass, CompositionAction.class, "CompositionAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCompositionAction_Create(), this.getCreateComposition(), null, "create", null, 0, 1, CompositionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1547,8 +1430,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
 
     initEClass(editCompositionEClass, EditComposition.class, "EditComposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEditComposition_CompositionName(), ecorePackage.getEString(), "compositionName", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEditComposition_Parameter(), this.getCompositionParameter(), "parameter", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEditComposition_Name(), ecorePackage.getEString(), "name", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEditComposition_Publicity(), this.getPublicity(), "publicity", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classEClass, de.tud.st.featurelang.featureLang.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClass_Abstract(), this.getAbstraction(), "abstract", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1565,11 +1447,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getPriority_Priority(), this.getPriorityValue(), "priority", null, 0, 1, Priority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(compositionParameterEEnum, CompositionParameter.class, "CompositionParameter");
-    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.URI);
-    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.ROLE);
-    addEEnumLiteral(compositionParameterEEnum, CompositionParameter.TARGET);
-
     initEEnum(publicityEEnum, Publicity.class, "Publicity");
     addEEnumLiteral(publicityEEnum, Publicity.PUBLIC);
     addEEnumLiteral(publicityEEnum, Publicity.PRIVATE);

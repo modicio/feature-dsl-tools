@@ -11,11 +11,9 @@ import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
 import de.tud.st.featurelang.featureLang.CreateAssociation;
 import de.tud.st.featurelang.featureLang.CreateComposition;
-import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.EditAssociation;
 import de.tud.st.featurelang.featureLang.EditComposition;
-import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.Identifier;
@@ -196,16 +194,6 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
       public Adapter caseInheritanceAction(InheritanceAction object)
       {
         return createInheritanceActionAdapter();
-      }
-      @Override
-      public Adapter caseCreateInheritance(CreateInheritance object)
-      {
-        return createCreateInheritanceAdapter();
-      }
-      @Override
-      public Adapter caseEditInheritance(EditInheritance object)
-      {
-        return createEditInheritanceAdapter();
       }
       @Override
       public Adapter caseCompositionAction(CompositionAction object)
@@ -545,36 +533,6 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInheritanceActionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.CreateInheritance <em>Create Inheritance</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.tud.st.featurelang.featureLang.CreateInheritance
-   * @generated
-   */
-  public Adapter createCreateInheritanceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.EditInheritance <em>Edit Inheritance</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.tud.st.featurelang.featureLang.EditInheritance
-   * @generated
-   */
-  public Adapter createEditInheritanceAdapter()
   {
     return null;
   }

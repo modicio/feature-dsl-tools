@@ -12,62 +12,60 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalFeatureLangLexer extends Lexer {
-    public static final int All=39;
-    public static final int Inheritance=7;
-    public static final int Must=33;
-    public static final int Name=34;
-    public static final int Compose=14;
-    public static final int Version=18;
-    public static final int Private=16;
-    public static final int To=48;
-    public static final int Inherit=15;
-    public static final int RULE_ID=52;
-    public static final int Have=32;
-    public static final int Phrase=21;
-    public static final int Public=22;
+    public static final int All=37;
+    public static final int Must=31;
+    public static final int Name=32;
+    public static final int Compose=13;
+    public static final int Version=17;
+    public static final int Private=15;
+    public static final int To=46;
+    public static final int Inherit=14;
+    public static final int RULE_ID=50;
+    public static final int Have=30;
+    public static final int Phrase=20;
+    public static final int Public=21;
     public static final int Associations=4;
-    public static final int Range=28;
-    public static final int Variant=17;
-    public static final int Role=35;
-    public static final int Not=41;
-    public static final int Versions=13;
-    public static final int RULE_INT=53;
-    public static final int Starting=12;
-    public static final int Value=29;
-    public static final int RULE_ML_COMMENT=55;
-    public static final int Class=25;
-    public static final int Up=49;
-    public static final int A=51;
-    public static final int Called=19;
-    public static final int Should=23;
-    public static final int Attribute=9;
-    public static final int Time=36;
-    public static final int Is=45;
-    public static final int RULE_STRING=54;
-    public static final int It=46;
-    public static final int URI=38;
-    public static final int An=43;
-    public static final int With=37;
-    public static final int RULE_SL_COMMENT=56;
-    public static final int The=42;
-    public static final int Target=24;
+    public static final int Range=26;
+    public static final int Variant=16;
+    public static final int Not=39;
+    public static final int Versions=12;
+    public static final int RULE_INT=51;
+    public static final int Starting=11;
+    public static final int Value=27;
+    public static final int RULE_ML_COMMENT=53;
+    public static final int Class=23;
+    public static final int Up=47;
+    public static final int A=49;
+    public static final int Called=18;
+    public static final int Should=22;
+    public static final int Attribute=8;
+    public static final int Time=34;
+    public static final int Is=43;
+    public static final int RULE_STRING=52;
+    public static final int It=44;
+    public static final int URI=36;
+    public static final int An=41;
+    public static final int With=35;
+    public static final int RULE_SL_COMMENT=54;
+    public static final int The=40;
     public static final int Association=5;
-    public static final int Exist=26;
-    public static final int Number=20;
+    public static final int Exist=24;
+    public static final int Number=19;
     public static final int EOF=-1;
-    public static final int FullStop=50;
+    public static final int That=33;
+    public static final int FullStop=48;
     public static final int Composition=6;
-    public static final int Be=44;
-    public static final int RULE_WS=57;
-    public static final int Abstract=10;
-    public static final int From=31;
-    public static final int RULE_ANY_OTHER=58;
-    public static final int Compatible=8;
-    public static final int Date=30;
-    public static final int Of=47;
-    public static final int Has=40;
-    public static final int Existing=11;
-    public static final int Other=27;
+    public static final int Be=42;
+    public static final int RULE_WS=55;
+    public static final int Abstract=9;
+    public static final int From=29;
+    public static final int RULE_ANY_OTHER=56;
+    public static final int Compatible=7;
+    public static final int Date=28;
+    public static final int Of=45;
+    public static final int Has=38;
+    public static final int Existing=10;
+    public static final int Other=25;
 
     // delegates
     // delegators
@@ -445,131 +443,13 @@ public class InternalFeatureLangLexer extends Lexer {
     }
     // $ANTLR end "Composition"
 
-    // $ANTLR start "Inheritance"
-    public final void mInheritance() throws RecognitionException {
-        try {
-            int _type = Inheritance;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:20:13: ( ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:20:15: ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'C' | 'c' ) ( 'E' | 'e' )
-            {
-            if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='R'||input.LA(1)=='r' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "Inheritance"
-
     // $ANTLR start "Compatible"
     public final void mCompatible() throws RecognitionException {
         try {
             int _type = Compatible;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:22:12: ( ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:22:14: ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:20:12: ( ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:20:14: ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
                 input.consume();
@@ -677,8 +557,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Attribute;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:24:11: ( ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'U' | 'u' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:24:13: ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'U' | 'u' ) ( 'T' | 't' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:22:11: ( ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'U' | 'u' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:22:13: ( 'A' | 'a' ) ( 'T' | 't' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'B' | 'b' ) ( 'U' | 'u' ) ( 'T' | 't' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
@@ -777,8 +657,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Abstract;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:26:10: ( ( 'A' | 'a' ) ( 'B' | 'b' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'C' | 'c' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:26:12: ( 'A' | 'a' ) ( 'B' | 'b' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'C' | 'c' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:24:10: ( ( 'A' | 'a' ) ( 'B' | 'b' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'C' | 'c' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:24:12: ( 'A' | 'a' ) ( 'B' | 'b' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'C' | 'c' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
@@ -868,8 +748,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Existing;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:28:10: ( ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
-            // InternalFeatureLangLexer.g:28:12: ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
+            // InternalFeatureLangLexer.g:26:10: ( ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
+            // InternalFeatureLangLexer.g:26:12: ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -959,8 +839,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Starting;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:30:10: ( ( 'S' | 's' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
-            // InternalFeatureLangLexer.g:30:12: ( 'S' | 's' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
+            // InternalFeatureLangLexer.g:28:10: ( ( 'S' | 's' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' ) )
+            // InternalFeatureLangLexer.g:28:12: ( 'S' | 's' ) ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'T' | 't' ) ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'G' | 'g' )
             {
             if ( input.LA(1)=='S'||input.LA(1)=='s' ) {
                 input.consume();
@@ -1050,8 +930,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Versions;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:32:10: ( ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) ( 'S' | 's' ) )
-            // InternalFeatureLangLexer.g:32:12: ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) ( 'S' | 's' )
+            // InternalFeatureLangLexer.g:30:10: ( ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) ( 'S' | 's' ) )
+            // InternalFeatureLangLexer.g:30:12: ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) ( 'S' | 's' )
             {
             if ( input.LA(1)=='V'||input.LA(1)=='v' ) {
                 input.consume();
@@ -1141,8 +1021,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Compose;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:34:9: ( ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'O' | 'o' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:34:11: ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'O' | 'o' ) ( 'S' | 's' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:32:9: ( ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'O' | 'o' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:32:11: ( 'C' | 'c' ) ( 'O' | 'o' ) ( 'M' | 'm' ) ( 'P' | 'p' ) ( 'O' | 'o' ) ( 'S' | 's' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
                 input.consume();
@@ -1223,8 +1103,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Inherit;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:36:9: ( ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:36:11: ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:34:9: ( ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:34:11: ( 'I' | 'i' ) ( 'N' | 'n' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
                 input.consume();
@@ -1305,8 +1185,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Private;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:38:9: ( ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:38:11: ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:36:9: ( ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:36:11: ( 'P' | 'p' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='P'||input.LA(1)=='p' ) {
                 input.consume();
@@ -1387,8 +1267,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Variant;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:40:9: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:40:11: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:38:9: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:38:11: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'I' | 'i' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='V'||input.LA(1)=='v' ) {
                 input.consume();
@@ -1469,8 +1349,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Version;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:42:9: ( ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
-            // InternalFeatureLangLexer.g:42:11: ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
+            // InternalFeatureLangLexer.g:40:9: ( ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' ) )
+            // InternalFeatureLangLexer.g:40:11: ( 'V' | 'v' ) ( 'E' | 'e' ) ( 'R' | 'r' ) ( 'S' | 's' ) ( 'I' | 'i' ) ( 'O' | 'o' ) ( 'N' | 'n' )
             {
             if ( input.LA(1)=='V'||input.LA(1)=='v' ) {
                 input.consume();
@@ -1551,8 +1431,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Called;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:44:8: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'D' | 'd' ) )
-            // InternalFeatureLangLexer.g:44:10: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'D' | 'd' )
+            // InternalFeatureLangLexer.g:42:8: ( ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'D' | 'd' ) )
+            // InternalFeatureLangLexer.g:42:10: ( 'C' | 'c' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) ( 'E' | 'e' ) ( 'D' | 'd' )
             {
             if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
                 input.consume();
@@ -1624,8 +1504,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Number;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:46:8: ( ( 'N' | 'n' ) ( 'U' | 'u' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
-            // InternalFeatureLangLexer.g:46:10: ( 'N' | 'n' ) ( 'U' | 'u' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' )
+            // InternalFeatureLangLexer.g:44:8: ( ( 'N' | 'n' ) ( 'U' | 'u' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
+            // InternalFeatureLangLexer.g:44:10: ( 'N' | 'n' ) ( 'U' | 'u' ) ( 'M' | 'm' ) ( 'B' | 'b' ) ( 'E' | 'e' ) ( 'R' | 'r' )
             {
             if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
                 input.consume();
@@ -1697,8 +1577,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Phrase;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:48:8: ( ( 'P' | 'p' ) ( 'H' | 'h' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:48:10: ( 'P' | 'p' ) ( 'H' | 'h' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:46:8: ( ( 'P' | 'p' ) ( 'H' | 'h' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:46:10: ( 'P' | 'p' ) ( 'H' | 'h' ) ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='P'||input.LA(1)=='p' ) {
                 input.consume();
@@ -1770,8 +1650,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Public;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:50:8: ( ( 'P' | 'p' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'I' | 'i' ) ( 'C' | 'c' ) )
-            // InternalFeatureLangLexer.g:50:10: ( 'P' | 'p' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'I' | 'i' ) ( 'C' | 'c' )
+            // InternalFeatureLangLexer.g:48:8: ( ( 'P' | 'p' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'I' | 'i' ) ( 'C' | 'c' ) )
+            // InternalFeatureLangLexer.g:48:10: ( 'P' | 'p' ) ( 'U' | 'u' ) ( 'B' | 'b' ) ( 'L' | 'l' ) ( 'I' | 'i' ) ( 'C' | 'c' )
             {
             if ( input.LA(1)=='P'||input.LA(1)=='p' ) {
                 input.consume();
@@ -1843,8 +1723,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Should;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:52:8: ( ( 'S' | 's' ) ( 'H' | 'h' ) ( 'O' | 'o' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'D' | 'd' ) )
-            // InternalFeatureLangLexer.g:52:10: ( 'S' | 's' ) ( 'H' | 'h' ) ( 'O' | 'o' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'D' | 'd' )
+            // InternalFeatureLangLexer.g:50:8: ( ( 'S' | 's' ) ( 'H' | 'h' ) ( 'O' | 'o' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'D' | 'd' ) )
+            // InternalFeatureLangLexer.g:50:10: ( 'S' | 's' ) ( 'H' | 'h' ) ( 'O' | 'o' ) ( 'U' | 'u' ) ( 'L' | 'l' ) ( 'D' | 'd' )
             {
             if ( input.LA(1)=='S'||input.LA(1)=='s' ) {
                 input.consume();
@@ -1911,86 +1791,13 @@ public class InternalFeatureLangLexer extends Lexer {
     }
     // $ANTLR end "Should"
 
-    // $ANTLR start "Target"
-    public final void mTarget() throws RecognitionException {
-        try {
-            int _type = Target;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:54:8: ( ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'G' | 'g' ) ( 'E' | 'e' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:54:10: ( 'T' | 't' ) ( 'A' | 'a' ) ( 'R' | 'r' ) ( 'G' | 'g' ) ( 'E' | 'e' ) ( 'T' | 't' )
-            {
-            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='R'||input.LA(1)=='r' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='G'||input.LA(1)=='g' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "Target"
-
     // $ANTLR start "Class"
     public final void mClass() throws RecognitionException {
         try {
             int _type = Class;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:56:7: ( ( 'C' | 'c' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'S' | 's' ) )
-            // InternalFeatureLangLexer.g:56:9: ( 'C' | 'c' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'S' | 's' )
+            // InternalFeatureLangLexer.g:52:7: ( ( 'C' | 'c' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'S' | 's' ) )
+            // InternalFeatureLangLexer.g:52:9: ( 'C' | 'c' ) ( 'L' | 'l' ) ( 'A' | 'a' ) ( 'S' | 's' ) ( 'S' | 's' )
             {
             if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
                 input.consume();
@@ -2053,8 +1860,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Exist;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:58:7: ( ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:58:9: ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:54:7: ( ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:54:9: ( 'E' | 'e' ) ( 'X' | 'x' ) ( 'I' | 'i' ) ( 'S' | 's' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -2117,8 +1924,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Other;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:60:7: ( ( 'O' | 'o' ) ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
-            // InternalFeatureLangLexer.g:60:9: ( 'O' | 'o' ) ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' )
+            // InternalFeatureLangLexer.g:56:7: ( ( 'O' | 'o' ) ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' ) )
+            // InternalFeatureLangLexer.g:56:9: ( 'O' | 'o' ) ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) ( 'R' | 'r' )
             {
             if ( input.LA(1)=='O'||input.LA(1)=='o' ) {
                 input.consume();
@@ -2181,8 +1988,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Range;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:62:7: ( ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'G' | 'g' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:62:9: ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'G' | 'g' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:58:7: ( ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'G' | 'g' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:58:9: ( 'R' | 'r' ) ( 'A' | 'a' ) ( 'N' | 'n' ) ( 'G' | 'g' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='R'||input.LA(1)=='r' ) {
                 input.consume();
@@ -2245,8 +2052,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Value;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:64:7: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:64:9: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:60:7: ( ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:60:9: ( 'V' | 'v' ) ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'U' | 'u' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='V'||input.LA(1)=='v' ) {
                 input.consume();
@@ -2309,8 +2116,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Date;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:66:6: ( ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:66:8: ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:62:6: ( ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:62:8: ( 'D' | 'd' ) ( 'A' | 'a' ) ( 'T' | 't' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='D'||input.LA(1)=='d' ) {
                 input.consume();
@@ -2364,8 +2171,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = From;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:68:6: ( ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' ) )
-            // InternalFeatureLangLexer.g:68:8: ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' )
+            // InternalFeatureLangLexer.g:64:6: ( ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' ) )
+            // InternalFeatureLangLexer.g:64:8: ( 'F' | 'f' ) ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'M' | 'm' )
             {
             if ( input.LA(1)=='F'||input.LA(1)=='f' ) {
                 input.consume();
@@ -2419,8 +2226,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Have;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:70:6: ( ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'V' | 'v' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:70:8: ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'V' | 'v' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:66:6: ( ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'V' | 'v' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:66:8: ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'V' | 'v' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
                 input.consume();
@@ -2474,8 +2281,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Must;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:72:6: ( ( 'M' | 'm' ) ( 'U' | 'u' ) ( 'S' | 's' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:72:8: ( 'M' | 'm' ) ( 'U' | 'u' ) ( 'S' | 's' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:68:6: ( ( 'M' | 'm' ) ( 'U' | 'u' ) ( 'S' | 's' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:68:8: ( 'M' | 'm' ) ( 'U' | 'u' ) ( 'S' | 's' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='M'||input.LA(1)=='m' ) {
                 input.consume();
@@ -2529,8 +2336,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Name;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:74:6: ( ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'M' | 'm' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:74:8: ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'M' | 'm' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:70:6: ( ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'M' | 'm' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:70:8: ( 'N' | 'n' ) ( 'A' | 'a' ) ( 'M' | 'm' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
                 input.consume();
@@ -2579,15 +2386,15 @@ public class InternalFeatureLangLexer extends Lexer {
     }
     // $ANTLR end "Name"
 
-    // $ANTLR start "Role"
-    public final void mRole() throws RecognitionException {
+    // $ANTLR start "That"
+    public final void mThat() throws RecognitionException {
         try {
-            int _type = Role;
+            int _type = That;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:76:6: ( ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'L' | 'l' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:76:8: ( 'R' | 'r' ) ( 'O' | 'o' ) ( 'L' | 'l' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:72:6: ( ( 'T' | 't' ) ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:72:8: ( 'T' | 't' ) ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'T' | 't' )
             {
-            if ( input.LA(1)=='R'||input.LA(1)=='r' ) {
+            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
                 input.consume();
 
             }
@@ -2596,7 +2403,7 @@ public class InternalFeatureLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            if ( input.LA(1)=='O'||input.LA(1)=='o' ) {
+            if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
                 input.consume();
 
             }
@@ -2605,7 +2412,7 @@ public class InternalFeatureLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
+            if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
 
             }
@@ -2614,7 +2421,7 @@ public class InternalFeatureLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
+            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
                 input.consume();
 
             }
@@ -2632,15 +2439,15 @@ public class InternalFeatureLangLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "Role"
+    // $ANTLR end "That"
 
     // $ANTLR start "Time"
     public final void mTime() throws RecognitionException {
         try {
             int _type = Time;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:78:6: ( ( 'T' | 't' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:78:8: ( 'T' | 't' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:74:6: ( ( 'T' | 't' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:74:8: ( 'T' | 't' ) ( 'I' | 'i' ) ( 'M' | 'm' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
                 input.consume();
@@ -2694,8 +2501,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = With;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:80:6: ( ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' ) )
-            // InternalFeatureLangLexer.g:80:8: ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' )
+            // InternalFeatureLangLexer.g:76:6: ( ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' ) )
+            // InternalFeatureLangLexer.g:76:8: ( 'W' | 'w' ) ( 'I' | 'i' ) ( 'T' | 't' ) ( 'H' | 'h' )
             {
             if ( input.LA(1)=='W'||input.LA(1)=='w' ) {
                 input.consume();
@@ -2749,8 +2556,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = URI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:82:5: ( ( 'U' | 'u' ) ( 'R' | 'r' ) ( 'I' | 'i' ) )
-            // InternalFeatureLangLexer.g:82:7: ( 'U' | 'u' ) ( 'R' | 'r' ) ( 'I' | 'i' )
+            // InternalFeatureLangLexer.g:78:5: ( ( 'U' | 'u' ) ( 'R' | 'r' ) ( 'I' | 'i' ) )
+            // InternalFeatureLangLexer.g:78:7: ( 'U' | 'u' ) ( 'R' | 'r' ) ( 'I' | 'i' )
             {
             if ( input.LA(1)=='U'||input.LA(1)=='u' ) {
                 input.consume();
@@ -2795,8 +2602,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = All;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:84:5: ( ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) )
-            // InternalFeatureLangLexer.g:84:7: ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' )
+            // InternalFeatureLangLexer.g:80:5: ( ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' ) )
+            // InternalFeatureLangLexer.g:80:7: ( 'A' | 'a' ) ( 'L' | 'l' ) ( 'L' | 'l' )
             {
             if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
@@ -2841,8 +2648,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Has;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:86:5: ( ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'S' | 's' ) )
-            // InternalFeatureLangLexer.g:86:7: ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'S' | 's' )
+            // InternalFeatureLangLexer.g:82:5: ( ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'S' | 's' ) )
+            // InternalFeatureLangLexer.g:82:7: ( 'H' | 'h' ) ( 'A' | 'a' ) ( 'S' | 's' )
             {
             if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
                 input.consume();
@@ -2887,8 +2694,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Not;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:88:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:88:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:84:5: ( ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:84:7: ( 'N' | 'n' ) ( 'O' | 'o' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
                 input.consume();
@@ -2933,8 +2740,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = The;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:90:5: ( ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:90:7: ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:86:5: ( ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:86:7: ( 'T' | 't' ) ( 'H' | 'h' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
                 input.consume();
@@ -2979,8 +2786,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = An;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:92:4: ( ( 'A' | 'a' ) ( 'N' | 'n' ) )
-            // InternalFeatureLangLexer.g:92:6: ( 'A' | 'a' ) ( 'N' | 'n' )
+            // InternalFeatureLangLexer.g:88:4: ( ( 'A' | 'a' ) ( 'N' | 'n' ) )
+            // InternalFeatureLangLexer.g:88:6: ( 'A' | 'a' ) ( 'N' | 'n' )
             {
             if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
@@ -3016,8 +2823,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Be;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:94:4: ( ( 'B' | 'b' ) ( 'E' | 'e' ) )
-            // InternalFeatureLangLexer.g:94:6: ( 'B' | 'b' ) ( 'E' | 'e' )
+            // InternalFeatureLangLexer.g:90:4: ( ( 'B' | 'b' ) ( 'E' | 'e' ) )
+            // InternalFeatureLangLexer.g:90:6: ( 'B' | 'b' ) ( 'E' | 'e' )
             {
             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                 input.consume();
@@ -3053,8 +2860,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Is;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:96:4: ( ( 'I' | 'i' ) ( 'S' | 's' ) )
-            // InternalFeatureLangLexer.g:96:6: ( 'I' | 'i' ) ( 'S' | 's' )
+            // InternalFeatureLangLexer.g:92:4: ( ( 'I' | 'i' ) ( 'S' | 's' ) )
+            // InternalFeatureLangLexer.g:92:6: ( 'I' | 'i' ) ( 'S' | 's' )
             {
             if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
                 input.consume();
@@ -3090,8 +2897,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = It;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:98:4: ( ( 'I' | 'i' ) ( 'T' | 't' ) )
-            // InternalFeatureLangLexer.g:98:6: ( 'I' | 'i' ) ( 'T' | 't' )
+            // InternalFeatureLangLexer.g:94:4: ( ( 'I' | 'i' ) ( 'T' | 't' ) )
+            // InternalFeatureLangLexer.g:94:6: ( 'I' | 'i' ) ( 'T' | 't' )
             {
             if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
                 input.consume();
@@ -3127,8 +2934,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Of;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:100:4: ( ( 'O' | 'o' ) ( 'F' | 'f' ) )
-            // InternalFeatureLangLexer.g:100:6: ( 'O' | 'o' ) ( 'F' | 'f' )
+            // InternalFeatureLangLexer.g:96:4: ( ( 'O' | 'o' ) ( 'F' | 'f' ) )
+            // InternalFeatureLangLexer.g:96:6: ( 'O' | 'o' ) ( 'F' | 'f' )
             {
             if ( input.LA(1)=='O'||input.LA(1)=='o' ) {
                 input.consume();
@@ -3164,8 +2971,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = To;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:102:4: ( ( 'T' | 't' ) ( 'O' | 'o' ) )
-            // InternalFeatureLangLexer.g:102:6: ( 'T' | 't' ) ( 'O' | 'o' )
+            // InternalFeatureLangLexer.g:98:4: ( ( 'T' | 't' ) ( 'O' | 'o' ) )
+            // InternalFeatureLangLexer.g:98:6: ( 'T' | 't' ) ( 'O' | 'o' )
             {
             if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
                 input.consume();
@@ -3201,8 +3008,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = Up;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:104:4: ( ( 'U' | 'u' ) ( 'P' | 'p' ) )
-            // InternalFeatureLangLexer.g:104:6: ( 'U' | 'u' ) ( 'P' | 'p' )
+            // InternalFeatureLangLexer.g:100:4: ( ( 'U' | 'u' ) ( 'P' | 'p' ) )
+            // InternalFeatureLangLexer.g:100:6: ( 'U' | 'u' ) ( 'P' | 'p' )
             {
             if ( input.LA(1)=='U'||input.LA(1)=='u' ) {
                 input.consume();
@@ -3238,8 +3045,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = FullStop;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:106:10: ( '.' )
-            // InternalFeatureLangLexer.g:106:12: '.'
+            // InternalFeatureLangLexer.g:102:10: ( '.' )
+            // InternalFeatureLangLexer.g:102:12: '.'
             {
             match('.'); 
 
@@ -3258,8 +3065,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = A;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:108:3: ( ( 'A' | 'a' ) )
-            // InternalFeatureLangLexer.g:108:5: ( 'A' | 'a' )
+            // InternalFeatureLangLexer.g:104:3: ( ( 'A' | 'a' ) )
+            // InternalFeatureLangLexer.g:104:5: ( 'A' | 'a' )
             {
             if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
                 input.consume();
@@ -3286,10 +3093,10 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:110:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalFeatureLangLexer.g:110:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalFeatureLangLexer.g:106:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalFeatureLangLexer.g:106:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalFeatureLangLexer.g:110:11: ( '^' )?
+            // InternalFeatureLangLexer.g:106:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -3298,7 +3105,7 @@ public class InternalFeatureLangLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalFeatureLangLexer.g:110:11: '^'
+                    // InternalFeatureLangLexer.g:106:11: '^'
                     {
                     match('^'); 
 
@@ -3316,7 +3123,7 @@ public class InternalFeatureLangLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalFeatureLangLexer.g:110:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalFeatureLangLexer.g:106:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -3365,10 +3172,10 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:112:10: ( ( '0' .. '9' )+ )
-            // InternalFeatureLangLexer.g:112:12: ( '0' .. '9' )+
+            // InternalFeatureLangLexer.g:108:10: ( ( '0' .. '9' )+ )
+            // InternalFeatureLangLexer.g:108:12: ( '0' .. '9' )+
             {
-            // InternalFeatureLangLexer.g:112:12: ( '0' .. '9' )+
+            // InternalFeatureLangLexer.g:108:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -3382,7 +3189,7 @@ public class InternalFeatureLangLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalFeatureLangLexer.g:112:13: '0' .. '9'
+            	    // InternalFeatureLangLexer.g:108:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3414,10 +3221,10 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:114:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalFeatureLangLexer.g:114:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalFeatureLangLexer.g:110:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalFeatureLangLexer.g:110:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalFeatureLangLexer.g:114:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalFeatureLangLexer.g:110:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -3435,10 +3242,10 @@ public class InternalFeatureLangLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalFeatureLangLexer.g:114:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalFeatureLangLexer.g:110:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalFeatureLangLexer.g:114:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalFeatureLangLexer.g:110:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -3454,7 +3261,7 @@ public class InternalFeatureLangLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalFeatureLangLexer.g:114:21: '\\\\' .
+                    	    // InternalFeatureLangLexer.g:110:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3462,7 +3269,7 @@ public class InternalFeatureLangLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalFeatureLangLexer.g:114:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalFeatureLangLexer.g:110:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3487,10 +3294,10 @@ public class InternalFeatureLangLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalFeatureLangLexer.g:114:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalFeatureLangLexer.g:110:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalFeatureLangLexer.g:114:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalFeatureLangLexer.g:110:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -3506,7 +3313,7 @@ public class InternalFeatureLangLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalFeatureLangLexer.g:114:54: '\\\\' .
+                    	    // InternalFeatureLangLexer.g:110:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3514,7 +3321,7 @@ public class InternalFeatureLangLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalFeatureLangLexer.g:114:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalFeatureLangLexer.g:110:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3557,12 +3364,12 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:116:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalFeatureLangLexer.g:116:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalFeatureLangLexer.g:112:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalFeatureLangLexer.g:112:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalFeatureLangLexer.g:116:24: ( options {greedy=false; } : . )*
+            // InternalFeatureLangLexer.g:112:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -3587,7 +3394,7 @@ public class InternalFeatureLangLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalFeatureLangLexer.g:116:52: .
+            	    // InternalFeatureLangLexer.g:112:52: .
             	    {
             	    matchAny(); 
 
@@ -3617,12 +3424,12 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:118:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalFeatureLangLexer.g:118:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalFeatureLangLexer.g:114:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalFeatureLangLexer.g:114:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalFeatureLangLexer.g:118:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalFeatureLangLexer.g:114:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -3635,7 +3442,7 @@ public class InternalFeatureLangLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalFeatureLangLexer.g:118:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalFeatureLangLexer.g:114:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3655,7 +3462,7 @@ public class InternalFeatureLangLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalFeatureLangLexer.g:118:40: ( ( '\\r' )? '\\n' )?
+            // InternalFeatureLangLexer.g:114:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3664,9 +3471,9 @@ public class InternalFeatureLangLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalFeatureLangLexer.g:118:41: ( '\\r' )? '\\n'
+                    // InternalFeatureLangLexer.g:114:41: ( '\\r' )? '\\n'
                     {
-                    // InternalFeatureLangLexer.g:118:41: ( '\\r' )?
+                    // InternalFeatureLangLexer.g:114:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -3675,7 +3482,7 @@ public class InternalFeatureLangLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalFeatureLangLexer.g:118:41: '\\r'
+                            // InternalFeatureLangLexer.g:114:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3707,10 +3514,10 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:120:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalFeatureLangLexer.g:120:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalFeatureLangLexer.g:116:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalFeatureLangLexer.g:116:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalFeatureLangLexer.g:120:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalFeatureLangLexer.g:116:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -3764,8 +3571,8 @@ public class InternalFeatureLangLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalFeatureLangLexer.g:122:16: ( . )
-            // InternalFeatureLangLexer.g:122:18: .
+            // InternalFeatureLangLexer.g:118:16: ( . )
+            // InternalFeatureLangLexer.g:118:18: .
             {
             matchAny(); 
 
@@ -3780,8 +3587,8 @@ public class InternalFeatureLangLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalFeatureLangLexer.g:1:8: ( Associations | Association | Composition | Inheritance | Compatible | Attribute | Abstract | Existing | Starting | Versions | Compose | Inherit | Private | Variant | Version | Called | Number | Phrase | Public | Should | Target | Class | Exist | Other | Range | Value | Date | From | Have | Must | Name | Role | Time | With | URI | All | Has | Not | The | An | Be | Is | It | Of | To | Up | FullStop | A | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=55;
+        // InternalFeatureLangLexer.g:1:8: ( Associations | Association | Composition | Compatible | Attribute | Abstract | Existing | Starting | Versions | Compose | Inherit | Private | Variant | Version | Called | Number | Phrase | Public | Should | Class | Exist | Other | Range | Value | Date | From | Have | Must | Name | That | Time | With | URI | All | Has | Not | The | An | Be | Is | It | Of | To | Up | FullStop | A | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=53;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -3806,364 +3613,350 @@ public class InternalFeatureLangLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // InternalFeatureLangLexer.g:1:47: Inheritance
-                {
-                mInheritance(); 
-
-                }
-                break;
-            case 5 :
-                // InternalFeatureLangLexer.g:1:59: Compatible
+                // InternalFeatureLangLexer.g:1:47: Compatible
                 {
                 mCompatible(); 
 
                 }
                 break;
-            case 6 :
-                // InternalFeatureLangLexer.g:1:70: Attribute
+            case 5 :
+                // InternalFeatureLangLexer.g:1:58: Attribute
                 {
                 mAttribute(); 
 
                 }
                 break;
-            case 7 :
-                // InternalFeatureLangLexer.g:1:80: Abstract
+            case 6 :
+                // InternalFeatureLangLexer.g:1:68: Abstract
                 {
                 mAbstract(); 
 
                 }
                 break;
-            case 8 :
-                // InternalFeatureLangLexer.g:1:89: Existing
+            case 7 :
+                // InternalFeatureLangLexer.g:1:77: Existing
                 {
                 mExisting(); 
 
                 }
                 break;
-            case 9 :
-                // InternalFeatureLangLexer.g:1:98: Starting
+            case 8 :
+                // InternalFeatureLangLexer.g:1:86: Starting
                 {
                 mStarting(); 
 
                 }
                 break;
-            case 10 :
-                // InternalFeatureLangLexer.g:1:107: Versions
+            case 9 :
+                // InternalFeatureLangLexer.g:1:95: Versions
                 {
                 mVersions(); 
 
                 }
                 break;
-            case 11 :
-                // InternalFeatureLangLexer.g:1:116: Compose
+            case 10 :
+                // InternalFeatureLangLexer.g:1:104: Compose
                 {
                 mCompose(); 
 
                 }
                 break;
-            case 12 :
-                // InternalFeatureLangLexer.g:1:124: Inherit
+            case 11 :
+                // InternalFeatureLangLexer.g:1:112: Inherit
                 {
                 mInherit(); 
 
                 }
                 break;
-            case 13 :
-                // InternalFeatureLangLexer.g:1:132: Private
+            case 12 :
+                // InternalFeatureLangLexer.g:1:120: Private
                 {
                 mPrivate(); 
 
                 }
                 break;
-            case 14 :
-                // InternalFeatureLangLexer.g:1:140: Variant
+            case 13 :
+                // InternalFeatureLangLexer.g:1:128: Variant
                 {
                 mVariant(); 
 
                 }
                 break;
-            case 15 :
-                // InternalFeatureLangLexer.g:1:148: Version
+            case 14 :
+                // InternalFeatureLangLexer.g:1:136: Version
                 {
                 mVersion(); 
 
                 }
                 break;
-            case 16 :
-                // InternalFeatureLangLexer.g:1:156: Called
+            case 15 :
+                // InternalFeatureLangLexer.g:1:144: Called
                 {
                 mCalled(); 
 
                 }
                 break;
-            case 17 :
-                // InternalFeatureLangLexer.g:1:163: Number
+            case 16 :
+                // InternalFeatureLangLexer.g:1:151: Number
                 {
                 mNumber(); 
 
                 }
                 break;
-            case 18 :
-                // InternalFeatureLangLexer.g:1:170: Phrase
+            case 17 :
+                // InternalFeatureLangLexer.g:1:158: Phrase
                 {
                 mPhrase(); 
 
                 }
                 break;
-            case 19 :
-                // InternalFeatureLangLexer.g:1:177: Public
+            case 18 :
+                // InternalFeatureLangLexer.g:1:165: Public
                 {
                 mPublic(); 
 
                 }
                 break;
-            case 20 :
-                // InternalFeatureLangLexer.g:1:184: Should
+            case 19 :
+                // InternalFeatureLangLexer.g:1:172: Should
                 {
                 mShould(); 
 
                 }
                 break;
-            case 21 :
-                // InternalFeatureLangLexer.g:1:191: Target
-                {
-                mTarget(); 
-
-                }
-                break;
-            case 22 :
-                // InternalFeatureLangLexer.g:1:198: Class
+            case 20 :
+                // InternalFeatureLangLexer.g:1:179: Class
                 {
                 mClass(); 
 
                 }
                 break;
-            case 23 :
-                // InternalFeatureLangLexer.g:1:204: Exist
+            case 21 :
+                // InternalFeatureLangLexer.g:1:185: Exist
                 {
                 mExist(); 
 
                 }
                 break;
-            case 24 :
-                // InternalFeatureLangLexer.g:1:210: Other
+            case 22 :
+                // InternalFeatureLangLexer.g:1:191: Other
                 {
                 mOther(); 
 
                 }
                 break;
-            case 25 :
-                // InternalFeatureLangLexer.g:1:216: Range
+            case 23 :
+                // InternalFeatureLangLexer.g:1:197: Range
                 {
                 mRange(); 
 
                 }
                 break;
-            case 26 :
-                // InternalFeatureLangLexer.g:1:222: Value
+            case 24 :
+                // InternalFeatureLangLexer.g:1:203: Value
                 {
                 mValue(); 
 
                 }
                 break;
-            case 27 :
-                // InternalFeatureLangLexer.g:1:228: Date
+            case 25 :
+                // InternalFeatureLangLexer.g:1:209: Date
                 {
                 mDate(); 
 
                 }
                 break;
-            case 28 :
-                // InternalFeatureLangLexer.g:1:233: From
+            case 26 :
+                // InternalFeatureLangLexer.g:1:214: From
                 {
                 mFrom(); 
 
                 }
                 break;
-            case 29 :
-                // InternalFeatureLangLexer.g:1:238: Have
+            case 27 :
+                // InternalFeatureLangLexer.g:1:219: Have
                 {
                 mHave(); 
 
                 }
                 break;
-            case 30 :
-                // InternalFeatureLangLexer.g:1:243: Must
+            case 28 :
+                // InternalFeatureLangLexer.g:1:224: Must
                 {
                 mMust(); 
 
                 }
                 break;
-            case 31 :
-                // InternalFeatureLangLexer.g:1:248: Name
+            case 29 :
+                // InternalFeatureLangLexer.g:1:229: Name
                 {
                 mName(); 
 
                 }
                 break;
-            case 32 :
-                // InternalFeatureLangLexer.g:1:253: Role
+            case 30 :
+                // InternalFeatureLangLexer.g:1:234: That
                 {
-                mRole(); 
+                mThat(); 
 
                 }
                 break;
-            case 33 :
-                // InternalFeatureLangLexer.g:1:258: Time
+            case 31 :
+                // InternalFeatureLangLexer.g:1:239: Time
                 {
                 mTime(); 
 
                 }
                 break;
-            case 34 :
-                // InternalFeatureLangLexer.g:1:263: With
+            case 32 :
+                // InternalFeatureLangLexer.g:1:244: With
                 {
                 mWith(); 
 
                 }
                 break;
-            case 35 :
-                // InternalFeatureLangLexer.g:1:268: URI
+            case 33 :
+                // InternalFeatureLangLexer.g:1:249: URI
                 {
                 mURI(); 
 
                 }
                 break;
-            case 36 :
-                // InternalFeatureLangLexer.g:1:272: All
+            case 34 :
+                // InternalFeatureLangLexer.g:1:253: All
                 {
                 mAll(); 
 
                 }
                 break;
-            case 37 :
-                // InternalFeatureLangLexer.g:1:276: Has
+            case 35 :
+                // InternalFeatureLangLexer.g:1:257: Has
                 {
                 mHas(); 
 
                 }
                 break;
-            case 38 :
-                // InternalFeatureLangLexer.g:1:280: Not
+            case 36 :
+                // InternalFeatureLangLexer.g:1:261: Not
                 {
                 mNot(); 
 
                 }
                 break;
-            case 39 :
-                // InternalFeatureLangLexer.g:1:284: The
+            case 37 :
+                // InternalFeatureLangLexer.g:1:265: The
                 {
                 mThe(); 
 
                 }
                 break;
-            case 40 :
-                // InternalFeatureLangLexer.g:1:288: An
+            case 38 :
+                // InternalFeatureLangLexer.g:1:269: An
                 {
                 mAn(); 
 
                 }
                 break;
-            case 41 :
-                // InternalFeatureLangLexer.g:1:291: Be
+            case 39 :
+                // InternalFeatureLangLexer.g:1:272: Be
                 {
                 mBe(); 
 
                 }
                 break;
-            case 42 :
-                // InternalFeatureLangLexer.g:1:294: Is
+            case 40 :
+                // InternalFeatureLangLexer.g:1:275: Is
                 {
                 mIs(); 
 
                 }
                 break;
-            case 43 :
-                // InternalFeatureLangLexer.g:1:297: It
+            case 41 :
+                // InternalFeatureLangLexer.g:1:278: It
                 {
                 mIt(); 
 
                 }
                 break;
-            case 44 :
-                // InternalFeatureLangLexer.g:1:300: Of
+            case 42 :
+                // InternalFeatureLangLexer.g:1:281: Of
                 {
                 mOf(); 
 
                 }
                 break;
-            case 45 :
-                // InternalFeatureLangLexer.g:1:303: To
+            case 43 :
+                // InternalFeatureLangLexer.g:1:284: To
                 {
                 mTo(); 
 
                 }
                 break;
-            case 46 :
-                // InternalFeatureLangLexer.g:1:306: Up
+            case 44 :
+                // InternalFeatureLangLexer.g:1:287: Up
                 {
                 mUp(); 
 
                 }
                 break;
-            case 47 :
-                // InternalFeatureLangLexer.g:1:309: FullStop
+            case 45 :
+                // InternalFeatureLangLexer.g:1:290: FullStop
                 {
                 mFullStop(); 
 
                 }
                 break;
-            case 48 :
-                // InternalFeatureLangLexer.g:1:318: A
+            case 46 :
+                // InternalFeatureLangLexer.g:1:299: A
                 {
                 mA(); 
 
                 }
                 break;
-            case 49 :
-                // InternalFeatureLangLexer.g:1:320: RULE_ID
+            case 47 :
+                // InternalFeatureLangLexer.g:1:301: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 50 :
-                // InternalFeatureLangLexer.g:1:328: RULE_INT
+            case 48 :
+                // InternalFeatureLangLexer.g:1:309: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 51 :
-                // InternalFeatureLangLexer.g:1:337: RULE_STRING
+            case 49 :
+                // InternalFeatureLangLexer.g:1:318: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 52 :
-                // InternalFeatureLangLexer.g:1:349: RULE_ML_COMMENT
+            case 50 :
+                // InternalFeatureLangLexer.g:1:330: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 53 :
-                // InternalFeatureLangLexer.g:1:365: RULE_SL_COMMENT
+            case 51 :
+                // InternalFeatureLangLexer.g:1:346: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 54 :
-                // InternalFeatureLangLexer.g:1:381: RULE_WS
+            case 52 :
+                // InternalFeatureLangLexer.g:1:362: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 55 :
-                // InternalFeatureLangLexer.g:1:389: RULE_ANY_OTHER
+            case 53 :
+                // InternalFeatureLangLexer.g:1:370: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -4177,137 +3970,138 @@ public class InternalFeatureLangLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\42\21\41\1\uffff\1\33\2\uffff\3\33\2\uffff\4\41\1\116\2\uffff\4\41\1\123\1\124\16\41\1\144\1\41\1\146\10\41\1\160\1\161\6\uffff\3\41\1\165\1\uffff\4\41\2\uffff\13\41\1\u0085\2\41\1\u0088\1\uffff\1\41\1\uffff\5\41\1\u008f\2\41\1\u0092\2\uffff\3\41\1\uffff\16\41\1\u00a5\1\uffff\1\41\1\u00a7\1\uffff\2\41\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\uffff\1\u00ae\1\u00af\1\uffff\6\41\1\u00b6\1\41\1\u00b9\4\41\1\u00be\4\41\1\uffff\1\41\1\uffff\1\u00c4\1\u00c5\6\uffff\5\41\1\u00cc\1\uffff\2\41\1\uffff\1\41\1\u00d0\2\41\1\uffff\1\41\1\u00d4\1\u00d5\1\u00d6\1\u00d7\2\uffff\4\41\1\u00dc\1\41\1\uffff\1\u00df\2\41\1\uffff\1\u00e3\1\u00e4\1\u00e5\4\uffff\2\41\1\u00e8\1\41\1\uffff\2\41\1\uffff\1\u00ec\1\u00ed\1\u00ee\3\uffff\1\41\1\u00f0\1\uffff\3\41\3\uffff\1\41\1\uffff\1\41\1\u00f6\1\41\1\u00f9\1\u00fa\1\uffff\1\u00fb\1\u00fc\4\uffff";
+        "\1\uffff\1\41\21\42\1\uffff\1\33\2\uffff\3\33\2\uffff\4\42\1\114\2\uffff\11\42\1\127\1\130\7\42\1\140\7\42\1\152\2\42\1\155\1\156\6\uffff\3\42\1\162\1\uffff\12\42\2\uffff\5\42\1\u0082\1\42\1\uffff\4\42\1\u0088\2\42\1\u008b\1\42\1\uffff\1\42\1\u008e\2\uffff\3\42\1\uffff\16\42\1\u00a1\1\uffff\2\42\1\u00a4\1\u00a5\1\u00a6\1\uffff\1\u00a7\1\u00a8\1\uffff\1\u00a9\1\u00aa\1\uffff\6\42\1\u00b1\1\u00b3\4\42\1\u00b8\5\42\1\uffff\1\u00be\1\u00bf\7\uffff\5\42\1\u00c6\1\uffff\1\42\1\uffff\1\42\1\u00c9\2\42\1\uffff\2\42\1\u00ce\1\u00cf\1\u00d0\2\uffff\4\42\1\u00d5\1\42\1\uffff\2\42\1\uffff\1\u00da\1\u00db\1\u00dc\1\u00dd\3\uffff\2\42\1\u00e0\1\42\1\uffff\1\42\1\u00e3\1\u00e4\1\u00e5\4\uffff\1\42\1\u00e7\1\uffff\2\42\3\uffff\1\42\1\uffff\1\42\1\u00ec\1\u00ee\1\u00ef\1\uffff\1\u00f0\3\uffff";
     static final String DFA12_eofS =
-        "\u00fd\uffff";
+        "\u00f1\uffff";
     static final String DFA12_minS =
-        "\1\0\1\60\1\101\1\116\1\130\1\110\1\101\1\110\2\101\1\106\2\101\1\122\1\101\1\125\1\111\1\120\1\105\1\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\123\1\124\1\123\1\114\1\60\2\uffff\1\115\1\114\1\101\1\110\2\60\1\111\1\101\1\117\1\122\1\114\1\111\1\122\1\102\2\115\1\124\1\122\1\115\1\105\1\60\1\110\1\60\1\116\1\114\1\124\1\117\2\123\1\124\1\111\2\60\6\uffff\1\117\1\122\1\124\1\60\1\uffff\1\120\1\114\1\123\1\105\2\uffff\1\123\1\122\1\125\1\123\1\111\1\125\1\126\1\101\1\114\1\102\1\105\1\60\1\107\1\105\1\60\1\uffff\1\105\1\uffff\1\107\2\105\1\115\1\105\1\60\1\124\1\110\1\60\2\uffff\1\103\1\111\1\122\1\uffff\1\101\1\105\1\123\1\122\2\124\1\114\1\111\1\101\1\105\1\101\1\123\1\111\1\105\1\60\1\uffff\1\105\1\60\1\uffff\1\122\1\105\4\60\1\uffff\2\60\1\uffff\1\111\1\102\1\101\1\123\1\124\1\104\1\60\1\111\1\60\1\111\1\104\1\117\1\116\1\60\1\124\1\105\1\103\1\122\1\uffff\1\124\1\uffff\2\60\6\uffff\1\101\1\125\1\103\1\105\1\111\1\60\1\uffff\1\124\1\116\1\uffff\1\116\1\60\1\116\1\124\1\uffff\1\105\4\60\2\uffff\4\124\1\60\1\102\1\uffff\1\60\2\107\1\uffff\3\60\4\uffff\1\111\1\105\1\60\1\111\1\uffff\1\114\1\116\1\uffff\3\60\3\uffff\1\117\1\60\1\uffff\1\117\1\105\1\103\3\uffff\1\116\1\uffff\1\116\1\60\1\105\2\60\1\uffff\2\60\4\uffff";
+        "\1\0\1\60\1\101\1\130\1\110\1\101\1\116\1\110\1\101\1\106\2\101\1\122\1\101\1\125\1\110\1\111\1\120\1\105\1\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\123\1\124\1\123\1\114\1\60\2\uffff\1\115\1\114\1\101\1\111\1\101\1\117\1\122\1\114\1\110\2\60\1\111\1\122\1\102\2\115\1\124\1\110\1\60\1\116\1\124\1\117\2\123\1\101\1\115\1\60\1\124\1\111\2\60\6\uffff\1\117\1\122\1\124\1\60\1\uffff\1\120\1\114\2\123\1\122\1\125\1\123\1\111\1\125\1\105\2\uffff\1\126\1\101\1\114\1\102\1\105\1\60\1\105\1\uffff\1\107\1\105\1\115\1\105\1\60\2\124\1\60\1\105\1\uffff\1\110\1\60\2\uffff\1\103\1\111\1\122\1\uffff\1\101\1\105\1\123\2\124\1\114\1\111\1\101\1\105\1\122\1\101\1\123\1\111\1\105\1\60\1\uffff\1\122\1\105\3\60\1\uffff\2\60\1\uffff\2\60\1\uffff\1\111\1\102\1\101\1\123\1\124\1\104\2\60\1\111\1\104\1\117\1\116\1\60\1\111\1\124\1\105\1\103\1\122\1\uffff\2\60\7\uffff\1\101\1\125\1\103\1\105\1\111\1\60\1\uffff\1\116\1\uffff\1\116\1\60\1\116\1\124\1\uffff\1\124\1\105\3\60\2\uffff\4\124\1\60\1\102\1\uffff\2\107\1\uffff\4\60\3\uffff\1\111\1\105\1\60\1\111\1\uffff\1\114\3\60\4\uffff\1\117\1\60\1\uffff\1\117\1\105\3\uffff\1\116\1\uffff\1\116\3\60\1\uffff\1\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\172\1\157\1\164\1\170\1\164\1\145\2\165\1\157\1\164\1\157\1\141\1\162\1\141\1\165\1\151\1\162\1\145\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\164\1\163\1\154\1\172\2\uffff\1\155\1\154\1\141\1\150\2\172\1\151\1\141\1\157\2\162\1\151\1\162\1\142\2\155\1\164\1\162\1\155\1\145\1\172\1\150\1\172\1\156\1\154\1\164\1\157\1\166\1\163\1\164\1\151\2\172\6\uffff\1\157\1\162\1\164\1\172\1\uffff\1\160\1\154\1\163\1\145\2\uffff\1\163\1\162\1\165\1\163\1\151\1\165\1\166\1\141\1\154\1\142\1\145\1\172\1\147\1\145\1\172\1\uffff\1\145\1\uffff\1\147\2\145\1\155\1\145\1\172\1\164\1\150\1\172\2\uffff\1\143\1\151\1\162\1\uffff\1\157\1\145\1\163\1\162\2\164\1\154\1\151\1\141\1\145\1\141\1\163\1\151\1\145\1\172\1\uffff\1\145\1\172\1\uffff\1\162\1\145\4\172\1\uffff\2\172\1\uffff\1\151\1\142\1\141\1\163\1\164\1\144\1\172\1\151\1\172\1\151\1\144\1\157\1\156\1\172\1\164\1\145\1\143\1\162\1\uffff\1\164\1\uffff\2\172\6\uffff\1\141\1\165\1\143\2\151\1\172\1\uffff\1\164\1\156\1\uffff\1\156\1\172\1\156\1\164\1\uffff\1\145\4\172\2\uffff\4\164\1\172\1\142\1\uffff\1\172\2\147\1\uffff\3\172\4\uffff\1\151\1\145\1\172\1\151\1\uffff\1\154\1\156\1\uffff\3\172\3\uffff\1\157\1\172\1\uffff\1\157\1\145\1\143\3\uffff\1\156\1\uffff\1\156\1\172\1\145\2\172\1\uffff\2\172\4\uffff";
+        "\1\uffff\1\172\1\157\1\170\1\164\1\145\1\164\2\165\1\164\2\141\1\162\1\141\1\165\1\157\1\151\1\162\1\145\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\164\1\163\1\154\1\172\2\uffff\1\155\1\154\1\141\1\151\1\141\1\157\2\162\1\150\2\172\1\151\1\162\1\142\2\155\1\164\1\150\1\172\1\156\1\164\1\157\1\166\1\163\1\145\1\155\1\172\1\164\1\151\2\172\6\uffff\1\157\1\162\1\164\1\172\1\uffff\1\160\1\154\2\163\1\162\1\165\1\163\1\151\1\165\1\145\2\uffff\1\166\1\141\1\154\1\142\1\145\1\172\1\145\1\uffff\1\147\1\145\1\155\1\145\1\172\2\164\1\172\1\145\1\uffff\1\150\1\172\2\uffff\1\143\1\151\1\162\1\uffff\1\157\1\145\1\163\2\164\1\154\1\151\1\141\1\145\1\162\1\141\1\163\1\151\1\145\1\172\1\uffff\1\162\1\145\3\172\1\uffff\2\172\1\uffff\2\172\1\uffff\1\151\1\142\1\141\1\163\1\164\1\144\2\172\1\151\1\144\1\157\1\156\1\172\1\151\1\164\1\145\1\143\1\162\1\uffff\2\172\7\uffff\1\141\1\165\1\143\2\151\1\172\1\uffff\1\156\1\uffff\1\156\1\172\1\156\1\164\1\uffff\1\164\1\145\3\172\2\uffff\4\164\1\172\1\142\1\uffff\2\147\1\uffff\4\172\3\uffff\1\151\1\145\1\172\1\151\1\uffff\1\154\3\172\4\uffff\1\157\1\172\1\uffff\1\157\1\145\3\uffff\1\156\1\uffff\1\156\3\172\1\uffff\1\172\3\uffff";
     static final String DFA12_acceptS =
-        "\23\uffff\1\57\1\uffff\1\61\1\62\3\uffff\1\66\1\67\5\uffff\1\61\1\60\41\uffff\1\57\1\62\1\63\1\64\1\65\1\66\4\uffff\1\50\4\uffff\1\52\1\53\17\uffff\1\55\1\uffff\1\54\11\uffff\1\56\1\51\3\uffff\1\44\17\uffff\1\46\2\uffff\1\47\6\uffff\1\45\2\uffff\1\43\22\uffff\1\37\1\uffff\1\41\2\uffff\1\40\1\33\1\34\1\35\1\36\1\42\6\uffff\1\26\2\uffff\1\27\4\uffff\1\32\5\uffff\1\30\1\31\6\uffff\1\20\3\uffff\1\24\3\uffff\1\22\1\23\1\21\1\25\4\uffff\1\13\2\uffff\1\14\3\uffff\1\17\1\16\1\15\2\uffff\1\7\3\uffff\1\10\1\11\1\12\1\uffff\1\6\5\uffff\1\5\2\uffff\1\2\1\3\1\4\1\1";
+        "\23\uffff\1\55\1\uffff\1\57\1\60\3\uffff\1\64\1\65\5\uffff\1\56\1\57\37\uffff\1\55\1\60\1\61\1\62\1\63\1\64\4\uffff\1\46\12\uffff\1\50\1\51\7\uffff\1\52\11\uffff\1\53\2\uffff\1\54\1\47\3\uffff\1\42\17\uffff\1\44\5\uffff\1\43\2\uffff\1\45\2\uffff\1\41\22\uffff\1\35\2\uffff\1\31\1\32\1\33\1\34\1\36\1\37\1\40\6\uffff\1\24\1\uffff\1\25\4\uffff\1\30\5\uffff\1\26\1\27\6\uffff\1\17\2\uffff\1\23\4\uffff\1\21\1\22\1\20\4\uffff\1\12\4\uffff\1\16\1\15\1\13\1\14\2\uffff\1\6\2\uffff\1\7\1\10\1\11\1\uffff\1\5\4\uffff\1\4\1\uffff\1\2\1\3\1\1";
     static final String DFA12_specialS =
-        "\1\1\26\uffff\1\2\1\0\u00e4\uffff}>";
+        "\1\1\26\uffff\1\2\1\0\u00d8\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\6\33\1\23\1\31\12\26\7\33\1\1\1\22\1\2\1\14\1\4\1\15\1\25\1\16\1\3\3\25\1\17\1\10\1\12\1\7\1\25\1\13\1\5\1\11\1\21\1\6\1\20\3\25\3\33\1\24\1\25\1\33\1\1\1\22\1\2\1\14\1\4\1\15\1\25\1\16\1\3\3\25\1\17\1\10\1\12\1\7\1\25\1\13\1\5\1\11\1\21\1\6\1\20\3\25\uff85\33",
-            "\12\41\7\uffff\1\41\1\36\11\41\1\37\1\41\1\40\4\41\1\34\1\35\6\41\4\uffff\1\41\1\uffff\1\41\1\36\11\41\1\37\1\41\1\40\4\41\1\34\1\35\6\41",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\6\33\1\23\1\31\12\26\7\33\1\1\1\22\1\2\1\13\1\3\1\14\1\25\1\15\1\6\3\25\1\16\1\10\1\11\1\7\1\25\1\12\1\4\1\17\1\21\1\5\1\20\3\25\3\33\1\24\1\25\1\33\1\1\1\22\1\2\1\13\1\3\1\14\1\25\1\15\1\6\3\25\1\16\1\10\1\11\1\7\1\25\1\12\1\4\1\17\1\21\1\5\1\20\3\25\uff85\33",
+            "\12\42\7\uffff\1\42\1\36\11\42\1\37\1\42\1\40\4\42\1\34\1\35\6\42\4\uffff\1\42\1\uffff\1\42\1\36\11\42\1\37\1\42\1\40\4\42\1\34\1\35\6\42",
             "\1\44\12\uffff\1\45\2\uffff\1\43\21\uffff\1\44\12\uffff\1\45\2\uffff\1\43",
-            "\1\46\4\uffff\1\47\1\50\31\uffff\1\46\4\uffff\1\47\1\50",
-            "\1\51\37\uffff\1\51",
-            "\1\53\13\uffff\1\52\23\uffff\1\53\13\uffff\1\52",
-            "\1\55\3\uffff\1\54\33\uffff\1\55\3\uffff\1\54",
+            "\1\46\37\uffff\1\46",
+            "\1\50\13\uffff\1\47\23\uffff\1\50\13\uffff\1\47",
+            "\1\52\3\uffff\1\51\33\uffff\1\52\3\uffff\1\51",
+            "\1\53\4\uffff\1\54\1\55\31\uffff\1\53\4\uffff\1\54\1\55",
             "\1\57\11\uffff\1\56\2\uffff\1\60\22\uffff\1\57\11\uffff\1\56\2\uffff\1\60",
             "\1\62\15\uffff\1\63\5\uffff\1\61\13\uffff\1\62\15\uffff\1\63\5\uffff\1\61",
-            "\1\64\6\uffff\1\66\1\65\5\uffff\1\67\21\uffff\1\64\6\uffff\1\66\1\65\5\uffff\1\67",
-            "\1\71\15\uffff\1\70\21\uffff\1\71\15\uffff\1\70",
-            "\1\72\15\uffff\1\73\21\uffff\1\72\15\uffff\1\73",
-            "\1\74\37\uffff\1\74",
-            "\1\75\37\uffff\1\75",
+            "\1\65\15\uffff\1\64\21\uffff\1\65\15\uffff\1\64",
+            "\1\66\37\uffff\1\66",
+            "\1\67\37\uffff\1\67",
+            "\1\70\37\uffff\1\70",
+            "\1\71\37\uffff\1\71",
+            "\1\72\37\uffff\1\72",
+            "\1\73\1\74\5\uffff\1\75\30\uffff\1\73\1\74\5\uffff\1\75",
             "\1\76\37\uffff\1\76",
-            "\1\77\37\uffff\1\77",
-            "\1\100\37\uffff\1\100",
-            "\1\102\1\uffff\1\101\35\uffff\1\102\1\uffff\1\101",
-            "\1\103\37\uffff\1\103",
+            "\1\100\1\uffff\1\77\35\uffff\1\100\1\uffff\1\77",
+            "\1\101\37\uffff\1\101",
             "",
-            "\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
             "",
-            "\0\106",
-            "\0\106",
-            "\1\107\4\uffff\1\110",
+            "\0\104",
+            "\0\104",
+            "\1\105\4\uffff\1\106",
             "",
             "",
+            "\1\110\37\uffff\1\110",
+            "\1\111\37\uffff\1\111",
             "\1\112\37\uffff\1\112",
             "\1\113\37\uffff\1\113",
-            "\1\114\37\uffff\1\114",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
             "\1\115\37\uffff\1\115",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "",
+            "\1\116\37\uffff\1\116",
             "\1\117\37\uffff\1\117",
             "\1\120\37\uffff\1\120",
             "\1\121\37\uffff\1\121",
             "\1\122\37\uffff\1\122",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\125\37\uffff\1\125",
+            "\1\123\37\uffff\1\123",
+            "\1\125\5\uffff\1\124\31\uffff\1\125\5\uffff\1\124",
             "\1\126\37\uffff\1\126",
-            "\1\127\37\uffff\1\127",
-            "\1\130\37\uffff\1\130",
-            "\1\132\5\uffff\1\131\31\uffff\1\132\5\uffff\1\131",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\131\37\uffff\1\131",
+            "\1\132\37\uffff\1\132",
             "\1\133\37\uffff\1\133",
             "\1\134\37\uffff\1\134",
             "\1\135\37\uffff\1\135",
             "\1\136\37\uffff\1\136",
             "\1\137\37\uffff\1\137",
-            "\1\140\37\uffff\1\140",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\141\37\uffff\1\141",
             "\1\142\37\uffff\1\142",
             "\1\143\37\uffff\1\143",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\145\37\uffff\1\145",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\147\37\uffff\1\147",
-            "\1\150\37\uffff\1\150",
+            "\1\145\2\uffff\1\144\34\uffff\1\145\2\uffff\1\144",
+            "\1\146\37\uffff\1\146",
+            "\1\147\3\uffff\1\150\33\uffff\1\147\3\uffff\1\150",
             "\1\151\37\uffff\1\151",
-            "\1\152\37\uffff\1\152",
-            "\1\154\2\uffff\1\153\34\uffff\1\154\2\uffff\1\153",
-            "\1\155\37\uffff\1\155",
-            "\1\156\37\uffff\1\156",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\153\37\uffff\1\153",
+            "\1\154\37\uffff\1\154",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\157\37\uffff\1\157",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\160\37\uffff\1\160",
+            "\1\161\37\uffff\1\161",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\162\37\uffff\1\162",
             "\1\163\37\uffff\1\163",
             "\1\164\37\uffff\1\164",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
+            "\1\165\37\uffff\1\165",
             "\1\166\37\uffff\1\166",
             "\1\167\37\uffff\1\167",
             "\1\170\37\uffff\1\170",
             "\1\171\37\uffff\1\171",
-            "",
-            "",
             "\1\172\37\uffff\1\172",
             "\1\173\37\uffff\1\173",
             "\1\174\37\uffff\1\174",
+            "",
+            "",
             "\1\175\37\uffff\1\175",
             "\1\176\37\uffff\1\176",
             "\1\177\37\uffff\1\177",
             "\1\u0080\37\uffff\1\u0080",
             "\1\u0081\37\uffff\1\u0081",
-            "\1\u0082\37\uffff\1\u0082",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\u0083\37\uffff\1\u0083",
+            "",
             "\1\u0084\37\uffff\1\u0084",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u0085\37\uffff\1\u0085",
             "\1\u0086\37\uffff\1\u0086",
             "\1\u0087\37\uffff\1\u0087",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\u0089\37\uffff\1\u0089",
-            "",
             "\1\u008a\37\uffff\1\u008a",
-            "\1\u008b\37\uffff\1\u008b",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\u008c\37\uffff\1\u008c",
+            "",
             "\1\u008d\37\uffff\1\u008d",
-            "\1\u008e\37\uffff\1\u008e",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "\1\u008f\37\uffff\1\u008f",
             "\1\u0090\37\uffff\1\u0090",
             "\1\u0091\37\uffff\1\u0091",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
-            "",
-            "\1\u0093\37\uffff\1\u0093",
+            "\1\u0093\15\uffff\1\u0092\21\uffff\1\u0093\15\uffff\1\u0092",
             "\1\u0094\37\uffff\1\u0094",
             "\1\u0095\37\uffff\1\u0095",
-            "",
-            "\1\u0097\15\uffff\1\u0096\21\uffff\1\u0097\15\uffff\1\u0096",
+            "\1\u0096\37\uffff\1\u0096",
+            "\1\u0097\37\uffff\1\u0097",
             "\1\u0098\37\uffff\1\u0098",
             "\1\u0099\37\uffff\1\u0099",
             "\1\u009a\37\uffff\1\u009a",
@@ -4317,128 +4111,115 @@ public class InternalFeatureLangLexer extends Lexer {
             "\1\u009e\37\uffff\1\u009e",
             "\1\u009f\37\uffff\1\u009f",
             "\1\u00a0\37\uffff\1\u00a0",
-            "\1\u00a1\37\uffff\1\u00a1",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
             "\1\u00a2\37\uffff\1\u00a2",
             "\1\u00a3\37\uffff\1\u00a3",
-            "\1\u00a4\37\uffff\1\u00a4",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\1\u00a6\37\uffff\1\u00a6",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\1\u00a8\37\uffff\1\u00a8",
-            "\1\u00a9\37\uffff\1\u00a9",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
+            "\1\u00ab\37\uffff\1\u00ab",
+            "\1\u00ac\37\uffff\1\u00ac",
+            "\1\u00ad\37\uffff\1\u00ad",
+            "\1\u00ae\37\uffff\1\u00ae",
+            "\1\u00af\37\uffff\1\u00af",
             "\1\u00b0\37\uffff\1\u00b0",
-            "\1\u00b1\37\uffff\1\u00b1",
-            "\1\u00b2\37\uffff\1\u00b2",
-            "\1\u00b3\37\uffff\1\u00b3",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\10\42\1\u00b2\21\42\4\uffff\1\42\1\uffff\10\42\1\u00b2\21\42",
             "\1\u00b4\37\uffff\1\u00b4",
             "\1\u00b5\37\uffff\1\u00b5",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u00b6\37\uffff\1\u00b6",
             "\1\u00b7\37\uffff\1\u00b7",
-            "\12\41\7\uffff\10\41\1\u00b8\21\41\4\uffff\1\41\1\uffff\10\41\1\u00b8\21\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\u00b9\37\uffff\1\u00b9",
             "\1\u00ba\37\uffff\1\u00ba",
             "\1\u00bb\37\uffff\1\u00bb",
             "\1\u00bc\37\uffff\1\u00bc",
             "\1\u00bd\37\uffff\1\u00bd",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\u00bf\37\uffff\1\u00bf",
+            "",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00c0\37\uffff\1\u00c0",
             "\1\u00c1\37\uffff\1\u00c1",
             "\1\u00c2\37\uffff\1\u00c2",
+            "\1\u00c4\3\uffff\1\u00c3\33\uffff\1\u00c4\3\uffff\1\u00c3",
+            "\1\u00c5\37\uffff\1\u00c5",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\1\u00c3\37\uffff\1\u00c3",
-            "",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00c6\37\uffff\1\u00c6",
             "\1\u00c7\37\uffff\1\u00c7",
+            "",
             "\1\u00c8\37\uffff\1\u00c8",
-            "\1\u00ca\3\uffff\1\u00c9\33\uffff\1\u00ca\3\uffff\1\u00c9",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\u00ca\37\uffff\1\u00ca",
             "\1\u00cb\37\uffff\1\u00cb",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
+            "\1\u00cc\37\uffff\1\u00cc",
             "\1\u00cd\37\uffff\1\u00cd",
-            "\1\u00ce\37\uffff\1\u00ce",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\1\u00cf\37\uffff\1\u00cf",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
             "\1\u00d1\37\uffff\1\u00d1",
             "\1\u00d2\37\uffff\1\u00d2",
-            "",
             "\1\u00d3\37\uffff\1\u00d3",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u00d4\37\uffff\1\u00d4",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\1\u00d6\37\uffff\1\u00d6",
             "",
-            "",
+            "\1\u00d7\37\uffff\1\u00d7",
             "\1\u00d8\37\uffff\1\u00d8",
-            "\1\u00d9\37\uffff\1\u00d9",
-            "\1\u00da\37\uffff\1\u00da",
-            "\1\u00db\37\uffff\1\u00db",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\u00dd\37\uffff\1\u00dd",
             "",
-            "\12\41\7\uffff\1\u00de\31\41\4\uffff\1\41\1\uffff\1\u00de\31\41",
-            "\1\u00e0\37\uffff\1\u00e0",
+            "\12\42\7\uffff\22\42\1\u00d9\7\42\4\uffff\1\42\1\uffff\22\42\1\u00d9\7\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "",
+            "\1\u00de\37\uffff\1\u00de",
+            "\1\u00df\37\uffff\1\u00df",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\u00e1\37\uffff\1\u00e1",
             "",
-            "\12\41\7\uffff\22\41\1\u00e2\7\41\4\uffff\1\41\1\uffff\22\41\1\u00e2\7\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u00e2\37\uffff\1\u00e2",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
             "",
             "",
             "",
             "\1\u00e6\37\uffff\1\u00e6",
-            "\1\u00e7\37\uffff\1\u00e7",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "\1\u00e8\37\uffff\1\u00e8",
             "\1\u00e9\37\uffff\1\u00e9",
             "",
+            "",
+            "",
             "\1\u00ea\37\uffff\1\u00ea",
+            "",
             "\1\u00eb\37\uffff\1\u00eb",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\42\7\uffff\22\42\1\u00ed\7\42\4\uffff\1\42\1\uffff\22\42\1\u00ed\7\42",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "",
-            "",
-            "\1\u00ef\37\uffff\1\u00ef",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "\1\u00f1\37\uffff\1\u00f1",
-            "\1\u00f2\37\uffff\1\u00f2",
-            "\1\u00f3\37\uffff\1\u00f3",
-            "",
-            "",
-            "",
-            "\1\u00f4\37\uffff\1\u00f4",
-            "",
-            "\1\u00f5\37\uffff\1\u00f5",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\u00f7\37\uffff\1\u00f7",
-            "\12\41\7\uffff\22\41\1\u00f8\7\41\4\uffff\1\41\1\uffff\22\41\1\u00f8\7\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "",
+            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
             "",
             ""
@@ -4474,7 +4255,7 @@ public class InternalFeatureLangLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( Associations | Association | Composition | Inheritance | Compatible | Attribute | Abstract | Existing | Starting | Versions | Compose | Inherit | Private | Variant | Version | Called | Number | Phrase | Public | Should | Target | Class | Exist | Other | Range | Value | Date | From | Have | Must | Name | Role | Time | With | URI | All | Has | Not | The | An | Be | Is | It | Of | To | Up | FullStop | A | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( Associations | Association | Composition | Compatible | Attribute | Abstract | Existing | Starting | Versions | Compose | Inherit | Private | Variant | Version | Called | Number | Phrase | Public | Should | Class | Exist | Other | Range | Value | Date | From | Have | Must | Name | That | Time | With | URI | All | Has | Not | The | An | Be | Is | It | Of | To | Up | FullStop | A | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -4484,7 +4265,7 @@ public class InternalFeatureLangLexer extends Lexer {
                         int LA12_24 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 70;}
+                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 68;}
 
                         else s = 27;
 
@@ -4498,31 +4279,31 @@ public class InternalFeatureLangLexer extends Lexer {
 
                         else if ( (LA12_0=='C'||LA12_0=='c') ) {s = 2;}
 
-                        else if ( (LA12_0=='I'||LA12_0=='i') ) {s = 3;}
+                        else if ( (LA12_0=='E'||LA12_0=='e') ) {s = 3;}
 
-                        else if ( (LA12_0=='E'||LA12_0=='e') ) {s = 4;}
+                        else if ( (LA12_0=='S'||LA12_0=='s') ) {s = 4;}
 
-                        else if ( (LA12_0=='S'||LA12_0=='s') ) {s = 5;}
+                        else if ( (LA12_0=='V'||LA12_0=='v') ) {s = 5;}
 
-                        else if ( (LA12_0=='V'||LA12_0=='v') ) {s = 6;}
+                        else if ( (LA12_0=='I'||LA12_0=='i') ) {s = 6;}
 
                         else if ( (LA12_0=='P'||LA12_0=='p') ) {s = 7;}
 
                         else if ( (LA12_0=='N'||LA12_0=='n') ) {s = 8;}
 
-                        else if ( (LA12_0=='T'||LA12_0=='t') ) {s = 9;}
+                        else if ( (LA12_0=='O'||LA12_0=='o') ) {s = 9;}
 
-                        else if ( (LA12_0=='O'||LA12_0=='o') ) {s = 10;}
+                        else if ( (LA12_0=='R'||LA12_0=='r') ) {s = 10;}
 
-                        else if ( (LA12_0=='R'||LA12_0=='r') ) {s = 11;}
+                        else if ( (LA12_0=='D'||LA12_0=='d') ) {s = 11;}
 
-                        else if ( (LA12_0=='D'||LA12_0=='d') ) {s = 12;}
+                        else if ( (LA12_0=='F'||LA12_0=='f') ) {s = 12;}
 
-                        else if ( (LA12_0=='F'||LA12_0=='f') ) {s = 13;}
+                        else if ( (LA12_0=='H'||LA12_0=='h') ) {s = 13;}
 
-                        else if ( (LA12_0=='H'||LA12_0=='h') ) {s = 14;}
+                        else if ( (LA12_0=='M'||LA12_0=='m') ) {s = 14;}
 
-                        else if ( (LA12_0=='M'||LA12_0=='m') ) {s = 15;}
+                        else if ( (LA12_0=='T'||LA12_0=='t') ) {s = 15;}
 
                         else if ( (LA12_0=='W'||LA12_0=='w') ) {s = 16;}
 
@@ -4554,7 +4335,7 @@ public class InternalFeatureLangLexer extends Lexer {
                         int LA12_23 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 70;}
+                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 68;}
 
                         else s = 27;
 

@@ -195,24 +195,6 @@ public interface FeatureLangFactory extends EFactory
   InheritanceAction createInheritanceAction();
 
   /**
-   * Returns a new object of class '<em>Create Inheritance</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Create Inheritance</em>'.
-   * @generated
-   */
-  CreateInheritance createCreateInheritance();
-
-  /**
-   * Returns a new object of class '<em>Edit Inheritance</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Edit Inheritance</em>'.
-   * @generated
-   */
-  EditInheritance createEditInheritance();
-
-  /**
    * Returns a new object of class '<em>Composition Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

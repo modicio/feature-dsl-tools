@@ -6,11 +6,6 @@
     complianceLevel="11.0" copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="FeatureLang" basePackage="de.tud.st.featurelang" disposableProviderFactory="true"
       fileExtensions="featurelang" ecorePackage="FeatureLang.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//CompositionParameter">
-      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/URI"/>
-      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/ROLE"/>
-      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//CompositionParameter/TARGET"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//Publicity">
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Publicity/PUBLIC"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Publicity/PRIVATE"/>
@@ -99,14 +94,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetLeftOpen/date"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//InheritanceAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/create"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/edit"/>
-    </genClasses>
-    <genClasses ecoreClass="FeatureLang.ecore#//CreateInheritance">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CreateInheritance/parent"/>
-    </genClasses>
-    <genClasses ecoreClass="FeatureLang.ecore#//EditInheritance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditInheritance/uri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/parent"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//CompositionAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//CompositionAction/create"/>
@@ -120,8 +108,7 @@
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//EditComposition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/compositionName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/publicity"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/abstract"/>

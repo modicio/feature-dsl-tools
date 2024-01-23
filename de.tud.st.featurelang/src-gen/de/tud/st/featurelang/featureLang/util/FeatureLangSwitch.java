@@ -11,11 +11,9 @@ import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
 import de.tud.st.featurelang.featureLang.CreateAssociation;
 import de.tud.st.featurelang.featureLang.CreateComposition;
-import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.EditAssociation;
 import de.tud.st.featurelang.featureLang.EditComposition;
-import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
 import de.tud.st.featurelang.featureLang.Identifier;
@@ -232,20 +230,6 @@ public class FeatureLangSwitch<T> extends Switch<T>
       {
         InheritanceAction inheritanceAction = (InheritanceAction)theEObject;
         T result = caseInheritanceAction(inheritanceAction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FeatureLangPackage.CREATE_INHERITANCE:
-      {
-        CreateInheritance createInheritance = (CreateInheritance)theEObject;
-        T result = caseCreateInheritance(createInheritance);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FeatureLangPackage.EDIT_INHERITANCE:
-      {
-        EditInheritance editInheritance = (EditInheritance)theEObject;
-        T result = caseEditInheritance(editInheritance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -602,38 +586,6 @@ public class FeatureLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInheritanceAction(InheritanceAction object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Create Inheritance</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Create Inheritance</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCreateInheritance(CreateInheritance object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Edit Inheritance</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Edit Inheritance</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEditInheritance(EditInheritance object)
   {
     return null;
   }

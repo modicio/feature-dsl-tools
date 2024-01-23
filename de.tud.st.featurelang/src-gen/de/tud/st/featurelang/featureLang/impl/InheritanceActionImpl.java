@@ -3,8 +3,6 @@
  */
 package de.tud.st.featurelang.featureLang.impl;
 
-import de.tud.st.featurelang.featureLang.CreateInheritance;
-import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.InheritanceAction;
 
@@ -25,8 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl#getCreate <em>Create</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl#getEdit <em>Edit</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class InheritanceActionImpl extends MinimalEObjectImpl.Container implements InheritanceAction
 {
   /**
-   * The cached value of the '{@link #getCreate() <em>Create</em>}' containment reference.
+   * The cached value of the '{@link #getParent() <em>Parent</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCreate()
+   * @see #getParent()
    * @generated
    * @ordered
    */
-  protected CreateInheritance create;
-
-  /**
-   * The cached value of the '{@link #getEdit() <em>Edit</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEdit()
-   * @generated
-   * @ordered
-   */
-  protected EditInheritance edit;
+  protected de.tud.st.featurelang.featureLang.Class parent;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,9 +67,9 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public CreateInheritance getCreate()
+  public de.tud.st.featurelang.featureLang.Class getParent()
   {
-    return create;
+    return parent;
   }
 
   /**
@@ -90,13 +77,13 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCreate(CreateInheritance newCreate, NotificationChain msgs)
+  public NotificationChain basicSetParent(de.tud.st.featurelang.featureLang.Class newParent, NotificationChain msgs)
   {
-    CreateInheritance oldCreate = create;
-    create = newCreate;
+    de.tud.st.featurelang.featureLang.Class oldParent = parent;
+    parent = newParent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__CREATE, oldCreate, newCreate);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__PARENT, oldParent, newParent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -108,70 +95,20 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public void setCreate(CreateInheritance newCreate)
+  public void setParent(de.tud.st.featurelang.featureLang.Class newParent)
   {
-    if (newCreate != create)
+    if (newParent != parent)
     {
       NotificationChain msgs = null;
-      if (create != null)
-        msgs = ((InternalEObject)create).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__CREATE, null, msgs);
-      if (newCreate != null)
-        msgs = ((InternalEObject)newCreate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__CREATE, null, msgs);
-      msgs = basicSetCreate(newCreate, msgs);
+      if (parent != null)
+        msgs = ((InternalEObject)parent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__PARENT, null, msgs);
+      if (newParent != null)
+        msgs = ((InternalEObject)newParent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__PARENT, null, msgs);
+      msgs = basicSetParent(newParent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__CREATE, newCreate, newCreate));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EditInheritance getEdit()
-  {
-    return edit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetEdit(EditInheritance newEdit, NotificationChain msgs)
-  {
-    EditInheritance oldEdit = edit;
-    edit = newEdit;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__EDIT, oldEdit, newEdit);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEdit(EditInheritance newEdit)
-  {
-    if (newEdit != edit)
-    {
-      NotificationChain msgs = null;
-      if (edit != null)
-        msgs = ((InternalEObject)edit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__EDIT, null, msgs);
-      if (newEdit != null)
-        msgs = ((InternalEObject)newEdit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.INHERITANCE_ACTION__EDIT, null, msgs);
-      msgs = basicSetEdit(newEdit, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__EDIT, newEdit, newEdit));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.INHERITANCE_ACTION__PARENT, newParent, newParent));
   }
 
   /**
@@ -184,10 +121,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CREATE:
-        return basicSetCreate(null, msgs);
-      case FeatureLangPackage.INHERITANCE_ACTION__EDIT:
-        return basicSetEdit(null, msgs);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return basicSetParent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -202,10 +137,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CREATE:
-        return getCreate();
-      case FeatureLangPackage.INHERITANCE_ACTION__EDIT:
-        return getEdit();
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return getParent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -220,11 +153,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CREATE:
-        setCreate((CreateInheritance)newValue);
-        return;
-      case FeatureLangPackage.INHERITANCE_ACTION__EDIT:
-        setEdit((EditInheritance)newValue);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        setParent((de.tud.st.featurelang.featureLang.Class)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,11 +170,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CREATE:
-        setCreate((CreateInheritance)null);
-        return;
-      case FeatureLangPackage.INHERITANCE_ACTION__EDIT:
-        setEdit((EditInheritance)null);
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        setParent((de.tud.st.featurelang.featureLang.Class)null);
         return;
     }
     super.eUnset(featureID);
@@ -260,10 +187,8 @@ public class InheritanceActionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FeatureLangPackage.INHERITANCE_ACTION__CREATE:
-        return create != null;
-      case FeatureLangPackage.INHERITANCE_ACTION__EDIT:
-        return edit != null;
+      case FeatureLangPackage.INHERITANCE_ACTION__PARENT:
+        return parent != null;
     }
     return super.eIsSet(featureID);
   }

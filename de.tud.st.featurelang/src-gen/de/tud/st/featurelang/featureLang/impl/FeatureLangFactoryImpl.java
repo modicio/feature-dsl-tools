@@ -10,15 +10,12 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.CompositionAction;
-import de.tud.st.featurelang.featureLang.CompositionParameter;
 import de.tud.st.featurelang.featureLang.CreateAssociation;
 import de.tud.st.featurelang.featureLang.CreateComposition;
-import de.tud.st.featurelang.featureLang.CreateInheritance;
 import de.tud.st.featurelang.featureLang.CreationStatement;
 import de.tud.st.featurelang.featureLang.Datatype;
 import de.tud.st.featurelang.featureLang.EditAssociation;
 import de.tud.st.featurelang.featureLang.EditComposition;
-import de.tud.st.featurelang.featureLang.EditInheritance;
 import de.tud.st.featurelang.featureLang.FeatureLangFactory;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
 import de.tud.st.featurelang.featureLang.FeatureRequest;
@@ -119,8 +116,6 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
       case FeatureLangPackage.SET_RIGHT_OPEN: return createSetRightOpen();
       case FeatureLangPackage.SET_LEFT_OPEN: return createSetLeftOpen();
       case FeatureLangPackage.INHERITANCE_ACTION: return createInheritanceAction();
-      case FeatureLangPackage.CREATE_INHERITANCE: return createCreateInheritance();
-      case FeatureLangPackage.EDIT_INHERITANCE: return createEditInheritance();
       case FeatureLangPackage.COMPOSITION_ACTION: return createCompositionAction();
       case FeatureLangPackage.CREATE_COMPOSITION: return createCreateComposition();
       case FeatureLangPackage.EDIT_COMPOSITION: return createEditComposition();
@@ -143,8 +138,6 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     switch (eDataType.getClassifierID())
     {
-      case FeatureLangPackage.COMPOSITION_PARAMETER:
-        return createCompositionParameterFromString(eDataType, initialValue);
       case FeatureLangPackage.PUBLICITY:
         return createPublicityFromString(eDataType, initialValue);
       case FeatureLangPackage.PRIORITY_VALUE:
@@ -170,8 +163,6 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     switch (eDataType.getClassifierID())
     {
-      case FeatureLangPackage.COMPOSITION_PARAMETER:
-        return convertCompositionParameterToString(eDataType, instanceValue);
       case FeatureLangPackage.PUBLICITY:
         return convertPublicityToString(eDataType, instanceValue);
       case FeatureLangPackage.PRIORITY_VALUE:
@@ -421,30 +412,6 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
    * @generated
    */
   @Override
-  public CreateInheritance createCreateInheritance()
-  {
-    CreateInheritanceImpl createInheritance = new CreateInheritanceImpl();
-    return createInheritance;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EditInheritance createEditInheritance()
-  {
-    EditInheritanceImpl editInheritance = new EditInheritanceImpl();
-    return editInheritance;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public CompositionAction createCompositionAction()
   {
     CompositionActionImpl compositionAction = new CompositionActionImpl();
@@ -521,28 +488,6 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
   {
     PriorityImpl priority = new PriorityImpl();
     return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CompositionParameter createCompositionParameterFromString(EDataType eDataType, String initialValue)
-  {
-    CompositionParameter result = CompositionParameter.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertCompositionParameterToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

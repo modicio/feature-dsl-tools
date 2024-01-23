@@ -824,41 +824,13 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class InheritanceActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.InheritanceAction");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cCreateAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cCreateCreateInheritanceParserRuleCall_0_0 = (RuleCall)cCreateAssignment_0.eContents().get(0);
-		private final Assignment cEditAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cEditEditInheritanceParserRuleCall_1_0 = (RuleCall)cEditAssignment_1.eContents().get(0);
-		
-		//InheritanceAction hidden(WS):
-		//    create=CreateInheritance | edit=EditInheritance
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//create=CreateInheritance | edit=EditInheritance
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//create=CreateInheritance
-		public Assignment getCreateAssignment_0() { return cCreateAssignment_0; }
-		
-		//CreateInheritance
-		public RuleCall getCreateCreateInheritanceParserRuleCall_0_0() { return cCreateCreateInheritanceParserRuleCall_0_0; }
-		
-		//edit=EditInheritance
-		public Assignment getEditAssignment_1() { return cEditAssignment_1; }
-		
-		//EditInheritance
-		public RuleCall getEditEditInheritanceParserRuleCall_1_0() { return cEditEditInheritanceParserRuleCall_1_0; }
-	}
-	public class CreateInheritanceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreateInheritance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInheritKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParentClassParserRuleCall_2_0 = (RuleCall)cParentAssignment_2.eContents().get(0);
 		
-		//CreateInheritance hidden(WS):
+		//InheritanceAction hidden(WS):
 		//    'inherit' 'from' parent=Class
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -877,38 +849,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Class
 		public RuleCall getParentClassParserRuleCall_2_0() { return cParentClassParserRuleCall_2_0; }
-	}
-	public class EditInheritanceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.EditInheritance");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cInheritanceKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cURIKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cUriAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cUriIDTerminalRuleCall_3_0 = (RuleCall)cUriAssignment_3.eContents().get(0);
-		
-		//EditInheritance hidden(WS):
-		//    'have' 'inheritance' 'URI' uri=ID
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'have' 'inheritance' 'URI' uri=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'have'
-		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
-		
-		//'inheritance'
-		public Keyword getInheritanceKeyword_1() { return cInheritanceKeyword_1; }
-		
-		//'URI'
-		public Keyword getURIKeyword_2() { return cURIKeyword_2; }
-		
-		//uri=ID
-		public Assignment getUriAssignment_3() { return cUriAssignment_3; }
-		
-		//ID
-		public RuleCall getUriIDTerminalRuleCall_3_0() { return cUriIDTerminalRuleCall_3_0; }
 	}
 	public class CompositionActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CompositionAction");
@@ -1015,18 +955,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCompositionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cCompositionNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCompositionNameIDTerminalRuleCall_2_0 = (RuleCall)cCompositionNameAssignment_2.eContents().get(0);
-		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cParameterAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cParameterCompositionParameterEnumRuleCall_4_0 = (RuleCall)cParameterAssignment_4.eContents().get(0);
-		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		private final Keyword cThatKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cIsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPublicityAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPublicityPublicityEnumRuleCall_5_0 = (RuleCall)cPublicityAssignment_5.eContents().get(0);
 		
 		//EditComposition hidden(WS):
-		//    'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+		//    'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+		//'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -1041,20 +980,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getCompositionNameIDTerminalRuleCall_2_0() { return cCompositionNameIDTerminalRuleCall_2_0; }
 		
-		//'with'
-		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
+		//'that'
+		public Keyword getThatKeyword_3() { return cThatKeyword_3; }
 		
-		//parameter=CompositionParameter
-		public Assignment getParameterAssignment_4() { return cParameterAssignment_4; }
+		//'is'
+		public Keyword getIsKeyword_4() { return cIsKeyword_4; }
 		
-		//CompositionParameter
-		public RuleCall getParameterCompositionParameterEnumRuleCall_4_0() { return cParameterCompositionParameterEnumRuleCall_4_0; }
+		//publicity=Publicity
+		public Assignment getPublicityAssignment_5() { return cPublicityAssignment_5; }
 		
-		//name=ID
-		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_5_0() { return cNameIDTerminalRuleCall_5_0; }
+		//Publicity
+		public RuleCall getPublicityPublicityEnumRuleCall_5_0() { return cPublicityPublicityEnumRuleCall_5_0; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Class");
@@ -1169,42 +1105,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		public RuleCall getPriorityPriorityValueEnumRuleCall_0() { return cPriorityPriorityValueEnumRuleCall_0; }
 	}
 	
-	public class CompositionParameterElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CompositionParameter");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cURIEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cURIURIKeyword_0_0 = (Keyword)cURIEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cROLEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cROLERoleKeyword_1_0 = (Keyword)cROLEEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cTARGETEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cTARGETTargetKeyword_2_0 = (Keyword)cTARGETEnumLiteralDeclaration_2.eContents().get(0);
-		
-		//enum CompositionParameter:
-		//    URI='URI' | ROLE='role' | TARGET='target'
-		//;
-		public EnumRule getRule() { return rule; }
-		
-		//URI='URI' | ROLE='role' | TARGET='target'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//URI='URI'
-		public EnumLiteralDeclaration getURIEnumLiteralDeclaration_0() { return cURIEnumLiteralDeclaration_0; }
-		
-		//'URI'
-		public Keyword getURIURIKeyword_0_0() { return cURIURIKeyword_0_0; }
-		
-		//ROLE='role'
-		public EnumLiteralDeclaration getROLEEnumLiteralDeclaration_1() { return cROLEEnumLiteralDeclaration_1; }
-		
-		//'role'
-		public Keyword getROLERoleKeyword_1_0() { return cROLERoleKeyword_1_0; }
-		
-		//TARGET='target'
-		public EnumLiteralDeclaration getTARGETEnumLiteralDeclaration_2() { return cTARGETEnumLiteralDeclaration_2; }
-		
-		//'target'
-		public Keyword getTARGETTargetKeyword_2_0() { return cTARGETTargetKeyword_2_0; }
-	}
 	public class PublicityElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Publicity");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1361,8 +1261,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final SetRightOpenElements pSetRightOpen;
 	private final SetLeftOpenElements pSetLeftOpen;
 	private final InheritanceActionElements pInheritanceAction;
-	private final CreateInheritanceElements pCreateInheritance;
-	private final EditInheritanceElements pEditInheritance;
 	private final CompositionActionElements pCompositionAction;
 	private final CreateCompositionElements pCreateComposition;
 	private final EditCompositionElements pEditComposition;
@@ -1370,7 +1268,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final AttributeElements pAttribute;
 	private final IdentifierElements pIdentifier;
 	private final PriorityElements pPriority;
-	private final CompositionParameterElements eCompositionParameter;
 	private final PublicityElements ePublicity;
 	private final PriorityValueElements ePriorityValue;
 	private final AbstractionElements eAbstraction;
@@ -1405,8 +1302,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pSetRightOpen = new SetRightOpenElements();
 		this.pSetLeftOpen = new SetLeftOpenElements();
 		this.pInheritanceAction = new InheritanceActionElements();
-		this.pCreateInheritance = new CreateInheritanceElements();
-		this.pEditInheritance = new EditInheritanceElements();
 		this.pCompositionAction = new CompositionActionElements();
 		this.pCreateComposition = new CreateCompositionElements();
 		this.pEditComposition = new EditCompositionElements();
@@ -1414,7 +1309,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pAttribute = new AttributeElements();
 		this.pIdentifier = new IdentifierElements();
 		this.pPriority = new PriorityElements();
-		this.eCompositionParameter = new CompositionParameterElements();
 		this.ePublicity = new PublicityElements();
 		this.ePriorityValue = new PriorityValueElements();
 		this.eAbstraction = new AbstractionElements();
@@ -1653,7 +1547,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//InheritanceAction hidden(WS):
-	//    create=CreateInheritance | edit=EditInheritance
+	//    'inherit' 'from' parent=Class
 	//;
 	public InheritanceActionElements getInheritanceActionAccess() {
 		return pInheritanceAction;
@@ -1661,28 +1555,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getInheritanceActionRule() {
 		return getInheritanceActionAccess().getRule();
-	}
-	
-	//CreateInheritance hidden(WS):
-	//    'inherit' 'from' parent=Class
-	//;
-	public CreateInheritanceElements getCreateInheritanceAccess() {
-		return pCreateInheritance;
-	}
-	
-	public ParserRule getCreateInheritanceRule() {
-		return getCreateInheritanceAccess().getRule();
-	}
-	
-	//EditInheritance hidden(WS):
-	//    'have' 'inheritance' 'URI' uri=ID
-	//;
-	public EditInheritanceElements getEditInheritanceAccess() {
-		return pEditInheritance;
-	}
-	
-	public ParserRule getEditInheritanceRule() {
-		return getEditInheritanceAccess().getRule();
 	}
 	
 	//CompositionAction hidden(WS):
@@ -1709,7 +1581,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//EditComposition hidden(WS):
-	//    'have' 'composition' compositionName=ID 'with' parameter=CompositionParameter name=ID
+	//    'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 	//;
 	public EditCompositionElements getEditCompositionAccess() {
 		return pEditComposition;
@@ -1761,17 +1633,6 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getPriorityRule() {
 		return getPriorityAccess().getRule();
-	}
-	
-	//enum CompositionParameter:
-	//    URI='URI' | ROLE='role' | TARGET='target'
-	//;
-	public CompositionParameterElements getCompositionParameterAccess() {
-		return eCompositionParameter;
-	}
-	
-	public EnumRule getCompositionParameterRule() {
-		return getCompositionParameterAccess().getRule();
 	}
 	
 	//enum Publicity:

@@ -726,22 +726,13 @@ public interface FeatureLangPackage extends EPackage
   int INHERITANCE_ACTION = 18;
 
   /**
-   * The feature id for the '<em><b>Create</b></em>' containment reference.
+   * The feature id for the '<em><b>Parent</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INHERITANCE_ACTION__CREATE = 0;
-
-  /**
-   * The feature id for the '<em><b>Edit</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INHERITANCE_ACTION__EDIT = 1;
+  int INHERITANCE_ACTION__PARENT = 0;
 
   /**
    * The number of structural features of the '<em>Inheritance Action</em>' class.
@@ -750,63 +741,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INHERITANCE_ACTION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl <em>Create Inheritance</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl
-   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateInheritance()
-   * @generated
-   */
-  int CREATE_INHERITANCE = 19;
-
-  /**
-   * The feature id for the '<em><b>Parent</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_INHERITANCE__PARENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Create Inheritance</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CREATE_INHERITANCE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl <em>Edit Inheritance</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl
-   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditInheritance()
-   * @generated
-   */
-  int EDIT_INHERITANCE = 20;
-
-  /**
-   * The feature id for the '<em><b>Uri</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EDIT_INHERITANCE__URI = 0;
-
-  /**
-   * The number of structural features of the '<em>Edit Inheritance</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EDIT_INHERITANCE_FEATURE_COUNT = 1;
+  int INHERITANCE_ACTION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CompositionActionImpl <em>Composition Action</em>}' class.
@@ -816,7 +751,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionAction()
    * @generated
    */
-  int COMPOSITION_ACTION = 21;
+  int COMPOSITION_ACTION = 19;
 
   /**
    * The feature id for the '<em><b>Create</b></em>' containment reference.
@@ -853,7 +788,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateComposition()
    * @generated
    */
-  int CREATE_COMPOSITION = 22;
+  int CREATE_COMPOSITION = 20;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -908,7 +843,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditComposition()
    * @generated
    */
-  int EDIT_COMPOSITION = 23;
+  int EDIT_COMPOSITION = 21;
 
   /**
    * The feature id for the '<em><b>Composition Name</b></em>' attribute.
@@ -920,22 +855,13 @@ public interface FeatureLangPackage extends EPackage
   int EDIT_COMPOSITION__COMPOSITION_NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Parameter</b></em>' attribute.
+   * The feature id for the '<em><b>Publicity</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EDIT_COMPOSITION__PARAMETER = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EDIT_COMPOSITION__NAME = 2;
+  int EDIT_COMPOSITION__PUBLICITY = 1;
 
   /**
    * The number of structural features of the '<em>Edit Composition</em>' class.
@@ -944,7 +870,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EDIT_COMPOSITION_FEATURE_COUNT = 3;
+  int EDIT_COMPOSITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.ClassImpl <em>Class</em>}' class.
@@ -954,7 +880,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getClass_()
    * @generated
    */
-  int CLASS = 24;
+  int CLASS = 22;
 
   /**
    * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -991,7 +917,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 25;
+  int ATTRIBUTE = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1019,7 +945,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getIdentifier()
    * @generated
    */
-  int IDENTIFIER = 26;
+  int IDENTIFIER = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1056,7 +982,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriority()
    * @generated
    */
-  int PRIORITY = 27;
+  int PRIORITY = 25;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -1077,16 +1003,6 @@ public interface FeatureLangPackage extends EPackage
   int PRIORITY_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.tud.st.featurelang.featureLang.CompositionParameter
-   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionParameter()
-   * @generated
-   */
-  int COMPOSITION_PARAMETER = 28;
-
-  /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1094,7 +1010,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPublicity()
    * @generated
    */
-  int PUBLICITY = 29;
+  int PUBLICITY = 26;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.PriorityValue <em>Priority Value</em>}' enum.
@@ -1104,7 +1020,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getPriorityValue()
    * @generated
    */
-  int PRIORITY_VALUE = 30;
+  int PRIORITY_VALUE = 27;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Abstraction <em>Abstraction</em>}' enum.
@@ -1114,7 +1030,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getAbstraction()
    * @generated
    */
-  int ABSTRACTION = 31;
+  int ABSTRACTION = 28;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.IdentifierValue <em>Identifier Value</em>}' enum.
@@ -1124,7 +1040,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getIdentifierValue()
    * @generated
    */
-  int IDENTIFIER_VALUE = 32;
+  int IDENTIFIER_VALUE = 29;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.Datatype <em>Datatype</em>}' enum.
@@ -1134,7 +1050,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getDatatype()
    * @generated
    */
-  int DATATYPE = 33;
+  int DATATYPE = 30;
 
 
   /**
@@ -1669,68 +1585,15 @@ public interface FeatureLangPackage extends EPackage
   EClass getInheritanceAction();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getCreate <em>Create</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Create</em>'.
-   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getCreate()
-   * @see #getInheritanceAction()
-   * @generated
-   */
-  EReference getInheritanceAction_Create();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getEdit <em>Edit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Edit</em>'.
-   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getEdit()
-   * @see #getInheritanceAction()
-   * @generated
-   */
-  EReference getInheritanceAction_Edit();
-
-  /**
-   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CreateInheritance <em>Create Inheritance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Create Inheritance</em>'.
-   * @see de.tud.st.featurelang.featureLang.CreateInheritance
-   * @generated
-   */
-  EClass getCreateInheritance();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.CreateInheritance#getParent <em>Parent</em>}'.
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.InheritanceAction#getParent <em>Parent</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Parent</em>'.
-   * @see de.tud.st.featurelang.featureLang.CreateInheritance#getParent()
-   * @see #getCreateInheritance()
+   * @see de.tud.st.featurelang.featureLang.InheritanceAction#getParent()
+   * @see #getInheritanceAction()
    * @generated
    */
-  EReference getCreateInheritance_Parent();
-
-  /**
-   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.EditInheritance <em>Edit Inheritance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Edit Inheritance</em>'.
-   * @see de.tud.st.featurelang.featureLang.EditInheritance
-   * @generated
-   */
-  EClass getEditInheritance();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditInheritance#getUri <em>Uri</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Uri</em>'.
-   * @see de.tud.st.featurelang.featureLang.EditInheritance#getUri()
-   * @see #getEditInheritance()
-   * @generated
-   */
-  EAttribute getEditInheritance_Uri();
+  EReference getInheritanceAction_Parent();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.CompositionAction <em>Composition Action</em>}'.
@@ -1840,26 +1703,15 @@ public interface FeatureLangPackage extends EPackage
   EAttribute getEditComposition_CompositionName();
 
   /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getParameter <em>Parameter</em>}'.
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getPublicity <em>Publicity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Parameter</em>'.
-   * @see de.tud.st.featurelang.featureLang.EditComposition#getParameter()
+   * @return the meta object for the attribute '<em>Publicity</em>'.
+   * @see de.tud.st.featurelang.featureLang.EditComposition#getPublicity()
    * @see #getEditComposition()
    * @generated
    */
-  EAttribute getEditComposition_Parameter();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.EditComposition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.tud.st.featurelang.featureLang.EditComposition#getName()
-   * @see #getEditComposition()
-   * @generated
-   */
-  EAttribute getEditComposition_Name();
+  EAttribute getEditComposition_Publicity();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.Class <em>Class</em>}'.
@@ -1966,16 +1818,6 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    */
   EAttribute getPriority_Priority();
-
-  /**
-   * Returns the meta object for enum '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Composition Parameter</em>'.
-   * @see de.tud.st.featurelang.featureLang.CompositionParameter
-   * @generated
-   */
-  EEnum getCompositionParameter();
 
   /**
    * Returns the meta object for enum '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}'.
@@ -2489,56 +2331,12 @@ public interface FeatureLangPackage extends EPackage
     EClass INHERITANCE_ACTION = eINSTANCE.getInheritanceAction();
 
     /**
-     * The meta object literal for the '<em><b>Create</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INHERITANCE_ACTION__CREATE = eINSTANCE.getInheritanceAction_Create();
-
-    /**
-     * The meta object literal for the '<em><b>Edit</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INHERITANCE_ACTION__EDIT = eINSTANCE.getInheritanceAction_Edit();
-
-    /**
-     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl <em>Create Inheritance</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.tud.st.featurelang.featureLang.impl.CreateInheritanceImpl
-     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCreateInheritance()
-     * @generated
-     */
-    EClass CREATE_INHERITANCE = eINSTANCE.getCreateInheritance();
-
-    /**
      * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CREATE_INHERITANCE__PARENT = eINSTANCE.getCreateInheritance_Parent();
-
-    /**
-     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl <em>Edit Inheritance</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.tud.st.featurelang.featureLang.impl.EditInheritanceImpl
-     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getEditInheritance()
-     * @generated
-     */
-    EClass EDIT_INHERITANCE = eINSTANCE.getEditInheritance();
-
-    /**
-     * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EDIT_INHERITANCE__URI = eINSTANCE.getEditInheritance_Uri();
+    EReference INHERITANCE_ACTION__PARENT = eINSTANCE.getInheritanceAction_Parent();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.CompositionActionImpl <em>Composition Action</em>}' class.
@@ -2627,20 +2425,12 @@ public interface FeatureLangPackage extends EPackage
     EAttribute EDIT_COMPOSITION__COMPOSITION_NAME = eINSTANCE.getEditComposition_CompositionName();
 
     /**
-     * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Publicity</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EDIT_COMPOSITION__PARAMETER = eINSTANCE.getEditComposition_Parameter();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EDIT_COMPOSITION__NAME = eINSTANCE.getEditComposition_Name();
+    EAttribute EDIT_COMPOSITION__PUBLICITY = eINSTANCE.getEditComposition_Publicity();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.ClassImpl <em>Class</em>}' class.
@@ -2729,16 +2519,6 @@ public interface FeatureLangPackage extends EPackage
      * @generated
      */
     EAttribute PRIORITY__PRIORITY = eINSTANCE.getPriority_Priority();
-
-    /**
-     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.CompositionParameter <em>Composition Parameter</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.tud.st.featurelang.featureLang.CompositionParameter
-     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getCompositionParameter()
-     * @generated
-     */
-    EEnum COMPOSITION_PARAMETER = eINSTANCE.getCompositionParameter();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.Publicity <em>Publicity</em>}' enum.

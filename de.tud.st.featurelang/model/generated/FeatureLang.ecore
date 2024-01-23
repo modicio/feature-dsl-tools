@@ -89,17 +89,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InheritanceAction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateInheritance"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="edit" eType="#//EditInheritance"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CreateInheritance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Class"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EditInheritance">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositionAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateComposition"
@@ -117,8 +108,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditComposition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="#//CompositionParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicity" eType="#//Publicity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//Abstraction"/>
@@ -133,11 +123,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Priority">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//PriorityValue"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CompositionParameter">
-    <eLiterals name="URI" literal="URI"/>
-    <eLiterals name="ROLE" value="1" literal="role"/>
-    <eLiterals name="TARGET" value="2" literal="target"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Publicity">
     <eLiterals name="PUBLIC" literal="public"/>

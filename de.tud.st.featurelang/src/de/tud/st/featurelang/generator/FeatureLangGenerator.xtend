@@ -25,7 +25,6 @@ import de.tud.st.featurelang.featureLang.SetVariant
 import de.tud.st.featurelang.featureLang.SetRightOpen
 import de.tud.st.featurelang.featureLang.SetLeftOpen
 import de.tud.st.featurelang.featureLang.Publicity
-import de.tud.st.featurelang.featureLang.CompositionParameter
 
 /**
  * Generates code from your model files on save.
@@ -61,7 +60,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF should»
 				START OPTIONAL,
 		«ENDIF»
-		OPEN CLASS «s.getTarget().name»,
+		OPEN CLASS «s.getTarget().name»/CLOSE CLASS «s.getTarget().name»,
 		«IF s.getAction() !== null »
 			«s.getAction().getType().compileAction(s.isNegation())»
 		«ELSEIF s.getUpdate() !== null»
@@ -76,7 +75,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 				CHANGE URI TO «newIdentifier»,
 			«ENDIF»	
 		«ENDIF»
-		CLOSE CLASS «s.getTarget().name»,
+		CLOSE CLASS «s.getTarget().name»/OPEN CLASS «s.getTarget().name»,
 		«IF should»
 				END OPTIONAL,
 		«ENDIF»
@@ -90,12 +89,12 @@ class FeatureLangGenerator extends AbstractGenerator {
 			START OPTIONAL,
 		«ENDIF»
 		«IF s.isNegation() »
-			DELETE CLASS «name»,
+			DELETE CLASS «name»/CREATE CLASS «name»,
 		«ELSE»
 			«IF abstract» 
-				CREATE ABSTRACT CLASS «name»,
+				CREATE ABSTRACT CLASS «name»/DELETE CLASS «name»,
 			«ELSE»	
-				CREATE CLASS «name»,
+				CREATE CLASS «name»/DELETE CLASS «name»,
 			«ENDIF»	
 		«ENDIF»
 		«IF should»
@@ -118,9 +117,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 		val attrName = attr.getName()
 		'''
 		«IF negation»
-			DELETE ATTRIBUTE «attrName»,
+			DELETE ATTRIBUTE «attrName»/ADD ATTRIBUTE «attrName»,
 		«ELSE»
-			ADD ATTRIBUTE «attrName»,
+			ADD ATTRIBUTE «attrName»/DELETE ATTRIBUTE «attrName»,
 			OPEN ATTRIBUTE «attrName»,
 			«IF a.getType() !== null»
 				SET TYPE «a.getType()»,
@@ -138,9 +137,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val targetClass = a.getCreate().getTarget().getName()»
 			«val relation = a.getCreate().getRelation()»
 			«IF negation»
-				DELETE ASSOCIATION «relation»,
+				DELETE ASSOCIATION «relation»/ADD ASSOCIATION «relation» TARGET «targetClass»,
 			«ELSE»
-				ADD ASSOCIATION «relation» TARGET «targetClass»,
+				ADD ASSOCIATION «relation» TARGET «targetClass»/DELETE ASSOCIATION «relation»,
 			«ENDIF» 
 		«ELSE» 
 			«val associationName = a.getName()»
@@ -204,9 +203,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val targetClass = a.getCreate().getTarget().getName()»
 			«val relation = a.getCreate().getRelation()»
 			«IF negation»
-				DELETE COMPOSITION «targetClass»,
+				DELETE COMPOSITION «relation»/ADD COMPOSITION «relation» TARGET «targetClass»,
 			«ELSE»
-				ADD COMPOSITION «relation» TARGET «targetClass»,
+				ADD COMPOSITION «relation» TARGET «targetClass»/DELETE COMPOSITION «relation»,
 				«IF a.getCreate().getPublicity() !== null»
 					«val should = a.getCreate().getPriority() !== null && a.getCreate().getPriority().getPriority() === PriorityValue.SHOULD»	
 					«IF should»
@@ -225,16 +224,13 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ELSE» 
 			«val compositionName = a.getEdit().getCompositionName()»
-			«val parameter = a.getEdit().getParameter()»
-			«val newName = a.getEdit().getName()»
 			OPEN COMPOSITION «compositionName»,
-			«IF parameter === CompositionParameter.URI»
-				SET URI TO «newName»,
-			«ELSEIF parameter === CompositionParameter.ROLE»
-				SET ROLE TO «newName»,
-			«ELSE»
-				SET TARGET TO «newName»,
-			«ENDIF»	
+			«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
+			«IF public»
+				MAKE COMPOSITION PUBLIC,
+			«ELSE» 
+				MAKE COMPOSITION PRIVATE,
+			«ENDIF»
 			CLOSE COMPOSITION «compositionName»,
 		«ENDIF»	
 		'''
@@ -242,16 +238,11 @@ class FeatureLangGenerator extends AbstractGenerator {
 	
 	private def compileInheritanceAction(InheritanceAction a, boolean negation){
 		'''
-		«IF a.getCreate() !== null»
-			«val targetClass = a.getCreate().getParent().getName()»
-			«IF negation»
-				DELETE PARENT_RELATION «targetClass»,
-			«ELSE»
-				ADD PARENT_RELATION «targetClass»,
-			«ENDIF»
-		«ELSE» 
-			«val newUri = a.getEdit().getUri()»
-			SET INHERITANCE URI TO «newUri»,
+		«val targetClass = a.getParent().getName()»
+		«IF negation»
+			DELETE PARENT_RELATION «targetClass»\ADD PARENT_RELATION «targetClass»,
+		«ELSE»
+			ADD PARENT_RELATION «targetClass»\DELETE PARENT_RELATION «targetClass»,
 		«ENDIF»	
 		'''
 	}
