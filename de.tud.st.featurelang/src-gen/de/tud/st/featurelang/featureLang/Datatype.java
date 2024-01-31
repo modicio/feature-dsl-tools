@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Datatype implements Enumerator
 {
   /**
+   * The '<em><b>DEFAULT</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DEFAULT_VALUE
+   * @generated
+   * @ordered
+   */
+  DEFAULT(0, "DEFAULT", "DEFAULT"),
+
+  /**
    * The '<em><b>WORD</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  WORD(0, "WORD", "time"),
+  WORD(1, "WORD", "time"),
 
   /**
    * The '<em><b>PHRASE</b></em>' literal object.
@@ -38,7 +48,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  PHRASE(1, "PHRASE", "phrase"),
+  PHRASE(2, "PHRASE", "phrase"),
 
   /**
    * The '<em><b>NUMBER</b></em>' literal object.
@@ -48,7 +58,18 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  NUMBER(2, "NUMBER", "number");
+  NUMBER(3, "NUMBER", "number");
+
+  /**
+   * The '<em><b>DEFAULT</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DEFAULT
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int DEFAULT_VALUE = 0;
 
   /**
    * The '<em><b>WORD</b></em>' literal value.
@@ -59,7 +80,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WORD_VALUE = 0;
+  public static final int WORD_VALUE = 1;
 
   /**
    * The '<em><b>PHRASE</b></em>' literal value.
@@ -70,7 +91,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int PHRASE_VALUE = 1;
+  public static final int PHRASE_VALUE = 2;
 
   /**
    * The '<em><b>NUMBER</b></em>' literal value.
@@ -81,7 +102,7 @@ public enum Datatype implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int NUMBER_VALUE = 2;
+  public static final int NUMBER_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Datatype</b></em>' enumerators.
@@ -92,6 +113,7 @@ public enum Datatype implements Enumerator
   private static final Datatype[] VALUES_ARRAY =
     new Datatype[]
     {
+      DEFAULT,
       WORD,
       PHRASE,
       NUMBER,
@@ -159,6 +181,7 @@ public enum Datatype implements Enumerator
   {
     switch (value)
     {
+      case DEFAULT_VALUE: return DEFAULT;
       case WORD_VALUE: return WORD;
       case PHRASE_VALUE: return PHRASE;
       case NUMBER_VALUE: return NUMBER;

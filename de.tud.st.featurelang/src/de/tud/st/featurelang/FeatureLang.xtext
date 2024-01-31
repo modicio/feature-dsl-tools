@@ -12,12 +12,14 @@ Statement:
 ;
 	
 ChangeStatement hidden(WS):
-	target=Class
-	((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
+	((target=Class 
+	(priority=Priority (negation ?= 'not')?)?) | (('set' | 'change' | negation ?= 'remove') 'in' target=Class))
+	(action=Action | update=UpdateAction) 
 ;	
 
 CreationStatement hidden(WS):
-	classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be') 
+	((classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')) | 
+		('create' | negation ?= 'delete') classElement=Class) 
 ;
 
 Action hidden(WS):
@@ -25,7 +27,7 @@ Action hidden(WS):
 ;
 
 UpdateAction hidden(WS):
-	'has' ('an' | 'a') ('existing')?
+	('has')? ('an' | 'a' | 'the') ('existing' | 'created')
 	attribute=Attribute '.' 'it' priority=Priority (datatype=UpdateAttributeDatatype | 
 													identifier=UpdateAttributeIdentifier |
 													value=UpdateAttributeValue
@@ -41,16 +43,17 @@ UpdateAttributeIdentifier hidden (WS):
 ;
 
 UpdateAttributeValue hidden (WS): 
-	'have' ('a')? 'value' value=ID
+	'have' ('a')? 'value' value=AttributeValue
 ;
 
 AttributeAction hidden(WS):
-	'have' ('the' | 'an' | 'a') attribute=Attribute
+	('have')? ('the' | 'an' | 'a') attribute=Attribute
 	('.' 'it' 'is' 'a' type=Datatype)?
+	('.' 'it' priority=Priority value=UpdateAttributeValue)?
 ;
 
 AssociationAction hidden(WS):
-	'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation) 
+	('have')? ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation) 
 ;
 
 CreateAssociation hidden(WS):
@@ -62,27 +65,27 @@ EditAssociation hidden(WS):
 ;
 
 SetCompatible hidden(WS):
-	'compatible' 'with' 'version' name=ID
+	'compatible' 'with' 'version' name=DATE
 ;
 
 SetVersionRange hidden(WS):
-	'with' 'version' 'range' 'from' start=ID 'to' end=ID
+	'with' 'version' 'range' 'from' start=DATE 'to' end=DATE
 ;
 
 SetVariant hidden(WS):
-	'with' 'all' 'versions' 'of' 'variant' name=ID
+	'with' 'all' 'versions' 'of' 'variant' name=DATE
 ;
 
 SetRightOpen hidden(WS):
-	'up' 'to' 'date' date=ID
+	'up' 'to' 'date' date=DATE
 ;
 
 SetLeftOpen hidden(WS):
-	'starting' 'from' 'date' date=ID
+	'starting' 'from' 'date' date=DATE
 ;
 	
 InheritanceAction hidden(WS):
-	'inherit' 'from' parent=Class
+	('inherit' | 'inheritance') 'from' parent=Class
 ;
 
 CompositionAction hidden(WS):
@@ -90,16 +93,16 @@ CompositionAction hidden(WS):
 ;
 
 CreateComposition hidden(WS):
-	'compose' target=Class 'called' relation=ID
+	('compose' | 'composition' 'to') target=Class 'called' relation=ID
 	('.' 'it' priority=Priority 'be' publicity=Publicity)?
 ;
 
 EditComposition hidden(WS):
-	'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
+	('have')? 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 ;
 
 Class hidden(WS):
-	('the' | 'a')? (abstract=Abstraction)? ('class')? name=ID
+	('the' | 'a')? (abstraction=Abstraction)? ('class')? name=ID
 ;
 
 Attribute hidden(WS):
@@ -114,6 +117,10 @@ Priority hidden(WS):
 	priority=PriorityValue
 ;
 
+AttributeValue:
+	(ID ('\r')?)+ | INT | DATE
+;
+
 enum Publicity:
 	PUBLIC='public' | PRIVATE='private'
 ;
@@ -123,7 +130,7 @@ enum PriorityValue:
 ;
 
 enum Abstraction:
-	ABSTRACT='abstract'
+	NEW='new' | ABSTRACTION='abstract'
 ;
 
 enum IdentifierValue:
@@ -131,5 +138,11 @@ enum IdentifierValue:
 ;
 
 enum Datatype:
-	WORD='time' | PHRASE='phrase' | NUMBER='number'
+	DEFAULT='DEFAULT' | WORD='time' | PHRASE='phrase' | NUMBER='number'
 ;
+
+terminal DATE:
+    INT '-' INT '-' INT
+; 
+
+    

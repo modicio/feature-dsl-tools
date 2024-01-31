@@ -168,7 +168,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AttributeAction returns AttributeAction
 	 *
 	 * Constraint:
-	 *     (attribute=Attribute type=Datatype?)
+	 *     (attribute=Attribute type=Datatype? (priority=Priority value=UpdateAttributeValue)?)
 	 * </pre>
 	 */
 	protected void sequence_AttributeAction(ISerializationContext context, AttributeAction semanticObject) {
@@ -203,7 +203,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ChangeStatement returns ChangeStatement
 	 *
 	 * Constraint:
-	 *     (target=Class ((priority=Priority negation?='not'? (action=Action | identifier=Identifier)) | update=UpdateAction))
+	 *     (((target=Class (priority=Priority negation?='not'?)?) | (negation?='remove'? target=Class)) (action=Action | update=UpdateAction))
 	 * </pre>
 	 */
 	protected void sequence_ChangeStatement(ISerializationContext context, ChangeStatement semanticObject) {
@@ -217,7 +217,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Class returns Class
 	 *
 	 * Constraint:
-	 *     (abstract=Abstraction? name=ID)
+	 *     (abstraction=Abstraction? name=ID)
 	 * </pre>
 	 */
 	protected void sequence_Class(ISerializationContext context, de.tud.st.featurelang.featureLang.Class semanticObject) {
@@ -283,7 +283,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CreationStatement returns CreationStatement
 	 *
 	 * Constraint:
-	 *     (classElement=Class priority=Priority negation?='not'?)
+	 *     ((classElement=Class priority=Priority negation?='not'?) | (negation?='delete'? classElement=Class))
 	 * </pre>
 	 */
 	protected void sequence_CreationStatement(ISerializationContext context, CreationStatement semanticObject) {
@@ -411,7 +411,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SetCompatible returns SetCompatible
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name=DATE
 	 * </pre>
 	 */
 	protected void sequence_SetCompatible(ISerializationContext context, SetCompatible semanticObject) {
@@ -420,7 +420,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_COMPATIBLE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSetCompatibleAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSetCompatibleAccess().getNameDATETerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -431,7 +431,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SetLeftOpen returns SetLeftOpen
 	 *
 	 * Constraint:
-	 *     date=ID
+	 *     date=DATE
 	 * </pre>
 	 */
 	protected void sequence_SetLeftOpen(ISerializationContext context, SetLeftOpen semanticObject) {
@@ -440,7 +440,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_LEFT_OPEN__DATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSetLeftOpenAccess().getDateIDTerminalRuleCall_3_0(), semanticObject.getDate());
+		feeder.accept(grammarAccess.getSetLeftOpenAccess().getDateDATETerminalRuleCall_3_0(), semanticObject.getDate());
 		feeder.finish();
 	}
 	
@@ -451,7 +451,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SetRightOpen returns SetRightOpen
 	 *
 	 * Constraint:
-	 *     date=ID
+	 *     date=DATE
 	 * </pre>
 	 */
 	protected void sequence_SetRightOpen(ISerializationContext context, SetRightOpen semanticObject) {
@@ -460,7 +460,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_RIGHT_OPEN__DATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSetRightOpenAccess().getDateIDTerminalRuleCall_3_0(), semanticObject.getDate());
+		feeder.accept(grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0(), semanticObject.getDate());
 		feeder.finish();
 	}
 	
@@ -471,7 +471,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SetVariant returns SetVariant
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name=DATE
 	 * </pre>
 	 */
 	protected void sequence_SetVariant(ISerializationContext context, SetVariant semanticObject) {
@@ -480,7 +480,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_VARIANT__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSetVariantAccess().getNameIDTerminalRuleCall_5_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSetVariantAccess().getNameDATETerminalRuleCall_5_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -491,7 +491,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SetVersionRange returns SetVersionRange
 	 *
 	 * Constraint:
-	 *     (start=ID end=ID)
+	 *     (start=DATE end=DATE)
 	 * </pre>
 	 */
 	protected void sequence_SetVersionRange(ISerializationContext context, SetVersionRange semanticObject) {
@@ -502,8 +502,8 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.SET_VERSION_RANGE__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSetVersionRangeAccess().getStartIDTerminalRuleCall_4_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getSetVersionRangeAccess().getEndIDTerminalRuleCall_6_0(), semanticObject.getEnd());
+		feeder.accept(grammarAccess.getSetVersionRangeAccess().getStartDATETerminalRuleCall_4_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getSetVersionRangeAccess().getEndDATETerminalRuleCall_6_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
@@ -568,7 +568,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     UpdateAttributeValue returns UpdateAttributeValue
 	 *
 	 * Constraint:
-	 *     value=ID
+	 *     value=AttributeValue
 	 * </pre>
 	 */
 	protected void sequence_UpdateAttributeValue(ISerializationContext context, UpdateAttributeValue semanticObject) {
@@ -577,7 +577,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUpdateAttributeValueAccess().getValueIDTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getUpdateAttributeValueAccess().getValueAttributeValueParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

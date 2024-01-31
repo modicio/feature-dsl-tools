@@ -425,20 +425,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getChangeStatement_Identifier()
-  {
-    return (EReference)changeStatementEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getChangeStatement_Update()
   {
-    return (EReference)changeStatementEClass.getEStructuralFeatures().get(3);
+    return (EReference)changeStatementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -648,6 +637,28 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
   public EAttribute getAttributeAction_Type()
   {
     return (EAttribute)attributeActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeAction_Priority()
+  {
+    return (EReference)attributeActionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeAction_Value()
+  {
+    return (EReference)attributeActionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1030,7 +1041,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EAttribute getClass_Abstract()
+  public EAttribute getClass_Abstraction()
   {
     return (EAttribute)classEClass.getEStructuralFeatures().get(0);
   }
@@ -1219,7 +1230,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     changeStatementEClass = createEClass(CHANGE_STATEMENT);
     createEReference(changeStatementEClass, CHANGE_STATEMENT__TARGET);
     createEReference(changeStatementEClass, CHANGE_STATEMENT__ACTION);
-    createEReference(changeStatementEClass, CHANGE_STATEMENT__IDENTIFIER);
     createEReference(changeStatementEClass, CHANGE_STATEMENT__UPDATE);
 
     creationStatementEClass = createEClass(CREATION_STATEMENT);
@@ -1247,6 +1257,8 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     attributeActionEClass = createEClass(ATTRIBUTE_ACTION);
     createEReference(attributeActionEClass, ATTRIBUTE_ACTION__ATTRIBUTE);
     createEAttribute(attributeActionEClass, ATTRIBUTE_ACTION__TYPE);
+    createEReference(attributeActionEClass, ATTRIBUTE_ACTION__PRIORITY);
+    createEReference(attributeActionEClass, ATTRIBUTE_ACTION__VALUE);
 
     associationActionEClass = createEClass(ASSOCIATION_ACTION);
     createEReference(associationActionEClass, ASSOCIATION_ACTION__CREATE);
@@ -1294,7 +1306,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     createEAttribute(editCompositionEClass, EDIT_COMPOSITION__PUBLICITY);
 
     classEClass = createEClass(CLASS);
-    createEAttribute(classEClass, CLASS__ABSTRACT);
+    createEAttribute(classEClass, CLASS__ABSTRACTION);
     createEAttribute(classEClass, CLASS__NAME);
 
     attributeEClass = createEClass(ATTRIBUTE);
@@ -1358,7 +1370,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEClass(changeStatementEClass, ChangeStatement.class, "ChangeStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getChangeStatement_Target(), this.getClass_(), null, "target", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChangeStatement_Action(), this.getAction(), null, "action", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getChangeStatement_Identifier(), this.getIdentifier(), null, "identifier", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChangeStatement_Update(), this.getUpdateAction(), null, "update", null, 0, 1, ChangeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(creationStatementEClass, CreationStatement.class, "CreationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1386,6 +1397,8 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEClass(attributeActionEClass, AttributeAction.class, "AttributeAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttributeAction_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributeAction_Type(), this.getDatatype(), "type", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeAction_Priority(), this.getPriority(), null, "priority", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeAction_Value(), this.getUpdateAttributeValue(), null, "value", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(associationActionEClass, AssociationAction.class, "AssociationAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssociationAction_Create(), this.getCreateAssociation(), null, "create", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1433,7 +1446,7 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEAttribute(getEditComposition_Publicity(), this.getPublicity(), "publicity", null, 0, 1, EditComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classEClass, de.tud.st.featurelang.featureLang.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClass_Abstract(), this.getAbstraction(), "abstract", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClass_Abstraction(), this.getAbstraction(), "abstraction", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getClass_Name(), ecorePackage.getEString(), "name", null, 0, 1, de.tud.st.featurelang.featureLang.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1456,13 +1469,15 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     addEEnumLiteral(priorityValueEEnum, PriorityValue.MUST);
 
     initEEnum(abstractionEEnum, Abstraction.class, "Abstraction");
-    addEEnumLiteral(abstractionEEnum, Abstraction.ABSTRACT);
+    addEEnumLiteral(abstractionEEnum, Abstraction.NEW);
+    addEEnumLiteral(abstractionEEnum, Abstraction.ABSTRACTION);
 
     initEEnum(identifierValueEEnum, IdentifierValue.class, "IdentifierValue");
     addEEnumLiteral(identifierValueEEnum, IdentifierValue.NAME);
     addEEnumLiteral(identifierValueEEnum, IdentifierValue.URI);
 
     initEEnum(datatypeEEnum, Datatype.class, "Datatype");
+    addEEnumLiteral(datatypeEEnum, Datatype.DEFAULT);
     addEEnumLiteral(datatypeEEnum, Datatype.WORD);
     addEEnumLiteral(datatypeEEnum, Datatype.PHRASE);
     addEEnumLiteral(datatypeEEnum, Datatype.NUMBER);

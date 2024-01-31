@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.ClassImpl#getAbstract <em>Abstract</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.ClassImpl#getAbstraction <em>Abstraction</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.ClassImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st.featurelang.featureLang.Class
 {
   /**
-   * The default value of the '{@link #getAbstract() <em>Abstract</em>}' attribute.
+   * The default value of the '{@link #getAbstraction() <em>Abstraction</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAbstract()
+   * @see #getAbstraction()
    * @generated
    * @ordered
    */
-  protected static final Abstraction ABSTRACT_EDEFAULT = Abstraction.ABSTRACT;
+  protected static final Abstraction ABSTRACTION_EDEFAULT = Abstraction.NEW;
 
   /**
-   * The cached value of the '{@link #getAbstract() <em>Abstract</em>}' attribute.
+   * The cached value of the '{@link #getAbstraction() <em>Abstraction</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAbstract()
+   * @see #getAbstraction()
    * @generated
    * @ordered
    */
-  protected Abstraction abstract_ = ABSTRACT_EDEFAULT;
+  protected Abstraction abstraction = ABSTRACTION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -96,9 +96,9 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
    * @generated
    */
   @Override
-  public Abstraction getAbstract()
+  public Abstraction getAbstraction()
   {
-    return abstract_;
+    return abstraction;
   }
 
   /**
@@ -107,12 +107,12 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
    * @generated
    */
   @Override
-  public void setAbstract(Abstraction newAbstract)
+  public void setAbstraction(Abstraction newAbstraction)
   {
-    Abstraction oldAbstract = abstract_;
-    abstract_ = newAbstract == null ? ABSTRACT_EDEFAULT : newAbstract;
+    Abstraction oldAbstraction = abstraction;
+    abstraction = newAbstraction == null ? ABSTRACTION_EDEFAULT : newAbstraction;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.CLASS__ABSTRACT, oldAbstract, abstract_));
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.CLASS__ABSTRACTION, oldAbstraction, abstraction));
   }
 
   /**
@@ -150,8 +150,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
   {
     switch (featureID)
     {
-      case FeatureLangPackage.CLASS__ABSTRACT:
-        return getAbstract();
+      case FeatureLangPackage.CLASS__ABSTRACTION:
+        return getAbstraction();
       case FeatureLangPackage.CLASS__NAME:
         return getName();
     }
@@ -168,8 +168,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
   {
     switch (featureID)
     {
-      case FeatureLangPackage.CLASS__ABSTRACT:
-        setAbstract((Abstraction)newValue);
+      case FeatureLangPackage.CLASS__ABSTRACTION:
+        setAbstraction((Abstraction)newValue);
         return;
       case FeatureLangPackage.CLASS__NAME:
         setName((String)newValue);
@@ -188,8 +188,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
   {
     switch (featureID)
     {
-      case FeatureLangPackage.CLASS__ABSTRACT:
-        setAbstract(ABSTRACT_EDEFAULT);
+      case FeatureLangPackage.CLASS__ABSTRACTION:
+        setAbstraction(ABSTRACTION_EDEFAULT);
         return;
       case FeatureLangPackage.CLASS__NAME:
         setName(NAME_EDEFAULT);
@@ -208,8 +208,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
   {
     switch (featureID)
     {
-      case FeatureLangPackage.CLASS__ABSTRACT:
-        return abstract_ != ABSTRACT_EDEFAULT;
+      case FeatureLangPackage.CLASS__ABSTRACTION:
+        return abstraction != ABSTRACTION_EDEFAULT;
       case FeatureLangPackage.CLASS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -227,8 +227,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements de.tud.st
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (abstract: ");
-    result.append(abstract_);
+    result.append(" (abstraction: ");
+    result.append(abstraction);
     result.append(", name: ");
     result.append(name);
     result.append(')');

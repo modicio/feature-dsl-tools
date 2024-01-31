@@ -7,6 +7,8 @@ import de.tud.st.featurelang.featureLang.Attribute;
 import de.tud.st.featurelang.featureLang.AttributeAction;
 import de.tud.st.featurelang.featureLang.Datatype;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
+import de.tud.st.featurelang.featureLang.Priority;
+import de.tud.st.featurelang.featureLang.UpdateAttributeValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,6 +29,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,7 +55,7 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected static final Datatype TYPE_EDEFAULT = Datatype.WORD;
+  protected static final Datatype TYPE_EDEFAULT = Datatype.DEFAULT;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -62,6 +66,26 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected Datatype type = TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPriority() <em>Priority</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPriority()
+   * @generated
+   * @ordered
+   */
+  protected Priority priority;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected UpdateAttributeValue value;
 
   /**
    * <!-- begin-user-doc -->
@@ -165,12 +189,116 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public Priority getPriority()
+  {
+    return priority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPriority(Priority newPriority, NotificationChain msgs)
+  {
+    Priority oldPriority = priority;
+    priority = newPriority;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY, oldPriority, newPriority);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPriority(Priority newPriority)
+  {
+    if (newPriority != priority)
+    {
+      NotificationChain msgs = null;
+      if (priority != null)
+        msgs = ((InternalEObject)priority).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY, null, msgs);
+      if (newPriority != null)
+        msgs = ((InternalEObject)newPriority).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY, null, msgs);
+      msgs = basicSetPriority(newPriority, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY, newPriority, newPriority));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UpdateAttributeValue getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(UpdateAttributeValue newValue, NotificationChain msgs)
+  {
+    UpdateAttributeValue oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ATTRIBUTE_ACTION__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(UpdateAttributeValue newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ATTRIBUTE_ACTION__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.ATTRIBUTE_ACTION__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.ATTRIBUTE_ACTION__VALUE, newValue, newValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case FeatureLangPackage.ATTRIBUTE_ACTION__ATTRIBUTE:
         return basicSetAttribute(null, msgs);
+      case FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY:
+        return basicSetPriority(null, msgs);
+      case FeatureLangPackage.ATTRIBUTE_ACTION__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -189,6 +317,10 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
         return getAttribute();
       case FeatureLangPackage.ATTRIBUTE_ACTION__TYPE:
         return getType();
+      case FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY:
+        return getPriority();
+      case FeatureLangPackage.ATTRIBUTE_ACTION__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,6 +340,12 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
         return;
       case FeatureLangPackage.ATTRIBUTE_ACTION__TYPE:
         setType((Datatype)newValue);
+        return;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY:
+        setPriority((Priority)newValue);
+        return;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__VALUE:
+        setValue((UpdateAttributeValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,6 +367,12 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
       case FeatureLangPackage.ATTRIBUTE_ACTION__TYPE:
         setType(TYPE_EDEFAULT);
         return;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY:
+        setPriority((Priority)null);
+        return;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__VALUE:
+        setValue((UpdateAttributeValue)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -247,6 +391,10 @@ public class AttributeActionImpl extends MinimalEObjectImpl.Container implements
         return attribute != null;
       case FeatureLangPackage.ATTRIBUTE_ACTION__TYPE:
         return type != TYPE_EDEFAULT;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__PRIORITY:
+        return priority != null;
+      case FeatureLangPackage.ATTRIBUTE_ACTION__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }

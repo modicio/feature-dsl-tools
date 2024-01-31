@@ -15,13 +15,15 @@
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//PriorityValue/MUST"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//Abstraction">
-      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Abstraction/ABSTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Abstraction/NEW"/>
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Abstraction/ABSTRACTION"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//IdentifierValue">
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//IdentifierValue/NAME"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//IdentifierValue/URI"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FeatureLang.ecore#//Datatype">
+      <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Datatype/DEFAULT"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Datatype/WORD"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Datatype/PHRASE"/>
       <genEnumLiterals ecoreEnumLiteral="FeatureLang.ecore#//Datatype/NUMBER"/>
@@ -36,7 +38,6 @@
     <genClasses ecoreClass="FeatureLang.ecore#//ChangeStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/target"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/action"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/identifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//ChangeStatement/update"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//CreationStatement">
@@ -64,6 +65,8 @@
     <genClasses ecoreClass="FeatureLang.ecore#//AttributeAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/attribute"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AttributeAction/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/value"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//AssociationAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/create"/>
@@ -111,7 +114,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//EditComposition/publicity"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Class">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/abstraction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//Class/name"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//Attribute">

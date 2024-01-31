@@ -65,15 +65,6 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«s.getAction().getType().compileAction(s.isNegation())»
 		«ELSEIF s.getUpdate() !== null»
 			«s.getUpdate().compileUpdate()»
-		«ELSEIF s.getIdentifier() !== null»	
-			«val identifier = s.getIdentifier()»
-			«val nameId = identifier.getValue() === IdentifierValue.NAME»
-			«val newIdentifier = identifier.getName()»
-			«IF nameId»
-				CHANGE NAME TO «newIdentifier»,
-			«ELSE» 
-				CHANGE URI TO «newIdentifier»,
-			«ENDIF»	
 		«ENDIF»
 		CLOSE CLASS «s.getTarget().name»/OPEN CLASS «s.getTarget().name»,
 		«IF should»
@@ -84,14 +75,14 @@ class FeatureLangGenerator extends AbstractGenerator {
     private def compile(CreationStatement s)'''
 		«val should = s.getPriority() !== null && s.getPriority().getPriority() === PriorityValue.SHOULD»
 		«val name = s.getClassElement().getName()»
-		«val abstract = s.getClassElement().getAbstract() !== null && s.getClassElement().getAbstract() === Abstraction.ABSTRACT»
+		«val abstraction = s.getClassElement().getAbstraction() === Abstraction.ABSTRACTION»
 		«IF should»
 			START OPTIONAL,
 		«ENDIF»
 		«IF s.isNegation() »
 			DELETE CLASS «name»/CREATE CLASS «name»,
 		«ELSE»
-			«IF abstract» 
+			«IF abstraction» 
 				CREATE ABSTRACT CLASS «name»/DELETE CLASS «name»,
 			«ELSE»	
 				CREATE CLASS «name»/DELETE CLASS «name»,
@@ -121,11 +112,24 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«ELSE»
 			ADD ATTRIBUTE «attrName»/DELETE ATTRIBUTE «attrName»,
 			OPEN ATTRIBUTE «attrName»,
-			«IF a.getType() !== null»
-				SET TYPE «a.getType()»,
-			«ELSE»
+			«IF a.getType() === null»
 				SET TYPE DEFAULT,
+			«ELSE»
+				SET TYPE «a.getType()»,
 			«ENDIF»
+			«IF a.getValue() !== null»
+				«val should = a.getPriority() !== null && a.getPriority().getPriority() === PriorityValue.SHOULD»
+				«IF should»
+					START OPTIONAL,
+				«ENDIF»
+				«val value = a.getValue().getValue()»
+				«IF value !== null» 
+					SET ATTRIBUTE VALUE TO «value»,
+				«ENDIF»	
+				«IF should»
+					END OPTIONAL,
+				«ENDIF»
+			«ENDIF»	
 			CLOSE ATTRIBUTE «attrName»,
 		«ENDIF»
 		'''

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.tud.st.featurelang.featureLang.Class#getAbstract <em>Abstract</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.Class#getAbstraction <em>Abstraction</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.Class#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -25,29 +25,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Class extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Abstract</b></em>' attribute.
+   * Returns the value of the '<em><b>Abstraction</b></em>' attribute.
    * The literals are from the enumeration {@link de.tud.st.featurelang.featureLang.Abstraction}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Abstract</em>' attribute.
+   * @return the value of the '<em>Abstraction</em>' attribute.
    * @see de.tud.st.featurelang.featureLang.Abstraction
-   * @see #setAbstract(Abstraction)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getClass_Abstract()
+   * @see #setAbstraction(Abstraction)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getClass_Abstraction()
    * @model
    * @generated
    */
-  Abstraction getAbstract();
+  Abstraction getAbstraction();
 
   /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.Class#getAbstract <em>Abstract</em>}' attribute.
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.Class#getAbstraction <em>Abstraction</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Abstract</em>' attribute.
+   * @param value the new value of the '<em>Abstraction</em>' attribute.
    * @see de.tud.st.featurelang.featureLang.Abstraction
-   * @see #getAbstract()
+   * @see #getAbstraction()
    * @generated
    */
-  void setAbstract(Abstraction value);
+  void setAbstraction(Abstraction value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -15,7 +15,6 @@ package de.tud.st.featurelang.featureLang;
  * <ul>
  *   <li>{@link de.tud.st.featurelang.featureLang.ChangeStatement#getTarget <em>Target</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.ChangeStatement#getAction <em>Action</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.ChangeStatement#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.ChangeStatement#getUpdate <em>Update</em>}</li>
  * </ul>
  *
@@ -68,28 +67,6 @@ public interface ChangeStatement extends Statement
    * @generated
    */
   void setAction(Action value);
-
-  /**
-   * Returns the value of the '<em><b>Identifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifier</em>' containment reference.
-   * @see #setIdentifier(Identifier)
-   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getChangeStatement_Identifier()
-   * @model containment="true"
-   * @generated
-   */
-  Identifier getIdentifier();
-
-  /**
-   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getIdentifier <em>Identifier</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifier</em>' containment reference.
-   * @see #getIdentifier()
-   * @generated
-   */
-  void setIdentifier(Identifier value);
 
   /**
    * Returns the value of the '<em><b>Update</b></em>' containment reference.

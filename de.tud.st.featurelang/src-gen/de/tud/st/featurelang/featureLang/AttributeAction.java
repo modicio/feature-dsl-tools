@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.tud.st.featurelang.featureLang.AttributeAction#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.AttributeAction#getType <em>Type</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AttributeAction#getPriority <em>Priority</em>}</li>
+ *   <li>{@link de.tud.st.featurelang.featureLang.AttributeAction#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAttributeAction()
@@ -70,5 +72,49 @@ public interface AttributeAction extends EObject
    * @generated
    */
   void setType(Datatype value);
+
+  /**
+   * Returns the value of the '<em><b>Priority</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Priority</em>' containment reference.
+   * @see #setPriority(Priority)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAttributeAction_Priority()
+   * @model containment="true"
+   * @generated
+   */
+  Priority getPriority();
+
+  /**
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AttributeAction#getPriority <em>Priority</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Priority</em>' containment reference.
+   * @see #getPriority()
+   * @generated
+   */
+  void setPriority(Priority value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(UpdateAttributeValue)
+   * @see de.tud.st.featurelang.featureLang.FeatureLangPackage#getAttributeAction_Value()
+   * @model containment="true"
+   * @generated
+   */
+  UpdateAttributeValue getValue();
+
+  /**
+   * Sets the value of the '{@link de.tud.st.featurelang.featureLang.AttributeAction#getValue <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(UpdateAttributeValue value);
 
 } // AttributeAction

@@ -170,22 +170,13 @@ public interface FeatureLangPackage extends EPackage
   int CHANGE_STATEMENT__ACTION = STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Identifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHANGE_STATEMENT__IDENTIFIER = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHANGE_STATEMENT__UPDATE = STATEMENT_FEATURE_COUNT + 3;
+  int CHANGE_STATEMENT__UPDATE = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Change Statement</em>' class.
@@ -194,7 +185,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHANGE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
+  int CHANGE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.CreationStatementImpl <em>Creation Statement</em>}' class.
@@ -447,13 +438,31 @@ public interface FeatureLangPackage extends EPackage
   int ATTRIBUTE_ACTION__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Priority</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_ACTION__PRIORITY = 2;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_ACTION__VALUE = 3;
+
+  /**
    * The number of structural features of the '<em>Attribute Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_ACTION_FEATURE_COUNT = 2;
+  int ATTRIBUTE_ACTION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl <em>Association Action</em>}' class.
@@ -883,13 +892,13 @@ public interface FeatureLangPackage extends EPackage
   int CLASS = 22;
 
   /**
-   * The feature id for the '<em><b>Abstract</b></em>' attribute.
+   * The feature id for the '<em><b>Abstraction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS__ABSTRACT = 0;
+  int CLASS__ABSTRACTION = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1139,17 +1148,6 @@ public interface FeatureLangPackage extends EPackage
   EReference getChangeStatement_Action();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getIdentifier <em>Identifier</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Identifier</em>'.
-   * @see de.tud.st.featurelang.featureLang.ChangeStatement#getIdentifier()
-   * @see #getChangeStatement()
-   * @generated
-   */
-  EReference getChangeStatement_Identifier();
-
-  /**
    * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.ChangeStatement#getUpdate <em>Update</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1361,6 +1359,28 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    */
   EAttribute getAttributeAction_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AttributeAction#getPriority <em>Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Priority</em>'.
+   * @see de.tud.st.featurelang.featureLang.AttributeAction#getPriority()
+   * @see #getAttributeAction()
+   * @generated
+   */
+  EReference getAttributeAction_Priority();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AttributeAction#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see de.tud.st.featurelang.featureLang.AttributeAction#getValue()
+   * @see #getAttributeAction()
+   * @generated
+   */
+  EReference getAttributeAction_Value();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.AssociationAction <em>Association Action</em>}'.
@@ -1724,15 +1744,15 @@ public interface FeatureLangPackage extends EPackage
   EClass getClass_();
 
   /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.Class#getAbstract <em>Abstract</em>}'.
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.Class#getAbstraction <em>Abstraction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Abstract</em>'.
-   * @see de.tud.st.featurelang.featureLang.Class#getAbstract()
+   * @return the meta object for the attribute '<em>Abstraction</em>'.
+   * @see de.tud.st.featurelang.featureLang.Class#getAbstraction()
    * @see #getClass_()
    * @generated
    */
-  EAttribute getClass_Abstract();
+  EAttribute getClass_Abstraction();
 
   /**
    * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.Class#getName <em>Name</em>}'.
@@ -1963,14 +1983,6 @@ public interface FeatureLangPackage extends EPackage
     EReference CHANGE_STATEMENT__ACTION = eINSTANCE.getChangeStatement_Action();
 
     /**
-     * The meta object literal for the '<em><b>Identifier</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CHANGE_STATEMENT__IDENTIFIER = eINSTANCE.getChangeStatement_Identifier();
-
-    /**
      * The meta object literal for the '<em><b>Update</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2143,6 +2155,22 @@ public interface FeatureLangPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE_ACTION__TYPE = eINSTANCE.getAttributeAction_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_ACTION__PRIORITY = eINSTANCE.getAttributeAction_Priority();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_ACTION__VALUE = eINSTANCE.getAttributeAction_Value();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl <em>Association Action</em>}' class.
@@ -2443,12 +2471,12 @@ public interface FeatureLangPackage extends EPackage
     EClass CLASS = eINSTANCE.getClass_();
 
     /**
-     * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Abstraction</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS__ABSTRACT = eINSTANCE.getClass_Abstract();
+    EAttribute CLASS__ABSTRACTION = eINSTANCE.getClass_Abstraction();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

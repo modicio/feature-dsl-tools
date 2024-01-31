@@ -6,7 +6,6 @@ package de.tud.st.featurelang.featureLang.impl;
 import de.tud.st.featurelang.featureLang.Action;
 import de.tud.st.featurelang.featureLang.ChangeStatement;
 import de.tud.st.featurelang.featureLang.FeatureLangPackage;
-import de.tud.st.featurelang.featureLang.Identifier;
 import de.tud.st.featurelang.featureLang.UpdateAction;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link de.tud.st.featurelang.featureLang.impl.ChangeStatementImpl#getUpdate <em>Update</em>}</li>
  * </ul>
  *
@@ -54,16 +52,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
    * @ordered
    */
   protected Action action;
-
-  /**
-   * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIdentifier()
-   * @generated
-   * @ordered
-   */
-  protected Identifier identifier;
 
   /**
    * The cached value of the '{@link #getUpdate() <em>Update</em>}' containment reference.
@@ -202,56 +190,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
    * @generated
    */
   @Override
-  public Identifier getIdentifier()
-  {
-    return identifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetIdentifier(Identifier newIdentifier, NotificationChain msgs)
-  {
-    Identifier oldIdentifier = identifier;
-    identifier = newIdentifier;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER, oldIdentifier, newIdentifier);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIdentifier(Identifier newIdentifier)
-  {
-    if (newIdentifier != identifier)
-    {
-      NotificationChain msgs = null;
-      if (identifier != null)
-        msgs = ((InternalEObject)identifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER, null, msgs);
-      if (newIdentifier != null)
-        msgs = ((InternalEObject)newIdentifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER, null, msgs);
-      msgs = basicSetIdentifier(newIdentifier, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER, newIdentifier, newIdentifier));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public UpdateAction getUpdate()
   {
     return update;
@@ -310,8 +248,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
         return basicSetTarget(null, msgs);
       case FeatureLangPackage.CHANGE_STATEMENT__ACTION:
         return basicSetAction(null, msgs);
-      case FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER:
-        return basicSetIdentifier(null, msgs);
       case FeatureLangPackage.CHANGE_STATEMENT__UPDATE:
         return basicSetUpdate(null, msgs);
     }
@@ -332,8 +268,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
         return getTarget();
       case FeatureLangPackage.CHANGE_STATEMENT__ACTION:
         return getAction();
-      case FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER:
-        return getIdentifier();
       case FeatureLangPackage.CHANGE_STATEMENT__UPDATE:
         return getUpdate();
     }
@@ -355,9 +289,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
         return;
       case FeatureLangPackage.CHANGE_STATEMENT__ACTION:
         setAction((Action)newValue);
-        return;
-      case FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER:
-        setIdentifier((Identifier)newValue);
         return;
       case FeatureLangPackage.CHANGE_STATEMENT__UPDATE:
         setUpdate((UpdateAction)newValue);
@@ -382,9 +313,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
       case FeatureLangPackage.CHANGE_STATEMENT__ACTION:
         setAction((Action)null);
         return;
-      case FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER:
-        setIdentifier((Identifier)null);
-        return;
       case FeatureLangPackage.CHANGE_STATEMENT__UPDATE:
         setUpdate((UpdateAction)null);
         return;
@@ -406,8 +334,6 @@ public class ChangeStatementImpl extends StatementImpl implements ChangeStatemen
         return target != null;
       case FeatureLangPackage.CHANGE_STATEMENT__ACTION:
         return action != null;
-      case FeatureLangPackage.CHANGE_STATEMENT__IDENTIFIER:
-        return identifier != null;
       case FeatureLangPackage.CHANGE_STATEMENT__UPDATE:
         return update != null;
     }

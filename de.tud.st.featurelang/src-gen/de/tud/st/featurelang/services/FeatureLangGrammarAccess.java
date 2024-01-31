@@ -70,90 +70,106 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class ChangeStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.ChangeStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTargetAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTargetClassParserRuleCall_0_0 = (RuleCall)cTargetAssignment_0.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final Assignment cTargetAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final RuleCall cTargetClassParserRuleCall_0_0_0_0 = (RuleCall)cTargetAssignment_0_0_0.eContents().get(0);
+		private final Group cGroup_0_0_1 = (Group)cGroup_0_0.eContents().get(1);
+		private final Assignment cPriorityAssignment_0_0_1_0 = (Assignment)cGroup_0_0_1.eContents().get(0);
+		private final RuleCall cPriorityPriorityParserRuleCall_0_0_1_0_0 = (RuleCall)cPriorityAssignment_0_0_1_0.eContents().get(0);
+		private final Assignment cNegationAssignment_0_0_1_1 = (Assignment)cGroup_0_0_1.eContents().get(1);
+		private final Keyword cNegationNotKeyword_0_0_1_1_0 = (Keyword)cNegationAssignment_0_0_1_1.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Alternatives cAlternatives_0_1_0 = (Alternatives)cGroup_0_1.eContents().get(0);
+		private final Keyword cSetKeyword_0_1_0_0 = (Keyword)cAlternatives_0_1_0.eContents().get(0);
+		private final Keyword cChangeKeyword_0_1_0_1 = (Keyword)cAlternatives_0_1_0.eContents().get(1);
+		private final Assignment cNegationAssignment_0_1_0_2 = (Assignment)cAlternatives_0_1_0.eContents().get(2);
+		private final Keyword cNegationRemoveKeyword_0_1_0_2_0 = (Keyword)cNegationAssignment_0_1_0_2.eContents().get(0);
+		private final Keyword cInKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
+		private final Assignment cTargetAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
+		private final RuleCall cTargetClassParserRuleCall_0_1_2_0 = (RuleCall)cTargetAssignment_0_1_2.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cPriorityAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cPriorityPriorityParserRuleCall_1_0_0_0 = (RuleCall)cPriorityAssignment_1_0_0.eContents().get(0);
-		private final Assignment cNegationAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cNegationNotKeyword_1_0_1_0 = (Keyword)cNegationAssignment_1_0_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_0_2 = (Alternatives)cGroup_1_0.eContents().get(2);
-		private final Assignment cActionAssignment_1_0_2_0 = (Assignment)cAlternatives_1_0_2.eContents().get(0);
-		private final RuleCall cActionActionParserRuleCall_1_0_2_0_0 = (RuleCall)cActionAssignment_1_0_2_0.eContents().get(0);
-		private final Group cGroup_1_0_2_1 = (Group)cAlternatives_1_0_2.eContents().get(1);
-		private final Keyword cHaveKeyword_1_0_2_1_0 = (Keyword)cGroup_1_0_2_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_0_2_1_1 = (Alternatives)cGroup_1_0_2_1.eContents().get(1);
-		private final Keyword cAKeyword_1_0_2_1_1_0 = (Keyword)cAlternatives_1_0_2_1_1.eContents().get(0);
-		private final Keyword cAnKeyword_1_0_2_1_1_1 = (Keyword)cAlternatives_1_0_2_1_1.eContents().get(1);
-		private final Assignment cIdentifierAssignment_1_0_2_1_2 = (Assignment)cGroup_1_0_2_1.eContents().get(2);
-		private final RuleCall cIdentifierIdentifierParserRuleCall_1_0_2_1_2_0 = (RuleCall)cIdentifierAssignment_1_0_2_1_2.eContents().get(0);
+		private final Assignment cActionAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cActionActionParserRuleCall_1_0_0 = (RuleCall)cActionAssignment_1_0.eContents().get(0);
 		private final Assignment cUpdateAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cUpdateUpdateActionParserRuleCall_1_1_0 = (RuleCall)cUpdateAssignment_1_1.eContents().get(0);
 		
 		//ChangeStatement hidden(WS):
-		//    target=Class
-		//    ((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
+		//    ((target=Class
+		//    (priority=Priority (negation ?= 'not')?)?) | (('set' | 'change' | negation ?= 'remove') 'in' target=Class))
+		//    (action=Action | update=UpdateAction)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//target=Class
-		//((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
+		//((target=Class
+		//(priority=Priority (negation ?= 'not')?)?) | (('set' | 'change' | negation ?= 'remove') 'in' target=Class))
+		//(action=Action | update=UpdateAction)
 		public Group getGroup() { return cGroup; }
 		
+		//((target=Class
+		//(priority=Priority (negation ?= 'not')?)?) | (('set' | 'change' | negation ?= 'remove') 'in' target=Class))
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//(target=Class
+		//    (priority=Priority (negation ?= 'not')?)?)
+		public Group getGroup_0_0() { return cGroup_0_0; }
+		
 		//target=Class
-		public Assignment getTargetAssignment_0() { return cTargetAssignment_0; }
+		public Assignment getTargetAssignment_0_0_0() { return cTargetAssignment_0_0_0; }
 		
 		//Class
-		public RuleCall getTargetClassParserRuleCall_0_0() { return cTargetClassParserRuleCall_0_0; }
+		public RuleCall getTargetClassParserRuleCall_0_0_0_0() { return cTargetClassParserRuleCall_0_0_0_0; }
 		
-		//((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//(priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier))
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//(priority=Priority (negation ?= 'not')?)?
+		public Group getGroup_0_0_1() { return cGroup_0_0_1; }
 		
 		//priority=Priority
-		public Assignment getPriorityAssignment_1_0_0() { return cPriorityAssignment_1_0_0; }
+		public Assignment getPriorityAssignment_0_0_1_0() { return cPriorityAssignment_0_0_1_0; }
 		
 		//Priority
-		public RuleCall getPriorityPriorityParserRuleCall_1_0_0_0() { return cPriorityPriorityParserRuleCall_1_0_0_0; }
+		public RuleCall getPriorityPriorityParserRuleCall_0_0_1_0_0() { return cPriorityPriorityParserRuleCall_0_0_1_0_0; }
 		
 		//(negation ?= 'not')?
-		public Assignment getNegationAssignment_1_0_1() { return cNegationAssignment_1_0_1; }
+		public Assignment getNegationAssignment_0_0_1_1() { return cNegationAssignment_0_0_1_1; }
 		
 		//'not'
-		public Keyword getNegationNotKeyword_1_0_1_0() { return cNegationNotKeyword_1_0_1_0; }
+		public Keyword getNegationNotKeyword_0_0_1_1_0() { return cNegationNotKeyword_0_0_1_1_0; }
 		
-		//(action=Action | 'have' ('a' | 'an')? identifier=Identifier)
-		public Alternatives getAlternatives_1_0_2() { return cAlternatives_1_0_2; }
+		//(('set' | 'change' | negation ?= 'remove') 'in' target=Class)
+		public Group getGroup_0_1() { return cGroup_0_1; }
+		
+		//('set' | 'change' | negation ?= 'remove')
+		public Alternatives getAlternatives_0_1_0() { return cAlternatives_0_1_0; }
+		
+		//'set'
+		public Keyword getSetKeyword_0_1_0_0() { return cSetKeyword_0_1_0_0; }
+		
+		//'change'
+		public Keyword getChangeKeyword_0_1_0_1() { return cChangeKeyword_0_1_0_1; }
+		
+		//negation ?= 'remove'
+		public Assignment getNegationAssignment_0_1_0_2() { return cNegationAssignment_0_1_0_2; }
+		
+		//'remove'
+		public Keyword getNegationRemoveKeyword_0_1_0_2_0() { return cNegationRemoveKeyword_0_1_0_2_0; }
+		
+		//'in'
+		public Keyword getInKeyword_0_1_1() { return cInKeyword_0_1_1; }
+		
+		//target=Class
+		public Assignment getTargetAssignment_0_1_2() { return cTargetAssignment_0_1_2; }
+		
+		//Class
+		public RuleCall getTargetClassParserRuleCall_0_1_2_0() { return cTargetClassParserRuleCall_0_1_2_0; }
+		
+		//(action=Action | update=UpdateAction)
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//action=Action
-		public Assignment getActionAssignment_1_0_2_0() { return cActionAssignment_1_0_2_0; }
+		public Assignment getActionAssignment_1_0() { return cActionAssignment_1_0; }
 		
 		//Action
-		public RuleCall getActionActionParserRuleCall_1_0_2_0_0() { return cActionActionParserRuleCall_1_0_2_0_0; }
-		
-		//'have' ('a' | 'an')? identifier=Identifier
-		public Group getGroup_1_0_2_1() { return cGroup_1_0_2_1; }
-		
-		//'have'
-		public Keyword getHaveKeyword_1_0_2_1_0() { return cHaveKeyword_1_0_2_1_0; }
-		
-		//('a' | 'an')?
-		public Alternatives getAlternatives_1_0_2_1_1() { return cAlternatives_1_0_2_1_1; }
-		
-		//'a'
-		public Keyword getAKeyword_1_0_2_1_1_0() { return cAKeyword_1_0_2_1_1_0; }
-		
-		//'an'
-		public Keyword getAnKeyword_1_0_2_1_1_1() { return cAnKeyword_1_0_2_1_1_1; }
-		
-		//identifier=Identifier
-		public Assignment getIdentifierAssignment_1_0_2_1_2() { return cIdentifierAssignment_1_0_2_1_2; }
-		
-		//Identifier
-		public RuleCall getIdentifierIdentifierParserRuleCall_1_0_2_1_2_0() { return cIdentifierIdentifierParserRuleCall_1_0_2_1_2_0; }
+		public RuleCall getActionActionParserRuleCall_1_0_0() { return cActionActionParserRuleCall_1_0_0; }
 		
 		//update=UpdateAction
 		public Assignment getUpdateAssignment_1_1() { return cUpdateAssignment_1_1; }
@@ -163,51 +179,85 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class CreationStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreationStatement");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cClassElementAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cClassElementClassParserRuleCall_0_0 = (RuleCall)cClassElementAssignment_0.eContents().get(0);
-		private final Assignment cPriorityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPriorityPriorityParserRuleCall_1_0 = (RuleCall)cPriorityAssignment_1.eContents().get(0);
-		private final Assignment cNegationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Keyword cNegationNotKeyword_2_0 = (Keyword)cNegationAssignment_2.eContents().get(0);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Keyword cExistKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
-		private final Keyword cBeKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cClassElementAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cClassElementClassParserRuleCall_0_0_0 = (RuleCall)cClassElementAssignment_0_0.eContents().get(0);
+		private final Assignment cPriorityAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cPriorityPriorityParserRuleCall_0_1_0 = (RuleCall)cPriorityAssignment_0_1.eContents().get(0);
+		private final Assignment cNegationAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final Keyword cNegationNotKeyword_0_2_0 = (Keyword)cNegationAssignment_0_2.eContents().get(0);
+		private final Alternatives cAlternatives_0_3 = (Alternatives)cGroup_0.eContents().get(3);
+		private final Keyword cExistKeyword_0_3_0 = (Keyword)cAlternatives_0_3.eContents().get(0);
+		private final Keyword cBeKeyword_0_3_1 = (Keyword)cAlternatives_0_3.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Keyword cCreateKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Assignment cNegationAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cNegationDeleteKeyword_1_0_1_0 = (Keyword)cNegationAssignment_1_0_1.eContents().get(0);
+		private final Assignment cClassElementAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cClassElementClassParserRuleCall_1_1_0 = (RuleCall)cClassElementAssignment_1_1.eContents().get(0);
 		
 		//CreationStatement hidden(WS):
-		//    classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
+		//    ((classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')) |
+		//        ('create' | negation ?= 'delete') classElement=Class)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
-		public Group getGroup() { return cGroup; }
+		//((classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')) |
+		//    ('create' | negation ?= 'delete') classElement=Class)
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//(classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be'))
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//classElement=Class
-		public Assignment getClassElementAssignment_0() { return cClassElementAssignment_0; }
+		public Assignment getClassElementAssignment_0_0() { return cClassElementAssignment_0_0; }
 		
 		//Class
-		public RuleCall getClassElementClassParserRuleCall_0_0() { return cClassElementClassParserRuleCall_0_0; }
+		public RuleCall getClassElementClassParserRuleCall_0_0_0() { return cClassElementClassParserRuleCall_0_0_0; }
 		
 		//priority=Priority
-		public Assignment getPriorityAssignment_1() { return cPriorityAssignment_1; }
+		public Assignment getPriorityAssignment_0_1() { return cPriorityAssignment_0_1; }
 		
 		//Priority
-		public RuleCall getPriorityPriorityParserRuleCall_1_0() { return cPriorityPriorityParserRuleCall_1_0; }
+		public RuleCall getPriorityPriorityParserRuleCall_0_1_0() { return cPriorityPriorityParserRuleCall_0_1_0; }
 		
 		//(negation ?= 'not')?
-		public Assignment getNegationAssignment_2() { return cNegationAssignment_2; }
+		public Assignment getNegationAssignment_0_2() { return cNegationAssignment_0_2; }
 		
 		//'not'
-		public Keyword getNegationNotKeyword_2_0() { return cNegationNotKeyword_2_0; }
+		public Keyword getNegationNotKeyword_0_2_0() { return cNegationNotKeyword_0_2_0; }
 		
 		//('exist' | 'be')
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_0_3() { return cAlternatives_0_3; }
 		
 		//'exist'
-		public Keyword getExistKeyword_3_0() { return cExistKeyword_3_0; }
+		public Keyword getExistKeyword_0_3_0() { return cExistKeyword_0_3_0; }
 		
 		//'be'
-		public Keyword getBeKeyword_3_1() { return cBeKeyword_3_1; }
+		public Keyword getBeKeyword_0_3_1() { return cBeKeyword_0_3_1; }
+		
+		//('create' | negation ?= 'delete') classElement=Class
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//('create' | negation ?= 'delete')
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//'create'
+		public Keyword getCreateKeyword_1_0_0() { return cCreateKeyword_1_0_0; }
+		
+		//negation ?= 'delete'
+		public Assignment getNegationAssignment_1_0_1() { return cNegationAssignment_1_0_1; }
+		
+		//'delete'
+		public Keyword getNegationDeleteKeyword_1_0_1_0() { return cNegationDeleteKeyword_1_0_1_0; }
+		
+		//classElement=Class
+		public Assignment getClassElementAssignment_1_1() { return cClassElementAssignment_1_1; }
+		
+		//Class
+		public RuleCall getClassElementClassParserRuleCall_1_1_0() { return cClassElementClassParserRuleCall_1_1_0; }
 	}
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Action");
@@ -248,7 +298,10 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cAnKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cAKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
-		private final Keyword cExistingKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cTheKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cExistingKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cCreatedKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
 		private final Assignment cAttributeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttributeAttributeParserRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
@@ -264,7 +317,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cValueUpdateAttributeValueParserRuleCall_7_2_0 = (RuleCall)cValueAssignment_7_2.eContents().get(0);
 		
 		//UpdateAction hidden(WS):
-		//    'has' ('an' | 'a') ('existing')?
+		//    ('has')? ('an' | 'a' | 'the') ('existing' | 'created')
 		//    attribute=Attribute '.' 'it' priority=Priority (datatype=UpdateAttributeDatatype |
 		//                                                    identifier=UpdateAttributeIdentifier |
 		//                                                    value=UpdateAttributeValue
@@ -272,17 +325,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'has' ('an' | 'a') ('existing')?
+		//('has')? ('an' | 'a' | 'the') ('existing' | 'created')
 		//attribute=Attribute '.' 'it' priority=Priority (datatype=UpdateAttributeDatatype |
 		//                                                identifier=UpdateAttributeIdentifier |
 		//                                                value=UpdateAttributeValue
 		//)
 		public Group getGroup() { return cGroup; }
 		
-		//'has'
+		//('has')?
 		public Keyword getHasKeyword_0() { return cHasKeyword_0; }
 		
-		//('an' | 'a')
+		//('an' | 'a' | 'the')
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'an'
@@ -291,8 +344,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'a'
 		public Keyword getAKeyword_1_1() { return cAKeyword_1_1; }
 		
-		//('existing')?
-		public Keyword getExistingKeyword_2() { return cExistingKeyword_2; }
+		//'the'
+		public Keyword getTheKeyword_1_2() { return cTheKeyword_1_2; }
+		
+		//('existing' | 'created')
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//'existing'
+		public Keyword getExistingKeyword_2_0() { return cExistingKeyword_2_0; }
+		
+		//'created'
+		public Keyword getCreatedKeyword_2_1() { return cCreatedKeyword_2_1; }
 		
 		//attribute=Attribute
 		public Assignment getAttributeAssignment_3() { return cAttributeAssignment_3; }
@@ -407,14 +469,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cAKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueIDTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueAttributeValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//UpdateAttributeValue hidden (WS):
-		//    'have' ('a')? 'value' value=ID
+		//    'have' ('a')? 'value' value=AttributeValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('a')? 'value' value=ID
+		//'have' ('a')? 'value' value=AttributeValue
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -426,11 +488,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'value'
 		public Keyword getValueKeyword_2() { return cValueKeyword_2; }
 		
-		//value=ID
+		//value=AttributeValue
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
-		//ID
-		public RuleCall getValueIDTerminalRuleCall_3_0() { return cValueIDTerminalRuleCall_3_0; }
+		//AttributeValue
+		public RuleCall getValueAttributeValueParserRuleCall_3_0() { return cValueAttributeValueParserRuleCall_3_0; }
 	}
 	public class AttributeActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AttributeAction");
@@ -449,18 +511,27 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cAKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Assignment cTypeAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
 		private final RuleCall cTypeDatatypeEnumRuleCall_3_4_0 = (RuleCall)cTypeAssignment_3_4.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFullStopKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cItKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cPriorityAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cPriorityPriorityParserRuleCall_4_2_0 = (RuleCall)cPriorityAssignment_4_2.eContents().get(0);
+		private final Assignment cValueAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cValueUpdateAttributeValueParserRuleCall_4_3_0 = (RuleCall)cValueAssignment_4_3.eContents().get(0);
 		
 		//AttributeAction hidden(WS):
-		//    'have' ('the' | 'an' | 'a') attribute=Attribute
+		//    ('have')? ('the' | 'an' | 'a') attribute=Attribute
 		//    ('.' 'it' 'is' 'a' type=Datatype)?
+		//    ('.' 'it' priority=Priority value=UpdateAttributeValue)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('the' | 'an' | 'a') attribute=Attribute
+		//('have')? ('the' | 'an' | 'a') attribute=Attribute
 		//('.' 'it' 'is' 'a' type=Datatype)?
+		//('.' 'it' priority=Priority value=UpdateAttributeValue)?
 		public Group getGroup() { return cGroup; }
 		
-		//'have'
+		//('have')?
 		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
 		
 		//('the' | 'an' | 'a')
@@ -501,6 +572,27 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Datatype
 		public RuleCall getTypeDatatypeEnumRuleCall_3_4_0() { return cTypeDatatypeEnumRuleCall_3_4_0; }
+		
+		//('.' 'it' priority=Priority value=UpdateAttributeValue)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4_0() { return cFullStopKeyword_4_0; }
+		
+		//'it'
+		public Keyword getItKeyword_4_1() { return cItKeyword_4_1; }
+		
+		//priority=Priority
+		public Assignment getPriorityAssignment_4_2() { return cPriorityAssignment_4_2; }
+		
+		//Priority
+		public RuleCall getPriorityPriorityParserRuleCall_4_2_0() { return cPriorityPriorityParserRuleCall_4_2_0; }
+		
+		//value=UpdateAttributeValue
+		public Assignment getValueAssignment_4_3() { return cValueAssignment_4_3; }
+		
+		//UpdateAttributeValue
+		public RuleCall getValueUpdateAttributeValueParserRuleCall_4_3_0() { return cValueUpdateAttributeValueParserRuleCall_4_3_0; }
 	}
 	public class AssociationActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AssociationAction");
@@ -519,14 +611,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cEditEditAssociationParserRuleCall_2_1_1_0 = (RuleCall)cEditAssignment_2_1_1.eContents().get(0);
 		
 		//AssociationAction hidden(WS):
-		//    'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
+		//    ('have')? ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
+		//('have')? ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 		public Group getGroup() { return cGroup; }
 		
-		//'have'
+		//('have')?
 		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
 		
 		//('associations' | 'association')
@@ -645,14 +737,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cWithKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cVersionKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final RuleCall cNameDATETerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//SetCompatible hidden(WS):
-		//    'compatible' 'with' 'version' name=ID
+		//    'compatible' 'with' 'version' name=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'compatible' 'with' 'version' name=ID
+		//'compatible' 'with' 'version' name=DATE
 		public Group getGroup() { return cGroup; }
 		
 		//'compatible'
@@ -664,11 +756,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'version'
 		public Keyword getVersionKeyword_2() { return cVersionKeyword_2; }
 		
-		//name=ID
+		//name=DATE
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		//DATE
+		public RuleCall getNameDATETerminalRuleCall_3_0() { return cNameDATETerminalRuleCall_3_0; }
 	}
 	public class SetVersionRangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetVersionRange");
@@ -678,17 +770,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cRangeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cStartAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cStartIDTerminalRuleCall_4_0 = (RuleCall)cStartAssignment_4.eContents().get(0);
+		private final RuleCall cStartDATETerminalRuleCall_4_0 = (RuleCall)cStartAssignment_4.eContents().get(0);
 		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cEndAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cEndIDTerminalRuleCall_6_0 = (RuleCall)cEndAssignment_6.eContents().get(0);
+		private final RuleCall cEndDATETerminalRuleCall_6_0 = (RuleCall)cEndAssignment_6.eContents().get(0);
 		
 		//SetVersionRange hidden(WS):
-		//    'with' 'version' 'range' 'from' start=ID 'to' end=ID
+		//    'with' 'version' 'range' 'from' start=DATE 'to' end=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'with' 'version' 'range' 'from' start=ID 'to' end=ID
+		//'with' 'version' 'range' 'from' start=DATE 'to' end=DATE
 		public Group getGroup() { return cGroup; }
 		
 		//'with'
@@ -703,20 +795,20 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'from'
 		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
 		
-		//start=ID
+		//start=DATE
 		public Assignment getStartAssignment_4() { return cStartAssignment_4; }
 		
-		//ID
-		public RuleCall getStartIDTerminalRuleCall_4_0() { return cStartIDTerminalRuleCall_4_0; }
+		//DATE
+		public RuleCall getStartDATETerminalRuleCall_4_0() { return cStartDATETerminalRuleCall_4_0; }
 		
 		//'to'
 		public Keyword getToKeyword_5() { return cToKeyword_5; }
 		
-		//end=ID
+		//end=DATE
 		public Assignment getEndAssignment_6() { return cEndAssignment_6; }
 		
-		//ID
-		public RuleCall getEndIDTerminalRuleCall_6_0() { return cEndIDTerminalRuleCall_6_0; }
+		//DATE
+		public RuleCall getEndDATETerminalRuleCall_6_0() { return cEndDATETerminalRuleCall_6_0; }
 	}
 	public class SetVariantElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetVariant");
@@ -727,14 +819,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cOfKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cVariantKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		private final RuleCall cNameDATETerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
 		
 		//SetVariant hidden(WS):
-		//    'with' 'all' 'versions' 'of' 'variant' name=ID
+		//    'with' 'all' 'versions' 'of' 'variant' name=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'with' 'all' 'versions' 'of' 'variant' name=ID
+		//'with' 'all' 'versions' 'of' 'variant' name=DATE
 		public Group getGroup() { return cGroup; }
 		
 		//'with'
@@ -752,11 +844,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'variant'
 		public Keyword getVariantKeyword_4() { return cVariantKeyword_4; }
 		
-		//name=ID
+		//name=DATE
 		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_5_0() { return cNameIDTerminalRuleCall_5_0; }
+		//DATE
+		public RuleCall getNameDATETerminalRuleCall_5_0() { return cNameDATETerminalRuleCall_5_0; }
 	}
 	public class SetRightOpenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetRightOpen");
@@ -765,14 +857,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cToKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cDateKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDateIDTerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
+		private final RuleCall cDateDATETerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
 		
 		//SetRightOpen hidden(WS):
-		//    'up' 'to' 'date' date=ID
+		//    'up' 'to' 'date' date=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'up' 'to' 'date' date=ID
+		//'up' 'to' 'date' date=DATE
 		public Group getGroup() { return cGroup; }
 		
 		//'up'
@@ -784,11 +876,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'date'
 		public Keyword getDateKeyword_2() { return cDateKeyword_2; }
 		
-		//date=ID
+		//date=DATE
 		public Assignment getDateAssignment_3() { return cDateAssignment_3; }
 		
-		//ID
-		public RuleCall getDateIDTerminalRuleCall_3_0() { return cDateIDTerminalRuleCall_3_0; }
+		//DATE
+		public RuleCall getDateDATETerminalRuleCall_3_0() { return cDateDATETerminalRuleCall_3_0; }
 	}
 	public class SetLeftOpenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetLeftOpen");
@@ -797,14 +889,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cDateKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDateIDTerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
+		private final RuleCall cDateDATETerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
 		
 		//SetLeftOpen hidden(WS):
-		//    'starting' 'from' 'date' date=ID
+		//    'starting' 'from' 'date' date=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'starting' 'from' 'date' date=ID
+		//'starting' 'from' 'date' date=DATE
 		public Group getGroup() { return cGroup; }
 		
 		//'starting'
@@ -816,30 +908,38 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'date'
 		public Keyword getDateKeyword_2() { return cDateKeyword_2; }
 		
-		//date=ID
+		//date=DATE
 		public Assignment getDateAssignment_3() { return cDateAssignment_3; }
 		
-		//ID
-		public RuleCall getDateIDTerminalRuleCall_3_0() { return cDateIDTerminalRuleCall_3_0; }
+		//DATE
+		public RuleCall getDateDATETerminalRuleCall_3_0() { return cDateDATETerminalRuleCall_3_0; }
 	}
 	public class InheritanceActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.InheritanceAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInheritKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cInheritKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cInheritanceKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParentClassParserRuleCall_2_0 = (RuleCall)cParentAssignment_2.eContents().get(0);
 		
 		//InheritanceAction hidden(WS):
-		//    'inherit' 'from' parent=Class
+		//    ('inherit' | 'inheritance') 'from' parent=Class
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'inherit' 'from' parent=Class
+		//('inherit' | 'inheritance') 'from' parent=Class
 		public Group getGroup() { return cGroup; }
 		
+		//('inherit' | 'inheritance')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
 		//'inherit'
-		public Keyword getInheritKeyword_0() { return cInheritKeyword_0; }
+		public Keyword getInheritKeyword_0_0() { return cInheritKeyword_0_0; }
+		
+		//'inheritance'
+		public Keyword getInheritanceKeyword_0_1() { return cInheritanceKeyword_0_1; }
 		
 		//'from'
 		public Keyword getFromKeyword_1() { return cFromKeyword_1; }
@@ -881,7 +981,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class CreateCompositionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.CreateComposition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cComposeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cComposeKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Keyword cCompositionKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Keyword cToKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTargetClassParserRuleCall_1_0 = (RuleCall)cTargetAssignment_1.eContents().get(0);
 		private final Keyword cCalledKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -897,17 +1001,29 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cPublicityPublicityEnumRuleCall_4_4_0 = (RuleCall)cPublicityAssignment_4_4.eContents().get(0);
 		
 		//CreateComposition hidden(WS):
-		//    'compose' target=Class 'called' relation=ID
+		//    ('compose' | 'composition' 'to') target=Class 'called' relation=ID
 		//    ('.' 'it' priority=Priority 'be' publicity=Publicity)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'compose' target=Class 'called' relation=ID
+		//('compose' | 'composition' 'to') target=Class 'called' relation=ID
 		//('.' 'it' priority=Priority 'be' publicity=Publicity)?
 		public Group getGroup() { return cGroup; }
 		
+		//('compose' | 'composition' 'to')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
 		//'compose'
-		public Keyword getComposeKeyword_0() { return cComposeKeyword_0; }
+		public Keyword getComposeKeyword_0_0() { return cComposeKeyword_0_0; }
+		
+		//'composition' 'to'
+		public Group getGroup_0_1() { return cGroup_0_1; }
+		
+		//'composition'
+		public Keyword getCompositionKeyword_0_1_0() { return cCompositionKeyword_0_1_0; }
+		
+		//'to'
+		public Keyword getToKeyword_0_1_1() { return cToKeyword_0_1_1; }
 		
 		//target=Class
 		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
@@ -961,14 +1077,14 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cPublicityPublicityEnumRuleCall_5_0 = (RuleCall)cPublicityAssignment_5.eContents().get(0);
 		
 		//EditComposition hidden(WS):
-		//    'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
+		//    ('have')? 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
+		//('have')? 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 		public Group getGroup() { return cGroup; }
 		
-		//'have'
+		//('have')?
 		public Keyword getHaveKeyword_0() { return cHaveKeyword_0; }
 		
 		//'composition'
@@ -998,18 +1114,18 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cTheKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cAKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Assignment cAbstractAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAbstractAbstractionEnumRuleCall_1_0 = (RuleCall)cAbstractAssignment_1.eContents().get(0);
+		private final Assignment cAbstractionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAbstractionAbstractionEnumRuleCall_1_0 = (RuleCall)cAbstractionAssignment_1.eContents().get(0);
 		private final Keyword cClassKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//Class hidden(WS):
-		//    ('the' | 'a')? (abstract=Abstraction)? ('class')? name=ID
+		//    ('the' | 'a')? (abstraction=Abstraction)? ('class')? name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('the' | 'a')? (abstract=Abstraction)? ('class')? name=ID
+		//('the' | 'a')? (abstraction=Abstraction)? ('class')? name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//('the' | 'a')?
@@ -1021,11 +1137,11 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'a'
 		public Keyword getAKeyword_0_1() { return cAKeyword_0_1; }
 		
-		//(abstract=Abstraction)?
-		public Assignment getAbstractAssignment_1() { return cAbstractAssignment_1; }
+		//(abstraction=Abstraction)?
+		public Assignment getAbstractionAssignment_1() { return cAbstractionAssignment_1; }
 		
 		//Abstraction
-		public RuleCall getAbstractAbstractionEnumRuleCall_1_0() { return cAbstractAbstractionEnumRuleCall_1_0; }
+		public RuleCall getAbstractionAbstractionEnumRuleCall_1_0() { return cAbstractionAbstractionEnumRuleCall_1_0; }
 		
 		//('class')?
 		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
@@ -1104,6 +1220,38 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//PriorityValue
 		public RuleCall getPriorityPriorityValueEnumRuleCall_0() { return cPriorityPriorityValueEnumRuleCall_0; }
 	}
+	public class AttributeValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AttributeValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Keyword cCarriageReturnKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDATETerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//AttributeValue:
+		//    (ID ('\r')?)+ | INT | DATE
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(ID ('\r')?)+ | INT | DATE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//(ID ('\r')?)+
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0_0() { return cIDTerminalRuleCall_0_0; }
+		
+		//('\r')?
+		public Keyword getCarriageReturnKeyword_0_1() { return cCarriageReturnKeyword_0_1; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		
+		//DATE
+		public RuleCall getDATETerminalRuleCall_2() { return cDATETerminalRuleCall_2; }
+	}
 	
 	public class PublicityElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Publicity");
@@ -1163,19 +1311,31 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class AbstractionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Abstraction");
-		private final EnumLiteralDeclaration cABSTRACTEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cABSTRACTAbstractKeyword_0 = (Keyword)cABSTRACTEnumLiteralDeclaration.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNEWEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNEWNewKeyword_0_0 = (Keyword)cNEWEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cABSTRACTIONEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cABSTRACTIONAbstractKeyword_1_0 = (Keyword)cABSTRACTIONEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum Abstraction:
-		//    ABSTRACT='abstract'
+		//    NEW='new' | ABSTRACTION='abstract'
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//ABSTRACT='abstract'
-		public EnumLiteralDeclaration getABSTRACTEnumLiteralDeclaration() { return cABSTRACTEnumLiteralDeclaration; }
+		//NEW='new' | ABSTRACTION='abstract'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//NEW='new'
+		public EnumLiteralDeclaration getNEWEnumLiteralDeclaration_0() { return cNEWEnumLiteralDeclaration_0; }
+		
+		//'new'
+		public Keyword getNEWNewKeyword_0_0() { return cNEWNewKeyword_0_0; }
+		
+		//ABSTRACTION='abstract'
+		public EnumLiteralDeclaration getABSTRACTIONEnumLiteralDeclaration_1() { return cABSTRACTIONEnumLiteralDeclaration_1; }
 		
 		//'abstract'
-		public Keyword getABSTRACTAbstractKeyword_0() { return cABSTRACTAbstractKeyword_0; }
+		public Keyword getABSTRACTIONAbstractKeyword_1_0() { return cABSTRACTIONAbstractKeyword_1_0; }
 	}
 	public class IdentifierValueElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.IdentifierValue");
@@ -1208,38 +1368,46 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class DatatypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.Datatype");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cWORDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cWORDTimeKeyword_0_0 = (Keyword)cWORDEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cPHRASEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cPHRASEPhraseKeyword_1_0 = (Keyword)cPHRASEEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cNUMBEREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cNUMBERNumberKeyword_2_0 = (Keyword)cNUMBEREnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cDEFAULTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cDEFAULTDEFAULTKeyword_0_0 = (Keyword)cDEFAULTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cWORDEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cWORDTimeKeyword_1_0 = (Keyword)cWORDEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cPHRASEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cPHRASEPhraseKeyword_2_0 = (Keyword)cPHRASEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cNUMBEREnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cNUMBERNumberKeyword_3_0 = (Keyword)cNUMBEREnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum Datatype:
-		//    WORD='time' | PHRASE='phrase' | NUMBER='number'
+		//    DEFAULT='DEFAULT' | WORD='time' | PHRASE='phrase' | NUMBER='number'
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//WORD='time' | PHRASE='phrase' | NUMBER='number'
+		//DEFAULT='DEFAULT' | WORD='time' | PHRASE='phrase' | NUMBER='number'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//DEFAULT='DEFAULT'
+		public EnumLiteralDeclaration getDEFAULTEnumLiteralDeclaration_0() { return cDEFAULTEnumLiteralDeclaration_0; }
+		
+		//'DEFAULT'
+		public Keyword getDEFAULTDEFAULTKeyword_0_0() { return cDEFAULTDEFAULTKeyword_0_0; }
+		
 		//WORD='time'
-		public EnumLiteralDeclaration getWORDEnumLiteralDeclaration_0() { return cWORDEnumLiteralDeclaration_0; }
+		public EnumLiteralDeclaration getWORDEnumLiteralDeclaration_1() { return cWORDEnumLiteralDeclaration_1; }
 		
 		//'time'
-		public Keyword getWORDTimeKeyword_0_0() { return cWORDTimeKeyword_0_0; }
+		public Keyword getWORDTimeKeyword_1_0() { return cWORDTimeKeyword_1_0; }
 		
 		//PHRASE='phrase'
-		public EnumLiteralDeclaration getPHRASEEnumLiteralDeclaration_1() { return cPHRASEEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getPHRASEEnumLiteralDeclaration_2() { return cPHRASEEnumLiteralDeclaration_2; }
 		
 		//'phrase'
-		public Keyword getPHRASEPhraseKeyword_1_0() { return cPHRASEPhraseKeyword_1_0; }
+		public Keyword getPHRASEPhraseKeyword_2_0() { return cPHRASEPhraseKeyword_2_0; }
 		
 		//NUMBER='number'
-		public EnumLiteralDeclaration getNUMBEREnumLiteralDeclaration_2() { return cNUMBEREnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getNUMBEREnumLiteralDeclaration_3() { return cNUMBEREnumLiteralDeclaration_3; }
 		
 		//'number'
-		public Keyword getNUMBERNumberKeyword_2_0() { return cNUMBERNumberKeyword_2_0; }
+		public Keyword getNUMBERNumberKeyword_3_0() { return cNUMBERNumberKeyword_3_0; }
 	}
 	
 	private final FeatureRequestElements pFeatureRequest;
@@ -1268,11 +1436,13 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final AttributeElements pAttribute;
 	private final IdentifierElements pIdentifier;
 	private final PriorityElements pPriority;
+	private final AttributeValueElements pAttributeValue;
 	private final PublicityElements ePublicity;
 	private final PriorityValueElements ePriorityValue;
 	private final AbstractionElements eAbstraction;
 	private final IdentifierValueElements eIdentifierValue;
 	private final DatatypeElements eDatatype;
+	private final TerminalRule tDATE;
 	
 	private final Grammar grammar;
 	
@@ -1309,11 +1479,13 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pAttribute = new AttributeElements();
 		this.pIdentifier = new IdentifierElements();
 		this.pPriority = new PriorityElements();
+		this.pAttributeValue = new AttributeValueElements();
 		this.ePublicity = new PublicityElements();
 		this.ePriorityValue = new PriorityValueElements();
 		this.eAbstraction = new AbstractionElements();
 		this.eIdentifierValue = new IdentifierValueElements();
 		this.eDatatype = new DatatypeElements();
+		this.tDATE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.DATE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1365,8 +1537,9 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//ChangeStatement hidden(WS):
-	//    target=Class
-	//    ((priority=Priority (negation ?= 'not')? (action=Action | 'have' ('a' | 'an')? identifier=Identifier)) | update=UpdateAction)
+	//    ((target=Class
+	//    (priority=Priority (negation ?= 'not')?)?) | (('set' | 'change' | negation ?= 'remove') 'in' target=Class))
+	//    (action=Action | update=UpdateAction)
 	//;
 	public ChangeStatementElements getChangeStatementAccess() {
 		return pChangeStatement;
@@ -1377,7 +1550,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//CreationStatement hidden(WS):
-	//    classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')
+	//    ((classElement=Class priority=Priority (negation ?= 'not')? ('exist' | 'be')) |
+	//        ('create' | negation ?= 'delete') classElement=Class)
 	//;
 	public CreationStatementElements getCreationStatementAccess() {
 		return pCreationStatement;
@@ -1399,7 +1573,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAction hidden(WS):
-	//    'has' ('an' | 'a') ('existing')?
+	//    ('has')? ('an' | 'a' | 'the') ('existing' | 'created')
 	//    attribute=Attribute '.' 'it' priority=Priority (datatype=UpdateAttributeDatatype |
 	//                                                    identifier=UpdateAttributeIdentifier |
 	//                                                    value=UpdateAttributeValue
@@ -1436,7 +1610,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAttributeValue hidden (WS):
-	//    'have' ('a')? 'value' value=ID
+	//    'have' ('a')? 'value' value=AttributeValue
 	//;
 	public UpdateAttributeValueElements getUpdateAttributeValueAccess() {
 		return pUpdateAttributeValue;
@@ -1447,8 +1621,9 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AttributeAction hidden(WS):
-	//    'have' ('the' | 'an' | 'a') attribute=Attribute
+	//    ('have')? ('the' | 'an' | 'a') attribute=Attribute
 	//    ('.' 'it' 'is' 'a' type=Datatype)?
+	//    ('.' 'it' priority=Priority value=UpdateAttributeValue)?
 	//;
 	public AttributeActionElements getAttributeActionAccess() {
 		return pAttributeAction;
@@ -1459,7 +1634,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AssociationAction hidden(WS):
-	//    'have' ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
+	//    ('have')? ('associations' | 'association') (create=CreateAssociation | name=ID edit=EditAssociation)
 	//;
 	public AssociationActionElements getAssociationActionAccess() {
 		return pAssociationAction;
@@ -1492,7 +1667,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SetCompatible hidden(WS):
-	//    'compatible' 'with' 'version' name=ID
+	//    'compatible' 'with' 'version' name=DATE
 	//;
 	public SetCompatibleElements getSetCompatibleAccess() {
 		return pSetCompatible;
@@ -1503,7 +1678,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SetVersionRange hidden(WS):
-	//    'with' 'version' 'range' 'from' start=ID 'to' end=ID
+	//    'with' 'version' 'range' 'from' start=DATE 'to' end=DATE
 	//;
 	public SetVersionRangeElements getSetVersionRangeAccess() {
 		return pSetVersionRange;
@@ -1514,7 +1689,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SetVariant hidden(WS):
-	//    'with' 'all' 'versions' 'of' 'variant' name=ID
+	//    'with' 'all' 'versions' 'of' 'variant' name=DATE
 	//;
 	public SetVariantElements getSetVariantAccess() {
 		return pSetVariant;
@@ -1525,7 +1700,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SetRightOpen hidden(WS):
-	//    'up' 'to' 'date' date=ID
+	//    'up' 'to' 'date' date=DATE
 	//;
 	public SetRightOpenElements getSetRightOpenAccess() {
 		return pSetRightOpen;
@@ -1536,7 +1711,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SetLeftOpen hidden(WS):
-	//    'starting' 'from' 'date' date=ID
+	//    'starting' 'from' 'date' date=DATE
 	//;
 	public SetLeftOpenElements getSetLeftOpenAccess() {
 		return pSetLeftOpen;
@@ -1547,7 +1722,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//InheritanceAction hidden(WS):
-	//    'inherit' 'from' parent=Class
+	//    ('inherit' | 'inheritance') 'from' parent=Class
 	//;
 	public InheritanceActionElements getInheritanceActionAccess() {
 		return pInheritanceAction;
@@ -1569,7 +1744,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//CreateComposition hidden(WS):
-	//    'compose' target=Class 'called' relation=ID
+	//    ('compose' | 'composition' 'to') target=Class 'called' relation=ID
 	//    ('.' 'it' priority=Priority 'be' publicity=Publicity)?
 	//;
 	public CreateCompositionElements getCreateCompositionAccess() {
@@ -1581,7 +1756,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//EditComposition hidden(WS):
-	//    'have' 'composition' compositionName=ID 'that' 'is' publicity=Publicity
+	//    ('have')? 'composition' compositionName=ID 'that' 'is' publicity=Publicity
 	//;
 	public EditCompositionElements getEditCompositionAccess() {
 		return pEditComposition;
@@ -1592,7 +1767,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Class hidden(WS):
-	//    ('the' | 'a')? (abstract=Abstraction)? ('class')? name=ID
+	//    ('the' | 'a')? (abstraction=Abstraction)? ('class')? name=ID
 	//;
 	public ClassElements getClassAccess() {
 		return pClass;
@@ -1635,6 +1810,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getPriorityAccess().getRule();
 	}
 	
+	//AttributeValue:
+	//    (ID ('\r')?)+ | INT | DATE
+	//;
+	public AttributeValueElements getAttributeValueAccess() {
+		return pAttributeValue;
+	}
+	
+	public ParserRule getAttributeValueRule() {
+		return getAttributeValueAccess().getRule();
+	}
+	
 	//enum Publicity:
 	//    PUBLIC='public' | PRIVATE='private'
 	//;
@@ -1658,7 +1844,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//enum Abstraction:
-	//    ABSTRACT='abstract'
+	//    NEW='new' | ABSTRACTION='abstract'
 	//;
 	public AbstractionElements getAbstractionAccess() {
 		return eAbstraction;
@@ -1680,7 +1866,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//enum Datatype:
-	//    WORD='time' | PHRASE='phrase' | NUMBER='number'
+	//    DEFAULT='DEFAULT' | WORD='time' | PHRASE='phrase' | NUMBER='number'
 	//;
 	public DatatypeElements getDatatypeAccess() {
 		return eDatatype;
@@ -1688,6 +1874,13 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public EnumRule getDatatypeRule() {
 		return getDatatypeAccess().getRule();
+	}
+	
+	//terminal DATE:
+	//    INT '-' INT '-' INT
+	//;
+	public TerminalRule getDATERule() {
+		return tDATE;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
