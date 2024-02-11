@@ -108,12 +108,14 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUpdateActionAccess().getIdentifierAssignment_7_1(), "rule__UpdateAction__IdentifierAssignment_7_1");
 			builder.put(grammarAccess.getUpdateActionAccess().getValueAssignment_7_2(), "rule__UpdateAction__ValueAssignment_7_2");
 			builder.put(grammarAccess.getUpdateAttributeDatatypeAccess().getTypeAssignment_2(), "rule__UpdateAttributeDatatype__TypeAssignment_2");
+			builder.put(grammarAccess.getUpdateAttributeDatatypeAccess().getOldTypeAssignment_5(), "rule__UpdateAttributeDatatype__OldTypeAssignment_5");
 			builder.put(grammarAccess.getUpdateAttributeIdentifierAccess().getIdentifierAssignment_2(), "rule__UpdateAttributeIdentifier__IdentifierAssignment_2");
+			builder.put(grammarAccess.getUpdateAttributeIdentifierAccess().getOldIdentifierAssignment_5(), "rule__UpdateAttributeIdentifier__OldIdentifierAssignment_5");
 			builder.put(grammarAccess.getUpdateAttributeValueAccess().getValueAssignment_3(), "rule__UpdateAttributeValue__ValueAssignment_3");
+			builder.put(grammarAccess.getUpdateAttributeValueAccess().getOldValueAssignment_6(), "rule__UpdateAttributeValue__OldValueAssignment_6");
 			builder.put(grammarAccess.getAttributeActionAccess().getAttributeAssignment_2(), "rule__AttributeAction__AttributeAssignment_2");
 			builder.put(grammarAccess.getAttributeActionAccess().getTypeAssignment_3_4(), "rule__AttributeAction__TypeAssignment_3_4");
-			builder.put(grammarAccess.getAttributeActionAccess().getPriorityAssignment_4_2(), "rule__AttributeAction__PriorityAssignment_4_2");
-			builder.put(grammarAccess.getAttributeActionAccess().getValueAssignment_4_3(), "rule__AttributeAction__ValueAssignment_4_3");
+			builder.put(grammarAccess.getAttributeActionAccess().getValueAssignment_4_5(), "rule__AttributeAction__ValueAssignment_4_5");
 			builder.put(grammarAccess.getAssociationActionAccess().getCreateAssignment_2_0(), "rule__AssociationAction__CreateAssignment_2_0");
 			builder.put(grammarAccess.getAssociationActionAccess().getNameAssignment_2_1_0(), "rule__AssociationAction__NameAssignment_2_1_0");
 			builder.put(grammarAccess.getAssociationActionAccess().getEditAssignment_2_1_1(), "rule__AssociationAction__EditAssignment_2_1_1");

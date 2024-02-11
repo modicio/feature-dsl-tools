@@ -168,7 +168,7 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AttributeAction returns AttributeAction
 	 *
 	 * Constraint:
-	 *     (attribute=Attribute type=Datatype? (priority=Priority value=UpdateAttributeValue)?)
+	 *     (attribute=Attribute type=Datatype? value=AttributeValue?)
 	 * </pre>
 	 */
 	protected void sequence_AttributeAction(ISerializationContext context, AttributeAction semanticObject) {
@@ -528,16 +528,19 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     UpdateAttributeDatatype returns UpdateAttributeDatatype
 	 *
 	 * Constraint:
-	 *     type=Datatype
+	 *     (type=Datatype oldType=Datatype)
 	 * </pre>
 	 */
 	protected void sequence_UpdateAttributeDatatype(ISerializationContext context, UpdateAttributeDatatype semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_DATATYPE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_DATATYPE__TYPE));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_DATATYPE__OLD_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_DATATYPE__OLD_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUpdateAttributeDatatypeAccess().getTypeDatatypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getUpdateAttributeDatatypeAccess().getOldTypeDatatypeEnumRuleCall_5_0(), semanticObject.getOldType());
 		feeder.finish();
 	}
 	
@@ -548,16 +551,19 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     UpdateAttributeIdentifier returns UpdateAttributeIdentifier
 	 *
 	 * Constraint:
-	 *     identifier=Identifier
+	 *     (identifier=Identifier oldIdentifier=Identifier)
 	 * </pre>
 	 */
 	protected void sequence_UpdateAttributeIdentifier(ISerializationContext context, UpdateAttributeIdentifier semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_IDENTIFIER__IDENTIFIER) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_IDENTIFIER__IDENTIFIER));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_IDENTIFIER__OLD_IDENTIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_IDENTIFIER__OLD_IDENTIFIER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUpdateAttributeIdentifierAccess().getIdentifierIdentifierParserRuleCall_2_0(), semanticObject.getIdentifier());
+		feeder.accept(grammarAccess.getUpdateAttributeIdentifierAccess().getOldIdentifierIdentifierParserRuleCall_5_0(), semanticObject.getOldIdentifier());
 		feeder.finish();
 	}
 	
@@ -568,16 +574,19 @@ public class FeatureLangSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     UpdateAttributeValue returns UpdateAttributeValue
 	 *
 	 * Constraint:
-	 *     value=AttributeValue
+	 *     (value=AttributeValue oldValue=AttributeValue)
 	 * </pre>
 	 */
 	protected void sequence_UpdateAttributeValue(ISerializationContext context, UpdateAttributeValue semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_VALUE__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_VALUE__OLD_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FeatureLangPackage.Literals.UPDATE_ATTRIBUTE_VALUE__OLD_VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUpdateAttributeValueAccess().getValueAttributeValueParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getUpdateAttributeValueAccess().getOldValueAttributeValueParserRuleCall_6_0(), semanticObject.getOldValue());
 		feeder.finish();
 	}
 	

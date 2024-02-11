@@ -35,21 +35,21 @@ UpdateAction hidden(WS):
 ;
 
 UpdateAttributeDatatype hidden (WS):
-	'be' 'a' type=Datatype
+	'be' 'a' type=Datatype 'instead' 'of' oldType=Datatype
 ;
 
 UpdateAttributeIdentifier hidden (WS):
-	'have' ('a' | 'an')? identifier=Identifier
+	'have' ('a' | 'an')? identifier=Identifier 'instead' 'of' oldIdentifier=Identifier
 ;
 
 UpdateAttributeValue hidden (WS): 
-	'have' ('a')? 'value' value=AttributeValue
+	'have' ('a')? 'value' value=AttributeValue 'instead' 'of' oldValue=AttributeValue
 ;
 
 AttributeAction hidden(WS):
 	('have')? ('the' | 'an' | 'a') attribute=Attribute
 	('.' 'it' 'is' 'a' type=Datatype)?
-	('.' 'it' priority=Priority value=UpdateAttributeValue)?
+	('.' 'it' 'has' ('a')? 'value' value=AttributeValue)?
 ;
 
 AssociationAction hidden(WS):

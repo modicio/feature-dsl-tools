@@ -345,13 +345,22 @@ public interface FeatureLangPackage extends EPackage
   int UPDATE_ATTRIBUTE_DATATYPE__TYPE = 0;
 
   /**
+   * The feature id for the '<em><b>Old Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_ATTRIBUTE_DATATYPE__OLD_TYPE = 1;
+
+  /**
    * The number of structural features of the '<em>Update Attribute Datatype</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UPDATE_ATTRIBUTE_DATATYPE_FEATURE_COUNT = 1;
+  int UPDATE_ATTRIBUTE_DATATYPE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.UpdateAttributeIdentifierImpl <em>Update Attribute Identifier</em>}' class.
@@ -373,13 +382,22 @@ public interface FeatureLangPackage extends EPackage
   int UPDATE_ATTRIBUTE_IDENTIFIER__IDENTIFIER = 0;
 
   /**
+   * The feature id for the '<em><b>Old Identifier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_ATTRIBUTE_IDENTIFIER__OLD_IDENTIFIER = 1;
+
+  /**
    * The number of structural features of the '<em>Update Attribute Identifier</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UPDATE_ATTRIBUTE_IDENTIFIER_FEATURE_COUNT = 1;
+  int UPDATE_ATTRIBUTE_IDENTIFIER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.UpdateAttributeValueImpl <em>Update Attribute Value</em>}' class.
@@ -401,13 +419,22 @@ public interface FeatureLangPackage extends EPackage
   int UPDATE_ATTRIBUTE_VALUE__VALUE = 0;
 
   /**
+   * The feature id for the '<em><b>Old Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_ATTRIBUTE_VALUE__OLD_VALUE = 1;
+
+  /**
    * The number of structural features of the '<em>Update Attribute Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UPDATE_ATTRIBUTE_VALUE_FEATURE_COUNT = 1;
+  int UPDATE_ATTRIBUTE_VALUE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl <em>Attribute Action</em>}' class.
@@ -438,22 +465,13 @@ public interface FeatureLangPackage extends EPackage
   int ATTRIBUTE_ACTION__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Priority</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_ACTION__PRIORITY = 2;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_ACTION__VALUE = 3;
+  int ATTRIBUTE_ACTION__VALUE = 2;
 
   /**
    * The number of structural features of the '<em>Attribute Action</em>' class.
@@ -462,7 +480,7 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_ACTION_FEATURE_COUNT = 4;
+  int ATTRIBUTE_ACTION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl <em>Association Action</em>}' class.
@@ -1287,6 +1305,17 @@ public interface FeatureLangPackage extends EPackage
   EAttribute getUpdateAttributeDatatype_Type();
 
   /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.UpdateAttributeDatatype#getOldType <em>Old Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Old Type</em>'.
+   * @see de.tud.st.featurelang.featureLang.UpdateAttributeDatatype#getOldType()
+   * @see #getUpdateAttributeDatatype()
+   * @generated
+   */
+  EAttribute getUpdateAttributeDatatype_OldType();
+
+  /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.UpdateAttributeIdentifier <em>Update Attribute Identifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1308,6 +1337,17 @@ public interface FeatureLangPackage extends EPackage
   EReference getUpdateAttributeIdentifier_Identifier();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.UpdateAttributeIdentifier#getOldIdentifier <em>Old Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Old Identifier</em>'.
+   * @see de.tud.st.featurelang.featureLang.UpdateAttributeIdentifier#getOldIdentifier()
+   * @see #getUpdateAttributeIdentifier()
+   * @generated
+   */
+  EReference getUpdateAttributeIdentifier_OldIdentifier();
+
+  /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.UpdateAttributeValue <em>Update Attribute Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1327,6 +1367,17 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    */
   EAttribute getUpdateAttributeValue_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.UpdateAttributeValue#getOldValue <em>Old Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Old Value</em>'.
+   * @see de.tud.st.featurelang.featureLang.UpdateAttributeValue#getOldValue()
+   * @see #getUpdateAttributeValue()
+   * @generated
+   */
+  EAttribute getUpdateAttributeValue_OldValue();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.AttributeAction <em>Attribute Action</em>}'.
@@ -1361,26 +1412,15 @@ public interface FeatureLangPackage extends EPackage
   EAttribute getAttributeAction_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AttributeAction#getPriority <em>Priority</em>}'.
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.AttributeAction#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Priority</em>'.
-   * @see de.tud.st.featurelang.featureLang.AttributeAction#getPriority()
-   * @see #getAttributeAction()
-   * @generated
-   */
-  EReference getAttributeAction_Priority();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.tud.st.featurelang.featureLang.AttributeAction#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @return the meta object for the attribute '<em>Value</em>'.
    * @see de.tud.st.featurelang.featureLang.AttributeAction#getValue()
    * @see #getAttributeAction()
    * @generated
    */
-  EReference getAttributeAction_Value();
+  EAttribute getAttributeAction_Value();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.AssociationAction <em>Association Action</em>}'.
@@ -2095,6 +2135,14 @@ public interface FeatureLangPackage extends EPackage
     EAttribute UPDATE_ATTRIBUTE_DATATYPE__TYPE = eINSTANCE.getUpdateAttributeDatatype_Type();
 
     /**
+     * The meta object literal for the '<em><b>Old Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATE_ATTRIBUTE_DATATYPE__OLD_TYPE = eINSTANCE.getUpdateAttributeDatatype_OldType();
+
+    /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.UpdateAttributeIdentifierImpl <em>Update Attribute Identifier</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2113,6 +2161,14 @@ public interface FeatureLangPackage extends EPackage
     EReference UPDATE_ATTRIBUTE_IDENTIFIER__IDENTIFIER = eINSTANCE.getUpdateAttributeIdentifier_Identifier();
 
     /**
+     * The meta object literal for the '<em><b>Old Identifier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_ATTRIBUTE_IDENTIFIER__OLD_IDENTIFIER = eINSTANCE.getUpdateAttributeIdentifier_OldIdentifier();
+
+    /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.UpdateAttributeValueImpl <em>Update Attribute Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2129,6 +2185,14 @@ public interface FeatureLangPackage extends EPackage
      * @generated
      */
     EAttribute UPDATE_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getUpdateAttributeValue_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATE_ATTRIBUTE_VALUE__OLD_VALUE = eINSTANCE.getUpdateAttributeValue_OldValue();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.AttributeActionImpl <em>Attribute Action</em>}' class.
@@ -2157,20 +2221,12 @@ public interface FeatureLangPackage extends EPackage
     EAttribute ATTRIBUTE_ACTION__TYPE = eINSTANCE.getAttributeAction_Type();
 
     /**
-     * The meta object literal for the '<em><b>Priority</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATTRIBUTE_ACTION__PRIORITY = eINSTANCE.getAttributeAction_Priority();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE_ACTION__VALUE = eINSTANCE.getAttributeAction_Value();
+    EAttribute ATTRIBUTE_ACTION__VALUE = eINSTANCE.getAttributeAction_Value();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.AssociationActionImpl <em>Association Action</em>}' class.

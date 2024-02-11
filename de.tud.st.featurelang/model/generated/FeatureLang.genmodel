@@ -55,18 +55,20 @@
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//UpdateAttributeDatatype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//UpdateAttributeDatatype/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//UpdateAttributeDatatype/oldType"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//UpdateAttributeIdentifier">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//UpdateAttributeIdentifier/identifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//UpdateAttributeIdentifier/oldIdentifier"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//UpdateAttributeValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//UpdateAttributeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//UpdateAttributeValue/oldValue"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//AttributeAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/attribute"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AttributeAction/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/priority"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AttributeAction/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//AttributeAction/value"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//AssociationAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//AssociationAction/create"/>

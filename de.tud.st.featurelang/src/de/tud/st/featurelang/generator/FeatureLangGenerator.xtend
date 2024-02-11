@@ -118,17 +118,10 @@ class FeatureLangGenerator extends AbstractGenerator {
 				SET TYPE «a.getType()»,
 			«ENDIF»
 			«IF a.getValue() !== null»
-				«val should = a.getPriority() !== null && a.getPriority().getPriority() === PriorityValue.SHOULD»
-				«IF should»
-					START OPTIONAL,
-				«ENDIF»
-				«val value = a.getValue().getValue()»
+				«val value = a.getValue()»
 				«IF value !== null» 
 					SET ATTRIBUTE VALUE TO «value»,
 				«ENDIF»	
-				«IF should»
-					END OPTIONAL,
-				«ENDIF»
 			«ENDIF»	
 			CLOSE ATTRIBUTE «attrName»,
 		«ENDIF»
@@ -181,9 +174,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 	}
 	
 	private def compileSetVariant(SetVariant a) {
-		val variantName = a.getName()
+		val variantDate = a.getName()
 		'''
-		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantName»,
+		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»,
 		'''
 	}
 	
@@ -217,9 +210,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 					«ENDIF»
 					«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
 					«IF public»
-						MAKE COMPOSITION PUBLIC,
+						MAKE COMPOSITION PUBLIC/MAKE COMPOSITION PRIVATE,
 					«ELSE» 
-						MAKE COMPOSITION PRIVATE,
+						MAKE COMPOSITION PRIVATE/MAKE COMPOSITION PUBLIC,
 					«ENDIF»
 					«IF should»
 						END OPTIONAL,
@@ -228,14 +221,14 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ELSE» 
 			«val compositionName = a.getEdit().getCompositionName()»
-			OPEN COMPOSITION «compositionName»,
+			OPEN COMPOSITION «compositionName»/CLOSE COMPOSITION «compositionName»,
 			«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
 			«IF public»
-				MAKE COMPOSITION PUBLIC,
+				MAKE COMPOSITION PUBLIC/MAKE COMPOSITION PRIVATE,
 			«ELSE» 
-				MAKE COMPOSITION PRIVATE,
+				MAKE COMPOSITION PRIVATE/MAKE COMPOSITION PUBLIC,
 			«ENDIF»
-			CLOSE COMPOSITION «compositionName»,
+			CLOSE COMPOSITION «compositionName»/OPEN COMPOSITION «compositionName»,
 		«ENDIF»	
 		'''
 	}
@@ -258,23 +251,25 @@ class FeatureLangGenerator extends AbstractGenerator {
 		«IF should»
 		START OPTIONAL,
 		«ENDIF» 
-		OPEN ATTRIBUTE «a.getAttribute().getName()»,
+		OPEN ATTRIBUTE «a.getAttribute().getName()»/CLOSE ATTRIBUTE «a.getAttribute().getName()»,
 		«IF changeType»
-			SET TYPE «a.getDatatype().getType()»,
+			SET TYPE «a.getDatatype().getType()»/SET TYPE «a.getDatatype().getOldType()»,
 		«ELSEIF changeIdentifier» 
 			«val identifier = a.getIdentifier().getIdentifier()»
 			«val nameId = identifier.getValue() === IdentifierValue.NAME»
 			«val newIdentifier = identifier.getName()»
+			«val oldIdentifier = a.getIdentifier().getOldIdentifier().getName()»
 			«IF nameId»
-				CHANGE ATTRIBUTE NAME TO «newIdentifier»,
+				CHANGE ATTRIBUTE NAME TO «newIdentifier»/CHANGE ATTRIBUTE NAME TO «oldIdentifier»,
 			«ELSE» 
-				CHANGE ATTRIBUTE URI TO «newIdentifier»,
+				CHANGE ATTRIBUTE URI TO «newIdentifier»/CHANGE ATTRIBUTE URI TO «oldIdentifier»,
 			«ENDIF»	
 		«ELSE»
 			«val value = a.getValue().getValue()»
-			SET ATTRIBUTE VALUE TO «value»,
+			«val oldValue = a.getValue().getOldValue()»
+			SET ATTRIBUTE VALUE TO «value»/SET ATTRIBUTE VALUE TO «oldValue»,
 		«ENDIF»	
-		CLOSE ATTRIBUTE «a.getAttribute().getName()»,
+		CLOSE ATTRIBUTE «a.getAttribute().getName()»/OPEN ATTRIBUTE «a.getAttribute().getName()»,
 		«IF should»
 		END OPTIONAL,
 		«ENDIF»

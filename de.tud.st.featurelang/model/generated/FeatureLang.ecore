@@ -41,22 +41,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeDatatype">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldType" eType="#//Datatype"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeIdentifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" eType="#//Identifier"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldIdentifier" eType="#//Identifier"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateAttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="priority" eType="#//Priority"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//UpdateAttributeValue"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="create" eType="#//CreateAssociation"

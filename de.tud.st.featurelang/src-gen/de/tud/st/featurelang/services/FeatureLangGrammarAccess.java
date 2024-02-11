@@ -405,13 +405,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cAKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeDatatypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Keyword cInsteadKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cOfKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOldTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOldTypeDatatypeEnumRuleCall_5_0 = (RuleCall)cOldTypeAssignment_5.eContents().get(0);
 		
 		//UpdateAttributeDatatype hidden (WS):
-		//    'be' 'a' type=Datatype
+		//    'be' 'a' type=Datatype 'instead' 'of' oldType=Datatype
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'be' 'a' type=Datatype
+		//'be' 'a' type=Datatype 'instead' 'of' oldType=Datatype
 		public Group getGroup() { return cGroup; }
 		
 		//'be'
@@ -425,6 +429,18 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Datatype
 		public RuleCall getTypeDatatypeEnumRuleCall_2_0() { return cTypeDatatypeEnumRuleCall_2_0; }
+		
+		//'instead'
+		public Keyword getInsteadKeyword_3() { return cInsteadKeyword_3; }
+		
+		//'of'
+		public Keyword getOfKeyword_4() { return cOfKeyword_4; }
+		
+		//oldType=Datatype
+		public Assignment getOldTypeAssignment_5() { return cOldTypeAssignment_5; }
+		
+		//Datatype
+		public RuleCall getOldTypeDatatypeEnumRuleCall_5_0() { return cOldTypeDatatypeEnumRuleCall_5_0; }
 	}
 	public class UpdateAttributeIdentifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.UpdateAttributeIdentifier");
@@ -435,13 +451,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cAnKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Assignment cIdentifierAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cIdentifierIdentifierParserRuleCall_2_0 = (RuleCall)cIdentifierAssignment_2.eContents().get(0);
+		private final Keyword cInsteadKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cOfKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOldIdentifierAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOldIdentifierIdentifierParserRuleCall_5_0 = (RuleCall)cOldIdentifierAssignment_5.eContents().get(0);
 		
 		//UpdateAttributeIdentifier hidden (WS):
-		//    'have' ('a' | 'an')? identifier=Identifier
+		//    'have' ('a' | 'an')? identifier=Identifier 'instead' 'of' oldIdentifier=Identifier
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('a' | 'an')? identifier=Identifier
+		//'have' ('a' | 'an')? identifier=Identifier 'instead' 'of' oldIdentifier=Identifier
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -461,6 +481,18 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Identifier
 		public RuleCall getIdentifierIdentifierParserRuleCall_2_0() { return cIdentifierIdentifierParserRuleCall_2_0; }
+		
+		//'instead'
+		public Keyword getInsteadKeyword_3() { return cInsteadKeyword_3; }
+		
+		//'of'
+		public Keyword getOfKeyword_4() { return cOfKeyword_4; }
+		
+		//oldIdentifier=Identifier
+		public Assignment getOldIdentifierAssignment_5() { return cOldIdentifierAssignment_5; }
+		
+		//Identifier
+		public RuleCall getOldIdentifierIdentifierParserRuleCall_5_0() { return cOldIdentifierIdentifierParserRuleCall_5_0; }
 	}
 	public class UpdateAttributeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.UpdateAttributeValue");
@@ -470,13 +502,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueAttributeValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final Keyword cInsteadKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cOfKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cOldValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cOldValueAttributeValueParserRuleCall_6_0 = (RuleCall)cOldValueAssignment_6.eContents().get(0);
 		
 		//UpdateAttributeValue hidden (WS):
-		//    'have' ('a')? 'value' value=AttributeValue
+		//    'have' ('a')? 'value' value=AttributeValue 'instead' 'of' oldValue=AttributeValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'have' ('a')? 'value' value=AttributeValue
+		//'have' ('a')? 'value' value=AttributeValue 'instead' 'of' oldValue=AttributeValue
 		public Group getGroup() { return cGroup; }
 		
 		//'have'
@@ -493,6 +529,18 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//AttributeValue
 		public RuleCall getValueAttributeValueParserRuleCall_3_0() { return cValueAttributeValueParserRuleCall_3_0; }
+		
+		//'instead'
+		public Keyword getInsteadKeyword_4() { return cInsteadKeyword_4; }
+		
+		//'of'
+		public Keyword getOfKeyword_5() { return cOfKeyword_5; }
+		
+		//oldValue=AttributeValue
+		public Assignment getOldValueAssignment_6() { return cOldValueAssignment_6; }
+		
+		//AttributeValue
+		public RuleCall getOldValueAttributeValueParserRuleCall_6_0() { return cOldValueAttributeValueParserRuleCall_6_0; }
 	}
 	public class AttributeActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AttributeAction");
@@ -514,21 +562,22 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cFullStopKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cItKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cPriorityAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cPriorityPriorityParserRuleCall_4_2_0 = (RuleCall)cPriorityAssignment_4_2.eContents().get(0);
-		private final Assignment cValueAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cValueUpdateAttributeValueParserRuleCall_4_3_0 = (RuleCall)cValueAssignment_4_3.eContents().get(0);
+		private final Keyword cHasKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Keyword cAKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Keyword cValueKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Assignment cValueAssignment_4_5 = (Assignment)cGroup_4.eContents().get(5);
+		private final RuleCall cValueAttributeValueParserRuleCall_4_5_0 = (RuleCall)cValueAssignment_4_5.eContents().get(0);
 		
 		//AttributeAction hidden(WS):
 		//    ('have')? ('the' | 'an' | 'a') attribute=Attribute
 		//    ('.' 'it' 'is' 'a' type=Datatype)?
-		//    ('.' 'it' priority=Priority value=UpdateAttributeValue)?
+		//    ('.' 'it' 'has' ('a')? 'value' value=AttributeValue)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//('have')? ('the' | 'an' | 'a') attribute=Attribute
 		//('.' 'it' 'is' 'a' type=Datatype)?
-		//('.' 'it' priority=Priority value=UpdateAttributeValue)?
+		//('.' 'it' 'has' ('a')? 'value' value=AttributeValue)?
 		public Group getGroup() { return cGroup; }
 		
 		//('have')?
@@ -573,7 +622,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Datatype
 		public RuleCall getTypeDatatypeEnumRuleCall_3_4_0() { return cTypeDatatypeEnumRuleCall_3_4_0; }
 		
-		//('.' 'it' priority=Priority value=UpdateAttributeValue)?
+		//('.' 'it' 'has' ('a')? 'value' value=AttributeValue)?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'.'
@@ -582,17 +631,20 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'it'
 		public Keyword getItKeyword_4_1() { return cItKeyword_4_1; }
 		
-		//priority=Priority
-		public Assignment getPriorityAssignment_4_2() { return cPriorityAssignment_4_2; }
+		//'has'
+		public Keyword getHasKeyword_4_2() { return cHasKeyword_4_2; }
 		
-		//Priority
-		public RuleCall getPriorityPriorityParserRuleCall_4_2_0() { return cPriorityPriorityParserRuleCall_4_2_0; }
+		//('a')?
+		public Keyword getAKeyword_4_3() { return cAKeyword_4_3; }
 		
-		//value=UpdateAttributeValue
-		public Assignment getValueAssignment_4_3() { return cValueAssignment_4_3; }
+		//'value'
+		public Keyword getValueKeyword_4_4() { return cValueKeyword_4_4; }
 		
-		//UpdateAttributeValue
-		public RuleCall getValueUpdateAttributeValueParserRuleCall_4_3_0() { return cValueUpdateAttributeValueParserRuleCall_4_3_0; }
+		//value=AttributeValue
+		public Assignment getValueAssignment_4_5() { return cValueAssignment_4_5; }
+		
+		//AttributeValue
+		public RuleCall getValueAttributeValueParserRuleCall_4_5_0() { return cValueAttributeValueParserRuleCall_4_5_0; }
 	}
 	public class AssociationActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.AssociationAction");
@@ -1588,7 +1640,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAttributeDatatype hidden (WS):
-	//    'be' 'a' type=Datatype
+	//    'be' 'a' type=Datatype 'instead' 'of' oldType=Datatype
 	//;
 	public UpdateAttributeDatatypeElements getUpdateAttributeDatatypeAccess() {
 		return pUpdateAttributeDatatype;
@@ -1599,7 +1651,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAttributeIdentifier hidden (WS):
-	//    'have' ('a' | 'an')? identifier=Identifier
+	//    'have' ('a' | 'an')? identifier=Identifier 'instead' 'of' oldIdentifier=Identifier
 	//;
 	public UpdateAttributeIdentifierElements getUpdateAttributeIdentifierAccess() {
 		return pUpdateAttributeIdentifier;
@@ -1610,7 +1662,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//UpdateAttributeValue hidden (WS):
-	//    'have' ('a')? 'value' value=AttributeValue
+	//    'have' ('a')? 'value' value=AttributeValue 'instead' 'of' oldValue=AttributeValue
 	//;
 	public UpdateAttributeValueElements getUpdateAttributeValueAccess() {
 		return pUpdateAttributeValue;
@@ -1623,7 +1675,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	//AttributeAction hidden(WS):
 	//    ('have')? ('the' | 'an' | 'a') attribute=Attribute
 	//    ('.' 'it' 'is' 'a' type=Datatype)?
-	//    ('.' 'it' priority=Priority value=UpdateAttributeValue)?
+	//    ('.' 'it' 'has' ('a')? 'value' value=AttributeValue)?
 	//;
 	public AttributeActionElements getAttributeActionAccess() {
 		return pAttributeAction;

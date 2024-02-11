@@ -761,6 +761,33 @@ ruleUpdateAttributeDatatype returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_3=Instead
+		{
+			newLeafNode(otherlv_3, grammarAccess.getUpdateAttributeDatatypeAccess().getInsteadKeyword_3());
+		}
+		otherlv_4=Of
+		{
+			newLeafNode(otherlv_4, grammarAccess.getUpdateAttributeDatatypeAccess().getOfKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUpdateAttributeDatatypeAccess().getOldTypeDatatypeEnumRuleCall_5_0());
+				}
+				lv_oldType_5_0=ruleDatatype
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUpdateAttributeDatatypeRule());
+					}
+					set(
+						$current,
+						"oldType",
+						lv_oldType_5_0,
+						"de.tud.st.featurelang.FeatureLang.Datatype");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 finally {
@@ -823,6 +850,33 @@ ruleUpdateAttributeIdentifier returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_4=Instead
+		{
+			newLeafNode(otherlv_4, grammarAccess.getUpdateAttributeIdentifierAccess().getInsteadKeyword_3());
+		}
+		otherlv_5=Of
+		{
+			newLeafNode(otherlv_5, grammarAccess.getUpdateAttributeIdentifierAccess().getOfKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUpdateAttributeIdentifierAccess().getOldIdentifierIdentifierParserRuleCall_5_0());
+				}
+				lv_oldIdentifier_6_0=ruleIdentifier
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUpdateAttributeIdentifierRule());
+					}
+					set(
+						$current,
+						"oldIdentifier",
+						lv_oldIdentifier_6_0,
+						"de.tud.st.featurelang.FeatureLang.Identifier");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 finally {
@@ -879,6 +933,33 @@ ruleUpdateAttributeValue returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_3_0,
+						"de.tud.st.featurelang.FeatureLang.AttributeValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=Instead
+		{
+			newLeafNode(otherlv_4, grammarAccess.getUpdateAttributeValueAccess().getInsteadKeyword_4());
+		}
+		otherlv_5=Of
+		{
+			newLeafNode(otherlv_5, grammarAccess.getUpdateAttributeValueAccess().getOfKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUpdateAttributeValueAccess().getOldValueAttributeValueParserRuleCall_6_0());
+				}
+				lv_oldValue_6_0=ruleAttributeValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUpdateAttributeValueRule());
+					}
+					set(
+						$current,
+						"oldValue",
+						lv_oldValue_6_0,
 						"de.tud.st.featurelang.FeatureLang.AttributeValue");
 					afterParserOrEnumRuleCall();
 				}
@@ -999,31 +1080,26 @@ ruleAttributeAction returns [EObject current=null]
 			{
 				newLeafNode(otherlv_11, grammarAccess.getAttributeActionAccess().getItKeyword_4_1());
 			}
+			otherlv_12=Has
+			{
+				newLeafNode(otherlv_12, grammarAccess.getAttributeActionAccess().getHasKeyword_4_2());
+			}
+			(
+				otherlv_13=A
+				{
+					newLeafNode(otherlv_13, grammarAccess.getAttributeActionAccess().getAKeyword_4_3());
+				}
+			)?
+			otherlv_14=Value
+			{
+				newLeafNode(otherlv_14, grammarAccess.getAttributeActionAccess().getValueKeyword_4_4());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAttributeActionAccess().getPriorityPriorityParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getAttributeActionAccess().getValueAttributeValueParserRuleCall_4_5_0());
 					}
-					lv_priority_12_0=rulePriority
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeActionRule());
-						}
-						set(
-							$current,
-							"priority",
-							lv_priority_12_0,
-							"de.tud.st.featurelang.FeatureLang.Priority");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeActionAccess().getValueUpdateAttributeValueParserRuleCall_4_3_0());
-					}
-					lv_value_13_0=ruleUpdateAttributeValue
+					lv_value_15_0=ruleAttributeValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAttributeActionRule());
@@ -1031,8 +1107,8 @@ ruleAttributeAction returns [EObject current=null]
 						set(
 							$current,
 							"value",
-							lv_value_13_0,
-							"de.tud.st.featurelang.FeatureLang.UpdateAttributeValue");
+							lv_value_15_0,
+							"de.tud.st.featurelang.FeatureLang.AttributeValue");
 						afterParserOrEnumRuleCall();
 					}
 				)

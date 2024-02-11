@@ -25,6 +25,7 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AssociationAction_AssociationKeyword_1_1_or_AssociationsKeyword_1_0;
 	protected AbstractElementAlias match_AssociationAction_HaveKeyword_0_q;
 	protected AbstractElementAlias match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0;
+	protected AbstractElementAlias match_AttributeAction_AKeyword_4_3_q;
 	protected AbstractElementAlias match_AttributeAction_HaveKeyword_0_q;
 	protected AbstractElementAlias match_Attribute_AttributeKeyword_0_q;
 	protected AbstractElementAlias match_ChangeStatement_ChangeKeyword_0_1_0_1_or_SetKeyword_0_1_0_0;
@@ -48,6 +49,7 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AssociationAction_AssociationKeyword_1_1_or_AssociationsKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationActionAccess().getAssociationKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getAssociationActionAccess().getAssociationsKeyword_1_0()));
 		match_AssociationAction_HaveKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAssociationActionAccess().getHaveKeyword_0());
 		match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getAKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getAnKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getAttributeActionAccess().getTheKeyword_1_0()));
+		match_AttributeAction_AKeyword_4_3_q = new TokenAlias(false, true, grammarAccess.getAttributeActionAccess().getAKeyword_4_3());
 		match_AttributeAction_HaveKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeActionAccess().getHaveKeyword_0());
 		match_Attribute_AttributeKeyword_0_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getAttributeKeyword_0());
 		match_ChangeStatement_ChangeKeyword_0_1_0_1_or_SetKeyword_0_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getChangeStatementAccess().getChangeKeyword_0_1_0_1()), new TokenAlias(false, false, grammarAccess.getChangeStatementAccess().getSetKeyword_0_1_0_0()));
@@ -84,6 +86,8 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AssociationAction_HaveKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0.equals(syntax))
 				emit_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AttributeAction_AKeyword_4_3_q.equals(syntax))
+				emit_AttributeAction_AKeyword_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AttributeAction_HaveKeyword_0_q.equals(syntax))
 				emit_AttributeAction_HaveKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Attribute_AttributeKeyword_0_q.equals(syntax))
@@ -161,6 +165,21 @@ public class FeatureLangSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_AttributeAction_AKeyword_1_2_or_AnKeyword_1_1_or_TheKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'a'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     attribute=Attribute '.' 'it' 'has' (ambiguity) 'value' value=AttributeValue
+	 *     type=Datatype '.' 'it' 'has' (ambiguity) 'value' value=AttributeValue
+	 
+	 * </pre>
+	 */
+	protected void emit_AttributeAction_AKeyword_4_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

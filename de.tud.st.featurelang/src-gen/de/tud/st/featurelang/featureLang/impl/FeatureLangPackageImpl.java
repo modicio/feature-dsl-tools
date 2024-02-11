@@ -568,6 +568,17 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
+  public EAttribute getUpdateAttributeDatatype_OldType()
+  {
+    return (EAttribute)updateAttributeDatatypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getUpdateAttributeIdentifier()
   {
     return updateAttributeIdentifierEClass;
@@ -590,6 +601,17 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
+  public EReference getUpdateAttributeIdentifier_OldIdentifier()
+  {
+    return (EReference)updateAttributeIdentifierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getUpdateAttributeValue()
   {
     return updateAttributeValueEClass;
@@ -604,6 +626,17 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
   public EAttribute getUpdateAttributeValue_Value()
   {
     return (EAttribute)updateAttributeValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getUpdateAttributeValue_OldValue()
+  {
+    return (EAttribute)updateAttributeValueEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -645,20 +678,9 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EReference getAttributeAction_Priority()
+  public EAttribute getAttributeAction_Value()
   {
-    return (EReference)attributeActionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getAttributeAction_Value()
-  {
-    return (EReference)attributeActionEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)attributeActionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1247,18 +1269,20 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
 
     updateAttributeDatatypeEClass = createEClass(UPDATE_ATTRIBUTE_DATATYPE);
     createEAttribute(updateAttributeDatatypeEClass, UPDATE_ATTRIBUTE_DATATYPE__TYPE);
+    createEAttribute(updateAttributeDatatypeEClass, UPDATE_ATTRIBUTE_DATATYPE__OLD_TYPE);
 
     updateAttributeIdentifierEClass = createEClass(UPDATE_ATTRIBUTE_IDENTIFIER);
     createEReference(updateAttributeIdentifierEClass, UPDATE_ATTRIBUTE_IDENTIFIER__IDENTIFIER);
+    createEReference(updateAttributeIdentifierEClass, UPDATE_ATTRIBUTE_IDENTIFIER__OLD_IDENTIFIER);
 
     updateAttributeValueEClass = createEClass(UPDATE_ATTRIBUTE_VALUE);
     createEAttribute(updateAttributeValueEClass, UPDATE_ATTRIBUTE_VALUE__VALUE);
+    createEAttribute(updateAttributeValueEClass, UPDATE_ATTRIBUTE_VALUE__OLD_VALUE);
 
     attributeActionEClass = createEClass(ATTRIBUTE_ACTION);
     createEReference(attributeActionEClass, ATTRIBUTE_ACTION__ATTRIBUTE);
     createEAttribute(attributeActionEClass, ATTRIBUTE_ACTION__TYPE);
-    createEReference(attributeActionEClass, ATTRIBUTE_ACTION__PRIORITY);
-    createEReference(attributeActionEClass, ATTRIBUTE_ACTION__VALUE);
+    createEAttribute(attributeActionEClass, ATTRIBUTE_ACTION__VALUE);
 
     associationActionEClass = createEClass(ASSOCIATION_ACTION);
     createEReference(associationActionEClass, ASSOCIATION_ACTION__CREATE);
@@ -1387,18 +1411,20 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
 
     initEClass(updateAttributeDatatypeEClass, UpdateAttributeDatatype.class, "UpdateAttributeDatatype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUpdateAttributeDatatype_Type(), this.getDatatype(), "type", null, 0, 1, UpdateAttributeDatatype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUpdateAttributeDatatype_OldType(), this.getDatatype(), "oldType", null, 0, 1, UpdateAttributeDatatype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updateAttributeIdentifierEClass, UpdateAttributeIdentifier.class, "UpdateAttributeIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUpdateAttributeIdentifier_Identifier(), this.getIdentifier(), null, "identifier", null, 0, 1, UpdateAttributeIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUpdateAttributeIdentifier_OldIdentifier(), this.getIdentifier(), null, "oldIdentifier", null, 0, 1, UpdateAttributeIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updateAttributeValueEClass, UpdateAttributeValue.class, "UpdateAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUpdateAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, UpdateAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUpdateAttributeValue_OldValue(), ecorePackage.getEString(), "oldValue", null, 0, 1, UpdateAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeActionEClass, AttributeAction.class, "AttributeAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttributeAction_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributeAction_Type(), this.getDatatype(), "type", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeAction_Priority(), this.getPriority(), null, "priority", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeAction_Value(), this.getUpdateAttributeValue(), null, "value", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeAction_Value(), ecorePackage.getEString(), "value", null, 0, 1, AttributeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(associationActionEClass, AssociationAction.class, "AssociationAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssociationAction_Create(), this.getCreateAssociation(), null, "create", null, 0, 1, AssociationAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
