@@ -76,11 +76,11 @@ SetVariant hidden(WS):
 	'with' 'all' 'versions' 'of' 'variant' name=DATE
 ;
 
-SetRightOpen hidden(WS):
+SetLeftOpen hidden(WS):
 	'up' 'to' 'date' date=DATE
 ;
 
-SetLeftOpen hidden(WS):
+SetRightOpen hidden(WS):
 	'starting' 'from' 'date' date=DATE
 ;
 	

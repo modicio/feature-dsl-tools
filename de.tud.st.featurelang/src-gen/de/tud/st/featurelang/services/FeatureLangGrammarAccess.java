@@ -902,8 +902,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//DATE
 		public RuleCall getNameDATETerminalRuleCall_5_0() { return cNameDATETerminalRuleCall_5_0; }
 	}
-	public class SetRightOpenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetRightOpen");
+	public class SetLeftOpenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetLeftOpen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUpKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cToKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -911,7 +911,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDateDATETerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
 		
-		//SetRightOpen hidden(WS):
+		//SetLeftOpen hidden(WS):
 		//    'up' 'to' 'date' date=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -934,8 +934,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		//DATE
 		public RuleCall getDateDATETerminalRuleCall_3_0() { return cDateDATETerminalRuleCall_3_0; }
 	}
-	public class SetLeftOpenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetLeftOpen");
+	public class SetRightOpenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.tud.st.featurelang.FeatureLang.SetRightOpen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStartingKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cFromKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -943,7 +943,7 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cDateAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDateDATETerminalRuleCall_3_0 = (RuleCall)cDateAssignment_3.eContents().get(0);
 		
-		//SetLeftOpen hidden(WS):
+		//SetRightOpen hidden(WS):
 		//    'starting' 'from' 'date' date=DATE
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1478,8 +1478,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final SetCompatibleElements pSetCompatible;
 	private final SetVersionRangeElements pSetVersionRange;
 	private final SetVariantElements pSetVariant;
-	private final SetRightOpenElements pSetRightOpen;
 	private final SetLeftOpenElements pSetLeftOpen;
+	private final SetRightOpenElements pSetRightOpen;
 	private final InheritanceActionElements pInheritanceAction;
 	private final CompositionActionElements pCompositionAction;
 	private final CreateCompositionElements pCreateComposition;
@@ -1521,8 +1521,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pSetCompatible = new SetCompatibleElements();
 		this.pSetVersionRange = new SetVersionRangeElements();
 		this.pSetVariant = new SetVariantElements();
-		this.pSetRightOpen = new SetRightOpenElements();
 		this.pSetLeftOpen = new SetLeftOpenElements();
+		this.pSetRightOpen = new SetRightOpenElements();
 		this.pInheritanceAction = new InheritanceActionElements();
 		this.pCompositionAction = new CompositionActionElements();
 		this.pCreateComposition = new CreateCompositionElements();
@@ -1751,19 +1751,8 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getSetVariantAccess().getRule();
 	}
 	
-	//SetRightOpen hidden(WS):
-	//    'up' 'to' 'date' date=DATE
-	//;
-	public SetRightOpenElements getSetRightOpenAccess() {
-		return pSetRightOpen;
-	}
-	
-	public ParserRule getSetRightOpenRule() {
-		return getSetRightOpenAccess().getRule();
-	}
-	
 	//SetLeftOpen hidden(WS):
-	//    'starting' 'from' 'date' date=DATE
+	//    'up' 'to' 'date' date=DATE
 	//;
 	public SetLeftOpenElements getSetLeftOpenAccess() {
 		return pSetLeftOpen;
@@ -1771,6 +1760,17 @@ public class FeatureLangGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getSetLeftOpenRule() {
 		return getSetLeftOpenAccess().getRule();
+	}
+	
+	//SetRightOpen hidden(WS):
+	//    'starting' 'from' 'date' date=DATE
+	//;
+	public SetRightOpenElements getSetRightOpenAccess() {
+		return pSetRightOpen;
+	}
+	
+	public ParserRule getSetRightOpenRule() {
+		return getSetRightOpenAccess().getRule();
 	}
 	
 	//InheritanceAction hidden(WS):

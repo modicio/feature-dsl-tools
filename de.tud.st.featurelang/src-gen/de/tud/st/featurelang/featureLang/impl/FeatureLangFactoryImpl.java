@@ -113,8 +113,8 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
       case FeatureLangPackage.SET_COMPATIBLE: return createSetCompatible();
       case FeatureLangPackage.SET_VERSION_RANGE: return createSetVersionRange();
       case FeatureLangPackage.SET_VARIANT: return createSetVariant();
-      case FeatureLangPackage.SET_RIGHT_OPEN: return createSetRightOpen();
       case FeatureLangPackage.SET_LEFT_OPEN: return createSetLeftOpen();
+      case FeatureLangPackage.SET_RIGHT_OPEN: return createSetRightOpen();
       case FeatureLangPackage.INHERITANCE_ACTION: return createInheritanceAction();
       case FeatureLangPackage.COMPOSITION_ACTION: return createCompositionAction();
       case FeatureLangPackage.CREATE_COMPOSITION: return createCreateComposition();
@@ -376,10 +376,10 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
    * @generated
    */
   @Override
-  public SetRightOpen createSetRightOpen()
+  public SetLeftOpen createSetLeftOpen()
   {
-    SetRightOpenImpl setRightOpen = new SetRightOpenImpl();
-    return setRightOpen;
+    SetLeftOpenImpl setLeftOpen = new SetLeftOpenImpl();
+    return setLeftOpen;
   }
 
   /**
@@ -388,10 +388,10 @@ public class FeatureLangFactoryImpl extends EFactoryImpl implements FeatureLangF
    * @generated
    */
   @Override
-  public SetLeftOpen createSetLeftOpen()
+  public SetRightOpen createSetRightOpen()
   {
-    SetLeftOpenImpl setLeftOpen = new SetLeftOpenImpl();
-    return setLeftOpen;
+    SetRightOpenImpl setRightOpen = new SetRightOpenImpl();
+    return setRightOpen;
   }
 
   /**

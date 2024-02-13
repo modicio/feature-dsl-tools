@@ -92,11 +92,11 @@
     <genClasses ecoreClass="FeatureLang.ecore#//SetVariant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetVariant/name"/>
     </genClasses>
-    <genClasses ecoreClass="FeatureLang.ecore#//SetRightOpen">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetRightOpen/date"/>
-    </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//SetLeftOpen">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetLeftOpen/date"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureLang.ecore#//SetRightOpen">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureLang.ecore#//SetRightOpen/date"/>
     </genClasses>
     <genClasses ecoreClass="FeatureLang.ecore#//InheritanceAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureLang.ecore#//InheritanceAction/parent"/>

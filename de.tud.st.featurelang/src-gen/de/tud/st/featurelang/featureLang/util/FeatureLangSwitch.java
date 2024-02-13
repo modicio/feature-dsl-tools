@@ -212,17 +212,17 @@ public class FeatureLangSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FeatureLangPackage.SET_RIGHT_OPEN:
-      {
-        SetRightOpen setRightOpen = (SetRightOpen)theEObject;
-        T result = caseSetRightOpen(setRightOpen);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FeatureLangPackage.SET_LEFT_OPEN:
       {
         SetLeftOpen setLeftOpen = (SetLeftOpen)theEObject;
         T result = caseSetLeftOpen(setLeftOpen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FeatureLangPackage.SET_RIGHT_OPEN:
+      {
+        SetRightOpen setRightOpen = (SetRightOpen)theEObject;
+        T result = caseSetRightOpen(setRightOpen);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -543,22 +543,6 @@ public class FeatureLangSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSetRightOpen(SetRightOpen object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Set Left Open</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -570,6 +554,22 @@ public class FeatureLangSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSetLeftOpen(SetLeftOpen object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Right Open</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetRightOpen(SetRightOpen object)
   {
     return null;
   }

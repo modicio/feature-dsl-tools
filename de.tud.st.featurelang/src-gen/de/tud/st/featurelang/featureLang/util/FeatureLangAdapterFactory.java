@@ -181,14 +181,14 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
         return createSetVariantAdapter();
       }
       @Override
-      public Adapter caseSetRightOpen(SetRightOpen object)
-      {
-        return createSetRightOpenAdapter();
-      }
-      @Override
       public Adapter caseSetLeftOpen(SetLeftOpen object)
       {
         return createSetLeftOpenAdapter();
+      }
+      @Override
+      public Adapter caseSetRightOpen(SetRightOpen object)
+      {
+        return createSetRightOpenAdapter();
       }
       @Override
       public Adapter caseInheritanceAction(InheritanceAction object)
@@ -493,21 +493,6 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.SetRightOpen <em>Set Right Open</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.tud.st.featurelang.featureLang.SetRightOpen
-   * @generated
-   */
-  public Adapter createSetRightOpenAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.SetLeftOpen <em>Set Left Open</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -518,6 +503,21 @@ public class FeatureLangAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSetLeftOpenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.tud.st.featurelang.featureLang.SetRightOpen <em>Set Right Open</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.tud.st.featurelang.featureLang.SetRightOpen
+   * @generated
+   */
+  public Adapter createSetRightOpenAdapter()
   {
     return null;
   }

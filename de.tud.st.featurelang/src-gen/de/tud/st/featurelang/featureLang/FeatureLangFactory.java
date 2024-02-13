@@ -168,15 +168,6 @@ public interface FeatureLangFactory extends EFactory
   SetVariant createSetVariant();
 
   /**
-   * Returns a new object of class '<em>Set Right Open</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Set Right Open</em>'.
-   * @generated
-   */
-  SetRightOpen createSetRightOpen();
-
-  /**
    * Returns a new object of class '<em>Set Left Open</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,6 +175,15 @@ public interface FeatureLangFactory extends EFactory
    * @generated
    */
   SetLeftOpen createSetLeftOpen();
+
+  /**
+   * Returns a new object of class '<em>Set Right Open</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Right Open</em>'.
+   * @generated
+   */
+  SetRightOpen createSetRightOpen();
 
   /**
    * Returns a new object of class '<em>Inheritance Action</em>'.

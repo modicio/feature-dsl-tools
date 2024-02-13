@@ -3493,12 +3493,12 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case Up:
+            case Starting:
                 {
                 alt29=4;
                 }
                 break;
-            case Starting:
+            case Up:
                 {
                 alt29=5;
                 }
@@ -4092,134 +4092,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSetVariant"
 
 
-    // $ANTLR start "entryRuleSetRightOpen"
-    // InternalFeatureLangParser.g:1628:1: entryRuleSetRightOpen returns [EObject current=null] : iv_ruleSetRightOpen= ruleSetRightOpen EOF ;
-    public final EObject entryRuleSetRightOpen() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSetRightOpen = null;
-
-
-
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-
-        try {
-            // InternalFeatureLangParser.g:1630:2: (iv_ruleSetRightOpen= ruleSetRightOpen EOF )
-            // InternalFeatureLangParser.g:1631:2: iv_ruleSetRightOpen= ruleSetRightOpen EOF
-            {
-             newCompositeNode(grammarAccess.getSetRightOpenRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleSetRightOpen=ruleSetRightOpen();
-
-            state._fsp--;
-
-             current =iv_ruleSetRightOpen; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleSetRightOpen"
-
-
-    // $ANTLR start "ruleSetRightOpen"
-    // InternalFeatureLangParser.g:1640:1: ruleSetRightOpen returns [EObject current=null] : (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) ;
-    public final EObject ruleSetRightOpen() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_date_3_0=null;
-
-
-        	enterRule();
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-
-        try {
-            // InternalFeatureLangParser.g:1647:2: ( (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) )
-            // InternalFeatureLangParser.g:1648:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
-            {
-            // InternalFeatureLangParser.g:1648:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
-            // InternalFeatureLangParser.g:1649:3: otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) )
-            {
-            otherlv_0=(Token)match(input,Up,FOLLOW_39); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getUpKeyword_0());
-            		
-            otherlv_1=(Token)match(input,To,FOLLOW_43); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getToKeyword_1());
-            		
-            otherlv_2=(Token)match(input,Date,FOLLOW_36); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
-            		
-            // InternalFeatureLangParser.g:1661:3: ( (lv_date_3_0= RULE_DATE ) )
-            // InternalFeatureLangParser.g:1662:4: (lv_date_3_0= RULE_DATE )
-            {
-            // InternalFeatureLangParser.g:1662:4: (lv_date_3_0= RULE_DATE )
-            // InternalFeatureLangParser.g:1663:5: lv_date_3_0= RULE_DATE
-            {
-            lv_date_3_0=(Token)match(input,RULE_DATE,FOLLOW_2); 
-
-            					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSetRightOpenRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"date",
-            						lv_date_3_0,
-            						"de.tud.st.featurelang.FeatureLang.DATE");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleSetRightOpen"
-
-
     // $ANTLR start "entryRuleSetLeftOpen"
-    // InternalFeatureLangParser.g:1686:1: entryRuleSetLeftOpen returns [EObject current=null] : iv_ruleSetLeftOpen= ruleSetLeftOpen EOF ;
+    // InternalFeatureLangParser.g:1628:1: entryRuleSetLeftOpen returns [EObject current=null] : iv_ruleSetLeftOpen= ruleSetLeftOpen EOF ;
     public final EObject entryRuleSetLeftOpen() throws RecognitionException {
         EObject current = null;
 
@@ -4230,8 +4104,8 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1688:2: (iv_ruleSetLeftOpen= ruleSetLeftOpen EOF )
-            // InternalFeatureLangParser.g:1689:2: iv_ruleSetLeftOpen= ruleSetLeftOpen EOF
+            // InternalFeatureLangParser.g:1630:2: (iv_ruleSetLeftOpen= ruleSetLeftOpen EOF )
+            // InternalFeatureLangParser.g:1631:2: iv_ruleSetLeftOpen= ruleSetLeftOpen EOF
             {
              newCompositeNode(grammarAccess.getSetLeftOpenRule()); 
             pushFollow(FOLLOW_1);
@@ -4261,7 +4135,7 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetLeftOpen"
-    // InternalFeatureLangParser.g:1698:1: ruleSetLeftOpen returns [EObject current=null] : (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) ;
+    // InternalFeatureLangParser.g:1640:1: ruleSetLeftOpen returns [EObject current=null] : (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) ;
     public final EObject ruleSetLeftOpen() throws RecognitionException {
         EObject current = null;
 
@@ -4275,29 +4149,29 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:1705:2: ( (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) )
-            // InternalFeatureLangParser.g:1706:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
+            // InternalFeatureLangParser.g:1647:2: ( (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) )
+            // InternalFeatureLangParser.g:1648:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
             {
-            // InternalFeatureLangParser.g:1706:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
-            // InternalFeatureLangParser.g:1707:3: otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) )
+            // InternalFeatureLangParser.g:1648:2: (otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
+            // InternalFeatureLangParser.g:1649:3: otherlv_0= Up otherlv_1= To otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) )
             {
-            otherlv_0=(Token)match(input,Starting,FOLLOW_38); 
+            otherlv_0=(Token)match(input,Up,FOLLOW_39); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getUpKeyword_0());
             		
-            otherlv_1=(Token)match(input,From,FOLLOW_43); 
+            otherlv_1=(Token)match(input,To,FOLLOW_43); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getFromKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getToKeyword_1());
             		
             otherlv_2=(Token)match(input,Date,FOLLOW_36); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSetLeftOpenAccess().getDateKeyword_2());
             		
-            // InternalFeatureLangParser.g:1719:3: ( (lv_date_3_0= RULE_DATE ) )
-            // InternalFeatureLangParser.g:1720:4: (lv_date_3_0= RULE_DATE )
+            // InternalFeatureLangParser.g:1661:3: ( (lv_date_3_0= RULE_DATE ) )
+            // InternalFeatureLangParser.g:1662:4: (lv_date_3_0= RULE_DATE )
             {
-            // InternalFeatureLangParser.g:1720:4: (lv_date_3_0= RULE_DATE )
-            // InternalFeatureLangParser.g:1721:5: lv_date_3_0= RULE_DATE
+            // InternalFeatureLangParser.g:1662:4: (lv_date_3_0= RULE_DATE )
+            // InternalFeatureLangParser.g:1663:5: lv_date_3_0= RULE_DATE
             {
             lv_date_3_0=(Token)match(input,RULE_DATE,FOLLOW_2); 
 
@@ -4342,6 +4216,132 @@ public class InternalFeatureLangParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleSetLeftOpen"
+
+
+    // $ANTLR start "entryRuleSetRightOpen"
+    // InternalFeatureLangParser.g:1686:1: entryRuleSetRightOpen returns [EObject current=null] : iv_ruleSetRightOpen= ruleSetRightOpen EOF ;
+    public final EObject entryRuleSetRightOpen() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSetRightOpen = null;
+
+
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1688:2: (iv_ruleSetRightOpen= ruleSetRightOpen EOF )
+            // InternalFeatureLangParser.g:1689:2: iv_ruleSetRightOpen= ruleSetRightOpen EOF
+            {
+             newCompositeNode(grammarAccess.getSetRightOpenRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSetRightOpen=ruleSetRightOpen();
+
+            state._fsp--;
+
+             current =iv_ruleSetRightOpen; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSetRightOpen"
+
+
+    // $ANTLR start "ruleSetRightOpen"
+    // InternalFeatureLangParser.g:1698:1: ruleSetRightOpen returns [EObject current=null] : (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) ;
+    public final EObject ruleSetRightOpen() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_date_3_0=null;
+
+
+        	enterRule();
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:1705:2: ( (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) ) )
+            // InternalFeatureLangParser.g:1706:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
+            {
+            // InternalFeatureLangParser.g:1706:2: (otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) ) )
+            // InternalFeatureLangParser.g:1707:3: otherlv_0= Starting otherlv_1= From otherlv_2= Date ( (lv_date_3_0= RULE_DATE ) )
+            {
+            otherlv_0=(Token)match(input,Starting,FOLLOW_38); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getStartingKeyword_0());
+            		
+            otherlv_1=(Token)match(input,From,FOLLOW_43); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getFromKeyword_1());
+            		
+            otherlv_2=(Token)match(input,Date,FOLLOW_36); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
+            		
+            // InternalFeatureLangParser.g:1719:3: ( (lv_date_3_0= RULE_DATE ) )
+            // InternalFeatureLangParser.g:1720:4: (lv_date_3_0= RULE_DATE )
+            {
+            // InternalFeatureLangParser.g:1720:4: (lv_date_3_0= RULE_DATE )
+            // InternalFeatureLangParser.g:1721:5: lv_date_3_0= RULE_DATE
+            {
+            lv_date_3_0=(Token)match(input,RULE_DATE,FOLLOW_2); 
+
+            					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSetRightOpenRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"date",
+            						lv_date_3_0,
+            						"de.tud.st.featurelang.FeatureLang.DATE");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSetRightOpen"
 
 
     // $ANTLR start "entryRuleInheritanceAction"

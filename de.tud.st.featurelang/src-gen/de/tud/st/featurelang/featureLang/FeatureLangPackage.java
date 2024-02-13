@@ -687,34 +687,6 @@ public interface FeatureLangPackage extends EPackage
   int SET_VARIANT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
-   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
-   * @generated
-   */
-  int SET_RIGHT_OPEN = 16;
-
-  /**
-   * The feature id for the '<em><b>Date</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_RIGHT_OPEN__DATE = 0;
-
-  /**
-   * The number of structural features of the '<em>Set Right Open</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_RIGHT_OPEN_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl <em>Set Left Open</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -722,7 +694,7 @@ public interface FeatureLangPackage extends EPackage
    * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetLeftOpen()
    * @generated
    */
-  int SET_LEFT_OPEN = 17;
+  int SET_LEFT_OPEN = 16;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -741,6 +713,34 @@ public interface FeatureLangPackage extends EPackage
    * @ordered
    */
   int SET_LEFT_OPEN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
+   * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
+   * @generated
+   */
+  int SET_RIGHT_OPEN = 17;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_RIGHT_OPEN__DATE = 0;
+
+  /**
+   * The number of structural features of the '<em>Set Right Open</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_RIGHT_OPEN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.
@@ -1593,27 +1593,6 @@ public interface FeatureLangPackage extends EPackage
   EAttribute getSetVariant_Name();
 
   /**
-   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetRightOpen <em>Set Right Open</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Set Right Open</em>'.
-   * @see de.tud.st.featurelang.featureLang.SetRightOpen
-   * @generated
-   */
-  EClass getSetRightOpen();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetRightOpen#getDate <em>Date</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Date</em>'.
-   * @see de.tud.st.featurelang.featureLang.SetRightOpen#getDate()
-   * @see #getSetRightOpen()
-   * @generated
-   */
-  EAttribute getSetRightOpen_Date();
-
-  /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetLeftOpen <em>Set Left Open</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1633,6 +1612,27 @@ public interface FeatureLangPackage extends EPackage
    * @generated
    */
   EAttribute getSetLeftOpen_Date();
+
+  /**
+   * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.SetRightOpen <em>Set Right Open</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Right Open</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetRightOpen
+   * @generated
+   */
+  EClass getSetRightOpen();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.tud.st.featurelang.featureLang.SetRightOpen#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Date</em>'.
+   * @see de.tud.st.featurelang.featureLang.SetRightOpen#getDate()
+   * @see #getSetRightOpen()
+   * @generated
+   */
+  EAttribute getSetRightOpen_Date();
 
   /**
    * Returns the meta object for class '{@link de.tud.st.featurelang.featureLang.InheritanceAction <em>Inheritance Action</em>}'.
@@ -2369,24 +2369,6 @@ public interface FeatureLangPackage extends EPackage
     EAttribute SET_VARIANT__NAME = eINSTANCE.getSetVariant_Name();
 
     /**
-     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
-     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
-     * @generated
-     */
-    EClass SET_RIGHT_OPEN = eINSTANCE.getSetRightOpen();
-
-    /**
-     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SET_RIGHT_OPEN__DATE = eINSTANCE.getSetRightOpen_Date();
-
-    /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetLeftOpenImpl <em>Set Left Open</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2403,6 +2385,24 @@ public interface FeatureLangPackage extends EPackage
      * @generated
      */
     EAttribute SET_LEFT_OPEN__DATE = eINSTANCE.getSetLeftOpen_Date();
+
+    /**
+     * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl <em>Set Right Open</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.tud.st.featurelang.featureLang.impl.SetRightOpenImpl
+     * @see de.tud.st.featurelang.featureLang.impl.FeatureLangPackageImpl#getSetRightOpen()
+     * @generated
+     */
+    EClass SET_RIGHT_OPEN = eINSTANCE.getSetRightOpen();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_RIGHT_OPEN__DATE = eINSTANCE.getSetRightOpen_Date();
 
     /**
      * The meta object literal for the '{@link de.tud.st.featurelang.featureLang.impl.InheritanceActionImpl <em>Inheritance Action</em>}' class.

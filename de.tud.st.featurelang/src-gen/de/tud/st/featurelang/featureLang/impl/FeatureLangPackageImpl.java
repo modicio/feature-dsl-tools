@@ -169,14 +169,14 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass setRightOpenEClass = null;
+  private EClass setLeftOpenEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass setLeftOpenEClass = null;
+  private EClass setRightOpenEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -865,28 +865,6 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
    * @generated
    */
   @Override
-  public EClass getSetRightOpen()
-  {
-    return setRightOpenEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSetRightOpen_Date()
-  {
-    return (EAttribute)setRightOpenEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getSetLeftOpen()
   {
     return setLeftOpenEClass;
@@ -901,6 +879,28 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
   public EAttribute getSetLeftOpen_Date()
   {
     return (EAttribute)setLeftOpenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSetRightOpen()
+  {
+    return setRightOpenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetRightOpen_Date()
+  {
+    return (EAttribute)setRightOpenEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1306,11 +1306,11 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     setVariantEClass = createEClass(SET_VARIANT);
     createEAttribute(setVariantEClass, SET_VARIANT__NAME);
 
-    setRightOpenEClass = createEClass(SET_RIGHT_OPEN);
-    createEAttribute(setRightOpenEClass, SET_RIGHT_OPEN__DATE);
-
     setLeftOpenEClass = createEClass(SET_LEFT_OPEN);
     createEAttribute(setLeftOpenEClass, SET_LEFT_OPEN__DATE);
+
+    setRightOpenEClass = createEClass(SET_RIGHT_OPEN);
+    createEAttribute(setRightOpenEClass, SET_RIGHT_OPEN__DATE);
 
     inheritanceActionEClass = createEClass(INHERITANCE_ACTION);
     createEReference(inheritanceActionEClass, INHERITANCE_ACTION__PARENT);
@@ -1448,11 +1448,11 @@ public class FeatureLangPackageImpl extends EPackageImpl implements FeatureLangP
     initEClass(setVariantEClass, SetVariant.class, "SetVariant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSetVariant_Name(), ecorePackage.getEString(), "name", null, 0, 1, SetVariant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(setRightOpenEClass, SetRightOpen.class, "SetRightOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSetRightOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetRightOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(setLeftOpenEClass, SetLeftOpen.class, "SetLeftOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSetLeftOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetLeftOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setRightOpenEClass, SetRightOpen.class, "SetRightOpen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetRightOpen_Date(), ecorePackage.getEString(), "date", null, 0, 1, SetRightOpen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inheritanceActionEClass, InheritanceAction.class, "InheritanceAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInheritanceAction_Parent(), this.getClass_(), null, "parent", null, 0, 1, InheritanceAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

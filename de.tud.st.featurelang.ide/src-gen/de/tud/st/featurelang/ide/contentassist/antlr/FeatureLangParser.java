@@ -77,8 +77,8 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSetCompatibleAccess().getGroup(), "rule__SetCompatible__Group__0");
 			builder.put(grammarAccess.getSetVersionRangeAccess().getGroup(), "rule__SetVersionRange__Group__0");
 			builder.put(grammarAccess.getSetVariantAccess().getGroup(), "rule__SetVariant__Group__0");
-			builder.put(grammarAccess.getSetRightOpenAccess().getGroup(), "rule__SetRightOpen__Group__0");
 			builder.put(grammarAccess.getSetLeftOpenAccess().getGroup(), "rule__SetLeftOpen__Group__0");
+			builder.put(grammarAccess.getSetRightOpenAccess().getGroup(), "rule__SetRightOpen__Group__0");
 			builder.put(grammarAccess.getInheritanceActionAccess().getGroup(), "rule__InheritanceAction__Group__0");
 			builder.put(grammarAccess.getCreateCompositionAccess().getGroup(), "rule__CreateComposition__Group__0");
 			builder.put(grammarAccess.getCreateCompositionAccess().getGroup_0_1(), "rule__CreateComposition__Group_0_1__0");
@@ -126,8 +126,8 @@ public class FeatureLangParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSetVersionRangeAccess().getStartAssignment_4(), "rule__SetVersionRange__StartAssignment_4");
 			builder.put(grammarAccess.getSetVersionRangeAccess().getEndAssignment_6(), "rule__SetVersionRange__EndAssignment_6");
 			builder.put(grammarAccess.getSetVariantAccess().getNameAssignment_5(), "rule__SetVariant__NameAssignment_5");
-			builder.put(grammarAccess.getSetRightOpenAccess().getDateAssignment_3(), "rule__SetRightOpen__DateAssignment_3");
 			builder.put(grammarAccess.getSetLeftOpenAccess().getDateAssignment_3(), "rule__SetLeftOpen__DateAssignment_3");
+			builder.put(grammarAccess.getSetRightOpenAccess().getDateAssignment_3(), "rule__SetRightOpen__DateAssignment_3");
 			builder.put(grammarAccess.getInheritanceActionAccess().getParentAssignment_2(), "rule__InheritanceAction__ParentAssignment_2");
 			builder.put(grammarAccess.getCompositionActionAccess().getCreateAssignment_0(), "rule__CompositionAction__CreateAssignment_0");
 			builder.put(grammarAccess.getCompositionActionAccess().getEditAssignment_1(), "rule__CompositionAction__EditAssignment_1");

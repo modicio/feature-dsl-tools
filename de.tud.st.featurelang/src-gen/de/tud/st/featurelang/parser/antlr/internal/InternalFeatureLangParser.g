@@ -1624,64 +1624,6 @@ finally {
 	myHiddenTokenState.restore();
 }
 
-// Entry rule entryRuleSetRightOpen
-entryRuleSetRightOpen returns [EObject current=null]@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-}:
-	{ newCompositeNode(grammarAccess.getSetRightOpenRule()); }
-	iv_ruleSetRightOpen=ruleSetRightOpen
-	{ $current=$iv_ruleSetRightOpen.current; }
-	EOF;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule SetRightOpen
-ruleSetRightOpen returns [EObject current=null]
-@init {
-	enterRule();
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0=Up
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getUpKeyword_0());
-		}
-		otherlv_1=To
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getToKeyword_1());
-		}
-		otherlv_2=Date
-		{
-			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
-		}
-		(
-			(
-				lv_date_3_0=RULE_DATE
-				{
-					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSetRightOpenRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"date",
-						lv_date_3_0,
-						"de.tud.st.featurelang.FeatureLang.DATE");
-				}
-			)
-		)
-	)
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
 // Entry rule entryRuleSetLeftOpen
 entryRuleSetLeftOpen returns [EObject current=null]@init {
 	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
@@ -1704,13 +1646,13 @@ ruleSetLeftOpen returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=Starting
+		otherlv_0=Up
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getSetLeftOpenAccess().getUpKeyword_0());
 		}
-		otherlv_1=From
+		otherlv_1=To
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getFromKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getSetLeftOpenAccess().getToKeyword_1());
 		}
 		otherlv_2=Date
 		{
@@ -1725,6 +1667,64 @@ ruleSetLeftOpen returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSetLeftOpenRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"date",
+						lv_date_3_0,
+						"de.tud.st.featurelang.FeatureLang.DATE");
+				}
+			)
+		)
+	)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Entry rule entryRuleSetRightOpen
+entryRuleSetRightOpen returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}:
+	{ newCompositeNode(grammarAccess.getSetRightOpenRule()); }
+	iv_ruleSetRightOpen=ruleSetRightOpen
+	{ $current=$iv_ruleSetRightOpen.current; }
+	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SetRightOpen
+ruleSetRightOpen returns [EObject current=null]
+@init {
+	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Starting
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSetRightOpenAccess().getStartingKeyword_0());
+		}
+		otherlv_1=From
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSetRightOpenAccess().getFromKeyword_1());
+		}
+		otherlv_2=Date
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSetRightOpenAccess().getDateKeyword_2());
+		}
+		(
+			(
+				lv_date_3_0=RULE_DATE
+				{
+					newLeafNode(lv_date_3_0, grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSetRightOpenRule());
 					}
 					setWithLastConsumed(
 						$current,

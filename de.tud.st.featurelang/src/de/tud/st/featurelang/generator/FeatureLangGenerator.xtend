@@ -210,9 +210,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 					«ENDIF»
 					«val public = a.getCreate().getPublicity() === Publicity.PUBLIC»
 					«IF public»
-						MAKE COMPOSITION PUBLIC/MAKE COMPOSITION PRIVATE,
+						MAKE COMPOSITION PUBLIC,
 					«ELSE» 
-						MAKE COMPOSITION PRIVATE/MAKE COMPOSITION PUBLIC,
+						MAKE COMPOSITION PRIVATE,
 					«ENDIF»
 					«IF should»
 						END OPTIONAL,
@@ -237,9 +237,9 @@ class FeatureLangGenerator extends AbstractGenerator {
 		'''
 		«val targetClass = a.getParent().getName()»
 		«IF negation»
-			DELETE PARENT_RELATION «targetClass»\ADD PARENT_RELATION «targetClass»,
+			DELETE PARENT_RELATION «targetClass»/ADD PARENT_RELATION «targetClass»,
 		«ELSE»
-			ADD PARENT_RELATION «targetClass»\DELETE PARENT_RELATION «targetClass»,
+			ADD PARENT_RELATION «targetClass»/DELETE PARENT_RELATION «targetClass»,
 		«ENDIF»	
 		'''
 	}
@@ -254,6 +254,7 @@ class FeatureLangGenerator extends AbstractGenerator {
 		OPEN ATTRIBUTE «a.getAttribute().getName()»/CLOSE ATTRIBUTE «a.getAttribute().getName()»,
 		«IF changeType»
 			SET TYPE «a.getDatatype().getType()»/SET TYPE «a.getDatatype().getOldType()»,
+			CLOSE ATTRIBUTE «a.getAttribute().getName()»/OPEN ATTRIBUTE «a.getAttribute().getName()»,
 		«ELSEIF changeIdentifier» 
 			«val identifier = a.getIdentifier().getIdentifier()»
 			«val nameId = identifier.getValue() === IdentifierValue.NAME»
@@ -261,15 +262,17 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«val oldIdentifier = a.getIdentifier().getOldIdentifier().getName()»
 			«IF nameId»
 				CHANGE ATTRIBUTE NAME TO «newIdentifier»/CHANGE ATTRIBUTE NAME TO «oldIdentifier»,
+				CLOSE ATTRIBUTE «newIdentifier»/OPEN ATTRIBUTE «newIdentifier»,
 			«ELSE» 
 				CHANGE ATTRIBUTE URI TO «newIdentifier»/CHANGE ATTRIBUTE URI TO «oldIdentifier»,
+				CLOSE ATTRIBUTE «a.getAttribute().getName()»/OPEN ATTRIBUTE «a.getAttribute().getName()»,
 			«ENDIF»	
 		«ELSE»
 			«val value = a.getValue().getValue()»
 			«val oldValue = a.getValue().getOldValue()»
 			SET ATTRIBUTE VALUE TO «value»/SET ATTRIBUTE VALUE TO «oldValue»,
+			CLOSE ATTRIBUTE «a.getAttribute().getName()»/OPEN ATTRIBUTE «a.getAttribute().getName()»,
 		«ENDIF»	
-		CLOSE ATTRIBUTE «a.getAttribute().getName()»/OPEN ATTRIBUTE «a.getAttribute().getName()»,
 		«IF should»
 		END OPTIONAL,
 		«ENDIF»

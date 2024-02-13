@@ -1556,100 +1556,15 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleSetVariant"
 
 
-    // $ANTLR start "entryRuleSetRightOpen"
-    // InternalFeatureLangParser.g:625:1: entryRuleSetRightOpen : ruleSetRightOpen EOF ;
-    public final void entryRuleSetRightOpen() throws RecognitionException {
-         
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-
-        try {
-            // InternalFeatureLangParser.g:629:1: ( ruleSetRightOpen EOF )
-            // InternalFeatureLangParser.g:630:1: ruleSetRightOpen EOF
-            {
-             before(grammarAccess.getSetRightOpenRule()); 
-            pushFollow(FOLLOW_1);
-            ruleSetRightOpen();
-
-            state._fsp--;
-
-             after(grammarAccess.getSetRightOpenRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleSetRightOpen"
-
-
-    // $ANTLR start "ruleSetRightOpen"
-    // InternalFeatureLangParser.g:640:1: ruleSetRightOpen : ( ( rule__SetRightOpen__Group__0 ) ) ;
-    public final void ruleSetRightOpen() throws RecognitionException {
-
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:645:2: ( ( ( rule__SetRightOpen__Group__0 ) ) )
-            // InternalFeatureLangParser.g:646:2: ( ( rule__SetRightOpen__Group__0 ) )
-            {
-            // InternalFeatureLangParser.g:646:2: ( ( rule__SetRightOpen__Group__0 ) )
-            // InternalFeatureLangParser.g:647:3: ( rule__SetRightOpen__Group__0 )
-            {
-             before(grammarAccess.getSetRightOpenAccess().getGroup()); 
-            // InternalFeatureLangParser.g:648:3: ( rule__SetRightOpen__Group__0 )
-            // InternalFeatureLangParser.g:648:4: rule__SetRightOpen__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSetRightOpenAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-            	myHiddenTokenState.restore();
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleSetRightOpen"
-
-
     // $ANTLR start "entryRuleSetLeftOpen"
-    // InternalFeatureLangParser.g:658:1: entryRuleSetLeftOpen : ruleSetLeftOpen EOF ;
+    // InternalFeatureLangParser.g:625:1: entryRuleSetLeftOpen : ruleSetLeftOpen EOF ;
     public final void entryRuleSetLeftOpen() throws RecognitionException {
          
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalFeatureLangParser.g:662:1: ( ruleSetLeftOpen EOF )
-            // InternalFeatureLangParser.g:663:1: ruleSetLeftOpen EOF
+            // InternalFeatureLangParser.g:629:1: ( ruleSetLeftOpen EOF )
+            // InternalFeatureLangParser.g:630:1: ruleSetLeftOpen EOF
             {
              before(grammarAccess.getSetLeftOpenRule()); 
             pushFollow(FOLLOW_1);
@@ -1678,22 +1593,22 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleSetLeftOpen"
-    // InternalFeatureLangParser.g:673:1: ruleSetLeftOpen : ( ( rule__SetLeftOpen__Group__0 ) ) ;
+    // InternalFeatureLangParser.g:640:1: ruleSetLeftOpen : ( ( rule__SetLeftOpen__Group__0 ) ) ;
     public final void ruleSetLeftOpen() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:678:2: ( ( ( rule__SetLeftOpen__Group__0 ) ) )
-            // InternalFeatureLangParser.g:679:2: ( ( rule__SetLeftOpen__Group__0 ) )
+            // InternalFeatureLangParser.g:645:2: ( ( ( rule__SetLeftOpen__Group__0 ) ) )
+            // InternalFeatureLangParser.g:646:2: ( ( rule__SetLeftOpen__Group__0 ) )
             {
-            // InternalFeatureLangParser.g:679:2: ( ( rule__SetLeftOpen__Group__0 ) )
-            // InternalFeatureLangParser.g:680:3: ( rule__SetLeftOpen__Group__0 )
+            // InternalFeatureLangParser.g:646:2: ( ( rule__SetLeftOpen__Group__0 ) )
+            // InternalFeatureLangParser.g:647:3: ( rule__SetLeftOpen__Group__0 )
             {
              before(grammarAccess.getSetLeftOpenAccess().getGroup()); 
-            // InternalFeatureLangParser.g:681:3: ( rule__SetLeftOpen__Group__0 )
-            // InternalFeatureLangParser.g:681:4: rule__SetLeftOpen__Group__0
+            // InternalFeatureLangParser.g:648:3: ( rule__SetLeftOpen__Group__0 )
+            // InternalFeatureLangParser.g:648:4: rule__SetLeftOpen__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SetLeftOpen__Group__0();
@@ -1724,6 +1639,91 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         return ;
     }
     // $ANTLR end "ruleSetLeftOpen"
+
+
+    // $ANTLR start "entryRuleSetRightOpen"
+    // InternalFeatureLangParser.g:658:1: entryRuleSetRightOpen : ruleSetRightOpen EOF ;
+    public final void entryRuleSetRightOpen() throws RecognitionException {
+         
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+
+        try {
+            // InternalFeatureLangParser.g:662:1: ( ruleSetRightOpen EOF )
+            // InternalFeatureLangParser.g:663:1: ruleSetRightOpen EOF
+            {
+             before(grammarAccess.getSetRightOpenRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSetRightOpen();
+
+            state._fsp--;
+
+             after(grammarAccess.getSetRightOpenRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSetRightOpen"
+
+
+    // $ANTLR start "ruleSetRightOpen"
+    // InternalFeatureLangParser.g:673:1: ruleSetRightOpen : ( ( rule__SetRightOpen__Group__0 ) ) ;
+    public final void ruleSetRightOpen() throws RecognitionException {
+
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:678:2: ( ( ( rule__SetRightOpen__Group__0 ) ) )
+            // InternalFeatureLangParser.g:679:2: ( ( rule__SetRightOpen__Group__0 ) )
+            {
+            // InternalFeatureLangParser.g:679:2: ( ( rule__SetRightOpen__Group__0 ) )
+            // InternalFeatureLangParser.g:680:3: ( rule__SetRightOpen__Group__0 )
+            {
+             before(grammarAccess.getSetRightOpenAccess().getGroup()); 
+            // InternalFeatureLangParser.g:681:3: ( rule__SetRightOpen__Group__0 )
+            // InternalFeatureLangParser.g:681:4: rule__SetRightOpen__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSetRightOpenAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+            	myHiddenTokenState.restore();
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSetRightOpen"
 
 
     // $ANTLR start "entryRuleInheritanceAction"
@@ -4224,12 +4224,12 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
                 }
                 }
                 break;
-            case Up:
+            case Starting:
                 {
                 alt17=4;
                 }
                 break;
-            case Starting:
+            case Up:
                 {
                 alt17=5;
                 }
@@ -12355,322 +12355,17 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SetVariant__Group__5__Impl"
 
 
-    // $ANTLR start "rule__SetRightOpen__Group__0"
-    // InternalFeatureLangParser.g:4033:1: rule__SetRightOpen__Group__0 : rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1 ;
-    public final void rule__SetRightOpen__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4037:1: ( rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1 )
-            // InternalFeatureLangParser.g:4038:2: rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1
-            {
-            pushFollow(FOLLOW_37);
-            rule__SetRightOpen__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__0"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__0__Impl"
-    // InternalFeatureLangParser.g:4045:1: rule__SetRightOpen__Group__0__Impl : ( Up ) ;
-    public final void rule__SetRightOpen__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4049:1: ( ( Up ) )
-            // InternalFeatureLangParser.g:4050:1: ( Up )
-            {
-            // InternalFeatureLangParser.g:4050:1: ( Up )
-            // InternalFeatureLangParser.g:4051:2: Up
-            {
-             before(grammarAccess.getSetRightOpenAccess().getUpKeyword_0()); 
-            match(input,Up,FOLLOW_2); 
-             after(grammarAccess.getSetRightOpenAccess().getUpKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__0__Impl"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__1"
-    // InternalFeatureLangParser.g:4060:1: rule__SetRightOpen__Group__1 : rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2 ;
-    public final void rule__SetRightOpen__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4064:1: ( rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2 )
-            // InternalFeatureLangParser.g:4065:2: rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2
-            {
-            pushFollow(FOLLOW_41);
-            rule__SetRightOpen__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__1"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__1__Impl"
-    // InternalFeatureLangParser.g:4072:1: rule__SetRightOpen__Group__1__Impl : ( To ) ;
-    public final void rule__SetRightOpen__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4076:1: ( ( To ) )
-            // InternalFeatureLangParser.g:4077:1: ( To )
-            {
-            // InternalFeatureLangParser.g:4077:1: ( To )
-            // InternalFeatureLangParser.g:4078:2: To
-            {
-             before(grammarAccess.getSetRightOpenAccess().getToKeyword_1()); 
-            match(input,To,FOLLOW_2); 
-             after(grammarAccess.getSetRightOpenAccess().getToKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__1__Impl"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__2"
-    // InternalFeatureLangParser.g:4087:1: rule__SetRightOpen__Group__2 : rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3 ;
-    public final void rule__SetRightOpen__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4091:1: ( rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3 )
-            // InternalFeatureLangParser.g:4092:2: rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3
-            {
-            pushFollow(FOLLOW_34);
-            rule__SetRightOpen__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__2"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__2__Impl"
-    // InternalFeatureLangParser.g:4099:1: rule__SetRightOpen__Group__2__Impl : ( Date ) ;
-    public final void rule__SetRightOpen__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4103:1: ( ( Date ) )
-            // InternalFeatureLangParser.g:4104:1: ( Date )
-            {
-            // InternalFeatureLangParser.g:4104:1: ( Date )
-            // InternalFeatureLangParser.g:4105:2: Date
-            {
-             before(grammarAccess.getSetRightOpenAccess().getDateKeyword_2()); 
-            match(input,Date,FOLLOW_2); 
-             after(grammarAccess.getSetRightOpenAccess().getDateKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__2__Impl"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__3"
-    // InternalFeatureLangParser.g:4114:1: rule__SetRightOpen__Group__3 : rule__SetRightOpen__Group__3__Impl ;
-    public final void rule__SetRightOpen__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4118:1: ( rule__SetRightOpen__Group__3__Impl )
-            // InternalFeatureLangParser.g:4119:2: rule__SetRightOpen__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__3"
-
-
-    // $ANTLR start "rule__SetRightOpen__Group__3__Impl"
-    // InternalFeatureLangParser.g:4125:1: rule__SetRightOpen__Group__3__Impl : ( ( rule__SetRightOpen__DateAssignment_3 ) ) ;
-    public final void rule__SetRightOpen__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:4129:1: ( ( ( rule__SetRightOpen__DateAssignment_3 ) ) )
-            // InternalFeatureLangParser.g:4130:1: ( ( rule__SetRightOpen__DateAssignment_3 ) )
-            {
-            // InternalFeatureLangParser.g:4130:1: ( ( rule__SetRightOpen__DateAssignment_3 ) )
-            // InternalFeatureLangParser.g:4131:2: ( rule__SetRightOpen__DateAssignment_3 )
-            {
-             before(grammarAccess.getSetRightOpenAccess().getDateAssignment_3()); 
-            // InternalFeatureLangParser.g:4132:2: ( rule__SetRightOpen__DateAssignment_3 )
-            // InternalFeatureLangParser.g:4132:3: rule__SetRightOpen__DateAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__SetRightOpen__DateAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSetRightOpenAccess().getDateAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__Group__3__Impl"
-
-
     // $ANTLR start "rule__SetLeftOpen__Group__0"
-    // InternalFeatureLangParser.g:4141:1: rule__SetLeftOpen__Group__0 : rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1 ;
+    // InternalFeatureLangParser.g:4033:1: rule__SetLeftOpen__Group__0 : rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1 ;
     public final void rule__SetLeftOpen__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4145:1: ( rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1 )
-            // InternalFeatureLangParser.g:4146:2: rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1
+            // InternalFeatureLangParser.g:4037:1: ( rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1 )
+            // InternalFeatureLangParser.g:4038:2: rule__SetLeftOpen__Group__0__Impl rule__SetLeftOpen__Group__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_37);
             rule__SetLeftOpen__Group__0__Impl();
 
             state._fsp--;
@@ -12699,21 +12394,21 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__0__Impl"
-    // InternalFeatureLangParser.g:4153:1: rule__SetLeftOpen__Group__0__Impl : ( Starting ) ;
+    // InternalFeatureLangParser.g:4045:1: rule__SetLeftOpen__Group__0__Impl : ( Up ) ;
     public final void rule__SetLeftOpen__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4157:1: ( ( Starting ) )
-            // InternalFeatureLangParser.g:4158:1: ( Starting )
+            // InternalFeatureLangParser.g:4049:1: ( ( Up ) )
+            // InternalFeatureLangParser.g:4050:1: ( Up )
             {
-            // InternalFeatureLangParser.g:4158:1: ( Starting )
-            // InternalFeatureLangParser.g:4159:2: Starting
+            // InternalFeatureLangParser.g:4050:1: ( Up )
+            // InternalFeatureLangParser.g:4051:2: Up
             {
-             before(grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0()); 
-            match(input,Starting,FOLLOW_2); 
-             after(grammarAccess.getSetLeftOpenAccess().getStartingKeyword_0()); 
+             before(grammarAccess.getSetLeftOpenAccess().getUpKeyword_0()); 
+            match(input,Up,FOLLOW_2); 
+             after(grammarAccess.getSetLeftOpenAccess().getUpKeyword_0()); 
 
             }
 
@@ -12736,14 +12431,14 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__1"
-    // InternalFeatureLangParser.g:4168:1: rule__SetLeftOpen__Group__1 : rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2 ;
+    // InternalFeatureLangParser.g:4060:1: rule__SetLeftOpen__Group__1 : rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2 ;
     public final void rule__SetLeftOpen__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4172:1: ( rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2 )
-            // InternalFeatureLangParser.g:4173:2: rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2
+            // InternalFeatureLangParser.g:4064:1: ( rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2 )
+            // InternalFeatureLangParser.g:4065:2: rule__SetLeftOpen__Group__1__Impl rule__SetLeftOpen__Group__2
             {
             pushFollow(FOLLOW_41);
             rule__SetLeftOpen__Group__1__Impl();
@@ -12774,21 +12469,21 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__1__Impl"
-    // InternalFeatureLangParser.g:4180:1: rule__SetLeftOpen__Group__1__Impl : ( From ) ;
+    // InternalFeatureLangParser.g:4072:1: rule__SetLeftOpen__Group__1__Impl : ( To ) ;
     public final void rule__SetLeftOpen__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4184:1: ( ( From ) )
-            // InternalFeatureLangParser.g:4185:1: ( From )
+            // InternalFeatureLangParser.g:4076:1: ( ( To ) )
+            // InternalFeatureLangParser.g:4077:1: ( To )
             {
-            // InternalFeatureLangParser.g:4185:1: ( From )
-            // InternalFeatureLangParser.g:4186:2: From
+            // InternalFeatureLangParser.g:4077:1: ( To )
+            // InternalFeatureLangParser.g:4078:2: To
             {
-             before(grammarAccess.getSetLeftOpenAccess().getFromKeyword_1()); 
-            match(input,From,FOLLOW_2); 
-             after(grammarAccess.getSetLeftOpenAccess().getFromKeyword_1()); 
+             before(grammarAccess.getSetLeftOpenAccess().getToKeyword_1()); 
+            match(input,To,FOLLOW_2); 
+             after(grammarAccess.getSetLeftOpenAccess().getToKeyword_1()); 
 
             }
 
@@ -12811,14 +12506,14 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__2"
-    // InternalFeatureLangParser.g:4195:1: rule__SetLeftOpen__Group__2 : rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3 ;
+    // InternalFeatureLangParser.g:4087:1: rule__SetLeftOpen__Group__2 : rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3 ;
     public final void rule__SetLeftOpen__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4199:1: ( rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3 )
-            // InternalFeatureLangParser.g:4200:2: rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3
+            // InternalFeatureLangParser.g:4091:1: ( rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3 )
+            // InternalFeatureLangParser.g:4092:2: rule__SetLeftOpen__Group__2__Impl rule__SetLeftOpen__Group__3
             {
             pushFollow(FOLLOW_34);
             rule__SetLeftOpen__Group__2__Impl();
@@ -12849,17 +12544,17 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__2__Impl"
-    // InternalFeatureLangParser.g:4207:1: rule__SetLeftOpen__Group__2__Impl : ( Date ) ;
+    // InternalFeatureLangParser.g:4099:1: rule__SetLeftOpen__Group__2__Impl : ( Date ) ;
     public final void rule__SetLeftOpen__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4211:1: ( ( Date ) )
-            // InternalFeatureLangParser.g:4212:1: ( Date )
+            // InternalFeatureLangParser.g:4103:1: ( ( Date ) )
+            // InternalFeatureLangParser.g:4104:1: ( Date )
             {
-            // InternalFeatureLangParser.g:4212:1: ( Date )
-            // InternalFeatureLangParser.g:4213:2: Date
+            // InternalFeatureLangParser.g:4104:1: ( Date )
+            // InternalFeatureLangParser.g:4105:2: Date
             {
              before(grammarAccess.getSetLeftOpenAccess().getDateKeyword_2()); 
             match(input,Date,FOLLOW_2); 
@@ -12886,14 +12581,14 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__3"
-    // InternalFeatureLangParser.g:4222:1: rule__SetLeftOpen__Group__3 : rule__SetLeftOpen__Group__3__Impl ;
+    // InternalFeatureLangParser.g:4114:1: rule__SetLeftOpen__Group__3 : rule__SetLeftOpen__Group__3__Impl ;
     public final void rule__SetLeftOpen__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4226:1: ( rule__SetLeftOpen__Group__3__Impl )
-            // InternalFeatureLangParser.g:4227:2: rule__SetLeftOpen__Group__3__Impl
+            // InternalFeatureLangParser.g:4118:1: ( rule__SetLeftOpen__Group__3__Impl )
+            // InternalFeatureLangParser.g:4119:2: rule__SetLeftOpen__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SetLeftOpen__Group__3__Impl();
@@ -12919,21 +12614,21 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SetLeftOpen__Group__3__Impl"
-    // InternalFeatureLangParser.g:4233:1: rule__SetLeftOpen__Group__3__Impl : ( ( rule__SetLeftOpen__DateAssignment_3 ) ) ;
+    // InternalFeatureLangParser.g:4125:1: rule__SetLeftOpen__Group__3__Impl : ( ( rule__SetLeftOpen__DateAssignment_3 ) ) ;
     public final void rule__SetLeftOpen__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalFeatureLangParser.g:4237:1: ( ( ( rule__SetLeftOpen__DateAssignment_3 ) ) )
-            // InternalFeatureLangParser.g:4238:1: ( ( rule__SetLeftOpen__DateAssignment_3 ) )
+            // InternalFeatureLangParser.g:4129:1: ( ( ( rule__SetLeftOpen__DateAssignment_3 ) ) )
+            // InternalFeatureLangParser.g:4130:1: ( ( rule__SetLeftOpen__DateAssignment_3 ) )
             {
-            // InternalFeatureLangParser.g:4238:1: ( ( rule__SetLeftOpen__DateAssignment_3 ) )
-            // InternalFeatureLangParser.g:4239:2: ( rule__SetLeftOpen__DateAssignment_3 )
+            // InternalFeatureLangParser.g:4130:1: ( ( rule__SetLeftOpen__DateAssignment_3 ) )
+            // InternalFeatureLangParser.g:4131:2: ( rule__SetLeftOpen__DateAssignment_3 )
             {
              before(grammarAccess.getSetLeftOpenAccess().getDateAssignment_3()); 
-            // InternalFeatureLangParser.g:4240:2: ( rule__SetLeftOpen__DateAssignment_3 )
-            // InternalFeatureLangParser.g:4240:3: rule__SetLeftOpen__DateAssignment_3
+            // InternalFeatureLangParser.g:4132:2: ( rule__SetLeftOpen__DateAssignment_3 )
+            // InternalFeatureLangParser.g:4132:3: rule__SetLeftOpen__DateAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SetLeftOpen__DateAssignment_3();
@@ -12963,6 +12658,311 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         return ;
     }
     // $ANTLR end "rule__SetLeftOpen__Group__3__Impl"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__0"
+    // InternalFeatureLangParser.g:4141:1: rule__SetRightOpen__Group__0 : rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1 ;
+    public final void rule__SetRightOpen__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4145:1: ( rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1 )
+            // InternalFeatureLangParser.g:4146:2: rule__SetRightOpen__Group__0__Impl rule__SetRightOpen__Group__1
+            {
+            pushFollow(FOLLOW_36);
+            rule__SetRightOpen__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__0"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__0__Impl"
+    // InternalFeatureLangParser.g:4153:1: rule__SetRightOpen__Group__0__Impl : ( Starting ) ;
+    public final void rule__SetRightOpen__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4157:1: ( ( Starting ) )
+            // InternalFeatureLangParser.g:4158:1: ( Starting )
+            {
+            // InternalFeatureLangParser.g:4158:1: ( Starting )
+            // InternalFeatureLangParser.g:4159:2: Starting
+            {
+             before(grammarAccess.getSetRightOpenAccess().getStartingKeyword_0()); 
+            match(input,Starting,FOLLOW_2); 
+             after(grammarAccess.getSetRightOpenAccess().getStartingKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__0__Impl"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__1"
+    // InternalFeatureLangParser.g:4168:1: rule__SetRightOpen__Group__1 : rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2 ;
+    public final void rule__SetRightOpen__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4172:1: ( rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2 )
+            // InternalFeatureLangParser.g:4173:2: rule__SetRightOpen__Group__1__Impl rule__SetRightOpen__Group__2
+            {
+            pushFollow(FOLLOW_41);
+            rule__SetRightOpen__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__1"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__1__Impl"
+    // InternalFeatureLangParser.g:4180:1: rule__SetRightOpen__Group__1__Impl : ( From ) ;
+    public final void rule__SetRightOpen__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4184:1: ( ( From ) )
+            // InternalFeatureLangParser.g:4185:1: ( From )
+            {
+            // InternalFeatureLangParser.g:4185:1: ( From )
+            // InternalFeatureLangParser.g:4186:2: From
+            {
+             before(grammarAccess.getSetRightOpenAccess().getFromKeyword_1()); 
+            match(input,From,FOLLOW_2); 
+             after(grammarAccess.getSetRightOpenAccess().getFromKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__1__Impl"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__2"
+    // InternalFeatureLangParser.g:4195:1: rule__SetRightOpen__Group__2 : rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3 ;
+    public final void rule__SetRightOpen__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4199:1: ( rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3 )
+            // InternalFeatureLangParser.g:4200:2: rule__SetRightOpen__Group__2__Impl rule__SetRightOpen__Group__3
+            {
+            pushFollow(FOLLOW_34);
+            rule__SetRightOpen__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__2"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__2__Impl"
+    // InternalFeatureLangParser.g:4207:1: rule__SetRightOpen__Group__2__Impl : ( Date ) ;
+    public final void rule__SetRightOpen__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4211:1: ( ( Date ) )
+            // InternalFeatureLangParser.g:4212:1: ( Date )
+            {
+            // InternalFeatureLangParser.g:4212:1: ( Date )
+            // InternalFeatureLangParser.g:4213:2: Date
+            {
+             before(grammarAccess.getSetRightOpenAccess().getDateKeyword_2()); 
+            match(input,Date,FOLLOW_2); 
+             after(grammarAccess.getSetRightOpenAccess().getDateKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__2__Impl"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__3"
+    // InternalFeatureLangParser.g:4222:1: rule__SetRightOpen__Group__3 : rule__SetRightOpen__Group__3__Impl ;
+    public final void rule__SetRightOpen__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4226:1: ( rule__SetRightOpen__Group__3__Impl )
+            // InternalFeatureLangParser.g:4227:2: rule__SetRightOpen__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__3"
+
+
+    // $ANTLR start "rule__SetRightOpen__Group__3__Impl"
+    // InternalFeatureLangParser.g:4233:1: rule__SetRightOpen__Group__3__Impl : ( ( rule__SetRightOpen__DateAssignment_3 ) ) ;
+    public final void rule__SetRightOpen__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:4237:1: ( ( ( rule__SetRightOpen__DateAssignment_3 ) ) )
+            // InternalFeatureLangParser.g:4238:1: ( ( rule__SetRightOpen__DateAssignment_3 ) )
+            {
+            // InternalFeatureLangParser.g:4238:1: ( ( rule__SetRightOpen__DateAssignment_3 ) )
+            // InternalFeatureLangParser.g:4239:2: ( rule__SetRightOpen__DateAssignment_3 )
+            {
+             before(grammarAccess.getSetRightOpenAccess().getDateAssignment_3()); 
+            // InternalFeatureLangParser.g:4240:2: ( rule__SetRightOpen__DateAssignment_3 )
+            // InternalFeatureLangParser.g:4240:3: rule__SetRightOpen__DateAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__SetRightOpen__DateAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSetRightOpenAccess().getDateAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__Group__3__Impl"
 
 
     // $ANTLR start "rule__InheritanceAction__Group__0"
@@ -17072,9 +17072,9 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SetVariant__NameAssignment_5"
 
 
-    // $ANTLR start "rule__SetRightOpen__DateAssignment_3"
-    // InternalFeatureLangParser.g:5672:1: rule__SetRightOpen__DateAssignment_3 : ( RULE_DATE ) ;
-    public final void rule__SetRightOpen__DateAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SetLeftOpen__DateAssignment_3"
+    // InternalFeatureLangParser.g:5672:1: rule__SetLeftOpen__DateAssignment_3 : ( RULE_DATE ) ;
+    public final void rule__SetLeftOpen__DateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -17084,43 +17084,6 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
             {
             // InternalFeatureLangParser.g:5677:2: ( RULE_DATE )
             // InternalFeatureLangParser.g:5678:3: RULE_DATE
-            {
-             before(grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0()); 
-            match(input,RULE_DATE,FOLLOW_2); 
-             after(grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SetRightOpen__DateAssignment_3"
-
-
-    // $ANTLR start "rule__SetLeftOpen__DateAssignment_3"
-    // InternalFeatureLangParser.g:5687:1: rule__SetLeftOpen__DateAssignment_3 : ( RULE_DATE ) ;
-    public final void rule__SetLeftOpen__DateAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalFeatureLangParser.g:5691:1: ( ( RULE_DATE ) )
-            // InternalFeatureLangParser.g:5692:2: ( RULE_DATE )
-            {
-            // InternalFeatureLangParser.g:5692:2: ( RULE_DATE )
-            // InternalFeatureLangParser.g:5693:3: RULE_DATE
             {
              before(grammarAccess.getSetLeftOpenAccess().getDateDATETerminalRuleCall_3_0()); 
             match(input,RULE_DATE,FOLLOW_2); 
@@ -17144,6 +17107,43 @@ public class InternalFeatureLangParser extends AbstractInternalContentAssistPars
         return ;
     }
     // $ANTLR end "rule__SetLeftOpen__DateAssignment_3"
+
+
+    // $ANTLR start "rule__SetRightOpen__DateAssignment_3"
+    // InternalFeatureLangParser.g:5687:1: rule__SetRightOpen__DateAssignment_3 : ( RULE_DATE ) ;
+    public final void rule__SetRightOpen__DateAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalFeatureLangParser.g:5691:1: ( ( RULE_DATE ) )
+            // InternalFeatureLangParser.g:5692:2: ( RULE_DATE )
+            {
+            // InternalFeatureLangParser.g:5692:2: ( RULE_DATE )
+            // InternalFeatureLangParser.g:5693:3: RULE_DATE
+            {
+             before(grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0()); 
+            match(input,RULE_DATE,FOLLOW_2); 
+             after(grammarAccess.getSetRightOpenAccess().getDateDATETerminalRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SetRightOpen__DateAssignment_3"
 
 
     // $ANTLR start "rule__InheritanceAction__ParentAssignment_2"
