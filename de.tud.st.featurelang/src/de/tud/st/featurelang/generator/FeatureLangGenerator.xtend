@@ -140,58 +140,78 @@ class FeatureLangGenerator extends AbstractGenerator {
 			«ENDIF» 
 		«ELSE» 
 			«val associationName = a.getName()»
-			OPEN ASSOCIATION «associationName»,
-			«a.getEdit().getType().compileEditAssociation()»
-			CLOSE ASSOCIATION «associationName»,
+			OPEN ASSOCIATION «associationName»/CLOSE ASSOCIATION «associationName»,
+			«a.getEdit().getType().compileEditAssociation(negation)»
+			CLOSE ASSOCIATION «associationName»/OPEN ASSOCIATION «associationName»,
 		«ENDIF»
 		'''
 	}
 	
-	private def compileEditAssociation(EObject a){
+	private def compileEditAssociation(EObject a, boolean negation){
 		switch a {
-			SetCompatible : a.compileSetCompatible()
-			SetVersionRange : a.compileSetVersionRange()
-			SetVariant : a.compileSetVariant()
-			SetLeftOpen : a.compileSetLeftOpen()
-			SetRightOpen : a.compileSetRightOpen()
+			SetCompatible : a.compileSetCompatible(negation)
+			SetVersionRange : a.compileSetVersionRange(negation)
+			SetVariant : a.compileSetVariant(negation)
+			SetLeftOpen : a.compileSetLeftOpen(negation)
+			SetRightOpen : a.compileSetRightOpen(negation)
 			default : 'NOP'
 		}
 	}
 	
-	private def compileSetCompatible(SetCompatible a) {
+	private def compileSetCompatible(SetCompatible a, boolean negation) {
 		val versionName = a.getName() 
 		'''
-		SET COMPATIBLE WITH VERSION «versionName»,
-		'''
+		«IF negation»
+			REMOVE COMPATIBLE WITH VERSION «versionName»/SET COMPATIBLE WITH VERSION «versionName»,
+		«ELSE» 
+			SET COMPATIBLE WITH VERSION «versionName»/REMOVE COMPATIBLE WITH VERSION «versionName»,
+		«ENDIF»
+		'''	
 	}
 	
-	private def compileSetVersionRange(SetVersionRange a) {
+	private def compileSetVersionRange(SetVersionRange a, boolean negation) {
 		val start = a.getStart()
 		val end = a.getEnd() 
 		'''
-		SET VERSION RANGE FROM «start» TO «end»,
-		'''
+		«IF negation»
+			REMOVE VERSION RANGE FROM «start» TO «end»/SET VERSION RANGE FROM «start» TO «end»,
+		«ELSE» 
+			SET VERSION RANGE FROM «start» TO «end»/REMOVE VERSION RANGE FROM «start» TO «end»,
+		«ENDIF»
+		'''	
 	}
 	
-	private def compileSetVariant(SetVariant a) {
+	private def compileSetVariant(SetVariant a, boolean negation) {
 		val variantDate = a.getName()
 		'''
-		SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»,
-		'''
+		«IF negation»
+			REMOVE COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»/SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»,
+		«ELSE» 
+			SET COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»/REMOVE COMPATIBLE WITH ALL VERSIONS OF VARIANT «variantDate»,
+		«ENDIF»
+		'''	
 	}
 	
-	private def compileSetLeftOpen(SetLeftOpen a) {
+	private def compileSetLeftOpen(SetLeftOpen a, boolean negation) {
 		val date = a.getDate()
 		'''
-		SET VERSION UP TO DATE «date»,
-		'''
+		«IF negation»
+			REMOVE VERSION UP TO DATE «date»/SET VERSION UP TO DATE «date»,
+		«ELSE» 
+			SET VERSION UP TO DATE «date»/REMOVE VERSION UP TO DATE «date»,
+		«ENDIF»
+		'''	
 	}
 	
-	private def compileSetRightOpen(SetRightOpen a) {
+	private def compileSetRightOpen(SetRightOpen a, boolean negation) {
 		val date = a.getDate()
 		'''
-		SET VERSION STARTING FROM DATE «date»,
-		'''
+		«IF negation»
+			REMOVE VERSION STARTING FROM DATE «date»/SET VERSION STARTING FROM DATE «date»,
+		«ELSE» 
+			SET VERSION STARTING FROM DATE «date»/REMOVE VERSION STARTING FROM DATE «date»,
+		«ENDIF»
+		'''	
 	}
 	
 	private def compileCompositionAction(CompositionAction a, boolean negation) {
